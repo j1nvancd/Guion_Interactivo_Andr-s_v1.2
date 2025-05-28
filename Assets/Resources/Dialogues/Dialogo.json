@@ -1,0 +1,119 @@
+[
+    {
+      "id": "start",
+      "speaker": "Verónica",
+      "text": "¿Te has enterado de lo de la Fábrica?",
+      "setFlags": ["Inicio"],
+      "choices": [
+        {
+          "text": "¿Qué pasó?",
+          "next": "ramo1"
+        },
+        {
+          "text": "No me interesa",
+          "next": "fin"
+        }
+      ]
+    },
+    {
+      "id": "ramo1",
+      "speaker": "Verónica",
+      "text": "Dicen que van a hacer cambios en la plantilla.",
+      "choices": [
+        {
+          "text": "¿Van a despedir a alguien?",
+          "next": "ramo2",
+          "setFlags": ["Preocupado"]
+        },
+        {
+          "text": "¿Por qué te preocupa?",
+          "next": "ramo2",
+          "setFlags": ["Indiferencia"]
+        }
+      ]
+    },
+    {
+      "id":"ramo2",
+      "speaker":"Verónica",
+      "text": "Creo que se a quién van a despedir",
+      "requiredFlags": ["Indiferencia"],
+      "choices": [
+        {
+          "text": "¿Es a mí?",
+          "next": "ramo3",
+          "setFlags": ["nervios"]
+        },
+        {
+          "text": "A mí me da igual",
+          "next": "fin"
+        }
+      ]
+
+    },
+    {
+      "id": "ramo2",
+      "speaker": "Verónica",
+      "text": "Sí, creo que a Marta.",
+      "requiredFlags": ["Preocupado"],
+      "choices": [
+        {
+          "text": "¡Qué injusto!",
+          "next": "ramo3",
+          "setFlags":["ApoyoMarta"]
+        },
+        {
+          "text":"No es asunto nuestro.",
+          "next": "fin"
+        }
+      ]
+    },
+    {
+        "id": "ramo3",
+        "speaker":"Verónica",
+        "text": "No, es a Marta",
+        "requiredFlags": ["nervios"],
+        "choices":[
+        {
+          "text": "¡Qué injusto!",
+          "next": "ramo3",
+          "setFlags":["ApoyoMarta"]
+        },
+        {
+          "text":"No es asunto nuestro.",
+          "next": "fin"
+        }
+      ]
+    },
+    {
+      "id": "ramo3",
+      "speaker": "Verónica",
+      "text": "Ella tiene hijos y se esfuerza mucho.",
+      "requiredFlags":["ApoyoMarta"],
+      "choices": [
+        {
+          "text": "Hablamos con recursos humanos.",
+          "next": "finalJusto",
+          "setFlags": ["SabeDespedida"]
+        },
+        {
+          "text": "Pero no podemos hacer nada nosotros",
+          "next": "fin"
+        }
+      ]
+    },
+    {
+      "id": "finalJusto",
+      "speaker": "Verónica",
+      "text": "Gracias por apoyarla, eres buena persona.",
+      "requiredFlags": ["SabeDespedida"],
+      "choices": []
+    },
+    {
+      "id": "fin",
+      "speaker": "Verónica",
+      "text": "Está bien, como quieras.",
+      "setFlags": ["Fin"],
+      "choices": []
+    }
+  ]
+  

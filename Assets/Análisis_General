@@ -1,0 +1,31 @@
+Análisis código SugarCube general:
+Varibles como $n(paso/etapa) y $branch(rama) como generales.
+<link> para la toma de decisiones y cambio de flujo de la historia.
+<include "historia"> para cargar contenido dinámico desde un pasaje externo.
+<replace> para actualizar las partes del contenido sin recargarlo todo.
+
+Objetivo:
+Crear un sistema parecido en Unity fácilmente escalable que haga lo siguiente:
+-Soporte múltiples historias y decisiones ramificadas.
+-Permita ser escalado con facilidad(cargado de datos externos a ser posible).
+-Sea editable sin necesidad de recompilar el juego para los cambios del diálogo.
+
+Que hacer(al añadir recordar poner un tab):
+-un JSON(puede ser un ScriptableObject) que contenga todos los nodos del diálogo.
+-Un sistema de dialogo que cargue, interprete y muestre los nodos.
+-Un componente UI que presente los textos y opciones.
+-Un diseño limpio y modular por el amor de dios Iván hazlo que después te lías con tu propio código AAAAAAAAAAAA.
+
+Objetivo 2:
+Hacer condiciones y flags para ramificar mejor los diálogos y poder mostrar condiciones o líneas solo si se cumplen ciertas condiciones
+
+Que hacer:
+-Modificar el sistema para hacer lo siguiente:
+    -Activar flags desde un nodo
+    -Restringir opciones dependiendo de si la flag está activa o no lo está.
+
+Pasos:
+-Ampliar el JSON
+-Extender las clases
+-Llever el estado de las flags
+-Filtrar las opciones en el dialogueUI

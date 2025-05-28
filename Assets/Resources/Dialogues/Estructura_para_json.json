@@ -1,0 +1,33 @@
+[
+    {
+        "id": "start", 
+        "speaker": "Verónica",
+        "text":"¿Te has enterado de lo de la Fábrica?",
+        "setFlags":["Inicio"],
+        "choices":
+        [
+            {
+                "text":"¿Qué pasó?",
+                "next":"ramo1"                
+            },
+            {
+                "text":"No me interesa",
+                "next":"fin"               
+            }
+        ]
+    },
+    {
+        "id":"ramo1",
+        "speaker":"Verónica",
+        "text":"Dicen que van a hacer cambios en la plantilla",
+        "choices":[],
+        "setFlags":["Preocupado"]
+    },
+    {
+        "id":"fin",
+        "speaker":"Verónica",
+        "text":"Ok, tu te lo pierdes",
+        "choices":[],
+        "setFlags":["fin"]
+    }
+]
