@@ -1,0 +1,201 @@
+[
+  {
+    "id": "startV1_2",
+    "speaker": "Verónica",
+    "text": "Al final has caído eh, si es que por muy cascarrabias que seas no me sabes decir que no",
+    "setFlags": ["InicioVeronica1"],
+    "choices": [
+      {
+        "text": "No es que no sepa decir que no, es que has perdido el bus por estar preprándote como si fueses a una comunión",
+        "next": "1V1_2",
+        "setFlags": ["V1_2.1"]
+      },
+      {
+        "text": "Cuando me has dicho que era sólo a tí y que las demás ya estaban allí ha sonado mejor",
+        "next": "1V1_2",
+        "setFlags": ["V1_2.2"]
+      }
+    ]
+  },
+  {
+    "id": "1V1_2",
+    "speaker": "Verónica",
+    "text": "*se ríe* No hace falta que te hagas el desagradable eh, si en el fondo no puedes estar sin mí",
+    "choices": [
+      {
+        "text": "No sé si es amor o síndrome de Estocolmo.",
+        "next": "2V1_2",
+        "setFlags": ["V1_2.1.1"]
+      },
+      {
+        "text": "Lo que no puedo es es un fin de semana tranquilo",
+        "next": "2V1_2",
+        "setFlags": ["V1_2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "2V1_2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1_2.1.1"],
+        "text": "Pues espérate a la vuelta, que a lo mejor te toca traer a las demás también."
+      },
+      {
+        "requiredFlags": ["V1_2.1.2"],
+        "text": "¿Te acuerdas cuando íbamos en moto a la playa? Eras más romántico entonces."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Yo ya te dije que si os llevaba a todas encendía el taxímetro...",
+        "next": "3V1_2",
+        "requiredFlags": ["V1_2.1.1"],
+        "setFlags": ["V1_2.1.1.1"]
+      },
+      {
+        "text": "...",
+        "next": "FinVeronica1",
+        "requiredFlags": ["V1_2.1.1"],
+        "setFlags": ["V1_2.1.1.2"]
+      },
+      {
+        "text": "Claro que me acuerdo. Nos íbamos a ir al contiente y sabíamos que teniamos que aprovechar el tiempo juntos",
+        "next": "3V1_2",
+        "requiredFlags": ["V1_2.1.2"],
+        "setFlags": ["V1_2.1.2.1"]
+      },
+      {
+        "text": "¿Hasta cuando te estoy haciendo un favor me tienes que echar cosas en cara?",
+        "next": "3V1_2",
+        "requiredFlags": ["V1_2.1.2"],
+        "setFlags": ["V1_2.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3V1_2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1_2.1.1.1"],
+        "text": "¿Te acuerdas cuando íbamos en moto a la playa? Eras más romántico entonces."
+      },
+      {
+        "requiredFlags": ["V1_2.1.1.2"],
+        "text": "Pues nada chico, pon la radio al menos"
+      },
+      {
+        "requiredFlags": ["V1_2.1.2.1"],
+        "text": "Será eso, que llevamos tanto tiempo así que ya nos damos por hecho..."
+      },
+      {
+        "requiredFlags": ["V1_2.1.2.2"],
+        "text": "No te estoy echando nada en cara, eres tú el que lleva recriminándome desde que salimos de casa que me tiene que llevar. Como si no te dedicases a conducir"
+      }
+    ],
+    "choices": [
+      {
+        "text": "No sé si eso es bonito o triste, pero supongo que eso es el matrimonio",
+        "next": "4V1_2",
+        "requiredFlags": ["V1_2.1.2.1"],
+        "setFlags": ["V1_2.1.2.1.1"]
+      },
+      {
+        "text": "Lo damos todo por hecho... antes teníamos el romanticismo de no saber lo que pasaría en el futuro",
+        "next": "4V1_2",
+        "requiredFlags": ["V1_2.1.2.1"],
+        "setFlags": ["V1_2.1.2.1.2"]
+      },
+      {
+        "text": "Me dedico a conducir, no a ser tu chófer personal...",
+        "next": "4V1_2",
+        "requiredFlags": ["V1_2.1.2.2"],
+        "setFlags": ["V1_2.1.2.2.1"]
+      },
+      {
+        "text": "...",
+        "next": "FinVeronica1",
+        "requiredFlags": ["V1_2.1.2.2"],
+        "setFlags": ["V1_2.1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4V1_2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1_2.1.2.1.1"],
+        "text": "Muchas cosas son bonitas y tristes al mismo tiempo..."
+      },
+      {
+        "requiredFlags": ["V1_2.1.2.1.2"],
+        "text": "De eso va hacerse mayor ¿no? De empezar a tener las cosa claras..."
+      },
+      {
+        "requiredFlags": ["V1_2.1.2.2.1"],
+        "text": "Muy bien, no te preocupes que no te pido más favores..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Vaya, al final has conseguido ponerme triste un sábado y no ha sido por hacer el turno de mañana.",
+        "next": "FinVeronica1",
+        "requiredFlags": ["V1_2.1.2.1.1"],
+        "setFlags": ["V1_2.1.2.1.1.1"]
+      },
+      {
+        "text": "¿Cuándo nos hemos hecho mayores?",
+        "next": "5V1_2",
+        "requiredFlags": ["V1_2.1.2.1.2"],
+        "setFlags": ["V1_2.1.2.1.2.1"]
+      }
+    ]
+  },
+  {
+    "id": "5V1_2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1_2.1.2.1.2.1"],
+        "text": "No lo sé, pero si mi yo de la universidad me viese definitivamente me hablaría de usted, si eso no es ser mayor..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Si mi yo de la universidad me viese...",
+        "next": "FinVeronica1",
+        "setFlags": ["V1_2.1.2.1.2.1.1"]
+      },
+      {
+        "text": "Eso es porque tú siempre has sido una estirada, hablándole de usted a los profesores",
+        "next": "FinVeronica1",
+        "setFlags": ["V1_2.1.2.1.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "FinVeronica1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1_2.1.1.2"],
+        "text": "Pues nada chico, pon la radio al menos"
+      },
+      {
+        "requiredFlags": ["V1_2.1.2.2.2"],
+        "text": "(silencio)"
+      },
+      {
+        "requiredFlags": ["V1_2.1.2.2.1"],
+        "text": "Muy bien, no te preocupes que no te pido más favores..."
+      },
+      {
+        "requiredFlags": ["V1_2.1.2.1.1.1"],
+        "text": "..."
+      }
+    ]
+  }
+]

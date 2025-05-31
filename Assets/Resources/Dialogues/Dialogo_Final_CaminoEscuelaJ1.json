@@ -1,0 +1,166 @@
+[
+  {
+    "id": "startJ1",
+    "speaker": "Verónica",
+    "text": "Cuatro días seguidos con el turno de mañana, soy una mujer con suerte",
+    "setFlags": ["InicioJ1"],
+    "choices": [
+      {
+        "text": "No te acostumbres que la semana que viene no sabemos como se va a dar",
+        "next": "1J1",
+        "setFlags": ["J1.1"]
+      },
+      {
+        "text": "Mientras pueda coger el turno de mañana y aprovechar para llevarte, mejor que mejor supongo",
+        "next": "1J1",
+        "setFlags": ["J1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1J1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["J1.1"],
+        "text": "Lo intentaré, pero ya sabes, a lo bueno una se acostumbra rápido. Por cierto, ¿te has enterado de lo de la señora Bencomo?"
+      },
+      {
+        "requiredFlags": ["J1.2"],
+        "text": "La verdad que es muy cómodo ahorrarte las cuestas del pueblo. Por cierto, ¿te has enterado de lo de la señora Bencomo?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿La señora Bencomo? ¿La viuda del marisquero aquel?",
+        "next": "2J1",
+        "setFlags": ["J1.2.1"]
+      },
+      {
+        "text": "Ya vamos a empezar con los cotilleos",
+        "next": "2J1",
+        "setFlags": ["J1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2J1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["J1.2.1"],
+        "text": "Efectivamente, todo el pueblo pensaba que esa mujer ya no se quitaba el luto en la vida, que yo pensaba, \"hay que ver, tan joven\" bueno pues por lo visto se está quedando un jovencito rubio en su casa esta semana"
+      },
+      {
+        "requiredFlags": ["J1.2.2"],
+        "text": "Bueno pues nada no te lo cuento, con la de cosas que te podrías enterar tú aquí si hablases con los que se suben, y te tiene que dar igual todo"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Cómo de joven?",
+        "next": "3J1",
+        "requiredFlags": ["J1.2.1"],
+        "setFlags": ["J1.2.1.1"]
+      },
+      {
+        "text": "¿Quedándose en qué sentido?",
+        "next": "3J1",
+        "requiredFlags": ["J1.2.1"],
+        "setFlags": ["J1.2.1.2"]
+      },
+      {
+        "text": "No mujer no te enfades, ahora ya no me dejes con la curiosidad, La Bencomo es la viuda del Capita el marisquero ¿no?",
+        "next": "3J1",
+        "requiredFlags": ["J1.2.2"],
+        "setFlags": ["J1.2.2.1"]
+      },
+      {
+        "text": "Cuanto menos sepa mejor, que después me preguntan a mí y yo no he jurado secreto de confesión",
+        "next": "3J1",
+        "requiredFlags": ["J1.2.2"],
+        "setFlags": ["J1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3J1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["J1.2.1.1"],
+        "text": "Hombre, joven en comparación, un poco más joven que nosotros, tampoco es que sea ahora una asaltacunas"
+      },
+      {
+        "requiredFlags": ["J1.2.1.2"],
+        "text": "Pues eso es lo que no sabemos, hombre pinta de familiar no tiene la verdad, no me suena que tenga un sobrino extranjero, además que según dicen él no habla ni el idioma"
+      },
+      {
+        "requiredFlags": ["J1.2.2.1"],
+        "text": "Hombre, joven en comparación, un poco más joven que nosotros, tampoco es que sea ahora una asaltacunas"
+      },
+      {
+        "requiredFlags": ["J1.2.2.2"],
+        "text": "La verdad que lo único que te falta es meterte a cura"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Entonces cuál es el problema?",
+        "next": "4J1",
+        "requiredFlags": ["J1.2.1.1"],
+        "setFlags": ["J1.2.1.1.1"]
+      },
+      {
+        "text": "¿Y no puede ser que a la Bencomo la paga de viuda se le quede corta...?",
+        "next": "4J1",
+        "requiredFlags": ["J1.2.1.1", "J1.2.1.2"],
+        "setFlags": ["J1.2.1.1.2"]
+      },
+      {
+        "text": "No creo que la señora invite a jovencitos a su casa para charlar de filosofía tampoco...",
+        "next": "4J1",
+        "requiredFlags": ["J1.2.1.2"],
+        "setFlags": ["J1.2.1.2.1"]
+      },
+      {
+        "text": "No porque entonces estaría obligado a escuchar todos estos cotilleos sin mandar a nadie a tomar por culo",
+        "next": "4J1",
+        "requiredFlags": ["J1.2.2.2"],
+        "setFlags": ["J1.2.2.2.1"]
+      },
+      {
+        "text": "Muy tranquila que debe ser la vida contemplativa, con tus libros y tus ave marías",
+        "next": "4J1",
+        "requiredFlags": ["J1.2.2.2"],
+        "setFlags": ["J1.2.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4J1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["J1.2.1.1.1"],
+        "text": "No a ver, ninguno supongo, pero ya sabes como es la gente. Para lo que pasa en el pueblo habrá que cotillear de las cosas aunque no sean malas, no todo tienen que ser desgracias ni crímenes"
+      },
+      {
+        "requiredFlags": ["J1.2.1.1.2"],
+        "text": "Pues no lo había pensado... me gustaba más la teoría de que se había echado un novio gigoló la viuda"
+      },
+      {
+        "requiredFlags": ["J1.2.1.1.2"],
+        "text": "*se ríe* no definitivamente no, bueno ya nos iremos enterando de la historia del rubito"
+      },
+      {
+        "requiredFlags": ["J1.2.2.2.1"],
+        "text": "Tan agradable como siempre, pues nada te quedas sin cotilleos"
+      },
+      {
+        "requiredFlags": ["J1.2.2.2.2"],
+        "text": "Pero si no sabes ni rezar un padrenuestro *se ríe*"
+      }
+    ]
+  }
+]

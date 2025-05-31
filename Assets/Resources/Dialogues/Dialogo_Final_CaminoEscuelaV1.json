@@ -1,0 +1,170 @@
+[
+  {
+    "id": "startV1",
+    "speaker": "Verónica",
+    "text": "¡Ya estamos a viernes!",
+    "setFlags": ["InicioV1"],
+    "choices": [
+      {
+        "text": "¿Tienes planes para el fin de semana?",
+        "next": "1V1",
+        "setFlags": ["V1.1"]
+      },
+      {
+        "text": "¿Mucho jaleo esta semana?",
+        "next": "1V1",
+        "setFlags": ["V1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1V1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1"],
+        "text": "Pues subiré a la playa una tarde al menos, tú vas a trabajar los dos días ¿no?"
+      },
+      {
+        "requiredFlags": ["V1.2"],
+        "text": "Bueno, ya está acabando el curso, hay que preparar exámenes, los mayores ya solo piensan en vacaciones y la clase se pone complicada de manejar"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, que se le va a hacer, son los días de más tránsito",
+        "next": "2V1",
+        "requiredFlags": ["V1.1"],
+        "setFlags": ["V1.1.1"]
+      },
+      {
+        "text": "¿A la playa te tengo que subir yo también?",
+        "next": "2V1",
+        "requiredFlags": ["V1.1"],
+        "setFlags": ["V1.1.2"]
+      },
+      {
+        "text": "Normal, empieza a hacer calor, qué niño va a querer estar ahí leyendo sobre la fotosíntesis en vez de irse a la playa",
+        "next": "2V1",
+        "requiredFlags": ["V1.2"],
+        "setFlags": ["V1.2.1"]
+      },
+      {
+        "text": "Ya queda poco, se tienen que centrar en sacar adelante el curso...",
+        "next": "2V1",
+        "requiredFlags": ["V1.2"],
+        "setFlags": ["V1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2V1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1.1"],
+        "text": "Ten cuidado si coges el taxi por la noche eh, que la gente bebe y pierde los papeles"
+      },
+      {
+        "requiredFlags": ["V1.1.2"],
+        "text": "Hombre pues si te ofreces no te diría que no, pero iré con mis amigas así que no creo que haga falta"
+      },
+      {
+        "requiredFlags": ["V1.2.1"],
+        "text": "Pues deberían, los peques no quieren que se acabe el curso, dos meses sin cole se les hace un mundo. Después se van haciendo mayores y no quieren verte la cara..."
+      },
+      {
+        "requiredFlags": ["V1.2.2"],
+        "text": "Hay de todo, hay padres muy centrados en que sus hijos estudien y se puedan ir al continente diciendo que vivirán mejor que nosotros y también hay los que dicen que total, en la isla hay trabajo y ellos tienen trabajo sin tener estudios"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Nunca me ha pasado nada no creo que a ningún borracho le de por pelearse con el que le tiene que llevar",
+        "next": "3V1",
+        "requiredFlags": ["V1.1.1"],
+        "setFlags": ["V1.1.1.1"]
+      },
+      {
+        "text": "La verdad que últimamente lo he pensado alguna vez, estoy pensando en poner un cristal o algo por si acaso",
+        "next": "3V1",
+        "requiredFlags": ["V1.1.1"],
+        "setFlags": ["V1.1.1.2"]
+      },
+      {
+        "text": "Ofrecerme ofrecerme tampoco, te estoy preguntando si tengo que hacerlo...",
+        "next": "3V1",
+        "requiredFlags": ["V1.1.2"],
+        "setFlags": ["V1.1.2.1"]
+      },
+      {
+        "text": "Hombre a tí te llevo, con las demás si hago de taxista enciendo el taxímetro",
+        "next": "3V1",
+        "requiredFlags": ["V1.1.2"],
+        "setFlags": ["V1.1.2.2"]
+      },
+      {
+        "text": "Los pequeños ni quieren que acabe el curso ni quieren que acaben las vacaciones en septiembre...",
+        "next": "3V1",
+        "requiredFlags": ["V1.2.1"],
+        "setFlags": ["V1.2.1.1"]
+      },
+      {
+        "text": "Yo creo que los padres tienen más miedo de tener a los niños dos meses con ellos...",
+        "next": "3V1",
+        "requiredFlags": ["V1.2.1"],
+        "setFlags": ["V1.2.1.2"]
+      },
+      {
+        "text": "Hay gente muy corta de miras...",
+        "next": "3V1",
+        "requiredFlags": ["V1.2.2"],
+        "setFlags": ["V1.2.2.1"]
+      },
+      {
+        "text": "Los que estudian se van y los que se quedan es porque no se pueden imaginar una vida mejor",
+        "next": "3V1",
+        "requiredFlags": ["V1.2.2"],
+        "setFlags": ["V1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3V1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1.1.1"],
+        "text": "Bueno tú ten cuidado, que últimamente cada vez hay más forasteros en la isla"
+      },
+      {
+        "requiredFlags": ["V1.1.1.2"],
+        "text": "¿Tan mal lo ves? A ver no sé cuánto podría costar, puede ser buena idea sí"
+      },
+      {
+        "requiredFlags": ["V1.1.2.1"],
+        "text": "Tan amable como habitualmente."
+      },
+      {
+        "requiredFlags": ["V1.1.2.2"],
+        "text": "Aunque suene raro, en el fondo me tranquiliza"
+      },
+      {
+        "requiredFlags": ["V1.2.1.1"],
+        "text": "Si sólo fuesen los pequeños"
+      },
+      {
+        "requiredFlags": ["V1.2.1.2"],
+        "text": "Hay gente que realmente no sé cómo pueden tener hijos..."
+      },
+      {
+        "requiredFlags": ["V1.2.2.1"],
+        "text": "Bueno, a veces las aspiraciones en la vida no tienen que ser conseguir más cosas, más caro todo, más grande, hay gente que es feliz pescando"
+      },
+      {
+        "requiredFlags": ["V1.2.2.2"],
+        "text": "¿Y qué van a hacer? Ahora mismo no hay trabajo para gente formada en la isla, a tí que te van a decir..."
+      }
+    ]
+  }
+]

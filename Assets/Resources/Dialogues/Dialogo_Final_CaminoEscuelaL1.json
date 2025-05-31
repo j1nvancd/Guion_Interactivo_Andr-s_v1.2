@@ -1,0 +1,153 @@
+[
+    {
+        "id":"startL1",
+        "speaker":"Verónica",
+        "text":"Lunes otra vez...",
+        "setFlags":["Inicio"],
+        "choices":
+        [
+            {
+                "text":"Al menos tú libras todo el fin de semana",
+                "next":"1L1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text":"¿No tienes ganas de ver a tus alumnos?",
+                "next":"1L1",
+                "setFlags": ["1.2"]
+            },
+             {
+                "text":"...",
+                "next":"1L1",
+                "setFlags": ["1.3"]
+            }
+        ]
+    },
+    {
+        "id":"1L1",
+        "speaker":"Verónica",
+        "conditionalTexts":
+        [
+            {"requiredFlags": ["1.1"], "text": "Hmpf, claro, los profesores y nuestra manía de no ir a trabajar cuando no hay alumnos"},
+            {"requiredFlags": ["1.2"], "text":"No seas tonto, ¿Qué iba a hacer yo sin ellos?"},
+            {"requiredFlags": ["1.3"], "text":"Hoy tampoco tienes ganas de hablar eh"}
+        ],
+        "choices":
+        [
+            {
+                "text":"Nadie ha dicho eso",
+                "next":"2L1",
+                "requiredFlags":["1.1"],
+                "setFlags":["1.1.1"]             
+            },
+            {
+                "text":"Son las ventajas del trabajo",
+                "next":"2L1",
+                "requiredFlags":["1.1"],
+                "setFlags":["1.1.2"]                
+            },
+             {
+                "text":"No quiero discutir",
+                "next":"2L1",
+                "requiredFlags":["1.1"],
+                "setFlags":["1.1.3"]
+            },
+            {
+                "text":"Se me ocurren un par de cosas que podríamos hacer",
+                "next":"2L1",
+                "requiredFlags":["1.2"],
+                "setFlags":["1.2.1"]
+            },
+            {
+                "text":"Mejor no respondo",
+                "next":"FinPasajeL1",
+                "requiredFlags":["1.2"],
+                "setFlags":["1.2.2"]
+            },
+            {
+                "text":"...",
+                "next":"FinPasajeL1",
+                "requiredFlags":["1.3"],
+                "setFlags":["1.3.1"]
+            },
+            {
+                "text":"¿Qué? Perdón estaba en mi mundo",
+                "next":"FinPasajeL1",
+                "requiredFlags":["1.3"],
+                "setFlags":["1.3.2"]
+            }
+        ]
+    },
+    {
+        "id":"2L1",
+        "speaker":"Verónica",
+        "conditionalTexts":
+        [
+            {"requiredFlags": ["1.1.1"], "text": "No, pero aquí el único con derecho a quejarse eres tú"},
+            {"requiredFlags": ["1.1.2"], "text":"Ya, supongo que sí, cada trabajo tiene sus cosas, mírate a ti, con esto del turismo seguro que estás practicando idiomas últimamente"},
+            {"requiredFlags": ["1.2.1"], "text":"Aquí cada loco con su tema"}
+        ],
+        "choices":
+        [
+            {
+                "text":"Cuanto más derecho a decidir, menos derecho a quejarse, a mí me parece justo",
+                "next":"3L1",
+                "requiredFlags":["1.1.1"],
+                "setFlags":["1.1.1.1"]             
+            },
+            {
+                "text":"...",
+                "next":"3L1",
+                "requiredFlags":["1.1.1"],
+                "setFlags":["1.1.1.2"]                
+            },
+             {
+                "text":"Sí, mírame, un hombre de mundo",
+                "next":"3L1",
+                "requiredFlags":["1.1.2"],
+                "setFlags":["1.1.2.1"]
+            },
+            {
+                "text":"Prepárate para que te pidan que des clase en su idioma también...",
+                "next":"3L1",
+                "requiredFlags":["1.1.2"],
+                "setFlags":["1.1.2.2"]
+            },
+            {
+                "text":"En eso de que me estoy volviendo loco sí que creo que te puedo dar la razón",
+                "next":"3L1",
+                "requiredFlags":["1.2.1"],
+                "setFlags":["1.2.1.1"]
+            },
+            {
+                "text":"*hacer el tonto imitando a un loco*",
+                "next":"3L1",
+                "requiredFlags":["1.2.1"],
+                "setFlags":["1.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id":"3L1",
+        "speaker":"Verónica",
+        "conditionalTexts":
+        [
+            {"requiredFlags": ["1.1.1.1"], "text":"Tan temprano y ya tan elocuente, que suerte tengo"},
+            {"requiredFlags": ["1.1.1.1"], "text":"Tan temprano y ya tan elocuente, que suerte tengo"},
+            {"requiredFlags": ["1.1.2.2"], "text":"¿Nunca puedes ser positivo con nada? ¿Ni aunque nos venga bien? Ya puedes aparcar, estamos aquí"},
+            {"requiredFlags": ["1.1.1.2"], "text": "No te preocupes que ya no tienes que hablar más, ya hemos llegado"},
+            {"requiredFlags": ["1.2.1.1"], "text":"Pues mira algo que me llevo, ya hemos llegado, hasta luego"},
+            {"requiredFlags": ["1.2.1.2"], "text":"*se ríe* Qué tonto que eres, ya estamos aquí, muchas gracias"}
+        ]
+    },
+    {
+        "id":"FinPasajeL1",
+        "speaker":"Verónica",
+        "conditionalTexts":
+        [
+            {"requiredFlags": ["1.2.2"], "text": "Sí mejor cállate si no tienes nada bueno que decir"},
+            {"requiredFlags": ["1.3.1"], "text":"..."},
+            {"requiredFlags": ["1.3.2"], "text":"Nada, no te preocupes"}
+        ]        
+    }  
+]

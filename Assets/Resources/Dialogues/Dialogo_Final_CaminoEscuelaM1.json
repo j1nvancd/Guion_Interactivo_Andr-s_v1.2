@@ -1,0 +1,159 @@
+[
+    {
+        "id": "startM1",
+        "speaker": "Verónica",
+        "text": "Lista, vamos. ¿Te has enterado de lo que van a hacer en La Fábrica?",
+        "setFlags": ["InicioM1"],
+        "choices": [
+            {
+                "text": "No, qué negocio va a hacer ahora los señores",
+                "next": "1M1",
+                "setFlags": ["M1.1"]
+            },
+            {
+                "text": "Hagan lo que hagan la gente les va a aplaudir, salvo que sean despidos, entonces se quejarán los despedidos mientras el resto agachan la cabeza o culpan a sus ex-compañeros",
+                "next": "1M1",
+                "setFlags": ["M1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1M1",
+        "speaker": "Verónica",
+        "conditionalTexts": 
+        [
+            {
+                "requiredFlags": ["M1.1"],
+                "text": "Dicen que van a abrir una sección de I+D, osea que además de tener gente en la cantera y mano de obra de fábrica, van a buscar personal cualificado para trabajar allí"
+            },
+            {
+                "requiredFlags": ["M1.2"],
+                "text": "Espera que esta vez te toca aplaudir a tí. Dicen que van a abrir una sección de I+D, osea que además de tener gente en la cantera y mano de obra de fábrica, van a buscar personal cualificado para trabajar allí"
+            }
+        ],
+        "choices": 
+        [
+            {
+                "text": "¿Ahora sí interesa que trabaje de ingeniero? ¿No decías que con esto del turismo ahora con el taxi nos iba a ir súper bien?",
+                "next": "2M1",
+                "requiredFlags": ["M1.1"],
+                "setFlags": ["M1.1.1"]
+            },
+            {
+                "text": "Una oportunidad de trabajar de lo mío en la isla...",
+                "next": "2M1",
+                "requiredFlags": ["M1.1"],
+                "setFlags": ["M1.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "2M1",
+        "speaker": "Verónica",
+        "conditionalTexts": 
+        [
+            {
+                "requiredFlags": ["M1.1.1"],
+                "text": "Mira de verdad, yo sólo intento ver las cosas con un poquito de positividad, te estoy diciendo que vas a poder trabajar de lo tuyo sin tener que irte de la isla, es una oportunidad caída del cielo"
+            },
+            {
+                "requiredFlags": ["M1.1.2"],
+                "text": "Exacto, osea no se cuándo la abrirán pero es una oportunidad caída del cielo..."
+            }
+        ],
+        "choices": 
+        [
+            {
+                "text": "Aún no hay nada por lo que ser positivo, cuando empiecen con un proceso de selección o pongan ofertas de trabajo me ceeré que esa gente quiere algo más que manos manchadas de carbón",
+                "next": "FinPasajeM1",
+                "requiredFlags": ["M1.1.1"],
+                "setFlags": ["M1.1.1.1"]
+            },
+            {
+                "text": "Y después de todo, de todo lo que me he quejado de lo que hacían, de todo lo que sabemos que han hecho ¿Ahora me voy y tabajo para ellos?",
+                "next": "3M1",
+                "requiredFlags": ["M1.1.2", "M1.2.1"],
+                "setFlags": ["M1.1.2.1"]
+            },
+            {
+                "text": "Y entonces qué, nos volvemos otra familia que depende de El Dueño, si vuelve a pasar algo como lo del agua hace un par de años nos callamos como todos los demás y vamos a votar sabiendo que salga lo que salga el poder lo tiene el que da los sueldos",
+                "next": "3M1",
+                "requiredFlags": ["M1.2.2"],
+                "setFlags": ["M1.2.2.1"]
+            }
+        ]
+    },
+    {
+        "id": "3M1",
+        "speaker": "Verónica",
+        "conditionalTexts":
+        [
+            {
+                "requiredFlags": ["M1.1.2.1"],
+                "text": "A veces hay que tragarse el orgullo, aunque con él se vayan algunos principios, a cambio de que todo vaya un poquito mejor ¿No crees?"
+            },
+            {
+                "requiredFlags": ["M1.2.2.1"],
+                "text": "Tú mismo lo has dicho, todo eso pero al menos podríamos ser una familia, con un sueldo mejor y más estable, un horario fijo, vacaciones... la familia que llevas tanto tiempo pidiéndome sería posible"
+            }
+        ],
+        "choices": 
+        [
+            {
+                "text": "Como todos los demás ¿no? Si no le gustan mis principios tengo otros jefe, pero no me mande a la calle",
+                "next": "4M1",
+                "requiredFlags": ["M1.1.2.1"],
+                "setFlags": ["M1.1.2.1.1"]
+            },
+            {
+                "text": "¿Y de verdad estaríamos mejor sabiendo las cosas que ha hecho la empresa para la que estaría trabajando?",
+                "next": "4M1",
+                "requiredFlags": ["M1.1.2.1"],
+                "setFlags": ["M1.1.2.1.2"]
+            },
+            {
+                "text": "Una familia...",
+                "next": "4M1",
+                "requiredFlags": ["M1.2.2.1"],
+                "setFlags": ["M1.2.2.1.1"]
+            },
+            {
+                "text": "¿Sabes que todo eso lo podemos tener en el continente cuando tu quieras, verdad?",
+                "next": "4M1",
+                "requiredFlags": ["M1.2.2.1"],
+                "setFlags": ["M1.2.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "4M1",
+        "speaker": "Verónica",
+        "conditionalTexts":
+        [
+            {
+                "requiredFlags": ["M1.1.2.1.1"],
+                "text": "La gente tiene que comer, y los que comen principios se mueren de hambre, o intentan volver a pescar. Ya hemos llegado, luego nos vemos"
+            },
+            {
+                "requiredFlags": ["M1.1.2.1.2"],
+                "text": "Supongo que en algún momento hay que vivir en paz, y convivir con que ciertas cosas ya no se pueden arreglar, aún menos desde fuera"
+            },
+            {
+                "requiredFlags": ["M1.2.2.1.1"],
+                "text": "Gracias por el porte, tú ve pensándotelo"
+            },
+            {
+                "requiredFlags": ["M1.2.2.1.2"],
+                "text": "No empecemos otra vez, que no tenemos tiempo de ponernos a discutir. Tú piénsatelo, luego hablamos"
+            }
+        ]
+    },
+    {
+        "id":"FinPasajeM1",
+        "speaker":"Verónica",
+        "conditionalTexts":
+        [
+            {"requiredFlags": ["M1.1.1.1"], "text": "En La Fábrica no se ha trabajado nunca con carbón y lo sabes perfectamente... Pues nada, no hay noticias entonces"}
+        ]        
+    } 
+]

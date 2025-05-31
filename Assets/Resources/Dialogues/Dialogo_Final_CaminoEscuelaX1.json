@@ -1,0 +1,206 @@
+[
+  {
+    "id": "startX1",
+    "speaker": "Verónica",
+    "text": "Vamos rápido que hoy tenía que llegar más temprano para preparar unas cosas y se me ha olvidado completamente",
+    "setFlags": ["InicioX1"],
+    "choices": [
+      {
+        "text": "Voy todo lo rápido que puedo no te preocupes",
+        "next": "1X1",
+        "setFlags": ["X1.1"]
+      },
+      {
+        "text": "Si eres la única profesora que hay en todo el colegio, tampoco es que nadie te vaya a meter prisa ¿no?",
+        "next": "1X1",
+        "setFlags": ["X1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1X1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["X1.1"],
+        "text": "Gracias, y perdón, me he puesto nerviosa yo sola, es mi culpa"
+      },
+      {
+        "requiredFlags": ["X1.2"],
+        "text": "Si soy la única profesora de todo el colegio, lo que quiere decir es que en las horas que tenemos le tengo que enseñar y dar cosas que hacer a los 34 niños que hay en la isla"
+      }
+    ],
+    "choices": [
+      {
+        "text": "No pasa nada, he sido yo que te he entretenido desayunando con mis gilipolleces",
+        "next": "2X1",
+        "requiredFlags": ["X1.1"],
+        "setFlags": ["X1.1.1"]
+      },
+      {
+        "text": "¿Quieres terminar de contarme lo del libro ese japonés o no te da tiempo en lo que llegamos al colegio?",
+        "next": "2X1",
+        "requiredFlags": ["X1.1"],
+        "setFlags": ["X1.1.2"]
+      },
+      {
+        "text": "Hmm, desde luego que si un día te quieres ir, esto no hay quien lo explique en el currículum",
+        "next": "2X1",
+        "requiredFlags": ["X1.2"],
+        "setFlags": ["X1.2.1"]
+      },
+      {
+        "text": "Bueno tranquilidad ¿Quieres terminar de contarme lo del libro ese japonés que me estabas diciendo en el desayuno o no te da tiempo en lo que llegamos al colegio?",
+        "next": "2X1",
+        "requiredFlags": ["X1.2"],
+        "setFlags": ["X1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2X1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["X1.1.1"],
+        "text": "No no, me he liado yo a contarte lo del libro y se me ha ido el santo al cielo"
+      },
+      {
+        "requiredFlags": ["X1.1.2", "X1.2.2"],
+        "text": "Coreana, la autora es coreana, no se por qué quieres que te cuente las cosas si no me vas a escuchar"
+      },
+      {
+        "requiredFlags": ["X1.2.1"],
+        "text": "No empecemos, hazme el favor"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Bueno ahora me lo puedes contar si quieres",
+        "next": "3X1",
+        "requiredFlags": ["X1.1.1"],
+        "setFlags": ["X1.1.1.1"]
+      },
+      {
+        "text": "Acordemos que ha sido culpa de los dos",
+        "next": "3X1",
+        "requiredFlags": ["X1.1.1"],
+        "setFlags": ["X1.1.1.2"]
+      },
+      {
+        "text": "Pues, nada, no me cuentes nada, si ya vamos a estar allí",
+        "next": "FinPasajeX1",
+        "requiredFlags": ["X1.1.2"],
+        "setFlags": ["X1.1.2.1"]
+      },
+      {
+        "text": "Normalmente porque me interesa lo que me cuentas, el resto del tiempo porque me gusta escucharte",
+        "next": "3X1",
+        "requiredFlags": ["X1.1.2"],
+        "setFlags": ["X1.1.2.2"]
+      },
+      {
+        "text": "No llevaba ninguna segunda intención, de verdad",
+        "next": "FinPasajeX1",
+        "requiredFlags": ["X1.2.1"],
+        "setFlags": ["X1.2.1.1"]
+      },
+      {
+        "text": "...",
+        "next": "FinPasajeX1",
+        "requiredFlags": ["X1.2.1"],
+        "setFlags": ["X1.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "3X1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["X1.1.1.1"],
+        "text": "Eso, que lo empecé a leer anoche después de cenar y me lo leí del tirón, después ya no tenía energía ni para irme a la cama y me quedé dormida en el sofá"
+      },
+      {
+        "requiredFlags": ["X1.1.1.2"],
+        "text": "Muy amable de tu parte entonces, ¿quieres que te lo deje y te lo lees? Aunque a tí no creo que te vaya a gustar tanto"
+      },
+      {
+        "requiredFlags": ["X1.1.2.2"],
+        "text": "Míralo que romántico, si va a resultar que me quiere y todo"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Pero cuéntame al menos de que va",
+        "next": "4X1",
+        "requiredFlags": ["X1.1.1.1", "X1.1.2.2"],
+        "setFlags": ["X1.1.1.1.1"]
+      },
+      {
+        "text": "Ya estaba yo pensando que era por mis ronquidos",
+        "next": "4X1",
+        "requiredFlags": ["X1.1.1.1"],
+        "setFlags": ["X1.1.1.1.2"]
+      },
+      {
+        "text": "¿Entonces para qué quieres que me lo lea?",
+        "next": "4X1",
+        "requiredFlags": ["X1.1.1.2"],
+        "setFlags": ["X1.1.1.2.1"]
+      },
+      {
+        "text": "Si no te quisiera cualquiera te aguanta",
+        "next": "4X1",
+        "requiredFlags": ["X1.1.2.2"],
+        "setFlags": ["X1.1.2.2.1"]
+      },
+      {
+        "text": "Como no me digas de que va el libro antes de que lleguemos lo mismo dejo de quererte y todo",
+        "next": "4X1",
+        "requiredFlags": ["X1.1.2.2"],
+        "setFlags": ["X1.1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4X1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["X1.1.1.1.1", "X1.1.2.2.2"],
+        "text": "Es que entonces pierde la gracia, es que me voló la cabeza, es sobre el hastío vital, la muerte del amor, lo prohibido, la locura, no lo sé"
+      },
+      {
+        "requiredFlags": ["X1.1.1.1.2"],
+        "text": "No, por eso es por lo que leo en el salón y no en la cama"
+      },
+      {
+        "requiredFlags": ["X1.1.1.2.1"],
+        "text": "Bueno, de vez en cuando tenemos que hacer cosas que no nos gustan para abrir la mente a nuevas ideas ¿No crees?"
+      },
+      {
+        "requiredFlags": ["X1.1.2.2.1"],
+        "text": "Con lo bien que ibas hoy... Luego nos vemos"
+      }
+    ]
+  },
+  {
+    "id": "FinPasajeX1",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["X1.1.2.1"],
+        "text": "Sí, total te iba a dar igual"
+      },
+      {
+        "requiredFlags": ["X1.2.1.1"],
+        "text": "..."
+      },
+      {
+        "requiredFlags": ["X1.2.1.2"],
+        "text": "Sí mejor vamos a callarnos ya para lo que nos queda de camino"
+      }
+    ]
+  }
+]
