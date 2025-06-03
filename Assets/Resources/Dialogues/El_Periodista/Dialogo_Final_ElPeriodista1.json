@@ -1,0 +1,559 @@
+[
+  {
+    "id": "startL2",
+    "speaker": "Periodista",
+    "text": "¡Buenos días! A los apartamentos Midas, por favor.",
+    "setFlags": ["InicioL2"],
+    "choices": [
+      {
+        "text": "Por supuesto, está al otro lado de la isla, tardaremos un rato.",
+        "next": "1L2_1",
+        "setFlags": ["1.1"]
+      },
+      {
+        "text": "¿A empezar las vacaciones un lunes? ¿A qué se supone que se dedica usted?",
+        "next": "1L2_2",
+        "setFlags": ["1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1L2_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1"],
+        "text": "No hay problema, así me puede contar usted sobre la isla ¿Usted es de aquí verdad?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Cómo lo has podido adivinar? Sí, me crié aquí, este taxi era de mi padre.",
+        "next": "1L2_1_1",
+        "setFlags": ["1.1.1"]
+      },
+      {
+        "text": "Sí, soy de aquí, aunque no creo que ningún isleño te pueda contar mucho de la zona norte.",
+        "next": "1L2_1_2",
+        "setFlags": ["1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1L2_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2"],
+        "text": "No no, no vengo de vacaciones, bueno, bien puedo decir eso o que mi trabajo es estar de vacaciones. Soy periodista y hago reportajes, ya sabe, los típicos de recomendaciones de destinos que no conocías y guías... esas cosas."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Así que tú nos vas a terminar de hacer famosos eh, te aviso que últimamente cada vez hay menos gente que no nos conozca como destino turístico.",
+        "next": "1L2_2_1",
+        "setFlags": ["1.2.1"]
+      },
+      {
+        "text": "Entonces mejor te llevo al pueblo, a ver si eso se lo recomendarías a tus lectores",
+        "next": "1L2_2_2",
+        "setFlags": ["1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "1L2_1_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.1"],
+        "text": "Jaja, normalmente a los sitios que voy casi todos son locales, parajes no muy conocidos no suelen tener mucha tasa de inmigración, sin ninguna intención de ofender ¿Quién iba a mudarse para llevar un taxi aquí?¿Hay siquiera más taxis que el suyo?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Quién iba a quedarse aquí para llevar un taxi?",
+        "next": "1L2_1_1_1",
+        "setFlags": ["1.1.1.1"]
+      },
+      {
+        "text": "Sí, somos 3 taxistas en la isla, si no, los horarios a los que la gente puede entrar y salir del puerto dependería de los 3 buses y de que a mí me apetezca venir.",
+        "next": "1L2_1_1_2",
+        "setFlags": ["1.1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1L2_1_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.2"],
+        "text": "¿Es de nueva construcción, no? Sí que he visto que está un poco lejos del único núcleo urbano de la isla. Bueno, supongo que así tendréis que aguantar menos a los turistas."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, vamos técnicamente aún está en construcción, siguen levantando edificios para convertir aquello en una zona turística",
+        "next": "1L2_1_2_1",
+        "setFlags": ["1.1.2.1"]
+      },
+      {
+        "text": "Llamar núcleo urbano a un pueblo de menos de 400 personas es un poco exagerado quizás, pero sí, de momento no hay mucho forastero por el pueblo",
+        "next": "1L2_1_2_2",
+        "setFlags": ["1.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "1L2_2_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.1"],
+        "text": "Sí lo sé, sois el destino indie de moda, eso a usted le viene bien para el negocio no? Un sitio así casi sin transporte público, hasta que tengáis una red como tal los taxis van a hacer el agosto."
+      }
+    ],
+    "choices": [
+      {
+        "text": "El turismo es un negocio muy lucrativo, y tan sólo a cambio de dedicarnos a servir a los extranjeros, la mitad de la isla se dedica a minar y producir en la fábrica materiales que venden al continente y, dentro de poco, la otra mitad nos dedicaremos a entretener a los que vengan de allí.",
+        "next": "1L2_2_1_1",
+        "setFlags": ["1.2.1.1"]
+      },
+      {
+        "text": "Muchos confían en que eso de \"moda\" no signifique que vaya a ser temporal, hay alguno que podría perder mucho dinero si la gente se aburre de nuestra pequeña isla. En la zona norte siguen construyendo edificios vacacionales, ni 400 personas, una escuela que es un aula con una profesora para todos los niños y ahora vamos a tener un resort en el otro lado de la isla, para que en el continente estén hablando de desarrollo sostenible.",
+        "next": "1L2_2_1_2",
+        "setFlags": ["1.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1L2_2_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.2"],
+        "text": "Pensaba ir algún día en las próximas semanas, ya sabe, para hablar de la experiencia local y eso. Aunque entiendo por su tono que el pueblo no está en un estado muy visitable."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ha estado peor, cuando la gente vivía del mar y el pueblo se vaciaba durante semanas, ahora es un pueblo tranquilo, trabajador, no tiene nada que visitar la verdad",
+        "next": "1L2_2_2_1",
+        "setFlags": ["1.2.2.1"]
+      },
+      {
+        "text": "Siempre mencionaís cosas así, la experiencia local, la experiencia local es levantarse de madrugada e irse a la fábrica o al puerto, pero la gente que venga no quiere hacer eso ¿no? Querrán una experiencia de cafeterías monas y productos con nombres raros",
+        "next": "1L2_2_2_2",
+        "setFlags": ["1.2.2.2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_1_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.1.1"],
+        "text": "Oh, lo siento, no lo he dicho con mala intención, es sólo que no parece la mejor idea de negocio si vienes del continente. Lo siento de verdad. Si no le importa ¿podría decirme algunas cosas típicas de la isla? Ya sabe, comidas, algún baile o fecha especial, algo así"
+      }
+    ],
+    "choices": [
+      {
+        "text": "No te preocupes, no me ofende, yo también preguntaba honestamente. No tenemos bailes y esas cosas, la realidad es que la isla apenas lleva 3 generaciones habitada por civiles, esto hace 200 años era un puesto militar para controlar que no se acercasen barcos indeseados al continente, después hubo unos años en los que desterraban gente aquí, gente con crímenes lo suficientemente graves como para no poder librarse y quedarse allí, pero con poder como para \"pactar\" con la justicia. De esa mezcla acaba naciendo el pueblo, en la zona desde la que se vigilaba el océano, en lugar de la que tiene playas de arena fina. Después resultó que había unas reservas naturales importantísimas en el centro de la isla, montaron una cantera, vieron que les salía mejor de precio ponernos a trabajar y exportar el producto directamente aquí y montaron La Fábrica, y ahora eso es lo que es la isla, una planta química y una playa para los forasteros",
+        "next": "1L2_1_1_1_1",
+        "setFlags": ["1.1.1.1.1"]
+      },
+      {
+        "text": "Yo soy taxista chaval, me dedico a llevarte a sitios, lo de los bailes regionales y las recomendaciones culinarias es lo tuyo.",
+        "next": "1L2_1_1_1_2",
+        "setFlags": ["1.1.1.1.2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_1_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.1.2"],
+        "text": "Ah, entonces supongo que hacéis turnos ¿Tenéis algo así como un sindicato? ¿Una patronal? Al menos siendo 3 no podéis empatar si sometéis cosas a votación"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Que pasa ¿vas a hacernos un reportaje a los taxistas de la isla? No, no tenemos ningún sindicato, tenemos un grupo de WhatsApp y un excel en el que nos apuntamos para asegurarnos de que ningún turno queda vacío, al menos entre semana. Si queda un hueco le toca cogerlo al que más tiempo haga que no cubre un turno, simple. Mientras todo el mundo quiera que algo funcione es fácil mantener una sociedad civilizada. Pero hay veces que la gente prefiere ganar más dinero aunque por el camino haya que joder a los demás, de momento los taxistas no somos así, ya nos llegará.",
+        "next": "1L2_1_1_2_1",
+        "setFlags": ["1.1.1.2.1"]
+      },
+      {
+        "text": "Si te interesa el derecho laboral deberías irte a hacer reportajes a La Fábrica, a nosotros déjanos que nos ganamos la vida de forma honesta y recordando siempre que lo nuestro también es un servicio público.",
+        "next": "1L2_1_1_2_2",
+        "setFlags": ["1.1.1.2.2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_2_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.2.1"],
+        "text": "Vaya, parece que a alguien le parece que el turismo es el futuro de esta isla eh, si construyen mucho más en aquella parte va a llegar un punto en el que seáis menos locales que turistas"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Mientras haya gente como para mantener La Fábrica funcionando, todos los demás podríamos ser turistas y defenderían que es lo mejor para la economía local.",
+        "next": "1L2_1_2_1_1",
+        "setFlags": ["1.1.2.1.1"]
+      },
+      {
+        "text": "Apenas 400 sí, más de 100 trabajando en La Fábrica, quita niños y jubilados y ya te puedes imaginar cuantos quedamos.",
+        "next": "1L2_1_2_1_2",
+        "setFlags": ["1.1.2.1.2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_2_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.2.2"],
+        "text": "¿Cuatrocientos? Wow, pensaba que seríais al menos mil, viendo las fotos parecía que la zona norte podía acoger bastante gente, va a llegar un punto en el que seáis menos que turistas."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Para nosotros lo importante es que la gente que vive aquí tenga trabajo y tranquilidad, que a los turistas les dé por pasear o no nos importa, a nosotros nos gusta vivir así.",
+        "next": "1L2_1_2_2_1",
+        "setFlags": ["1.1.2.2.1"]
+      },
+      {
+        "text": "Claro, tenemos los pocos servicios que podemos, ni 400 habitantes, así que lo que queremos es que no vengan demasiados.",
+        "next": "1L2_1_2_2_2",
+        "setFlags": ["1.1.2.2.2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_2_1_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.1.1"],
+        "text": "Eso suena a que os tomáis en serio el turismo y lo que aporta a la isla, pero me temo que tampoco os va a durar mucho esta \"moda\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "Si viene mucha gente la isla tendrá que adaptarse, por ahora es pequeña y la mayoría estamos contentos, no tenemos grandes problemas sociales ni de delincuencia, y mientras siga así es un sitio perfecto para vivir.",
+        "next": "1L2_2_1_1_1",
+        "setFlags": ["1.2.1.1.1"]
+      },
+      {
+        "text": "Si se acaba la moda todos perderemos dinero, pero creo que hemos llegado a un punto en el que esto ya no es tan temporal como pensábamos hace unos años.",
+        "next": "1L2_2_1_1_2",
+        "setFlags": ["1.2.1.1.2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_2_1_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.1.2"],
+        "text": "Sí, la parte norte se está poniendo de moda, pero no sé si eso va a ser para siempre."
+      }
+    ],
+    "choices": [
+      {
+        "text": "No sé, pero creo que la gente que tiene aquí negocios son gente con visión de futuro, no especuladores. No sé si será suficiente para mantener la economía, pero al menos intentamos que las cosas vayan bien.",
+        "next": "1L2_2_1_2_1",
+        "setFlags": ["1.2.1.2.1"]
+      },
+      {
+        "text": "Los negocios que dependen del turismo suelen ser un arma de doble filo, a veces un auge muy rápido acaba con una caída muy rápida, pero veremos qué pasa.",
+        "next": "1L2_2_1_2_2",
+        "setFlags": ["1.2.1.2.2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_2_2_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.2.1"],
+        "text": "Pues suena a un pueblo que, aunque tranquilo, no tiene mucho para ofrecer a los turistas, ¿no?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Exacto, somos una isla industrial con un pequeño pueblo al norte, la gente viene por las playas, pero el pueblo es solo para los residentes.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      },
+      {
+        "text": "Pero la tranquilidad es algo que cada vez más turistas buscan, así que igual esto cambia pronto.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_2_2_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.2.2"],
+        "text": "Tiene razón, la gente busca experiencias diferentes, pero aquí eso es complicado."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Exacto, a veces la realidad no es tan bonita como la experiencia que esperan.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      },
+      {
+        "text": "Por eso estamos aquí, para mostrar la realidad tal y como es.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_1_1_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.1.1.1"],
+        "text": "Interesante, la historia de la isla es bastante peculiar para un lugar turístico."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, es un lugar con mucha historia y carácter, aunque no es para todos los gustos.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_1_1_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.1.1.2"],
+        "text": "Pues sí, cada uno con su rol en la isla."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Exacto, y así es como se mantiene la isla viva.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_1_2_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.1.2.1"],
+        "text": "Muy organizado para ser un grupo tan pequeño."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, la organización es clave para que todo funcione bien.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_1_2_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.1.2.2"],
+        "text": "Cada quien con su trabajo y respeto, perfecto."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Exacto, es importante respetar los roles de cada uno.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_2_1_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.2.1.1"],
+        "text": "Parece que el turismo y la industria pueden coexistir en la isla."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, al menos por ahora.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_2_1_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.2.1.2"],
+        "text": "Me imagino que es un pueblo pequeño, casi todos se conocen."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, eso ayuda a mantener la comunidad unida.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_2_2_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.2.2.1"],
+        "text": "Entiendo, para algunos la tranquilidad es lo más importante."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Exacto, preferimos así la vida.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_1_2_2_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.1.2.2.2"],
+        "text": "Es lógico querer controlar el flujo turístico."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, no queremos que sea demasiado.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_2_1_1_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.1.1.1"],
+        "text": "Muy bien, parece que hay un buen equilibrio."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Así es, un buen lugar para vivir.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_2_1_1_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.1.1.2"],
+        "text": "Esperemos que dure mucho tiempo."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Eso espero.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_2_1_2_1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.1.2.1"],
+        "text": "La visión a largo plazo es importante."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Exactamente.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "1L2_2_1_2_2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["1.2.1.2.2"],
+        "text": "Habrá que ver cómo evoluciona."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, veremos qué pasa.",
+        "next": "endL2",
+        "setFlags": ["endL2"]
+      }
+    ]
+  },
+
+  {
+    "id": "endL2",
+    "speaker": "Periodista",
+    "text": "Gracias por compartir todo esto conmigo. Seguro que mi reportaje mostrará la isla tal como es.",
+    "setFlags": ["FinL2"]
+  }
+]
