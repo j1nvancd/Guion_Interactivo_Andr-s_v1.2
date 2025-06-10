@@ -1,0 +1,356 @@
+[
+  {
+    "id": "start",
+    "speaker": "El Padre",
+    "text": "A la Ermita, por favor",
+    "choices": [
+      {
+        "text": "¿Hoy no sube usted andando con la gente?",
+        "next": "1Padre2",
+        "setFlags": ["Padre2.1"]
+      },
+      {
+        "text": "*sarcásticamente*\"Hoy le toca la actuación con público de la semana eh\"",
+        "next": "1Padre2",
+        "setFlags": ["Padre2.2"]
+      }
+    ]
+  },
+  {
+    "id": "1Padre2",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre2.1"],
+        "text": "No, tenía que haber dejado preparado todo para la Homilía ayer, se me pasó así que tengo que llegar antes"
+      },
+      {
+        "requiredFlags": ["Padre2.2"],
+        "text": "*entre risas*\"Sí hoy toca la función semanal con público\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "Llevar la ermita sin sacristán es más complicado, supongo",
+        "next": "2Padre2",
+        "requiredFlags": ["Padre2.1"],
+        "setFlags": ["Padre2.1.1"]
+      },
+      {
+        "text": "Hasta haciendo lo mismo todas las semanas a veces se nos olvida lo más básico, si le dijese que a mí se me sigue calando el coche en el Stop saliendo del puerto",
+        "next": "2Padre2",
+        "requiredFlags": ["Padre2.1"],
+        "setFlags": ["Padre2.1.2"]
+      },
+      {
+        "text": "Poca broma que cualquiera se moriría de la verguenza de hablar delante de todo el pueblo y usted lo hace todas las semanas eh, tiene su mérito.",
+        "next": "2Padre2",
+        "requiredFlags": ["Padre2.2"],
+        "setFlags": ["Padre2.2.1"]
+      },
+      {
+        "text": "¿Cree que alguien se quedará en casa al ver que no sube usted con ellos?",
+        "next": "2Padre2",
+        "requiredFlags": ["Padre2.2"],
+        "setFlags": ["Padre2.2.2"]
+      },
+      {
+        "text": "Padre si me permite una pregunta ¿Usted habló con Abel en las semanas antes de que desapareciese?",
+        "next": "3Padre2",
+        "requiredFlags": ["seen_1.1.1.1.2.1"],
+        "setFlags": ["Padre2.3"],
+        "persistent": true
+      }
+    ]
+  },
+  {
+    "id": "2Padre2",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre2.1.1"],
+        "text": "Supongo que la falta de personal nos afecta a todos, cada vez hay menos gente interesada en la Iglesia, menos vienen a los ritos, ¿Quién va a querer meterse a sacristán?"
+      },
+      {
+        "requiredFlags": ["Padre2.1.2"],
+        "text": "Somos humanos, nada más, si no cometiesemos errores por la rutina, no seríamos más que maquinaria."
+      },
+      {
+        "requiredFlags": ["Padre2.2.1"],
+        "text": "Bueno, cada vez hay menos \"público\" al que hablarle, la gente esta perdiendo el interés en la Biblia, la fe está dedicada a otros templos en estos días"
+      },
+      {
+        "requiredFlags": ["Padre2.2.2"],
+        "text": "Bueno, cada vez hay menos que suban a la Ermita, vaya con ellos o no, la gente esta perdiendo el interés en la Biblia, la fe está dedicada a otros templos en estos días"
+      }
+    ],
+    "choices": [
+      {
+        "text": "La gente tiene otras cosas en mente hoy en día, supongo que en el fondo es más habitual buscar la intervención divina cuando tu fuente de alimentos es el mar que cuando una fábrica pone el sueldo en la cuenta al principio de cada mes",
+        "next": "3Padre2",
+        "requiredFlags": ["Padre2.1.1"],
+        "setFlags": ["Padre2.1.1.1"]
+      },
+      {
+        "text": "Ahí no le puedo ayudar, Padre, la última vez que pisé una iglesia fue para el funeral de mi padre. A mí nunca me ha atraído demasiado la idea de una fuerza todopoderosa que nos guíe, no le veo la gracia a la vida si todo forma parte de un plan.",
+        "next": "3Padre2",
+        "requiredFlags": ["Padre2.1.1"],
+        "setFlags": ["Padre2.1.1.2"]
+      },
+      {
+        "text": "¿Otros templos? ¿A qué se refiere?",
+        "next": "3Padre2",
+        "requiredFlags": ["Padre2.2.1", "Padre2.2.2"],
+        "setFlags": ["Padre2.2.1.1", "Padre2.2.2.1"]
+      },
+      {
+        "text": "Los tiempos cambian Padre, y parece que en esta isla se estila mucho aquello de \"adaptarse o morir\"",
+        "next": "3Padre2",
+        "requiredFlags": ["Padre2.2.1", "Padre2.2.2"],
+        "setFlags": ["Padre2.2.1.2", "Padre2.2.2.2"]
+      },
+      {
+        "text": "Padre si me permite una pregunta ¿Usted habló con Abel en las semanas antes de que desapareciese?",
+        "next": "3Padre2",
+        "requiredFlags": ["seen_1.1.1.1.2.1"],
+        "setFlags": ["Padre2.3"],
+        "persistent": true
+      }
+    ]
+  },
+  {
+    "id": "3Padre2",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre2.1.1.1"],
+        "text": "Sí, parece que hoy en día la gente cree tener todas las respuestas que necesita, lo que yo creo es que no se hacen las suficientes preguntas."
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.2"],
+        "text": "La muerte es la única pregunta a la que la gente sólo encuentra respuesta a través de la fe. Lo demás; sus propósitos en la vida, la moral, la ética, nada de eso se lo cuestionan, el propósito es ganar más dinero, la moral es el dinero y la ética gastarse ese dinero."
+      },
+      {
+        "requiredFlags": ["Padre2.2.1.1", "Padre2.2.2.1"],
+        "text": "La gente ya no se hace preguntas; sus propósitos en la vida, la moral, la ética, nada de eso se lo cuestionan, el propósito es ganar más dinero, la moral es el dinero y la ética gastarse ese dinero. En nada se tiene más fe hoy en día que en la productividad"
+      },
+      {
+        "requiredFlags": ["Padre2.2.1.2", "Padre2.2.2.2"],
+        "text": "Es curioso, yo creo que estábamos más adaptados antes, conviviendo con el entorno, con las herramientas y recursos que Dios nos entregaba, ahora no estamos adaptados al medio, ahora adaptamos el medio a nosotros ¿Pero qué pasa si el medio no se adapta?"
+      },
+      {
+        "requiredFlags": ["Padre2.3"],
+        "text": "¿Abel? ¿El Huérfano? No, su familia nunca fue especialmente religiosa. Cuando sucedió lo de su padre hablé con muchos vecinos, intenté que la gente se movilizase, pero apenas conseguí un poco de caridad con aquellos niños, nada de justicia."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Las preguntas pueden ser muy incómodas, Padre, sobretodo si se cuestionan cosas que damos por hecho",
+        "next": "4Padre2",
+        "requiredFlags": ["Padre2.1.1.1"],
+        "setFlags": ["Padre2.1.1.1.1"]
+      },
+      {
+        "text": "¿Y quién va a hacerle esas preguntas? Si la gente cree que vive bien, no se van a plantear su estilo de vida y, sin intención de ofender, a la Iglesia van cuando ya no tienen más opción, y suelen ir a buscar respuestas o consuelo, no a buscar un desafío intelectual",
+        "next": "4Padre2",
+        "requiredFlags": ["Padre2.1.1.1"],
+        "setFlags": ["Padre2.1.1.1.2"]
+      },
+      {
+        "text": "Bueno, al menos para los católicos la muerte no es demasiado tarde para encontrar las respuestas ¿No es así?",
+        "next": "4Padre2",
+        "requiredFlags": ["Padre2.1.1.2"],
+        "setFlags": ["Padre2.1.1.2.1"]
+      },
+      {
+        "text": "No creo que todo el mundo sea así, Padre, algunos eligen hacer lo que creen que es lo correcto, rechazando promesas de vidas mejores. Si no, todos los que no trabajamos en La Fábrica ya nos habríamos ido",
+        "next": "4Padre2",
+        "requiredFlags": ["Padre2.1.1.2", "Padre2.2.1.1"],
+        "setFlags": ["Padre2.1.1.2.2", "Padre2.2.1.1.1"]
+      },
+      {
+        "text": "Así que cuando habla de \"nevos templos\" se refiere a La Fábrica",
+        "next": "4Padre2",
+        "requiredFlags": ["Padre2.2.1.1", "Padre2.2.1.2"],
+        "setFlags": ["Padre2.2.1.1.2", "Padre2.2.1.2.1"]
+      },
+      {
+        "text": "Supongo que se aplica al medio en este caso, tristemente la isla se adaptará, o morirá",
+        "next": "4Padre2",
+        "requiredFlags": ["Padre2.2.1.2"],
+        "setFlags": ["Padre2.2.1.2.2"]
+      },
+      {
+        "text": "Al parecer su hermana ha encontrado plegarias y cosas así en casa, como si el chaval se hubiese vuelto devoto las últimas semanas antes de desaparecer",
+        "next": "4Padre2",
+        "requiredFlags": ["Padre2.3"],
+        "setFlags": ["Padre2.3.1"]
+      },
+      {
+        "text": "Supongo que en ese momento empezó a sentir que la Iglesia perdía fuerza ¿no? Cuando nadie estaba dispuesto a morder la mano que le daba de comer aunque fuese lo que había que hacer",
+        "next": "4Padre2",
+        "requiredFlags": ["Padre2.3"],
+        "setFlags": ["Padre2.3.2"]
+      },
+      {
+        "text": "Padre si me permite una pregunta ¿Usted habló con Abel en las semanas antes de que desapareciese?",
+        "next": "3Padre2",
+        "requiredFlags": ["seen_1.1.1.1.2.1"],
+        "setFlags": ["Padre2.3"],
+        "persistent": true,
+        "hideIfChosen": true
+      }
+    ]
+  },
+  {
+    "id": "4Padre2",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre2.1.1.1.1"],
+        "text": "La incomodidad produce movimiento, y el movimiento, progreso."
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.1.2"],
+        "text": "A la religión se le da bien aportar respuestas, las preguntas debe hacerlas la filosofia. Si la gente leyese a Sócrates, Bourdieu, Foucalt, icluso a Nietzsche, se plantearían muchas cosas que ahora simplemente dan por hechas."
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.2.1"],
+        "text": "Es una forma de verlos, yo la verdad que prefiero no posponer las cosas PARA después de muerto."
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.2.2", "Padre2.2.1.1.1"],
+        "text": "Hasta en Babilonia había justos, la proporción y la tendencia es lo procupante."
+      },
+      {
+        "requiredFlags": ["Padre2.2.1.1.2", "Padre2.2.1.2.1"],
+        "text": "La religión es un buen refugio para las almas perdidas, ese chico tenía todo el derecho del mundo de perderse, de rebelarse contra el mundo, si se refugió en Dios yo no tendría nada que reprocharle"
+      },
+      {
+        "requiredFlags": ["Padre2.3.2"],
+        "text": "¿Cuántas empresas llevan abiertas dos mil años? Su poder sobre la gente es fuerte pero pasajero, una tendencia, sólo Dios prevalecerá."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Buena reflexión, Padre. ¿Ha pensado alguna vez en meterse en política?",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.1.1.1.1"],
+        "setFlags": ["Padre2.1.1.1.1.1"]
+      },
+      {
+        "text": "Cada uno con su idea de progreso...",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.1.1.1.1"],
+        "setFlags": ["Padre2.1.1.1.1.2"]
+      },
+      {
+        "text": "Me lo tomaré como recomendaciones de lectura, estoy seguro de que puedo conseguir algunos libros de los autores que me faltan en la lista.",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.1.1.1.2"],
+        "setFlags": ["Padre2.1.1.1.2.1"]
+      },
+      {
+        "text": "Vaya, perdona que le diga, pero son referencias sorprendentes para un sacerdote.",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.1.1.1.2"],
+        "setFlags": ["Padre2.1.1.1.2.2"]
+      },
+      {
+        "text": "Es una buena filosofía de vida",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.1.1.2.1"],
+        "setFlags": ["Padre2.1.1.2.1.1"]
+      },
+      {
+        "text": "A veces hay que asumir que algunas cosas nunca las haremos en esta vida, yo nunca jugaré en la NBA y, siento decirle, usted no cambiará el mundo desde su altar",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.1.1.2.1"],
+        "setFlags": ["Padre2.1.1.2.1.2"]
+      },
+      {
+        "text": "Creo que hay más justos y buenos de los que creemos, Padre, lo creo de verdad",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.1.1.2.2"],
+        "setFlags": ["Padre2.1.1.2.2.1"]
+      },
+      {
+        "text": "Vivimos tiempos de injusticia, Padre",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.1.1.2.2"],
+        "setFlags": ["Padre2.1.1.2.2.2"]
+      },
+      {
+        "text": "Claro, yo sólo preguntaba porque, si se refugió en Dios, tendría sentido que el pobre desgraciado fuese a buscarle a usted",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.3.1"],
+        "setFlags": ["Padre2.3.1.1"]
+      },
+      {
+        "text": "Todo parte del plan divino, supongo",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.3.1"],
+        "setFlags": ["Padre2.3.1.2"]
+      },
+      {
+        "text": "Supongo que ahí tiene usted razón, no hay empresa más rentable que la Iglesia",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.3.2"],
+        "setFlags": ["Padre2.3.2.1"]
+      },
+      {
+        "text": "Claro, Dios proveerá",
+        "next": "endPadre2",
+        "requiredFlags": ["Padre2.3.2"],
+        "setFlags": ["Padre2.3.2.2"]
+      },
+      {
+        "text": "Padre si me permite una pregunta ¿Usted habló con Abel en las semanas antes de que desapareciese?",
+        "next": "3Padre2",
+        "requiredFlags": ["seen_1.1.1.1.2.1"],
+        "setFlags": ["Padre2.3"],
+        "persistent": true,
+        "hideIfChosen": true
+      }
+    ]
+  },
+  {
+    "id": "endPadre2",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre2.1.1.1.1.1", "Padre2.1.1.1.1.2"],
+        "text": "*entre risas*\"No soy más que un confesor con ideas propias. Ha sido una buena charla, espero que el domingo podamos hablar de nuevo\""
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.1.2.1"],
+        "text": "Estaré encantado de charlar sobre ellos cuando quieras."
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.1.2.2"],
+        "text": "*entre risas* \"Mucho tiempo libre entre confesiones para leer. Estaré encantado de charlar sobre ellos cuando quieras.\""
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.2.1.1"],
+        "text": "*con una carcajada por lo bajo* \"Si...\""
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.2.1.2"],
+        "text": "Nunca digas nunca muchacho. Julio César tenía 42 años cuando cruzó el Rubicón, moviéndose no con prisa, sino con certeza."
+      },
+      {
+        "requiredFlags": ["Padre2.1.1.2.2.1", "Padre2.1.1.2.2.2"],
+        "text": "Evangelio según San Mateo, capítulo cinco, versículo 6 \"Bienaventurados los que tienen hambre y sed de justicia, porque ellos serán saciados.\""
+      },
+      {
+        "requiredFlags": ["Padre2.3.2.1"],
+        "text": "..."
+      },
+      {
+        "requiredFlags": ["Padre2.3.2.2"],
+        "text": "Dios proveerá"
+      }
+    ],
+    "end": true
+  }
+]

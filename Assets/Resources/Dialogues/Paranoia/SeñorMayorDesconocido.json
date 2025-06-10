@@ -1,0 +1,237 @@
+[
+  {
+    "id": "start",
+    "speaker": "Señor Mayor Desconocido",
+    "text": "Lléveme al puerto, por favor",
+    "setFlags": ["InicioSMD"],
+    "choices": [
+      {
+        "text": "¿Qué va usted a hacer al puerto a estas horas un domingo?",
+        "next": "1SMD",
+        "setFlags": ["SMD1.1"]
+      },
+      {
+        "text": "Enseguida. No me suena usted ¿Vive aquí?",
+        "next": "1SMD",
+        "setFlags": ["SMD1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1SMD",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD1.1"],
+        "text": "Escuchar las olas, mirar al mar, tener los ojos abiertos y no ver nada es una experiencia de lo más liberadora, muchacho."
+      },
+      {
+        "requiredFlags": ["SMD1.2"],
+        "text": "Nunca he salido de aquí, o si he salido no lo recuerdo."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ya... supongo que a cada uno le ayuda lo suyo.",
+        "next": "2SMD",
+        "requiredFlags": ["SMD1.1"],
+        "setFlags": ["SMD1.1.1"]
+      },
+      {
+        "text": "*riendo* Lo probaré, quién sabe, lo mismo tiene usted el secreto de la felicidad.",
+        "next": "2SMD",
+        "requiredFlags": ["SMD1.1"],
+        "setFlags": ["SMD1.1.2"]
+      },
+      {
+        "text": "Curioso... de verdad que no me suena usted",
+        "next": "2SMD",
+        "requiredFlags": ["SMD1.2"],
+        "setFlags": ["SMD1.2.1"]
+      },
+      {
+        "text": "Quizá la brisa marina le ayude con la memoria",
+        "next": "2SMD",
+        "requiredFlags": ["SMD1.2"],
+        "setFlags": ["SMD1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2SMD",
+    "speaker": "Señor Mayor Desconocido",
+    "text": "Muchos piensan que la fe lo puede todo. Que el alma limpia, la intención pura, bastan para enderezar el mundo. Y en su nombre, muchos inocentes han sido llevados al matadero.",
+    "choices": [
+      {
+        "text": "¿Perdón?",
+        "next": "3SMD",
+        "setFlags": ["SMD2.1"]
+      },
+      {
+        "text": "No es usted muy amigo de la Iglesia por lo que veo",
+        "next": "3SMD",
+        "setFlags": ["SMD2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3SMD",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD2.1"],
+        "text": "¿No conoces la historia de La Cruzada de los niños?"
+      },
+      {
+        "requiredFlags": ["SMD2.2"],
+        "text": "La Fe no es más que doctrina, Fe tenían los perros de Pavlov en que tras la campana llegaría la comida."
+      }
+    ],
+    "choices": [
+      {
+        "text": "No me suena, caballero",
+        "next": "4SMD",
+        "requiredFlags": ["SMD2.1"],
+        "setFlags": ["SMD3.1.1"]
+      },
+      {
+        "text": "Tengo la sensación de que me la va a contar usted",
+        "next": "4SMD",
+        "requiredFlags": ["SMD2.1"],
+        "setFlags": ["SMD3.1.2"]
+      },
+      {
+        "text": "¿Y no llegaba?",
+        "next": "4SMD",
+        "requiredFlags": ["SMD2.2"],
+        "setFlags": ["SMD3.2.1"]
+      },
+      {
+        "text": "Definitivamente no eres amigo de la Iglesia, yo tampoco eh, no se crea",
+        "next": "4SMD",
+        "requiredFlags": ["SMD2.2"],
+        "setFlags": ["SMD3.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4SMD",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD3.1.1", "SMD3.1.2"],
+        "text": "Cuentan que, en el año 1212, un niño pastor llamado Esteban, en Francia, afirmaba haber recibido una carta de Jesucristo. Decía que Dios le había encomendado reunir un ejército de niños, libres de pecado, para marchar a Tierra Santa y reconquistarla sin violencia, solo con el poder de su fe.\nNo eran soldados, ni nobles, ni adultos siquiera. Eran campesinos, pastores, hijos de panaderos, niñas con muñecas de trapo, chicos que no conocían la guerra más que por los cuentos."
+      },
+      {
+        "requiredFlags": ["SMD3.2.1"],
+        "text": "Llegaba, hasta que la comida empezó a estar debajo de tanques, hasta que los tanques empezaron a moverse, hasta que los perros llevaban chalecos con explosivos"
+      },
+      {
+        "requiredFlags": ["SMD3.2.2"],
+        "text": "Yo no he dicho nunca que esté hablando de la Iglesia"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Entiendo que si me lo cuenta usted es que esto no sale bien...",
+        "next": "5SMD",
+        "requiredFlags": ["SMD3.1.1", "SMD3.1.2"],
+        "setFlags": ["SMD4.1.1"]
+      },
+      {
+        "text": "Parece algo que saldría bien en el antiguo",
+        "next": "5SMD",
+        "requiredFlags": ["SMD3.1.1", "SMD3.1.2"],
+        "setFlags": ["SMD4.1.2"]
+      },
+      {
+        "text": "Ya... Y usted cree que los feligreses de la Iglesia son como esos perros",
+        "next": "5SMD",
+        "requiredFlags": ["SMD3.2.1"],
+        "setFlags": ["SMD4.2.1"]
+      },
+      {
+        "text": "Empiezo a dudar de que esté usted hablando de la Iglesia",
+        "next": "5SMD",
+        "requiredFlags": ["SMD3.2.1", "SMD3.2.2"],
+        "setFlags": ["SMD4.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "5SMD",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD4.1.1", "SMD4.1.2"],
+        "text": "La noticia se extendió como fuego en un campo seco. Miles de niños y adolescentes abandonaron sus casas y caminaron durante semanas, cruzando pueblos y montañas. Cantaban himnos, portaban crucifijos tallados a mano, y proclamaban que el mar se abriría como ante Moisés cuando llegaran a Italia.\nMuchos murieron en el camino. De hambre, de frío, de agotamiento. Pero aún más terrible fue el destino de los que llegaron."
+      },
+      {
+        "requiredFlags": ["SMD4.2.1", "SMD4.2.2"],
+        "text": "Yo no he dicho nunca que esté hablando de la Iglesia"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Más terrible que la muerte?",
+        "next": "6SMD",
+        "requiredFlags": ["SMD4.1.1", "SMD4.1.2"],
+        "setFlags": ["SMD5.1.1"]
+      },
+      {
+        "text": "Espero que usted no piense que el mar se abrirá cuando lleguemos al puerto",
+        "next": "6SMD",
+        "requiredFlags": ["SMD4.1.1", "SMD4.1.2"],
+        "setFlags": ["SMD5.1.2"]
+      },
+      {
+        "text": "¿Entonces de qué está usted hablando?",
+        "next": "6SMD",
+        "requiredFlags": ["SMD4.2.1", "SMD4.2.2"],
+        "setFlags": ["SMD5.2.1"]
+      },
+      {
+        "text": "Entiendo...",
+        "next": "6SMD",
+        "requiredFlags": ["SMD4.2.2"],
+        "setFlags": ["SMD5.2.2"],
+        "end": true
+      }
+    ]
+  },
+  {
+    "id": "6SMD",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD5.1.1", "SMD5.1.2"],
+        "text": "En Marsella, esperaban que Dios obraría un milagro. Pero el mar no se abrió. Dos mercaderes ofrecieron entonces barcos para llevarlos a Tierra Santa. Aquellos hombres hablaban con dulzura y prometían gloria.\nZarparon siete barcos. Dos se hundieron. Los otros cinco llegaron a África en lugar de a Jerusalén. Los niños fueron vendidos como esclavos. Uno a uno. Los varones a minas, las niñas a prostíbulos. La cruzada terminó en silencio. Sin guerra. Sin gloria. Sin milagro."
+      },
+      {
+        "requiredFlags": ["SMD5.2.1"],
+        "text": "Quizás debes escuchar la brisa más a menudo",
+        "end": true
+      }
+    ],
+    "choices": [
+      {
+        "text": "Vaya, pues supongo que había destinos peores que la muerte",
+        "next": "7SMD",
+        "requiredFlags": ["SMD5.1.1", "SMD5.1.2"],
+        "setFlags": ["SMD6.1.1"]
+      },
+      {
+        "text": "Bueno, algunos dirán que mejor encadenado que muerto",
+        "next": "7SMD",
+        "requiredFlags": ["SMD5.1.1", "SMD5.1.2"],
+        "setFlags": ["SMD6.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "7SMD",
+    "speaker": "Señor Mayor Desconocido",
+    "text": "*El anciano guarda silencio mientras el coche llega al puerto*",
+    "end": true
+  }
+]

@@ -1,0 +1,285 @@
+[
+  {
+    "id": "start",
+    "speaker": "El Padre",
+    "text": "A la ermita de la Roca por favor",
+    "choices": [
+      {
+        "text": "Como todas las semanas",
+        "next": "1Padre1",
+        "setFlags": ["Padre1.1"]
+      },
+      {
+        "text": "¿Le puedo preguntar por qué va todos los miércoles? Los miércoles ni siquiera hay misa",
+        "next": "1Padre1",
+        "setFlags": ["Padre1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1Padre1",
+    "speaker": "El Padre",
+    "text": "Soy un hombre de rutinas ¿Cómo va todo en el pueblo? Parece que todo sigue igual, ¿no? Siempre el mismo ir y venir.",
+    "choices": [
+      {
+        "text": "Sí, todo sigue igual. Parece que todos son gente de rutina aquí.",
+        "next": "2Padre1",
+        "requiredFlags": ["Padre1.1", "Padre1.2"],
+        "setFlags": ["Padre1.1.1"]
+      },
+      {
+        "text": "No lo sé, últimamente el ambiente está un poco turbio.",
+        "next": "2Padre1",
+        "requiredFlags": ["Padre1.1", "Padre1.2"],
+        "setFlags": ["Padre1.1.2"]
+      },
+      {
+        "text": "Bueno, siempre hay algo de lo que hablar. ¿No ha escuchado nada interesante por ahí?¿Alguna confesión?",
+        "next": "2Padre1",
+        "requiredFlags": ["Padre1.1", "Padre1.2"],
+        "setFlags": ["Padre1.1.3"]
+      }
+    ]
+  },
+  {
+    "id": "2Padre1",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre1.1.1"],
+        "text": "Lo pensaba... todo sigue igual, sin cambio real. El tiempo se detiene aquí, en esta isla. ¿No le parece?"
+      },
+      {
+        "requiredFlags": ["Padre1.1.2"],
+        "text": "Ah, sí, yo también noto esa sensación de que algo está por ocurrir. Me pregunto que será ¿A usted, qué le gustaría que fuera?"
+      },
+      {
+        "requiredFlags": ["Padre1.1.3"],
+        "text": "Jejeje, no, aunque lo hubiese tampoco podría decirle nada."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Tal vez es sólo que nos hemos acostumbrado, cada cual se aguanta con el destino que le toca.",
+        "next": "3Padre1",
+        "requiredFlags": ["Padre1.1.1"],
+        "setFlags": ["Padre1.1.1.1"]
+      },
+      {
+        "text": "Bueno, últimamente parece que el progreso nos está atropellando.",
+        "next": "3Padre1",
+        "requiredFlags": ["Padre1.1.1"],
+        "setFlags": ["Padre1.1.1.2"]
+      },
+      {
+        "text": "A veces los cambios no se notan, pero ahí están.",
+        "next": "3Padre1",
+        "requiredFlags": ["Padre1.1.1"],
+        "setFlags": ["Padre1.1.1.3"]
+      },
+      {
+        "text": "Sí, me da la sensación de que hay algo en el aire, pero nadie lo ve, espero que sea que esa maldita empresa va a hacer negocios con las casas de otros.",
+        "next": "3Padre1",
+        "requiredFlags": ["Padre1.1.2"],
+        "setFlags": ["Padre1.1.2.1"]
+      },
+      {
+        "text": "Lo mismo pienso. Hay una especie de tensión que no se puede negar, supongo que aunque nadie lo quiera admitir, todos están preocupados por el Huérfano.",
+        "next": "3Padre1",
+        "requiredFlags": ["Padre1.1.2"],
+        "setFlags": ["Padre1.1.2.2"]
+      },
+      {
+        "text": "Es curioso. A veces lo noto, pero parece que no hay nada en concreto.",
+        "next": "3Padre1",
+        "requiredFlags": ["Padre1.1.2"],
+        "setFlags": ["Padre1.1.2.3"]
+      },
+      {
+        "text": "Si le soy sincero, eso nunca me ha dado buena espina, lo entiendo eh, pero ustedes los curas están entrenados para guardar secretos, eso es peligroso",
+        "next": "3Padre1",
+        "requiredFlags": ["Padre1.1.3"],
+        "setFlags": ["Padre1.1.3.1"]
+      },
+      {
+        "text": "¿Quién sabe? Tal vez algo grande está por ocurrir.",
+        "next": "3Padre1",
+        "requiredFlags": ["Padre1.1.3"],
+        "setFlags": ["Padre1.1.3.2"]
+      }
+    ]
+  },
+  {
+    "id": "3Padre1",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre1.1.1.1"],
+        "text": "Quizás, la rutina nos envuelve. Pero es triste. La vida no debería ser sólo eso, ¿no crees? Es triste que un hombre viva de acuerdo a su destino sólo por miedo a caer, a mi me gustaría caer por mi propia voluntad más que vivir con cadenas"
+      },
+      {
+        "requiredFlags": ["Padre1.1.1.2"],
+        "text": "Sí, desde que esa fábrica abrió todo es muy diferente. La rutina nos envuelve. Pero es triste. La vida no debería ser sólo eso, ¿no crees? Es triste que un hombre viva por su destino sólo por miedo a caer, a mi me gustaría caer por mi propia voluntad más que vivir con cadenas"
+      },
+      {
+        "requiredFlags": ["Padre1.1.1.3"],
+        "text": "Los cambios pequeños se acumulan, y al final, todo se transforma, pero aquí la gente pasó de una rutina a la otra sin plantearse nada más que la hora a la que poner la alarma."
+      },
+      {
+        "requiredFlags": ["Padre1.1.2.1", "Padre1.1.2.3", "Padre1.1.3.2"],
+        "text": "La gente siempre ha sabido que algo no está bien, pero no quieren admitirlo."
+      },
+      {
+        "requiredFlags": ["Padre1.1.2.2"],
+        "text": "Algo está ocurriendo y, sin embargo, nadie dice nada. Cuando todos sabían los culpables del sufrimiento de esa familia nadie dijo nada ¿Por qué se preocupan ahora entonces? ¿Acaso tienen miedo de que él sí haya encontrado un camino?"
+      },
+      {
+        "requiredFlags": ["Padre1.1.3.1"],
+        "text": "La información es un arma que los hombres de fe juramos no usar, es como temer que te dispare aquel cuyo trabajo es desmontar armas"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Vaya, no me esperaba ese pensamiento de usted, padre.",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.1.1", "Padre1.1.1.2"],
+        "setFlags": ["Padre1.1.1.1.1", "Padre1.1.1.2.1"]
+      },
+      {
+        "text": "Cadenas eh, sí, definitivamente la isla se siente como cadenas para mucha gente",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.1.1", "Padre1.1.1.2"],
+        "setFlags": ["Padre1.1.1.1.2", "Padre1.1.1.2.2"]
+      },
+      {
+        "text": "Suena usted como un revolucionario, Padre",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.1.3"],
+        "setFlags": ["Padre1.1.1.3.1"]
+      },
+      {
+        "text": "La mayoría no dudó ni un momento en dejar el mar",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.1.3"],
+        "setFlags": ["Padre1.1.1.3.2"]
+      },
+      {
+        "text": "Sí, tal vez simplemente estamos demasiado ocupados para ver lo que pasa alrededor.",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.2.1"],
+        "setFlags": ["Padre1.1.2.1.1"]
+      },
+      {
+        "text": "Lo bueno de la rutina es que al menos sabemos qué esperar.",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.2.1"],
+        "setFlags": ["Padre1.1.2.1.2"]
+      },
+      {
+        "text": "Nadie va a morder la mano que le da de comer Padre, eso siempre ha sido así.",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.2.1", "Padre1.1.2.2"],
+        "setFlags": ["Padre1.1.2.1.3", "Padre1.1.2.2.1"]
+      },
+      {
+        "text": "¿Un camino? Padre ese muchacho no está bien, aunque sea hipócrita de su parte, creo que los vecinos están realmente preocupados",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.2.2"],
+        "setFlags": ["Padre1.1.2.2.2"]
+      },
+      {
+        "text": "...",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.2.2"],
+        "setFlags": ["Padre1.1.2.2.3"]
+      },
+      {
+        "text": "Ya, pero que uno se pase la vida desmontando rifles no quiere decir que no sepa disparar.",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.3.1"],
+        "setFlags": ["Padre1.1.3.1.1"]
+      },
+      {
+        "text": "Supongo que es un poco como los niños que le tienen miedo al carnicero, un trabajo con mal marketing",
+        "next": "4Padre1",
+        "requiredFlags": ["Padre1.1.3.1"],
+        "setFlags": ["Padre1.1.3.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "4Padre1",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre1.1.1.1.1"],
+        "text": "Que pasa, ¿un clérigo no puede leer a Shakespeare? Podría usar otra frase suya para describir mi opinión general de lo que necesita la isla \"Locura sí, pero no sin un propósito\""
+      },
+      {
+        "requiredFlags": ["Padre1.1.1.1.2"],
+        "text": "Lo entiendo... ¿por qué sentirte atrapado si tienes la libertad para irte?"
+      },
+      {
+        "requiredFlags": ["Padre1.1.1.3.1"],
+        "text": "*suspira* Sólo soy un viejo cascarrabias..."
+      },
+      {
+        "requiredFlags": ["Padre1.1.2.1.1"],
+        "text": "Hoy en día hay tiempo para todo menos para reflexionar."
+      },
+      {
+        "requiredFlags": ["Padre1.1.2.1.2"],
+        "text": "Esa es la comodidad de la rutina. Pero, ¿qué pasa cuando esa rutina se rompe? ¿Estará la gente preparada?"
+      },
+      {
+        "requiredFlags": ["Padre1.1.2.2.1"],
+        "text": "Por suerte aún quedan polluelos capaces de alimentarse por sí mismos"
+      },
+      {
+        "requiredFlags": ["Padre1.1.2.2.2"],
+        "text": "Tan sólo cuando no hay culpables quieren caridad aquellos que nunca quisieron justicia"
+      },
+      {
+        "requiredFlags": ["Padre1.1.3.1.1"],
+        "text": "Supongo que 30 años sin hacerlo no significa nada hoy en día..."
+      },
+      {
+        "requiredFlags": ["Padre1.1.3.1.2"],
+        "text": "Visto lo que le está haciendo la publicidad a la isla, mejor tener mal marketing"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ya hemos llegado Padre, espero que la próxima vez podamos hablar de algo más alegre",
+        "next": "endPadre1",
+        "requiredFlags": ["Padre1.1.1.1.1", "Padre1.1.1.1.2", "Padre1.1.1.3.1", "Padre1.1.1.3.2", "Padre1.1.2.1.1", "Padre1.1.2.1.2", "Padre1.1.2.1.3", "Padre1.1.2.2.1", "Padre1.1.2.2.2", "Padre1.1.2.2.3", "Padre1.1.3.1.1", "Padre1.1.3.1.2"]
+      },
+      {
+        "text": "Quizás debería plantearse entrar en política Padre, muchos de la isla tienen buena opinión de usted. Ya hemos llegado, espero que la próxima vez podamos hablar de algo más alegre",
+        "next": "endPadre1",
+        "requiredFlags": ["Padre1.1.1.1.2", "Padre1.1.2.2.1", "Padre1.1.3.1.1"]
+      },
+      {
+        "text": "Hay muchos tipos de cadenas Padre, la libertad es más complicada de lo que parece. Ya hemos llegado, espero que la próxima vez podamos hablar de algo más alegre",
+        "next": "endPadre1",
+        "requiredFlags": ["Padre1.1.1.2.2"]
+      },
+      {
+        "text": "Ese día será el que podamos conocer a mucha gente de verdad. Ya hemos llegado Padre, espero que la próxima vez podamos hablar de algo más alegre",
+        "next": "endPadre1",
+        "requiredFlags": ["Padre1.1.2.1.2"]
+      },
+      {
+        "text": "Eso suena a que sabe usted más de lo que me puede contar Padre, tiene suerte de que ya hayamos llegado y no pueda seguir interrogándolo",
+        "next": "endPadre1",
+        "requiredFlags": ["Padre1.1.2.1.3"]
+      }
+    ]
+  },
+  {
+    "id": "endPadre1",
+    "speaker": "PJ",
+    "text": "(Fin del diálogo)",
+    "end": true
+  }
+]

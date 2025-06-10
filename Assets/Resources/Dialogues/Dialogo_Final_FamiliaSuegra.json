@@ -1,6 +1,6 @@
 [
   {
-    "id": "startSuegra",
+    "id": "start",
     "speaker": "Suegra",
     "text": "¿Sabes ir a la Ermita verdad?, vamos, que se me va a hacer de noche",
     "setFlags": ["InicioSuegra"],

@@ -1,0 +1,309 @@
+[
+  {
+    "id": "start",
+    "speaker": "Periodista",
+    "text": "A la Ermita de la Roca, por favor",
+    "choices": [
+      {
+        "text": "Ahora mismo ¿Parte del reportaje o es que además de periodista eres religioso?",
+        "next": "1P2",
+        "setFlags": ["P2.1"]
+      },
+      {
+        "text": "Hombre mira quién está por aquí. De momento no está acompañando el clima a tu reportaje de playas paradisíacas.",
+        "next": "1P2",
+        "setFlags": ["P2.2"]
+      }
+    ]
+  },
+  {
+    "id": "1P2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P2.1"],
+        "text": "Parte del reportaje, según parece, es lo único de la isla que pueda entrar en el apartado de \"atractivo cultural\" Al menos en el sentido más tradicional."
+      },
+      {
+        "requiredFlags": ["P2.2"],
+        "text": "La verdad es que no, pero bueno, supongo que las tormentas de verano son parte del clima local. Los paisajes cuando sales un poco de las zonas construidas son impresionantes igualmente."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿A qué te refieres con \"el sentido tradicional\"? ¿Qué más cosas quieres meter en \"atractivo cultural\"?",
+        "next": "2P2",
+        "requiredFlags": ["P2.1"],
+        "setFlags": ["P2.1.1"]
+      },
+      {
+        "text": "Tampoco es ninguna maravilla, así que no te hagas muchas ilusiones",
+        "next": "2P2",
+        "requiredFlags": ["P2.1"],
+        "setFlags": ["P2.1.2"]
+      },
+      {
+        "text": "Eso no te lo puedo discutir, la isla en sí es una maravilla.",
+        "next": "2P2",
+        "requiredFlags": ["P2.2"],
+        "setFlags": ["P2.2.1"]
+      },
+      {
+        "text": "Sí, todavía hay mucha isla sin construir, aunque cada día menos.",
+        "next": "2P2",
+        "requiredFlags": ["P2.2"],
+        "setFlags": ["P2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2P2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P2.1.1"],
+        "text": "Bueno una iglesia, monumentos y demás son tradicionalmente de interes cultural, pero hay sitios que la gente visita por otras cosas, hasta en la cuenca del Ruhr hay turismo"
+      },
+      {
+        "requiredFlags": ["P2.1.2"],
+        "text": "Bueno, con este tiempo tampoco es que tenga nada mejor que hacer en la isla."
+      },
+      {
+        "requiredFlags": ["P2.2.1"],
+        "text": "Lo es, aunque entre nuestra conversación del otro día y algunos comentarios que he escuchado tengo que preguntar ¿Qué es exactamente La Fábrica?"
+      },
+      {
+        "requiredFlags": ["P2.2.2"],
+        "text": "Sí, según he entendido, la contructora que está haciendo los apartamentos en el norte es de la misma compañía que maneja La Fábrica ¿no?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Osea que reventamos el medio natural para producir y además viene gente a verlo.",
+        "next": "3P2",
+        "requiredFlags": ["P2.1.1"],
+        "setFlags": ["P2.1.1.1"]
+      },
+      {
+        "text": "Vamos que eres capaz de venderle a la gente el puerto como un destino interesante",
+        "next": "3P2",
+        "requiredFlags": ["P2.1.1"],
+        "setFlags": ["P2.1.1.2"]
+      },
+      {
+        "text": "Ahí te tengo que dar la razón, estos días está haciendo un día para quedarse en casa pensando.",
+        "next": "3P2",
+        "requiredFlags": ["P2.1.2"],
+        "setFlags": ["P2.1.2.1"]
+      },
+      {
+        "text": "Si te hubiese pilado este tiempo los últimos días que estés aquí te diría que aproveches para escribir el artículo pero todavía tendrás poco que escribir.",
+        "next": "3P2",
+        "requiredFlags": ["P2.1.2"],
+        "setFlags": ["P2.1.2.2"]
+      },
+      {
+        "text": "No sé cómo funciona exactamente a nivel de empresa ni quién pertenece a quién pero sí, van bajo el mismo nombre y el mismo logo",
+        "next": "3P2",
+        "requiredFlags": ["P2.2.2"],
+        "setFlags": ["P2.2.2.1"]
+      },
+      {
+        "text": "Aquí todo es de los mismos",
+        "next": "3P2",
+        "requiredFlags": ["P2.2.2"],
+        "setFlags": ["P2.2.2.2"]
+      },
+      {
+        "text": "La Fábrica hoy en día es una Planta Química, hacen fertilizantes y cosas así, más de la mitad de la gente en edad de trabajar de la isla trabaja allí, así que si de vez en cuando se saltan alguna norma o no piden algún permiso nadie se atreve tampoco a denunciarlo. Al final, la producción la trasladaron aquí porque en el continente era más caro pagarle a trabajadores sindicados. Ellos decían que era por el transporte pero antes mandaban los materiales y ahora mandan el producto, los barcos salen igual.",
+        "next": "4P2",
+        "requiredFlags": ["P2.2.1"],
+        "setFlags": ["P2.2.1.1"]
+      },
+      {
+        "text": "Hará 6 años abrieron una cantera en el volcán, se veía desde cualquier sitio de este lado de la isla, como si Dios nos hubiese mordido. Extraían azufre, fosfatos... Empezaron a contratar gente de la isla, en aquel entonces todavía la mayoría preferían sus barquitos a subir a la montaña. Un año después el sindicato convocó huelgas en el continente y al siguiente ya empezaba a funcionar La Fábrica en la isla.",
+        "next": "4P2",
+        "requiredFlags": ["P2.2.1"],
+        "setFlags": ["P2.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "3P2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P2.1.1.1"],
+        "text": "Bueno, yo creo que es mejor sin la primera parte, la isla tiene potencial de que la gente quiera venir a ver su medio natural. Aún así, hablando de industria, después de nuestra conversación del otro día y algún comentario que me ha llegado tengo que preguntar ¿Qué es eso exactamente La Fábrica?"
+      },
+      {
+        "requiredFlags": ["P2.1.1.2"],
+        "text": "Ese es mi trabajo sí, aunque preferiría que dejase de llover y hablar de las playas y el paisaje, de verdad. Por cierto, después de nuestra conversación del otro día y algún comentario que me ha llegado tengo que preguntar ¿Qué es eso exactamente La Fábrica?"
+      },
+      {
+        "requiredFlags": ["P2.1.2.1", "P2.1.2.2"],
+        "text": "Sí, con tanto tiempo para pensar he acabado investigando un poco, leyéndo sobre historia de la isla, viendo noticias antiguas... Y no me puedo quedar con la duda ¿Qué pasó hace dos años con el agua? He visto un par de noticias de medios del continente hablando sobre que tuvieron que enviar barcos con agua potable para la gente, pero no hay manera de leer que pasó"
+      },
+      {
+        "requiredFlags": ["P2.2.2.1", "P2.2.2.2"],
+        "text": "Ya... la verdad es que después de estos días lo tengo que preguntar ¿Qué es exactamente La Fábrica?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "La Fábrica hoy en día es una Planta Química, hacen fertilizantes y cosas así, más de la mitad de la gente en edad de trabajar de la isla trabaja allí, así que si de vez en cuando se saltan alguna norma o no piden algún permiso nadie se atreve tampoco a denunciarlo. Al final, la producción la trasladaron aquí porque en el continente era más caro pagarle a trabajadores sindicados. Ellos decían que era por el transporte pero antes mandaban los materiales y ahora mandan el producto, los barcos salen igual.",
+        "next": "4P2",
+        "requiredFlags": ["P2.1.1.1", "P2.1.1.2", "P2.2.2.1", "P2.2.2.2"],
+        "setFlags": ["P2.2.1.1"]
+      },
+      {
+        "text": "Hará 6 años abrieron una cantera en el volcán, se veía desde cualquier sitio de este lado de la isla, como si Dios nos hubiese mordido. Extraían azufre, fosfatos... Empezaron a contratar gente de la isla, en aquel entonces todavía la mayoría preferían sus barquitos a subir a la montaña. Un año después el sindicato convocó huelgas en el continente y al siguiente ya empezaba a funcionar La Fábrica en la isla.",
+        "next": "4P2",
+        "requiredFlags": ["P2.1.1.1", "P2.1.1.2", "P2.2.2.1", "P2.2.2.2"],
+        "setFlags": ["P2.2.1.2"]
+      },
+      {
+        "text": "Uf, este tema es peligroso, más aún ahora, yo sinceramente no me metería si fuera tú, entiendo además que si estás aquí quedándote donde te estás quedando, no creo que te vayan a dejar hablar de nada de esto tampoco",
+        "next": "5P2",
+        "requiredFlags": ["P2.1.2.1", "P2.1.2.2"],
+        "setFlags": ["P2.1.2.1.1"]
+      },
+      {
+        "text": "La Fábrica tuvo un fallo en la gestión de los residuos, eso dicen ellos, la realidad yo creo que es que la empresa filtraba aguas residuales al subsuelo y las vertía en los barrancos naturales de la isla.",
+        "next": "5P2",
+        "requiredFlags": ["P2.1.2.1", "P2.1.2.2"],
+        "setFlags": ["P2.1.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "4P2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P2.2.1.1", "P2.2.1.2"],
+        "text": "Entiendo... con tanto tiempo para pensar he acabado investigando un poco, leyéndo sobre historia de la isla, viendo noticias antiguas... Y no me puedo quedar con la duda ¿Qué pasó hace dos años con el agua? He visto un par de noticias de medios del continente hablando sobre que tuvieron que enviar barcos con agua potable para la gente, pero no hay manera de leer que pasó."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Uf, este tema es peligroso, más aún ahora, yo sinceramente no me metería si fuera tú, entiendo además que si estás aquí quedándote donde te estás quedando, no creo que te vayan a dejar hablar de nada de esto tampoco",
+        "next": "5P2",
+        "requiredFlags": ["P2.2.1.1", "P2.2.1.2"],
+        "setFlags": ["P2.2.1.1.1"]
+      },
+      {
+        "text": "La Fábrica tuvo un fallo en la gestión de los residuos, eso dicen ellos, la realidad yo creo que es que la empresa filtraba aguas residuales al subsuelo y las vertía en los barrancos naturales de la isla.",
+        "next": "5P2",
+        "requiredFlags": ["P2.2.1.1", "P2.2.1.2"],
+        "setFlags": ["P2.2.1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "5P2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P2.1.2.1.1"],
+        "text": "Vaya, yo que pensaba que no te gustaba que hablase de la isla porque no querías que viniese gente a joderla, va a resultar que te da miedo que la gente de fuera vea que los de aquí la estaís jodiendo por dinero"
+      },
+      {
+        "requiredFlags": ["P2.1.2.1.2", "P2.2.1.1.2"],
+        "text": "¿Y qué pasó con eso? ¿La gente protestó? ¿El gobierno? ¿O todo sigue igual?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "...",
+        "next": "6P2",
+        "requiredFlags": ["P2.1.2.1.1"],
+        "setFlags": ["P2.1.2.1.1.1"]
+      },
+      {
+        "text": "La Fábrica tuvo un fallo en la gestión de los residuos, eso dicen ellos, la realidad yo creo que es que la empresa filtraba aguas residuales al subsuelo y las vertía en los barrancos naturales de la isla.",
+        "next": "6P2",
+        "requiredFlags": ["P2.1.2.1.1"],
+        "setFlags": ["P2.1.2.1.1.2"]
+      },
+      {
+        "text": "La gente no se atrevía a protestar, la economía de las familias dependía de La Fábrica ya en aquel entonces. Lo que pasó fue que a sus empleados les facilitaron agua embotellada y les recomendaron comprar comida envasada que viniese del continente. Claro, como prácticamente todas las familias de la isla tienen a alguien trabajando en La Fábrica, la mayoría de la gente siguió las indicaciones y no les pasó nada.",
+        "next": "6P2",
+        "requiredFlags": ["P2.1.2.1.2", "P2.2.1.1.2"],
+        "setFlags": ["P2.1.2.1.2.1"]
+      },
+      {
+        "text": "Bueno, ya gestionan debidamente los residuos, al menos no contaminan el agua. No te recomiendo escarbar mucho sobre este tema por aquí",
+        "next": "6P2",
+        "requiredFlags": ["P2.1.2.1.2", "P2.2.1.1.2"],
+        "setFlags": ["P2.1.2.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "6P2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P2.1.2.1.1.1"],
+        "text": "Bueno, alguien conseguiré que me cuente qué pasó"
+      },
+      {
+        "requiredFlags": ["P2.1.2.1.2.1"],
+        "text": "¿La mayoría?"
+      },
+      {
+        "requiredFlags": ["P2.1.2.1.2.2"],
+        "text": "¿Y ya está?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Bueno, los pocos pescadores de bajura que quedaban no podían vender sus capturas y si se las comían ellos mismos se la estaban jugando. Varios cayeron enfermos y pasaron a seguir las recomendaciones aunque les hiciera perder dinero. Una familia no se podía permitir perder dinero, el padre tenía que mantener a tres hijos y no tenía dinero para comprar la comida importada, las dos pequeñas comían en el colegio, iban con vecinos... lo que fuese, el padre y el mayor no. El padre acabó enfermando de gravedad y falleciendo, el mayor, Abel, enfermó y acabó curándose aunque con algunas secuelas, sobretodo mentales. El chico después, aún con sus problemas, lleva manteniendo a flote a sus hermanas casi dos años.",
+        "next": "7P2",
+        "requiredFlags": ["P2.1.2.1.2.1", "P2.1.2.1.2.2"],
+        "setFlags": ["P2.1.2.1.2.1.1", "P2.1.2.1.2.2.1"]
+      },
+      {
+        "text": "Sí, la gente siguió las instrucciones y La Fábrica reformó su sistema de residuos.",
+        "next": "7P2",
+        "requiredFlags": ["P2.1.2.1.2.1", "P2.1.2.1.2.2"],
+        "setFlags": ["P2.1.2.1.2.1.2", "P2.1.2.1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "7P2",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P2.1.2.1.2.1.1", "P2.1.2.1.2.2.1"],
+        "text": "¿Abel? ¿Ese es el chico al que ahora están buscando?"
+      },
+      {
+        "requiredFlags": ["P2.1.2.1.2.1.2", "P2.1.2.1.2.2.2"],
+        "text": "Entiendo, supongo que al fin y al cabo todo salió bien."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, el pobre desgraciado lleva casi dos semanas sin dar señales de vida",
+        "next": "endP2",
+        "requiredFlags": ["P2.1.2.1.2.1.1", "P2.1.2.1.2.2.1"],
+        "setFlags": ["P2.1.2.1.2.1.1.1"]
+      },
+      {
+        "text": "Ahora la gente se las dá de buenos organizándose para buscarle, en su época cuando del otro lado estaba La Fábrica ni uno se atrevió a meter la mano en el fuego",
+        "next": "endP2",
+        "requiredFlags": ["P2.1.2.1.2.1.1", "P2.1.2.1.2.2.1"],
+        "setFlags": ["P2.1.2.1.2.1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "endP2",
+    "speaker": "PJ",
+    "text": "(Fin del diálogo)",
+    "end": true
+  }
+]

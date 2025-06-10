@@ -1,6 +1,6 @@
 [
   {
-    "id": "startV1",
+    "id": "start",
     "speaker": "Verónica",
     "text": "¡Ya estamos a viernes!",
     "setFlags": ["InicioV1"],

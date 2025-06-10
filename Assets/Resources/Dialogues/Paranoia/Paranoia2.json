@@ -1,0 +1,227 @@
+[
+  {
+    "id": "start",
+    "speaker": "Señor Mayor Desconocido",
+    "text": "Al puerto, por favor",
+    "setFlags": ["InicioSMD2"],
+    "choices": [
+      {
+        "text": "Ahora mismo",
+        "next": "1SMD2",
+        "setFlags": ["SMD2_0.1"]
+      },
+      {
+        "text": "Hombre, ¿qué tal caballero? ¿Hoy me va a contar alguna historia?",
+        "next": "1SMD2",
+        "setFlags": ["SMD2_0.2"]
+      }
+    ]
+  },
+  {
+    "id": "1SMD2",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD2_0.1"],
+        "text": "¿Has ido a escuchar la brisa estos días?"
+      },
+      {
+        "requiredFlags": ["SMD2_0.2"],
+        "text": "¿Me recuerdas? Claro, te contaré una historia que creo que te puede interesar"
+      }
+    ],
+    "choices": [
+      {
+        "text": "No, creo que de momento le dejo eso a usted, yo le llevo y usted me cuenta qué historias le trae la brisa.",
+        "next": "2SMD2",
+        "requiredFlags": ["SMD2_0.1"],
+        "setFlags": ["SMD2_0.1.1"]
+      },
+      {
+        "text": "La verdad es que todavía no entiendo que significa exactamente eso",
+        "next": "2SMD2",
+        "requiredFlags": ["SMD2_0.1"],
+        "setFlags": ["SMD2_0.1.2"]
+      },
+      {
+        "text": "Claro que le recuerdo, lo que no sé es como sabe usted lo que me puede interesar",
+        "next": "2SMD2",
+        "requiredFlags": ["SMD2_0.2"],
+        "setFlags": ["SMD2_0.2.1"]
+      },
+      {
+        "text": "Lo raro es que sigo sin saber quién es usted...",
+        "next": "2SMD2",
+        "requiredFlags": ["SMD2_0.2"],
+        "setFlags": ["SMD2_0.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2SMD2",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD2_0.1.1", "SMD2_0.1.2"],
+        "text": "No te preocupes, de momento seguiré por aquí un tiempo... ¿Conoces el mito de Orfeo?"
+      },
+      {
+        "requiredFlags": ["SMD2_0.2.1", "SMD2_0.2.2"],
+        "text": "Bueno, con que te interese lo que te cuento no te preocupes por cosas sin importancia ¿Conoces el mito de Orfeo?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿El mito griego? Sí, es bastante conocido",
+        "next": "3SMD2",
+        "setFlags": ["SMD2_1.1"]
+      },
+      {
+        "text": "Me suena, pero no sería capaz de ponerlo en pie por mi cuenta",
+        "next": "3SMD2",
+        "setFlags": ["SMD2_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "3SMD2",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD2_1.1"],
+        "text": "¿No te ves parecido a él? Siempre mirando hacia delante, confiando en que la voz que te habla desde atrás sea más que un reflejo en el retrovisor"
+      },
+      {
+        "requiredFlags": ["SMD2_1.2"],
+        "text": "Orfeo era un músico tan prodigioso que los árboles se inclinaban para oírlo y las bestias se amansaban a su paso. Amaba con devoción a Eurídice, una ninfa de risa clara y pasos ligeros. Su amor era puro, elevado... casi divino.\nPero la felicidad nunca es eterna. Eurídice murió, mordida por una serpiente, y Orfeo descendió al inframundo para recuperarla. Con su lira, Orfeo logró lo imposible: conmovió a Hades y Perséfone. Las sombras detuvieron su lamento, las Furias se cubrieron el rostro, y los reyes del inframundo, por un instante, sintieron compasión.\nHades accedió a liberarla... con una condición: Orfeo debía caminar delante de Eurídice y no mirarla hasta alcanzar la luz del mundo. Si se giraba, la perdería para siempre."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Espero que si yo miro hacia detrás usted no desaparezca",
+        "next": "4SMD2",
+        "requiredFlags": ["SMD2_1.1", "SMD2_1.2"],
+        "setFlags": ["SMD2_1.1.1"]
+      },
+      {
+        "text": "Bueno, hay muchos mitos que directamente van de reflejos, Perseo y la Medusa, Narciso...",
+        "next": "4SMD2",
+        "requiredFlags": ["SMD2_1.1"],
+        "setFlags": ["SMD2_1.1.2"]
+      },
+      {
+        "text": "Bajó al inframundo por amor...",
+        "next": "4SMD2",
+        "requiredFlags": ["SMD2_1.2"],
+        "setFlags": ["SMD2_1.2.1"]
+      }
+    ]
+  },
+  {
+    "id": "4SMD2",
+    "speaker": "Señor Mayor Desconocido",
+    "text": "Caminaron en silencio por túneles eternos. Orfeo oía sus pasos, sentía su presencia, pero el silencio es espeso como el barro. La duda empezó a sembrar su veneno: -¿Y si no está ahí?\n-¿Y si me han engañado?\n-¿Y si no la oigo porque ya no me sigue?\nA escasos metros de la salida, Orfeo giró la cabeza. Eurídice aún estaba allí... pero al cruzarse sus ojos, fue arrastrada a las sombras. Esta vez, para siempre.",
+    "choices": [
+      {
+        "text": "¿Usted cree que me incomoda el silencio?",
+        "next": "5SMD2",
+        "setFlags": ["SMD2_2.1"]
+      },
+      {
+        "text": "¿Usted cree que la isla es nuestro inframundo?",
+        "next": "5SMD2",
+        "setFlags": ["SMD2_2.2"]
+      },
+      {
+        "text": "*Guardar silencio*",
+        "next": "5SMD2",
+        "setFlags": ["SMD2_2.3"]
+      }
+    ]
+  },
+  {
+    "id": "5SMD2",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD2_2.1", "SMD2_2.2"],
+        "text": "Yo solo cuento historias, las interpretaciones son cuestión de quién escucha. Nunca le he pedido su opinión al viento"
+      },
+      {
+        "requiredFlags": ["SMD2_2.3"],
+        "text": "*asiente*"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ya... claro, usted escucha la brisa y yo le escucho a usted",
+        "next": "6SMD2",
+        "requiredFlags": ["SMD2_2.1"],
+        "setFlags": ["SMD2_2.1.1"]
+      },
+      {
+        "text": "¿Ni una guía me va a dar? Ya sabe, como un profesor de literatura que te enseña a leer poesía",
+        "next": "6SMD2",
+        "requiredFlags": ["SMD2_2.1", "SMD2_2.3"],
+        "setFlags": ["SMD2_2.1.2"]
+      },
+      {
+        "text": "*Guardar silencio*",
+        "next": "6SMD2",
+        "requiredFlags": ["SMD2_2.3"],
+        "setFlags": ["SMD2_2.3.1"],
+        "end": true
+      }
+    ]
+  },
+  {
+    "id": "6SMD2",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD2_2.1.1"],
+        "text": "*Asiente*"
+      },
+      {
+        "requiredFlags": ["SMD2_2.1.2"],
+        "text": "Piensa... ¿Eres el Orfeo de esta historia? Si lo eres por qué estás dispuesto a bajar, hasta donde. Si no ¿Qué eres? ¿Eres Eurídice? ¿Quién bajaría al inframundo por tí? Y si lo hicieran, ¿Estarías ahí cuando mirasen atrás?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Ni una guía me va a dar? Ya sabe, como un profesor de literatura que te enseña a leer poesía",
+        "next": "7SMD2",
+        "requiredFlags": ["SMD2_2.1.1"],
+        "setFlags": ["SMD2_2.1.1.1"]
+      },
+      {
+        "text": "*Guardar silencio*",
+        "next": "7SMD2",
+        "requiredFlags": ["SMD2_2.1.1", "SMD2_2.1.2"],
+        "setFlags": ["SMD2_2.1.1.2"],
+        "end": true
+      },
+      {
+        "text": "Vaya, creo que prefería quedarme sin la pista...",
+        "next": "7SMD2",
+        "requiredFlags": ["SMD2_2.1.2"],
+        "setFlags": ["SMD2_2.1.2.1"]
+      }
+    ]
+  },
+  {
+    "id": "7SMD2",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD2_2.1.1.1"],
+        "text": "Piensa... ¿Eres el Orfeo de esta historia? Si lo eres por qué estás dispuesto a bajar, hasta donde. Si no ¿Qué eres? ¿Eres Eurídice? ¿Quién bajaría al inframundo por tí? Y si lo hicieran, ¿Estarías ahí cuando mirasen atrás?"
+      },
+      {
+        "requiredFlags": ["SMD2_2.1.2.1"],
+        "text": "La brisa no siempre es agradable..."
+      }
+    ],
+    "end": true
+  }
+]

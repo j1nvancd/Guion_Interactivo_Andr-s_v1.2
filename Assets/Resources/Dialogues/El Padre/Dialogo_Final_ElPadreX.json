@@ -1,0 +1,333 @@
+[
+  {
+    "id": "start",
+    "speaker": "El Padre",
+    "text": "Dime, ¿qué piensas tú de la situación general de la isla? ¿Es todo realmente tan simple como dicen?",
+    "choices": [
+      {
+        "text": "Es lo que hay, ¿no? La gente trabaja, vive, y sigue el ciclo.",
+        "next": "2Padre",
+        "setFlags": ["Padre.2.1"]
+      },
+      {
+        "text": "No sé, la gente parece estar más preocupada por cosas que no se ven.",
+        "next": "2Padre",
+        "setFlags": ["Padre.2.2"]
+      },
+      {
+        "text": "Tal vez sólo estamos buscando respuestas donde no las hay.",
+        "next": "2Padre",
+        "setFlags": ["Padre.2.3"]
+      }
+    ]
+  },
+  {
+    "id": "2Padre",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre.2.1"],
+        "text": "¿Es eso? ¿Solo un ciclo? ¿Una isla donde todo sigue igual y nadie cuestiona?"
+      },
+      {
+        "requiredFlags": ["Padre.2.2"],
+        "text": "Siempre he pensado que hay algo más, algo detrás de las acciones de las personas..."
+      },
+      {
+        "requiredFlags": ["Padre.2.3"],
+        "text": "Pero, ¿qué pasa si no hay respuestas? Si realmente todo es tan... vacío..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Quizás sí. Hay cosas que son mejores no tocar.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.1"],
+        "setFlags": ["Padre.2.1.1"]
+      },
+      {
+        "text": "O tal vez, estamos demasiado cómodos con la idea de no cuestionar.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.1"],
+        "setFlags": ["Padre.2.1.2"]
+      },
+      {
+        "text": "Es una isla pequeña, todo está interconectado de alguna manera.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.1"],
+        "setFlags": ["Padre.2.1.3"]
+      },
+      {
+        "text": "Tal vez la gente está demasiado centrada en lo superficial.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.2"],
+        "setFlags": ["Padre.2.2.1"]
+      },
+      {
+        "text": "Hay algo extraño en el aire, pero no sé qué es.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.2"],
+        "setFlags": ["Padre.2.2.2"]
+      },
+      {
+        "text": "Es curioso. Todos lo notamos, pero nadie habla.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.2"],
+        "setFlags": ["Padre.2.2.3"]
+      },
+      {
+        "text": "Es posible. A veces las respuestas son lo que más nos asusta.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.3"],
+        "setFlags": ["Padre.2.3.1"]
+      },
+      {
+        "text": "Quizás simplemente nos hemos resignado a no encontrar respuestas.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.3"],
+        "setFlags": ["Padre.2.3.2"]
+      },
+      {
+        "text": "O tal vez las respuestas están en lo que no vemos, en lo que ignoramos.",
+        "next": "3Padre",
+        "requiredFlags": ["Padre.2.3"],
+        "setFlags": ["Padre.2.3.3"]
+      }
+    ]
+  },
+  {
+    "id": "3Padre",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre.2.1.1"],
+        "text": "Sí, a veces no sabemos si es mejor seguir ciegos o hacer preguntas incómodas."
+      },
+      {
+        "requiredFlags": ["Padre.2.1.2"],
+        "text": "Ciertamente. La comodidad ciega es lo que ha mantenido el statu quo por tanto tiempo."
+      },
+      {
+        "requiredFlags": ["Padre.2.1.3"],
+        "text": "Interconectados, sí. La isla es un microcosmos de algo mucho más grande. Pero hay cosas que necesitamos cambiar."
+      },
+      {
+        "requiredFlags": ["Padre.2.2.1"],
+        "text": "Es posible. Pero la superficialidad es la que ha mantenido a la isla 'en paz', por decirlo de alguna manera."
+      },
+      {
+        "requiredFlags": ["Padre.2.2.2"],
+        "text": "Sí, esa extraña sensación. Es como si todo estuviera por estallar."
+      },
+      {
+        "requiredFlags": ["Padre.2.2.3"],
+        "text": "Eso mismo. Nadie lo menciona, pero todos lo sabemos."
+      },
+      {
+        "requiredFlags": ["Padre.2.3.1"],
+        "text": "¿Es así? ¿Estamos buscando lo que nos da miedo encontrar?"
+      },
+      {
+        "requiredFlags": ["Padre.2.3.2"],
+        "text": "Es un pensamiento interesante. A veces nos asusta lo que podría cambiar."
+      },
+      {
+        "requiredFlags": ["Padre.2.3.3"],
+        "text": "Quizás simplemente nos acostumbramos a vivir con lo que ignoramos."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Hay algo que me molesta, y he visto en muchos el mismo desdén... Esa empresa que ha crecido como una plaga, La Fábrica.",
+        "next": "4Padre",
+        "setFlags": ["Padre.3"]
+      }
+    ]
+  },
+  {
+    "id": "4Padre",
+    "speaker": "El Padre",
+    "text": "Hay algo que me molesta, y he visto en muchos el mismo desdén... Esa empresa que ha crecido como una plaga, La Fábrica.",
+    "choices": [
+      {
+        "text": "¿La Fábrica? Bueno, muchos dependen de ella para vivir.",
+        "next": "5Padre",
+        "setFlags": ["Padre.3.1"]
+      },
+      {
+        "text": "Siempre se ha hablado de La Fábrica... ¿Qué es lo que te molesta realmente?",
+        "next": "5Padre",
+        "setFlags": ["Padre.3.2"]
+      },
+      {
+        "text": "¿La Fábrica? Es lo único que parece estar en crecimiento en la isla.",
+        "next": "5Padre",
+        "setFlags": ["Padre.3.3"]
+      }
+    ]
+  },
+  {
+    "id": "5Padre",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre.3.1"],
+        "text": "¡Eso es lo que me molesta! Dependen de una cadena que los controla, les da lo que necesitan, pero les arrebata todo lo demás."
+      },
+      {
+        "requiredFlags": ["Padre.3.2"],
+        "text": "Lo que me molesta es su poder, cómo la gente ha dejado de cuestionarla. Pero todos se callan porque tienen miedo a perder su lugar."
+      },
+      {
+        "requiredFlags": ["Padre.3.3"],
+        "text": "Lo sé. Es triste que este lugar, una isla de tradición y vida, se haya convertido en una extensión de una máquina sin alma."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Pero qué alternativa hay? La gente necesita trabajo.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.1"],
+        "setFlags": ["Padre.3.1.1"]
+      },
+      {
+        "text": "Quizás ese miedo sea lo que nos mantiene a todos aquí, atrapados en la misma rueda.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.1"],
+        "setFlags": ["Padre.3.1.2"]
+      },
+      {
+        "text": "No creo que La Fábrica sea tan mala... al final, todos necesitamos algo que hacer.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.1"],
+        "setFlags": ["Padre.3.1.3"]
+      },
+      {
+        "text": "No puedo negar que tiene mucho poder, pero la gente parece estar demasiado cómoda con su situación.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.2"],
+        "setFlags": ["Padre.3.2.1"]
+      },
+      {
+        "text": "Es cierto, la gente prefiere callar antes que perder su estabilidad.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.2"],
+        "setFlags": ["Padre.3.2.2"]
+      },
+      {
+        "text": "No sé... Tal vez el poder de La Fábrica está en la gente que sigue ciegamente.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.2"],
+        "setFlags": ["Padre.3.2.3"]
+      },
+      {
+        "text": "Eso parece, ¿pero qué alternativa tenemos? Sin ellos, todo se desmorona.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.3"],
+        "setFlags": ["Padre.3.3.1"]
+      },
+      {
+        "text": "La verdad, la isla parece más una fábrica que un hogar.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.3"],
+        "setFlags": ["Padre.3.3.2"]
+      },
+      {
+        "text": "Es una pena, esta isla tiene tantas historias que ahora se están perdiendo.",
+        "next": "6Padre",
+        "requiredFlags": ["Padre.3.3"],
+        "setFlags": ["Padre.3.3.3"]
+      }
+    ]
+  },
+  {
+    "id": "6Padre",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre.3.1.1"],
+        "text": "¿Trabajo a cambio de dignidad? No. La gente no ve lo que están perdiendo en el proceso."
+      },
+      {
+        "requiredFlags": ["Padre.3.1.2"],
+        "text": "El miedo... Sí, el miedo nos mantiene en la oscuridad, pero no siempre será suficiente."
+      },
+      {
+        "requiredFlags": ["Padre.3.1.3"],
+        "text": "Claro, necesitas un trabajo, pero... ¿a qué costo? Es más que solo trabajar, es lo que te hace ser."
+      },
+      {
+        "requiredFlags": ["Padre.3.2.1"],
+        "text": "Sí, la estabilidad parece ser lo más importante para todos, pero ¿a qué precio?"
+      },
+      {
+        "requiredFlags": ["Padre.3.2.2"],
+        "text": "El miedo es el mayor enemigo de la libertad. La gente lo ha olvidado."
+      },
+      {
+        "requiredFlags": ["Padre.3.2.3"],
+        "text": "Y esa ceguera es la que nos mantiene atrapados. Nadie quiere cuestionar."
+      },
+      {
+        "requiredFlags": ["Padre.3.3.1"],
+        "text": "Es triste... ¿y qué queda después de todo eso?"
+      },
+      {
+        "requiredFlags": ["Padre.3.3.2"],
+        "text": "Exacto. La isla se está convirtiendo en una sombra de sí misma."
+      },
+      {
+        "requiredFlags": ["Padre.3.3.3"],
+        "text": "¿Qué nos queda cuando la esencia de la isla se desvanece?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Todo esto... me hace pensar que, tal vez, estamos todos buscando respuestas en los lugares equivocados.",
+        "next": "7Padre",
+        "setFlags": ["Padre.4"]
+      }
+    ]
+  },
+  {
+    "id": "7Padre",
+    "speaker": "El Padre",
+    "text": "Todo esto... me hace pensar que, tal vez, estamos todos buscando respuestas en los lugares equivocados.",
+    "choices": [
+      {
+        "text": "La respuesta está siempre más cerca de lo que creemos.",
+        "next": "8Padre",
+        "setFlags": ["Padre.4.1"]
+      },
+      {
+        "text": "¿Y si ya hemos encontrado la respuesta, solo que no nos gusta?",
+        "next": "8Padre",
+        "setFlags": ["Padre.4.2"]
+      },
+      {
+        "text": "Quizás estamos buscando respuestas en el lugar equivocado.",
+        "next": "8Padre",
+        "setFlags": ["Padre.4.3"]
+      }
+    ]
+  },
+  {
+    "id": "8Padre",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre.4.1"],
+        "text": "Cerca, sí... Pero también escondida en lo que no queremos ver."
+      },
+      {
+        "requiredFlags": ["Padre.4.2"],
+        "text": "Es posible. Pero a veces, la respuesta que no queremos escuchar es la que más necesitamos."
+      },
+      {
+        "requiredFlags": ["Padre.4.3"],
+        "text": "Tal vez simplemente necesitamos mirar dentro de nosotros mismos."
+      }
+    ],
+    "end": true
+  }
+]

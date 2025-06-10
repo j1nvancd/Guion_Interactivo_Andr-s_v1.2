@@ -1,0 +1,318 @@
+[
+  {
+    "id": "start",
+    "speaker": "HdH",
+    "text": "¿Me puedes llevar al puerto?",
+    "choices": [
+      {
+        "text": "Claro. Hay mucha gente del pueblo ayudando a buscarlo eh.",
+        "next": "1HdH",
+        "setFlags": ["HdH.1.1"]
+      },
+      {
+        "text": "Yo te llevo, no te preocupes. ¿Estás ayudando a buscarlo o sólo quieres oír el mar un rato?",
+        "next": "1HdH",
+        "setFlags": ["HdH.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1HdH",
+    "speaker": "HdH",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdH.1.1"],
+        "text": "Sí, la gente está ayudando bastante la verdad"
+      },
+      {
+        "requiredFlags": ["HdH.1.2"],
+        "text": "Seguimos buscando, voy al puerto a ver si alguien le ha visto... si se coló en algún barco..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Tiene que estar en algún sitio. No desaparece uno así sin dejar rastro.",
+        "next": "2HdH",
+        "requiredFlags": ["HdH.1.1", "HdH.1.2"],
+        "setFlags": ["HdH.1.1.1", "HdH.1.2.1"]
+      },
+      {
+        "text": "Me alegro, ya era hora de que los vecinos se volcasen a ayudaros sin medias tintas",
+        "next": "2HdH",
+        "requiredFlags": ["HdH.1.1"],
+        "setFlags": ["HdH.1.1.2"]
+      },
+      {
+        "text": "Uf, ni se me había ocurrido la posibilidad de que no estuviese en la isla, pero si se hubiese colado aquí después lo habrían detenido en el continente al intentar salir del puerto allí ¿no?",
+        "next": "2HdH",
+        "requiredFlags": ["HdH.1.2"],
+        "setFlags": ["HdH.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2HdH",
+    "speaker": "HdH",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdH.1.1.1"],
+        "text": "Dejó rastro, sí. Yo lo vi. Solo que nadie quiso hacerme caso. Llenó la casa de notas, hablaba de salvación."
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2"],
+        "text": "Los vecinos siempre se han portado bien con nosotros, desde lo de papá..."
+      },
+      {
+        "requiredFlags": ["HdH.1.2.2"],
+        "text": "Bueno eso al menos significaría que está bien"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Cómo?¿Qué tipo de notas? ¿Le has enseñado eso a alguien?",
+        "next": "3HdH",
+        "requiredFlags": ["HdH.1.1.1"],
+        "setFlags": ["HdH.1.1.1.1"]
+      },
+      {
+        "text": "Bueno, tu hermano hace bastante tiempo que decía bastantes cosas raras, no te enfades pero hacerle caso a lo que dijese puede ser una pérdida de tiempo que no os podéis permitir",
+        "next": "3HdH",
+        "requiredFlags": ["HdH.1.1.1"],
+        "setFlags": ["HdH.1.1.1.2"]
+      },
+      {
+        "text": "Tú todavía eras una niña... Que no se te olvide nunca lo que lucharon tu padre y tu hermano mayor por tí y por tu hermano pequeño.",
+        "next": "3HdH",
+        "requiredFlags": ["HdH.1.1.2"],
+        "setFlags": ["HdH.1.1.2.1"]
+      },
+      {
+        "text": "Es lo mínimo que el pueblo podía hacer, siendo tan pocos, que menos que comportarnos como una familia en estos casos.",
+        "next": "3HdH",
+        "requiredFlags": ["HdH.1.1.2"],
+        "setFlags": ["HdH.1.1.2.2"]
+      },
+      {
+        "text": "Sí, nos dejaría a todos con la incertidumbre pero lo más importante sería que él está bien",
+        "next": "3HdH",
+        "requiredFlags": ["HdH.1.2.2"],
+        "setFlags": ["HdH.1.2.2.1"]
+      },
+      {
+        "text": "Seguro que sí, seguro que sólo se agobió y cuando se dé cuenta de que os ha dejado aquí vuelve",
+        "next": "3HdH",
+        "requiredFlags": ["HdH.1.2.2"],
+        "setFlags": ["HdH.1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3HdH",
+    "speaker": "HdH",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdH.1.1.1.1"],
+        "text": "Plegarias, principalmente. A San Miguel Arcángel, a San Jorge, a San Sebastián...No se lo he enseñado a ningún vecino, no creía que fuese a ayudar, si ya dicen que estaba loco..."
+      },
+      {
+        "requiredFlags": ["HdH.1.1.1.2"],
+        "text": "No estaba mal. Solo... confundido. Pero decía cosas muy concretas últimamente."
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2.1"],
+        "text": "No se me olvida, no te preocupes... pero tampoco puedo dedicarme a odiar a la gente que nos ayuda como hacía mi padre..."
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2.2"],
+        "text": "Mi padre también decía eso cada vez que alguien nos ayudaba, yo creo que lo mínimo que se puede hacer es no hacer nada ¿no?"
+      },
+      {
+        "requiredFlags": ["HdH.1.2.2.1", "HdH.1.2.2.2"],
+        "text": "Al menos podría haber dejado una nota si se iba a ir, así no perdía el tiempo la gente buscándole"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Bueno, si viene algún policía, ya sabes, alguien que su trabajo sea ayudar, no le ocultes nada de esto ¿vale?",
+        "next": "4HdH",
+        "requiredFlags": ["HdH.1.1.1.1", "HdH.1.2.2.1"],
+        "setFlags": ["HdH.1.1.1.1.1", "HdH.1.2.2.1.1"]
+      },
+      {
+        "text": "¿Plegarias? ¿Tu hermano era muy religioso? No recuerdo verle nunca en la iglesia",
+        "next": "4HdH",
+        "requiredFlags": ["HdH.1.1.1.1"],
+        "setFlags": ["HdH.1.1.1.1.2"]
+      },
+      {
+        "text": "¿Cosas concretas? ¿A qué te refieres con cosas concretas?",
+        "next": "4HdH",
+        "requiredFlags": ["HdH.1.1.1.2"],
+        "setFlags": ["HdH.1.1.1.2.1"]
+      },
+      {
+        "text": "Cuando la gente pasa por situaciones así a veces la mente juega malas pasadas, es normal que se obsesionarse con temas, que usase ciertas cosas para ocupar su mente si estaba teniendo malas ideas.",
+        "next": "4HdH",
+        "requiredFlags": ["HdH.1.1.1.2"],
+        "setFlags": ["HdH.1.1.1.2.2"]
+      },
+      {
+        "text": "Bueno, tu padre tenía motivos para estar enfadado con el mundo, no le culpes, era un buen hombre que quería lo mejor para todos",
+        "next": "4HdH",
+        "requiredFlags": ["HdH.1.1.2.1"],
+        "setFlags": ["HdH.1.1.2.1.1"]
+      },
+      {
+        "text": "Es una buena visión de vida, aunque la amabilidad radical no sé si funciona siempre",
+        "next": "4HdH",
+        "requiredFlags": ["HdH.1.1.2.1"],
+        "setFlags": ["HdH.1.1.2.1.2"]
+      },
+      {
+        "text": "Bueno, de momento no creo que haga falta ser tan pragmáticos, confiemos en que va a aparecer más pronto que tarde",
+        "next": "4HdH",
+        "requiredFlags": ["HdH.1.2.2.1"],
+        "setFlags": ["HdH.1.2.2.1.1"]
+      },
+      {
+        "text": "¿De verdad lo que te molesta de que desaparezca tu hermano es que haga perder el tiempo a los vecinos?",
+        "next": "4HdH",
+        "requiredFlags": ["HdH.1.2.2.1"],
+        "setFlags": ["HdH.1.2.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "4HdH",
+    "speaker": "HdH",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdH.1.1.1.1.1", "HdH.1.2.2.1.1"],
+        "text": "*asiente y mira por la ventana*",
+        "end": true
+      },
+      {
+        "requiredFlags": ["HdH.1.1.1.1.2"],
+        "text": "Nunca fuimos, Papá ni siquiera tuvo un entierro, Abel hará unos meses empezó a citar a la Biblia y hablar del señor, no sé dónde habría aprendido esas cosas"
+      },
+      {
+        "requiredFlags": ["HdH.1.1.1.2.1"],
+        "text": "-> 1.1.1.1"
+      },
+      {
+        "requiredFlags": ["HdH.1.1.1.2.2"],
+        "text": "Claro, como si no tuviese cosas suficientes en las que pensar, ya podía haberse obsesionado con cuidar a Agar."
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2.1.1"],
+        "text": "Siempre es culpa de otros... Si todo el mundo se adapta menos tú digo yo que será tu culpa por no hacerlo y no de los demás"
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2.1.2"],
+        "text": "No es amabilidad, es no morder la mano que te da de comer"
+      },
+      {
+        "requiredFlags": ["HdH.1.2.2.1.2"],
+        "text": "*mira por la ventana*",
+        "end": true
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Habéis hablado con El Padre? Quizás él hablase con Abel antes de que desapareciese",
+        "next": "5HdH",
+        "requiredFlags": ["HdH.1.1.1.1.2"],
+        "setFlags": ["HdH.1.1.1.1.2.1"],
+        "unlocks": ["ElPadre2"]
+      },
+      {
+        "text": "En estas situaciones es normal refugiarse en la religión, es una forma de darle sentido y respuesta a las cosas",
+        "next": "5HdH",
+        "requiredFlags": ["HdH.1.1.1.1.2"],
+        "setFlags": ["HdH.1.1.1.1.2.2"]
+      },
+      {
+        "text": "Bueno, estoy seguro de que en lo que más pensaba siempre era en cuidar de vosotras.",
+        "next": "5HdH",
+        "requiredFlags": ["HdH.1.1.1.2.2"],
+        "setFlags": ["HdH.1.1.1.2.2.1"]
+      },
+      {
+        "text": "Ey, él también lo estaba pasando mal, que fuese el hermano mayor no quiere decir que no fuese hijo también, vosotras sois muy jóvenes para pasar por todo esto, pero él también lo es para, además, ser responsable de dos niñas",
+        "next": "5HdH",
+        "requiredFlags": ["HdH.1.1.1.2.2"],
+        "setFlags": ["HdH.1.1.1.2.2.2"]
+      },
+      {
+        "text": "Bueno, a veces defender unos principios hasta el final te trae problemas, pero ya entenderás que sin principios tampoco es fácil vivir",
+        "next": "5HdH",
+        "requiredFlags": ["HdH.1.1.2.1.1"],
+        "setFlags": ["HdH.1.1.2.1.1.1"]
+      },
+      {
+        "text": "Adaptarse es evolucionar... y sólo los más adaptados sobrevivirán",
+        "next": "5HdH",
+        "requiredFlags": ["HdH.1.1.2.1.1"],
+        "setFlags": ["HdH.1.1.2.1.1.2"]
+      },
+      {
+        "text": "Como gusta esa frase en esta isla...",
+        "next": "5HdH",
+        "requiredFlags": ["HdH.1.1.2.1.2"],
+        "setFlags": ["HdH.1.1.2.1.2.1"]
+      },
+      {
+        "text": "A veces hay que morder para poder comer",
+        "next": "5HdH",
+        "requiredFlags": ["HdH.1.1.2.1.2"],
+        "setFlags": ["HdH.1.1.2.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "5HdH",
+    "speaker": "HdH",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdH.1.1.1.1.2.1"],
+        "text": "Algunas vecinas subieron a la zona de la Ermita y las ayudó a buscar, digo yo que si supiese algo ya lo habría dicho"
+      },
+      {
+        "requiredFlags": ["HdH.1.1.1.1.2.2"],
+        "text": "*asiente y mira por la ventana*",
+        "end": true
+      },
+      {
+        "requiredFlags": ["HdH.1.1.1.2.2.1"],
+        "text": "*resopla y mira por la ventana*",
+        "end": true
+      },
+      {
+        "requiredFlags": ["HdH.1.1.1.2.2.2"],
+        "text": "*resopla y mira por la ventana*",
+        "end": true
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2.1.1.1"],
+        "text": "*resopla y mira por la ventana*",
+        "end": true
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2.1.1.2"],
+        "text": "*asiente y mira por la ventana*",
+        "end": true
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2.1.2.1"],
+        "text": "Es la verdad, no hay más",
+        "end": true
+      },
+      {
+        "requiredFlags": ["HdH.1.1.2.1.2.2"],
+        "text": "Supongo que hay momentos para todos...",
+        "end": true
+      }
+    ],
+    "end": true
+  }
+]

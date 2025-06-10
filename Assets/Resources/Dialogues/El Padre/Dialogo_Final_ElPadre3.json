@@ -1,0 +1,436 @@
+[
+  {
+    "id": "start",
+    "speaker": "El Padre",
+    "text": "Buenos días. Lléveme a la Ermita de la Roca, por favor.",
+    "choices": [
+      {
+        "text": "Sin problema ¿Últimamente sube más a la Ermita o es sólo que coincidimos más?",
+        "next": "1Padre3",
+        "setFlags": ["Padre3.1"]
+      },
+      {
+        "text": "Buenos días ¿Algo que organizar por allí?",
+        "next": "1Padre3",
+        "setFlags": ["Padre3.2"]
+      }
+    ]
+  },
+  {
+    "id": "1Padre3",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre3.1", "dia_miercoles"],
+        "text": "Será coincidencia, siempre he subido todos los miércoles y domingos."
+      },
+      {
+        "requiredFlags": ["Padre3.1", "dia_lunes", "dia_martes"],
+        "text": "Con la edad uno se vuelve cada vez más maniático. Sólo quiero tenerlo todo como debe. Además, vivimos tiempos en los que unos rezos extras no vienen mal."
+      },
+      {
+        "requiredFlags": ["Padre3.2"],
+        "text": "Con la edad uno se vuelve cada vez más maniático. Sólo quiero tenerlo todo como debe."
+      }
+    ],
+    "next": "2Padre3"
+  },
+  {
+    "id": "2Padre3",
+    "speaker": "El Padre",
+    "text": "*tras unos minutos de silencio, mirando por la ventana* \"Hay momentos en los que uno se pregunta si la voluntad divina se manifiesta a través del juicio... o del sacrificio.\"",
+    "choices": [
+      {
+        "text": "¿Se refiere a algo en concreto, Padre?",
+        "next": "3Padre3",
+        "setFlags": ["Padre3.1.1"]
+      },
+      {
+        "text": "Si empieza con una parábola, espero que no acabe en sermón.",
+        "next": "3Padre3",
+        "setFlags": ["Padre3.1.2"]
+      },
+      {
+        "text": "*Guardar silencio*",
+        "next": "3Padre3",
+        "setFlags": ["Padre3.1.3"]
+      }
+    ]
+  },
+  {
+    "id": "3Padre3",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre3.1.1"],
+        "text": "Me refiero a que hay almas cuya existencia pende de un hilo... y a veces ese hilo es tirado por manos temblorosas, confundidas entre fe y desesperación."
+      },
+      {
+        "requiredFlags": ["Padre3.1.2"],
+        "text": "No doy sermones a quien no los pide. Pero incluso el más cínico acaba escuchando cuando las palabras huelen a verdad... o a culpa."
+      },
+      {
+        "requiredFlags": ["Padre3.1.3"],
+        "text": "¿No lo siente usted también? Ese murmullo debajo del viento... Como si la tierra misma aguardase una decisión. O un castigo."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Habla de alguien en particular? ¿O es sólo una reflexión más de las suyas?",
+        "next": "4Padre3",
+        "requiredFlags": ["Padre3.1.1"],
+        "setFlags": ["Padre3.1.1.1"]
+      },
+      {
+        "text": "Eso suena... inquietantemente específico.",
+        "next": "4Padre3",
+        "requiredFlags": ["Padre3.1.1"],
+        "setFlags": ["Padre3.1.1.2"]
+      },
+      {
+        "text": "A veces la desesperación no necesita fe, solo un motivo. ¿No cree?",
+        "next": "4Padre3",
+        "requiredFlags": ["Padre3.1.1"],
+        "setFlags": ["Padre3.1.1.3"]
+      },
+      {
+        "text": "¿Y a qué cree que huelen las suyas, Padre?",
+        "next": "4Padre3",
+        "requiredFlags": ["Padre3.1.2"],
+        "setFlags": ["Padre3.1.2.1"]
+      },
+      {
+        "text": "Yo no soy cínico, solo me cuesta encontrar verdades últimamente.",
+        "next": "4Padre3",
+        "requiredFlags": ["Padre3.1.2"],
+        "setFlags": ["Padre3.1.2.2"]
+      },
+      {
+        "text": "¿Y usted cree que ese castigo vendrá desde arriba... o desde aquí abajo?",
+        "next": "4Padre3",
+        "requiredFlags": ["Padre3.1.3"],
+        "setFlags": ["Padre3.1.3.2"]
+      },
+      {
+        "text": "A veces el viento solo sopla, Padre. No siempre trae mensajes.",
+        "next": "4Padre3",
+        "requiredFlags": ["Padre3.1.3"],
+        "setFlags": ["Padre3.1.3.3"]
+      }
+    ]
+  },
+  {
+    "id": "4Padre3",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre3.1.1.1"],
+        "text": "A veces la reflexión es un velo que cubre una preocupación verdadera. Pero si le soy franco... sí. Me preocupa un alma joven, frágil, que carga con un peso que no le corresponde. Como un cordero extraviado en un valle sin pastores."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.2"],
+        "text": "Lo específico incomoda cuando uno teme mirar de frente al dolor ajeno. A veces, la herida de un solo inocente es el reflejo del pecado de toda una comunidad. ¿No es justo, entonces, que alguien pague por ello?"
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.3"],
+        "text": "Tal vez. Pero cuando la desesperación se reviste de fe... puede convertirse en fuego sagrado. O en juicio. Y un alma desesperada guiada con firmeza... puede llegar más lejos de lo que nadie espera."
+      },
+      {
+        "requiredFlags": ["Padre3.1.2.1"],
+        "text": "*Sonríe* \"A incienso y ceniza. A culpa vieja y fervor nuevo. A lo que uno encuentra cuando excava demasiado hondo, y ya no sabe si lo que sale a la superficie es oro o podredumbre. Pero dígame, ¿A qué le huele la fe? ¿A salvación... o a condena?\""
+      },
+      {
+        "requiredFlags": ["Padre3.1.2.2"],
+        "text": "*Asiente* \"Eso le honra. El verdadero peligro no es perder la fe, sino sustituirla por certezas falsas. La duda... la duda es el inicio de toda búsqueda sincera.\""
+      },
+      {
+        "requiredFlags": ["Padre3.1.3.2"],
+        "text": "El castigo no siempre cae. A veces, se levanta. Y camina entre nosotros con ojos cansados y las manos vacías."
+      },
+      {
+        "requiredFlags": ["Padre3.1.3.3"],
+        "text": "Entonces guarde su abrigo cerca. Porque cuando el viento cambia de dirección, no todos están preparados para lo que arrastra."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿No se supone que usted es ese pastor?",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.1.1"],
+        "setFlags": ["Padre3.1.1.1.1"]
+      },
+      {
+        "text": "No sabía que aún quedaran corderos en esta isla, Padre. Lo que hay son lobos flacos y mucha hambre.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.1.1"],
+        "setFlags": ["Padre3.1.1.1.2"]
+      },
+      {
+        "text": "Muchas veces paga el que no debe nada, y los que deberían responder nunca aparecen por el juzgado.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.1.2"],
+        "setFlags": ["Padre3.1.1.2.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "Depende. ¿Está hablando de justicia... o de venganza?",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.1.2"],
+        "setFlags": ["Padre3.1.1.2.2"]
+      },
+      {
+        "text": "¿Hasta dónde, exactamente?",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.1.3"],
+        "setFlags": ["Padre3.1.1.3.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "He visto a más de uno prenderle fuego al mundo convencido de que hacía lo correcto.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.1.3"],
+        "setFlags": ["Padre3.1.1.3.2"],
+        "influence": {"HdN": 1}
+      },
+      {
+        "text": "A sudor y miedo. A la gente haciendo lo que sea por no sentirse sola.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.2.1"],
+        "setFlags": ["Padre3.1.2.1.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "Depende de quién la predique. Hay credos que apaciguan... y otros que exigen sangre.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.2.1"],
+        "setFlags": ["Padre3.1.2.1.2"],
+        "influence": {"HdN": 1}
+      },
+      {
+        "text": "A veces me huele a teatro. Y otras, a pólvora mojada. No sé cuál es peor.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.2.1"],
+        "setFlags": ["Padre3.1.2.1.3"]
+      },
+      {
+        "text": "Pues yo he visto a algunos con menos certezas que yo hacer tomar decisiones con total seguridad.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.2.2"],
+        "setFlags": ["Padre3.1.2.2.1"],
+        "influence": {"HdN": 1}
+      },
+      {
+        "text": "¿Y qué pasa cuando la duda se convierte en costumbre? ¿Sigue siendo búsqueda... o solo parálisis?",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.2.2"],
+        "setFlags": ["Padre3.1.2.2.2"]
+      },
+      {
+        "text": "Entonces espero no cruzármelo. Si va con las manos vacías no tiene para pagarme la carrera.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.3.2"],
+        "setFlags": ["Padre3.1.3.2.1"]
+      },
+      {
+        "text": "Eso suena más como un hombre que como un instrumento divino, Padre.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.3.2"],
+        "setFlags": ["Padre3.1.3.2.2"]
+      },
+      {
+        "text": "¿Y qué cree usted que traerá esta vez, Padre? ¿Lluvia... o fuego?",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.3.3"],
+        "setFlags": ["Padre3.1.3.3.1"],
+        "influence": {"HdN": 1}
+      },
+      {
+        "text": "No es el viento lo que me preocupa, sino los que ya saben hacia donde soplará.",
+        "next": "5Padre3",
+        "requiredFlags": ["Padre3.1.3.3"],
+        "setFlags": ["Padre3.1.3.3.2"]
+      }
+    ]
+  },
+  {
+    "id": "5Padre3",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre3.1.1.1.1", "Padre3.1.1.1.2"],
+        "text": "Un pastor solo guía a quien quiere ser guiado. Los demás... corren por hambre, por miedo. Pero incluso el lobo más famélico puede arrodillarse, si oye la voz adecuada."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.2.1", "Padre3.1.1.2.2", "Padre3.1.3.2.2"],
+        "text": "La justicia de los hombres exige pruebas. La divina... exige propósito. No siempre el elegido es el culpable."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.3.1", "Padre3.1.1.3.2", "Padre3.1.3.3.1"],
+        "text": "El fuego purifica. Da miedo, sí... pero también revela lo que hay debajo de las cenizas. Algunos temen el incendio. Otros... lo esperan."
+      },
+      {
+        "requiredFlags": ["Padre3.1.2.1.1", "Padre3.1.2.1.2", "Padre3.1.2.1.3"],
+        "text": "La fe toma la forma del recipiente que la contiene. En unos es consuelo. En otros, mandato. Pero cuando se mezcla con el miedo... se vuelve poderosa."
+      },
+      {
+        "requiredFlags": ["Padre3.1.2.2.1", "Padre3.1.2.2.2"],
+        "text": "Los que actúan sin dudar pueden mover montañas... o aplastar inocentes. Pero los que no actúan nunca... dejan que el pecado se acumule. A veces, dudar es señal de sabiduría. Otras... de cobardía."
+      },
+      {
+        "requiredFlags": ["Padre3.1.3.2.1", "Padre3.1.3.3.2"],
+        "text": "Algunos ya lo sienten en la nuca, aunque no sepan ponerle nombre. Pero cuando llegue... no pedirá tarifa. Solo obediencia."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Depende de lo que le prometa esa voz. A veces, la fe te hace apretar los dientes, otras, los ojos.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.1.1.1"],
+        "setFlags": ["Padre3.1.1.1.1.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "O a lo mejor el lobo ya sabe dónde está el redil... y solo está esperando a que el pastor se dé la vuelta.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.1.1.1"],
+        "setFlags": ["Padre3.1.1.1.1.2"],
+        "influence": {"HdN": 1}
+      },
+      {
+        "text": "No sé, Padre... A veces uno no sigue a nadie. Solo camina porque quedarse quieto da más miedo.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.1.1.1"],
+        "setFlags": ["Padre3.1.1.1.1.3"]
+      },
+      {
+        "text": "Suena a excusa. Como cuando alguien quiere convencer a un crío de que un castigo es por su bien.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.1.2.1"],
+        "setFlags": ["Padre3.1.1.2.1.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "Eso ya lo he oído antes. Suenas como un \"manager\" que decide a quién echar para que parezca que hace algo.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.1.2.1"],
+        "setFlags": ["Padre3.1.1.2.1.2"],
+        "influence": {"Fábrica": 1}
+      },
+      {
+        "text": "A veces hay que quemarlo todo para poder empezar de nuevo.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.1.3.1"],
+        "setFlags": ["Padre3.1.1.3.1.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "Tal vez algunos incendios no son tragedias... sino justicia que por fin prende.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.1.3.1"],
+        "setFlags": ["Padre3.1.1.3.1.2"],
+        "influence": {"Fábrica": 1}
+      },
+      {
+        "text": "A veces el miedo no necesita palabras. Basta con un silencio tranquilo en el momento justo.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.2.1.1"],
+        "setFlags": ["Padre3.1.2.1.1.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "Y si alguien le dice que ese miedo tiene nombre y apellidos... ya tiene medio trabajo hecho.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.2.1.1"],
+        "setFlags": ["Padre3.1.2.1.1.2"],
+        "influence": {"Fábrica": 1}
+      },
+      {
+        "text": "Y si uno duda... pero al final da el paso, ¿eso lo redime o lo condena?",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.2.2.1"],
+        "setFlags": ["Padre3.1.2.2.1.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "A veces la cobardía se disfraza de prudencia. O al revés. Lo difícil es saber quién está mirando.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.2.2.1"],
+        "setFlags": ["Padre3.1.2.2.1.2"],
+        "influence": {"Fábrica": 1}
+      },
+      {
+        "text": "Obedecer sin entender es el modus operandi general de esta isla. La gente mientras no les toque a ellos mejor no saber que pasa",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.3.2.1"],
+        "setFlags": ["Padre3.1.3.2.1.1"],
+        "influence": {"Hermana": 1}
+      },
+      {
+        "text": "Pues que llegue pronto, entonces. Porque aquí muchos llevan tiempo sin pagar por nada.",
+        "next": "endPadre3",
+        "requiredFlags": ["Padre3.1.3.2.1"],
+        "setFlags": ["Padre3.1.3.2.1.2"],
+        "influence": {"Fábrica": 1}
+      }
+    ]
+  },
+  {
+    "id": "endPadre3",
+    "speaker": "El Padre",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Padre3.1.1.1.1.1"],
+        "text": "Apretar los dientes... cerrar los ojos... pero seguir caminando. A veces, eso basta. Nos volveremos a ver, Teodoro."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.1.1.2"],
+        "text": "Y algunos pastores ya lo saben... pero prefieren no mirar atrás. Hay ovejas que no se pueden salvar. Y a los lobos no les gusta pedir permiso. Nos volveremos a ver, Teodoro."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.1.1.3"],
+        "text": "El miedo también es una brújula, hijo. Vive hoy, lucha mañana. El miedo te mantiene vivo. Nos volveremos a ver, Teodoro."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.2.1.1"],
+        "text": "A veces la única forma de que un niño escuche... es endurecer el tono. Eso no quita que en esas palabras haya amor, créeme."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.2.1.2"],
+        "text": "Puede ser. Pero incluso los que reparten culpas... a veces aciertan. Aunque solo sea por divina estadística."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.3.1.1"],
+        "text": "Y entre las cenizas... nace algo nuevo. No siempre mejor, pero distinto. A veces, eso es todo lo que uno necesita."
+      },
+      {
+        "requiredFlags": ["Padre3.1.1.3.1.2"],
+        "text": "La justicia es lenta, el fuego... es inmediato. Y cuando prende en el lugar correcto, hasta el mayor de los pecadores se siente redimido."
+      },
+      {
+        "requiredFlags": ["Padre3.1.2.1.1.1"],
+        "text": "El silencio también es liturgia. En el momento justo... puede cambiar el rumbo de un alma. O de un pueblo."
+      },
+      {
+        "requiredFlags": ["Padre3.1.2.1.1.2"],
+        "text": "Y si encima le das una causa... ya tienes un mártir. Y donde hay un mártir... hay una hoguera."
+      },
+      {
+        "requiredFlags": ["Padre3.1.2.2.1.1"],
+        "text": "Depende de qué paso sea y hacia quién, la redención no siempre es un destino. A veces, es solo un desvío."
+      },
+      {
+        "requiredFlags": ["Padre3.1.2.2.1.2"],
+        "text": "Y a veces, quien mira también se disfraza. La conciencia puede ser un espejo o una máscara."
+      },
+      {
+        "requiredFlags": ["Padre3.1.3.2.1.1"],
+        "text": "Y cuando les toca... ya es tarde. Por eso algunos prefieren gritar ahora, aunque nadie escuche."
+      },
+      {
+        "requiredFlags": ["Padre3.1.3.2.1.2"],
+        "text": "Entonces, escuche bien, hijo... cuando venga, no va a detenerse a preguntar quién firmó el recibo."
+      }
+    ],
+    "end": true
+  }
+]

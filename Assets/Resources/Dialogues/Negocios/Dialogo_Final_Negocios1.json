@@ -1,0 +1,454 @@
+[
+  {
+    "id": "start",
+    "speaker": "HdN",
+    "text": "Lléveme a la planta química, por favor",
+    "choices": [
+      {
+        "text": "¿A La Fábrica, sin problema?",
+        "next": "1HdN",
+        "setFlags": ["HdN.0.1"]
+      },
+      {
+        "text": "No hacía falta ni que me lo dijese, ¿Dónde va a ir si no alguien desde el puerto en traje en esta isla?",
+        "next": "1HdN",
+        "setFlags": ["HdN.0.2"]
+      }
+    ]
+  },
+  {
+    "id": "1HdN",
+    "speaker": "HdN",
+    "text": "Cada vez veo más casas nuevas en la isla... Parece que la Fábrica ha traído algo de vida, ¿no cree?",
+    "choices": [
+      {
+        "text": "Para algunos, sí.",
+        "next": "2HdN",
+        "setFlags": ["HdN.1.1"]
+      },
+      {
+        "text": "Vida no sé, dinero sin duda.",
+        "next": "2HdN",
+        "setFlags": ["HdN.1.2"]
+      },
+      {
+        "text": "No todos están contentos.",
+        "next": "2HdN",
+        "setFlags": ["HdN.1.3"]
+      }
+    ]
+  },
+  {
+    "id": "2HdN",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdN.1.1", "HdN.1.3"],
+        "text": "Algo es algo. No se puede esperar que todos salgan ganando."
+      },
+      {
+        "requiredFlags": ["HdN.1.2"],
+        "text": "¿Y qué es darle vida a un sitio si no inyectarle dinero?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Para que unos ganen otros deben perder ¿No es así?",
+        "next": "3HdN",
+        "requiredFlags": ["HdN.1.1"],
+        "setFlags": ["HdN.1.1.1"]
+      },
+      {
+        "text": "Que se lo digan a los pescadores",
+        "next": "3HdN",
+        "requiredFlags": ["HdN.1.1"],
+        "setFlags": ["HdN.1.1.2"]
+      },
+      {
+        "text": "No me meto en eso.",
+        "next": "3HdN",
+        "requiredFlags": ["HdN.1.1"],
+        "setFlags": ["HdN.1.1.3"]
+      },
+      {
+        "text": "Aquí todos vivíamos tranquilamente con el poco dinero que había.",
+        "next": "3HdN",
+        "requiredFlags": ["HdN.1.2"],
+        "setFlags": ["HdN.1.2.1"]
+      },
+      {
+        "text": "Bueno, depende de a quién le preguntes.",
+        "next": "3HdN",
+        "requiredFlags": ["HdN.1.2"],
+        "setFlags": ["HdN.1.2.2"]
+      },
+      {
+        "text": "(Encogerse de hombros)",
+        "next": "3HdN",
+        "requiredFlags": ["HdN.1.2"],
+        "setFlags": ["HdN.1.2.3"]
+      }
+    ]
+  },
+  {
+    "id": "3HdN",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdN.1.1.1"],
+        "text": "Así suele ser sí, aunque lo ideal es encontrar relaciones simbióticas, ya sabe, beneficio mutuo, pero la envidia y el odio provoca que siempre haya algún parásito."
+      },
+      {
+        "requiredFlags": ["HdN.1.1.2"],
+        "text": "Siempre hay quien no entiende que el futuro llega, quieran o no."
+      },
+      {
+        "requiredFlags": ["HdN.1.1.3"],
+        "text": "Sensato. En los negocios, a veces el silencio es el mejor escudo."
+      },
+      {
+        "requiredFlags": ["HdN.1.2.1"],
+        "text": "El cambio es inevitable. Mejor acostumbrarse."
+      },
+      {
+        "requiredFlags": ["HdN.1.2.2"],
+        "text": "Es curioso cómo dos personas pueden ver el mismo sitio de maneras tan distintas."
+      },
+      {
+        "requiredFlags": ["HdN.1.2.3"],
+        "text": "Respetable. Hay que saber cuándo hablar y cuándo callar."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Entiendo la reflexión, pero llamar parásitos a personas que quieren seguir viviendo en sus casas está un poco fuera de lugar ¿no cree?",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.1.1"],
+        "setFlags": ["HdN.1.1.1.1"]
+      },
+      {
+        "text": "Claro, todo iría mejor si todos remasemos en la misma dirección",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.1.1", "HdN.1.2.1"],
+        "setFlags": ["HdN.1.1.1.2", "HdN.1.2.1.1"]
+      },
+      {
+        "text": "Acostumbrarse o quedarse atrás, supongo.",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.1.2"],
+        "setFlags": ["HdN.1.1.2.1"]
+      },
+      {
+        "text": "No todo cambio es bueno.",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.1.2"],
+        "setFlags": ["HdN.1.1.2.2"]
+      },
+      {
+        "text": "¿Así trabaja usted también?",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.1.3", "HdN.1.2.3"],
+        "setFlags": ["HdN.1.1.3.1", "HdN.1.2.3.2"]
+      },
+      {
+        "text": "(No decir nada)",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.1.3"],
+        "setFlags": ["HdN.1.1.3.2"]
+      },
+      {
+        "text": "A la gente aquí le gusta vivir tranquila.",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.2.1"],
+        "setFlags": ["HdN.1.2.1.2"]
+      },
+      {
+        "text": "Es lo bonito de la isla.",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.2.2"],
+        "setFlags": ["HdN.1.2.2.1"]
+      },
+      {
+        "text": "Cada uno ve la vida en general de formas muy distintas.",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.2.2"],
+        "setFlags": ["HdN.1.2.2.2"]
+      },
+      {
+        "text": "(Mantener el silencio)",
+        "next": "4HdN",
+        "requiredFlags": ["HdN.1.2.3"],
+        "setFlags": ["HdN.1.2.3.1"]
+      }
+    ]
+  },
+  {
+    "id": "4HdN",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdN.1.1.1.1"],
+        "text": "¿Y que otra cosa son? Un parásito es un organismo que vive a expensas de otro, sin aportar más que daño, hay mucha gente que sólo se dedica a dañar aquello que le mantiene."
+      },
+      {
+        "requiredFlags": ["HdN.1.1.1.2", "HdN.1.1.2.1"],
+        "text": "Exacto. Evolucionar o morir."
+      },
+      {
+        "requiredFlags": ["HdN.1.1.2.2"],
+        "text": "No, claro. Pero resistirse por costumbre tampoco ayuda."
+      },
+      {
+        "requiredFlags": ["HdN.1.1.3.1"],
+        "text": "A veces hablar poco es cerrar más tratos."
+      },
+      {
+        "requiredFlags": ["HdN.1.1.3.2"],
+        "text": "(HdN sonríe levemente)"
+      },
+      {
+        "requiredFlags": ["HdN.1.2.1.2"],
+        "text": "Hay que tener cuidado... si te duermes cerca de la costa, te puede pillar la marea."
+      },
+      {
+        "requiredFlags": ["HdN.1.2.2.1"],
+        "text": "Sí, supongo que en la variedad está el gusto."
+      },
+      {
+        "requiredFlags": ["HdN.1.2.2.2"],
+        "text": "Hmm, eso es interesante, ver la perspectiva de otras personas a veces es importante."
+      },
+      {
+        "requiredFlags": ["HdN.1.2.3.1"],
+        "text": "(HdN respeta el silencio)"
+      }
+    ],
+    "choices": [
+      {
+        "text": "En eso le doy la razón...",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.1.1.1"],
+        "setFlags": ["HdN.1.1.1.1.1"]
+      },
+      {
+        "text": "A veces los parásitos se cansan de comer sobras...",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.1.1.1"],
+        "setFlags": ["HdN.1.1.1.1.2"]
+      },
+      {
+        "text": "Sí, no queda otra...",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.1.1.2"],
+        "setFlags": ["HdN.1.1.1.2.1"]
+      },
+      {
+        "text": "Hay quién preferiría morir a evolucionar dependiendo de lo que signifique evolucionar",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.1.1.2", "HdN.1.1.2.2"],
+        "setFlags": ["HdN.1.1.1.2.2", "HdN.1.1.2.2.1"]
+      },
+      {
+        "text": "Bueno, en ciertos contextos la resistencia se considera una facultad",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.1.2.2"],
+        "setFlags": ["HdN.1.1.2.2.2"]
+      },
+      {
+        "text": "Yo creo que debería aprender a callarme.",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.1.3.1"],
+        "setFlags": ["HdN.1.1.3.1.1"]
+      },
+      {
+        "text": "En mi negocio la gente cuando quiere que me calle simplemente se pone unos auriculares.",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.1.3.1"],
+        "setFlags": ["HdN.1.1.3.1.2"]
+      },
+      {
+        "text": "La gente de la costa conoce el mar, sabemos dónde nos podemos quedar dormidos.",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.2.1.2"],
+        "setFlags": ["HdN.1.2.1.2.1"]
+      },
+      {
+        "text": "El mar es diferente, no se rige por el dinero ni el poder, le da igual quién sea el que se ahoga.",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.2.1.2"],
+        "setFlags": ["HdN.1.2.1.2.2"]
+      },
+      {
+        "text": "Para algunas cosas supongo que sería más rentable que todos fuésemos iguales, pero eso es imposible",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.2.2.1"],
+        "setFlags": ["HdN.1.2.2.1.1"]
+      },
+      {
+        "text": "Si todos fuésemos iguales no tendría gracia",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.2.2.1"],
+        "setFlags": ["HdN.1.2.2.1.2"]
+      },
+      {
+        "text": "Lo dice como si le acabase de descubrir un gran secreto, claro que la perspectiva de los demás es importante.",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.2.2.2"],
+        "setFlags": ["HdN.1.2.2.2.1"]
+      },
+      {
+        "text": "Lo único positivo de no escuchar la opinión de los demás es que así uno siempre tiene la razón.",
+        "next": "5HdN",
+        "requiredFlags": ["HdN.1.2.2.2"],
+        "setFlags": ["HdN.1.2.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "5HdN",
+    "speaker": "HdN",
+    "text": "(Se queda en silencio unos segundos antes de hablar de nuevo) Dígame... ¿qué haría usted si tuviera que elegir entre despedir a unos cuantos trabajadores o ver cómo la empresa se hunde?",
+    "choices": [
+      {
+        "text": "A veces no hay más remedio que despedir.",
+        "next": "6HdN",
+        "setFlags": ["HdN.2.1"]
+      },
+      {
+        "text": "Buscaría otra solución, aunque fuera más difícil.",
+        "next": "6HdN",
+        "setFlags": ["HdN.2.2"]
+      },
+      {
+        "text": "Me iría antes de tomar esa decisión.",
+        "next": "6HdN",
+        "setFlags": ["HdN.2.3"]
+      }
+    ]
+  },
+  {
+    "id": "6HdN",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdN.2.1"],
+        "text": "Hm. Frío, pero eficaz."
+      },
+      {
+        "requiredFlags": ["HdN.2.2"],
+        "text": "Caritativo... pero los sentimientos cuestan dinero."
+      },
+      {
+        "requiredFlags": ["HdN.2.3"],
+        "text": "La cobardía también es una elección."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Y otra cuestión... ¿Cree usted que vale la pena gastar más para que una fábrica sea \"verde\" si eso implica menos beneficios?",
+        "next": "7HdN",
+        "setFlags": ["HdN.3"]
+      }
+    ]
+  },
+  {
+    "id": "7HdN",
+    "speaker": "HdN",
+    "text": "Y otra cuestión... ¿Cree usted que vale la pena gastar más para que una fábrica sea \"verde\" si eso implica menos beneficios?",
+    "choices": [
+      {
+        "text": "Sí, es una responsabilidad.",
+        "next": "8HdN",
+        "setFlags": ["HdN.3.1"]
+      },
+      {
+        "text": "Sólo si mejora la imagen de la empresa.",
+        "next": "8HdN",
+        "setFlags": ["HdN.3.2"]
+      },
+      {
+        "text": "No. Los beneficios son lo primero.",
+        "next": "8HdN",
+        "setFlags": ["HdN.3.3"]
+      }
+    ]
+  },
+  {
+    "id": "8HdN",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdN.3.1"],
+        "text": "Idealismo. No se ve mucho hoy en día."
+      },
+      {
+        "requiredFlags": ["HdN.3.2"],
+        "text": "Eso es pensar como un verdadero hombre de negocios."
+      },
+      {
+        "requiredFlags": ["HdN.3.3"],
+        "text": "Directo al grano. Me gusta."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Y la última... Si pudiera usted invertir, ¿apostaría por construir un nuevo barrio turístico en la isla, aunque eso desplazase a los vecinos de toda la vida?",
+        "next": "9HdN",
+        "setFlags": ["HdN.4"]
+      }
+    ]
+  },
+  {
+    "id": "9HdN",
+    "speaker": "HdN",
+    "text": "Y la última... Si pudiera usted invertir, ¿apostaría por construir un nuevo barrio turístico en la isla, aunque eso desplazase a los vecinos de toda la vida?",
+    "choices": [
+      {
+        "text": "No. Hay cosas que el dinero no debería comprar.",
+        "next": "10HdN",
+        "setFlags": ["HdN.4.1"]
+      },
+      {
+        "text": "Si es legal, todo vale.",
+        "next": "10HdN",
+        "setFlags": ["HdN.4.2"]
+      },
+      {
+        "text": "Depende. ¿Cuánto dinero hablamos?",
+        "next": "10HdN",
+        "setFlags": ["HdN.4.3"]
+      }
+    ]
+  },
+  {
+    "id": "10HdN",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdN.4.1"],
+        "text": "Qué bonito suena. Qué difícil es verlo en los balances."
+      },
+      {
+        "requiredFlags": ["HdN.4.2"],
+        "text": "Exacto. El juego se juega según las reglas que hay."
+      },
+      {
+        "requiredFlags": ["HdN.4.3"],
+        "text": "Todo el mundo tiene un precio..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Volveremos a hablar un día de estos, no me viene mal un cambio de perspectiva de vez en cuando.",
+        "next": "endHdN",
+        "setFlags": ["HdN.5"]
+      }
+    ]
+  },
+  {
+    "id": "endHdN",
+    "speaker": "HdN",
+    "text": "Volveremos a hablar un día de estos, no me viene mal un cambio de perspectiva de vez en cuando.",
+    "end": true
+  }
+]

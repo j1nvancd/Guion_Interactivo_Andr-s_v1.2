@@ -1,6 +1,6 @@
 [
     {
-        "id": "startM1",
+        "id": "start",
         "speaker": "Verónica",
         "text": "Lista, vamos. ¿Te has enterado de lo que van a hacer en La Fábrica?",
         "setFlags": ["InicioM1"],

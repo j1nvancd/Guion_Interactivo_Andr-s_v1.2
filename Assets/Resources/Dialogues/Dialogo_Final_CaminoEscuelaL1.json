@@ -1,6 +1,6 @@
 [
     {
-        "id":"startL1",
+        "id":"start",
         "speaker":"Verónica",
         "text":"Lunes otra vez...",
         "setFlags":["Inicio"],

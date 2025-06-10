@@ -1,0 +1,235 @@
+[
+  {
+    "id": "start",
+    "speaker": "Periodista",
+    "text": "Buenos días mi querido conductor, parece que no podemos evitar coincidir.",
+    "choices": [
+      {
+        "text": "No hay manera de que te subas en los otros taxis eh, no sé qué tienes conmigo ¿Dónde vamos?",
+        "next": "1P3",
+        "setFlags": ["P3.1"]
+      },
+      {
+        "text": "Al final te voy a acabar cogiendo cariño y todo ¿Dónde vamos?",
+        "next": "1P3",
+        "setFlags": ["P3.2"]
+      }
+    ]
+  },
+  {
+    "id": "1P3",
+    "speaker": "Periodista",
+    "text": "A La Fábrica, voy a intentar entrevistar... bueno, dejémoslo en charlar con El Dueño",
+    "choices": [
+      {
+        "text": "¿En serio? ¿Has acordado algo o te piensas presentar ahí y decir \"Quiero hablar con el jefe\"?",
+        "next": "2P3",
+        "requiredFlags": ["P3.1", "P3.2"],
+        "setFlags": ["P3.1.1"]
+      },
+      {
+        "text": "¿Y eso? ¿Vais a vender tours por la fábrica?",
+        "next": "2P3",
+        "requiredFlags": ["P3.1", "P3.2"],
+        "setFlags": ["P3.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "2P3",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P3.1.1", "hidden_info"],
+        "text": "No he acordado nada, pero como nadie en esta isla se atreve a hablar voy a ver si él intentando hacer un poco de lavado de imagen me cuenta algo"
+      },
+      {
+        "requiredFlags": ["P3.1.1", "revealed_info"],
+        "text": "Tú mismo sabes que si intento acordar algo con esta gente estoy jodido. Ya veré como llevo la conversación, pero no creo que, una vez sepan que voy a contar la historia de La Fábrica y todo lo que la envuelve, no quiera intentar darle a esto una perspectiva en la que queden un poco mejor"
+      },
+      {
+        "requiredFlags": ["P3.1.2", "hidden_info"],
+        "text": "No, entiendo que a los que vivís aquí no podáis hablar, o no queráis, mejor dicho, La Fábrica tiene el suficiente poder como para manejar la opinión pública, pero yo puedo hacer que el continente os mire, esta historia puede cambiar muchas cosas aquí. También es una oportunidad para mí de dejar de hablar de playas y hacer honor al título de periodista."
+      },
+      {
+        "requiredFlags": ["P3.1.2", "revealed_info"],
+        "text": "No, después de lo que me contaste intenté hablar con gente de la isla sobre el tema. Sólo hablaban de un \"Pobre desgraciado\" que ha desaparecido. No quiero caer en ningún tipo de síndrome del salvador, pero creo que es una gran oportunidad de hacer que el continente mire hacia aquí y haya justicia."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Bien, si consigues algo, no tengo problema en que me llames, aunque a salir de la isla no te puedo ayudar, de momento este trasto no flota",
+        "next": "3P3",
+        "requiredFlags": ["P3.1.1", "hidden_info"],
+        "setFlags": ["P3.1.1.1"]
+      },
+      {
+        "text": "Bueno, allá tú, no creo que vayas a conseguir entrar la verdad, pero tú a lo tuyo",
+        "next": "3P3",
+        "requiredFlags": ["P3.1.1", "hidden_info"],
+        "setFlags": ["P3.1.1.2"]
+      },
+      {
+        "text": "Entonces el plan es que se crean que les vas a hacer quedar medianamente bien para ver si te filtran algo nuevo ¿No?",
+        "next": "3P3",
+        "requiredFlags": ["P3.1.1", "revealed_info"],
+        "setFlags": ["P3.1.1.1"]
+      },
+      {
+        "text": "Ya... no creo que se vayan a asustar mucho, no te lo tomes a mal, pero no impones mucho con un gorrito y bermudas, parece que venías a la playa y por el camino has decidido tumbar una macro compañía.",
+        "next": "3P3",
+        "requiredFlags": ["P3.1.1", "revealed_info"],
+        "setFlags": ["P3.1.1.2"]
+      },
+      {
+        "text": "Honor al título... Sí, supongo que si te sale bien es la historia de tu vida, no te olvides de que estás hablando de la vida de mucha gente.",
+        "next": "3P3",
+        "requiredFlags": ["P3.1.2", "hidden_info"],
+        "setFlags": ["P3.1.2.1"]
+      },
+      {
+        "text": "Te honra... tienes la oportunidad no sé si de mejorar la vida de la isla, pero de intentar traer justicia sin duda.",
+        "next": "3P3",
+        "requiredFlags": ["P3.1.2", "hidden_info"],
+        "setFlags": ["P3.1.2.2"]
+      },
+      {
+        "text": "Claro, la gente ahora le dan mucha pena los chavales, se dan golpes en el pecho pensando que ayudaron a las chicas como si no se hubieran callado como putas cuando pasó aquello. Ahora si tú consigues sacar cosas a la luz todos querrán hacerse las víctimas, harán ver que ellos no sabían nada, como si no hubiesen elegido mirar para otro lado.",
+        "next": "3P3",
+        "requiredFlags": ["P3.1.2", "revealed_info"],
+        "setFlags": ["P3.1.2.1"]
+      },
+      {
+        "text": "Justicia, ahora necesitamos que el gran público decida que somos noticia de alcance, que necesitamos de su intervención para ser civilizados y salir de la edad del feudalismo.",
+        "next": "3P3",
+        "requiredFlags": ["P3.1.2", "revealed_info"],
+        "setFlags": ["P3.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3P3",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P3.1.1.1", "hidden_info"],
+        "text": "Vaya, al final vas a estar en mi bando y todo. No creo que tenga que salir corriendo de la isla, si consigo material el artículo lo publicaría estando ya en el continente, no te preocupes que no menciono tu nombre si no quieres."
+      },
+      {
+        "requiredFlags": ["P3.1.1.2", "hidden_info"],
+        "text": "Bueno, si con eso consigo una historia de como me echan o algo así tampoco me viene mal del todo, no es mala imagen"
+      },
+      {
+        "requiredFlags": ["P3.1.1.1", "revealed_info"],
+        "text": "Al menos hasta que me dejen entrar, una vez empiece a hablar con el jefe, enchufo la cámara y todo lo que pase lo intentaré tener grabado."
+      },
+      {
+        "requiredFlags": ["P3.1.1.2", "revealed_info"],
+        "text": "Bueno... técnicamente es cierto, yo venía a hacer mi reportaje para el turismo. Ni yo me esperaba acabar haciendo una cosa así."
+      },
+      {
+        "requiredFlags": ["P3.1.2.1", "hidden_info"],
+        "text": "Ya, bueno... Yo sólo intento ayudar, no creo que por buscar justicia vaya a joder a gente inocente."
+      },
+      {
+        "requiredFlags": ["P3.1.2.2", "hidden_info"],
+        "text": "Es el objetivo, lo de mejorar la vida de la gente es complicado, cada uno que se busque la vida, yo voy a intentar que el mundo se entere de lo que ha hecho esta gente."
+      },
+      {
+        "requiredFlags": ["P3.1.2.1", "revealed_info"],
+        "text": "Bueno, la gente que haga lo que quiera, yo voy a intentar hacer mi trabajo lo mejor que pueda."
+      },
+      {
+        "requiredFlags": ["P3.1.2.2", "revealed_info"],
+        "text": "Hombre, no me eches en cara que venga como si os tuviesen que rescatar. Tú mismo te quejas del caciquismo de aquí y de que la gente agacha la cabeza y no habla, solo os faltaba que viniese alguien de fuera que pudiese hablar, contra mí no tienen nada."
+      }
+    ],
+    "choices": [
+      {
+        "text": "No te equivoques, yo sé que tú lo que has visto es un puesto mejor en un periódico, problemas habrá en todos los sitios a los que vas a tomar el sol. Aquí has visto una historia que contar, no una injusticia contra la que luchar.",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.1.1", "hidden_info", "P3.1.2.1", "hidden_info", "P3.1.2.2", "revealed_info"],
+        "setFlags": ["P3.1.1.1.1", "P3.1.2.1.1", "P3.1.2.2.2"]
+      },
+      {
+        "text": "Pon mi nombre ponlo, a ver si así tengo una excusa para irme...",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.1.1", "hidden_info"],
+        "setFlags": ["P3.1.1.1.2"]
+      },
+      {
+        "text": "Claro, casi se me olvida que tú no quieres solucionar nada, solamente quieres una historia que contar para que te suban el sueldo.",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.1.2", "hidden_info", "P3.1.2.1", "hidden_info", "P3.1.1.1", "revealed_info"],
+        "setFlags": ["P3.1.1.2.1", "P3.1.2.1.1", "P3.1.1.1.1"]
+      },
+      {
+        "text": "Lo que sea por un titular llamativo, supongo.",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.1.2", "hidden_info"],
+        "setFlags": ["P3.1.1.2.2"]
+      },
+      {
+        "text": "Ya...Sinceramente no creo que un tipo así vaya a patinar delante de una cámara. Vas a tener que leer mu bien los silencios y preguntar cosas que directamente se niegue a contestar.",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.1.1", "revealed_info"],
+        "setFlags": ["P3.1.1.1.1"]
+      },
+      {
+        "text": "No creo que esté muy acostumbrado a que alguien vaya a intentar sacarle información, especialmente aquí. Lo mismo patina rápido si le aprietas las tuercas.",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.1.1", "revealed_info"],
+        "setFlags": ["P3.1.1.1.2"]
+      },
+      {
+        "text": "Justicia... Supongo que sí.",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.2.1", "hidden_info"],
+        "setFlags": ["P3.1.2.1.2"]
+      },
+      {
+        "text": "Algo es algo...",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.2.2", "hidden_info", "P3.1.2.2", "revealed_info"],
+        "setFlags": ["P3.1.2.2.2"]
+      },
+      {
+        "text": "Ya, supongo que tienes razón. Perdona eh, es que es duro ver que a los de aquí se nos escapa la isla y alguien de fuera pueda ser la solución.",
+        "next": "4P3",
+        "requiredFlags": ["P3.1.2.2", "revealed_info"],
+        "setFlags": ["P3.1.2.2.1"]
+      }
+    ]
+  },
+  {
+    "id": "4P3",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P3.1.1.1.1", "P3.1.1.2.1"],
+        "text": "Tú cree lo que quieras de mí, yo voy a intentar hacer mi parte y, si necesito reconocimiento de alguien, no es de tí. Pero vamos, que si sale mal os quedaréis igual y si sale bien ya me darás las gracias."
+      },
+      {
+        "requiredFlags": ["P3.1.1.2.2"],
+        "text": "Un titular llamativo puede hacer que alguien con capacidad para afrontar estas cosas se meta a investigar lo que pasa aquí, no es solamente un cebo de clics."
+      },
+      {
+        "requiredFlags": ["P3.1.1.1.1", "revealed_info"],
+        "text": "Si... quedarse callado si le pregunto por el chico que ha desaparecido sería bastante revelador."
+      },
+      {
+        "requiredFlags": ["P3.1.1.1.2", "revealed_info"],
+        "text": "Tengo que tener cuidado, un animal que se ve acorralado sólo puede atacar."
+      },
+      {
+        "requiredFlags": ["P3.1.2.1.2", "P3.1.2.2.2", "P3.1.2.2"],
+        "text": "Es lo mínimo que puedo intentar y lo máximo que puedo conseguir, no hay otra."
+      },
+      {
+        "requiredFlags": ["P3.1.2.2.1"],
+        "text": "Tampoco creo que vaya a ser tanto como la solución, parte de ella, como mucho."
+      }
+    ],
+    "end": true
+  }
+]

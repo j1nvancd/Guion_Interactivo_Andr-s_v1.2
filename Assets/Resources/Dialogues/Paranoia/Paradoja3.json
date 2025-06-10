@@ -1,0 +1,295 @@
+[
+  {
+    "id": "start",
+    "speaker": "Señor Mayor Desconocido",
+    "text": "Al puerto, por favor",
+    "setFlags": ["InicioSMD3"],
+    "choices": [
+      {
+        "text": "Le había echado hasta de menos estos días.",
+        "next": "1SMD3",
+        "setFlags": ["SMD3_0.1"]
+      },
+      {
+        "text": "Hombre, visto lo visto la única persona que queda cuerda en esta isla.",
+        "next": "1SMD3",
+        "setFlags": ["SMD3_0.2"]
+      }
+    ]
+  },
+  {
+    "id": "1SMD3",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD3_0.1"],
+        "text": "Siempre puedes ir al puerto a escuchar la brisa..."
+      },
+      {
+        "requiredFlags": ["SMD3_0.2"],
+        "text": "Siempre lo digo, un poco de brisa marina es necesaria para mantener la cabeza en su sitio."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Le ha dicho algo la brisa sobre lo que ha pasado estos días?",
+        "next": "2SMD3",
+        "requiredFlags": ["SMD3_0.1"],
+        "setFlags": ["SMD3_0.1.1"]
+      },
+      {
+        "text": "No me habría venido mal, la verdad que no...",
+        "next": "2SMD3",
+        "requiredFlags": ["SMD3_0.1"],
+        "setFlags": ["SMD3_0.1.2"]
+      },
+      {
+        "text": "¿Y usted? ¿Qué ha estado haciendo por aquí, tan tranquilo entre tanto desastre?",
+        "next": "2SMD3",
+        "requiredFlags": ["SMD3_0.2"],
+        "setFlags": ["SMD3_0.2.1"]
+      },
+      {
+        "text": "¿Y qué le ha dicho a usted últimamente la brisa?",
+        "next": "2SMD3",
+        "requiredFlags": ["SMD3_0.2"],
+        "setFlags": ["SMD3_0.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2SMD3",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD3_0.1.1", "SMD3_0.2.2"],
+        "text": "¿Conoces la historia de Dédalo?"
+      },
+      {
+        "requiredFlags": ["SMD3_0.1.2"],
+        "text": "Con la brisa vienen historias antiguas... con lecturas muy modernas."
+      },
+      {
+        "requiredFlags": ["SMD3_0.2.1"],
+        "text": "Reflexionar... pensar en como saldría yo del laberinto"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿El del laberinto? ¿El famoso no es el hijo?",
+        "next": "3SMD3",
+        "requiredFlags": ["SMD3_0.1.1"],
+        "setFlags": ["SMD3_0.1.1.1"]
+      },
+      {
+        "text": "Ilumíname",
+        "next": "3SMD3",
+        "requiredFlags": ["SMD3_0.1.1"],
+        "setFlags": ["SMD3_0.1.1.2"]
+      },
+      {
+        "text": "Entiendo que ahora es cuando me cuentas una...",
+        "next": "3SMD3",
+        "requiredFlags": ["SMD3_0.1.2"],
+        "setFlags": ["SMD3_0.1.2.1"]
+      },
+      {
+        "text": "Yo no sé si quiero escuchar más historias...",
+        "next": "3SMD3",
+        "requiredFlags": ["SMD3_0.1.2"],
+        "setFlags": ["SMD3_0.1.2.2"]
+      },
+      {
+        "text": "¿Laberinto?",
+        "next": "3SMD3",
+        "requiredFlags": ["SMD3_0.2.1"],
+        "setFlags": ["SMD3_0.2.1.1"]
+      },
+      {
+        "text": "¿Y cuál ha sido la solución?",
+        "next": "3SMD3",
+        "requiredFlags": ["SMD3_0.2.1"],
+        "setFlags": ["SMD3_0.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "3SMD3",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD3_0.1.1.1"],
+        "text": "Ícaro es conocido por sus errores, Dédalo era el genio."
+      },
+      {
+        "requiredFlags": ["SMD3_0.1.1.2", "SMD3_0.1.2.1"],
+        "text": "Dicen que fue el Minotauro quien devoraba a los inocentes. Que en lo profundo del laberinto, la bestia mugía y exigía carne. Pero nadie pregunta quién construyó ese laberinto. Nadie mira al arquitecto."
+      },
+      {
+        "requiredFlags": ["SMD3_0.1.2.2"],
+        "text": "Un pueblo que olvida su historia está condenado a repetirla, muchacho."
+      },
+      {
+        "requiredFlags": ["SMD3_0.2.1.2"],
+        "text": "No lo sé, quizás a tí se te ocurra alguna antes de que lleguemos."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Supongo que ahora me cuenta su historia...",
+        "next": "4SMD3",
+        "requiredFlags": ["SMD3_0.1.1.1"],
+        "setFlags": ["SMD3_0.1.1.1.1"]
+      },
+      {
+        "text": "Ícaro es conocido por ser humano, los errores le hacen humano.",
+        "next": "4SMD3",
+        "requiredFlags": ["SMD3_0.1.1.1"],
+        "setFlags": ["SMD3_0.1.1.1.2"]
+      },
+      {
+        "text": "Nunca he sabido si fue antes el minotauro o el laberinto...",
+        "next": "4SMD3",
+        "requiredFlags": ["SMD3_0.1.1.2", "SMD3_0.1.2.1"],
+        "setFlags": ["SMD3_0.1.1.2.1"]
+      },
+      {
+        "text": "Supongo que a nadie le interesa escuchar una historia de planos y dibujo técnico",
+        "next": "4SMD3",
+        "requiredFlags": ["SMD3_0.1.1.2", "SMD3_0.1.2.1"],
+        "setFlags": ["SMD3_0.1.1.2.2"]
+      },
+      {
+        "text": "Cuénteme, entonces.",
+        "next": "4SMD3",
+        "requiredFlags": ["SMD3_0.1.2.2"],
+        "setFlags": ["SMD3_0.1.2.2.1"]
+      },
+      {
+        "text": "Y a usted se la recuerda la brisa...",
+        "next": "4SMD3",
+        "requiredFlags": ["SMD3_0.1.2.2"],
+        "setFlags": ["SMD3_0.1.2.2.2"]
+      },
+      {
+        "text": "Para encontrar una solución entiendo que me tendrá que plantear usted un problema...",
+        "next": "4SMD3",
+        "requiredFlags": ["SMD3_0.2.1.2"],
+        "setFlags": ["SMD3_0.2.1.2.1"]
+      },
+      {
+        "text": "Por qué será que creo que no...",
+        "next": "4SMD3",
+        "requiredFlags": ["SMD3_0.2.1.2"],
+        "setFlags": ["SMD3_0.2.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4SMD3",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD3_0.1.1.1.1", "SMD3_0.1.1.1.2", "SMD3_0.2.1.2.2"],
+        "text": "Dédalo no era un monstruo. Era algo peor: un hombre inteligente. Alguien que sabía lo que hacía. Le encargaron una prisión sin puertas, un sistema perfecto. Y él la creó. No con barro ni con piedra, sino con su genio.\nCada giro era un cálculo. Cada callejón sin salida, una decisión. No había salida. Porque no debía haberla."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Entonces no era un genio. Era un cómplice. Alguien que se vendió por orgullo... y dejó a otros atrapados con tal de demostrar lo listo que era.",
+        "next": "5SMD3",
+        "setFlags": ["SMD3_1.1"]
+      },
+      {
+        "text": "Y aún así... acabó viviendo allí, con su hijo. Así entendió su propia crueldad.",
+        "next": "5SMD3",
+        "setFlags": ["SMD3_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "5SMD3",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD3_1.2"],
+        "text": "Cuando el primer niño entró, cuando las paredes cerraron detrás...\nDédalo no protestó.\nNo lloró.\nNo huyó.\nSe quedó.\nY con el tiempo, olvidó que estaba atrapado también, se convirtió en parte de los muros, en parte del mecanismo. En parte del monstruo."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Y si no lo olvidó? ¿Y si simplemente decidió mirar a otro lado? A veces es más fácil convertirse en piedra que enfrentarse a la realidad.",
+        "next": "6SMD3",
+        "setFlags": ["SMD3_2.1"]
+      },
+      {
+        "text": "Entonces no fue una víctima, fue un cómplice. Uno que prefirió ser engranaje antes que romper la máquina.",
+        "next": "6SMD3",
+        "setFlags": ["SMD3_2.2"]
+      }
+    ]
+  },
+  {
+    "id": "6SMD3",
+    "speaker": "Señor Mayor Desconocido",
+    "text": "No todos los monstruos rugen. Algunos diseñan planos, firman nóminas, llaman progreso a lo que otros llaman sufrimiento. Dicen que Dédalo construyó alas para huir pero, si no hubiese sido por su hijo, nunca hubiese escapado. El arquitecto nunca quiso volar. El sol le quemó las alas a Ícaro, el laberinto nunca haría eso.",
+    "choices": [
+      {
+        "text": "Quizás porque el laberinto era lo único que entendía. El aire libre... el sol... eso era el verdadero miedo. No saber a dónde ir cuando ya no tienes muros que te digan qué hacer.",
+        "next": "7SMD3",
+        "setFlags": ["SMD3_3.1"]
+      },
+      {
+        "text": "Claro. Porque el laberinto no quema. Solo desgasta. Solo atrapa. Solo borra lo que somos hasta que nos creemos parte de él. Mucho más limpio que el fuego, ¿no?",
+        "next": "7SMD3",
+        "setFlags": ["SMD3_3.2"]
+      }
+    ]
+  },
+  {
+    "id": "7SMD3",
+    "speaker": "Señor Mayor Desconocido",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SMD3_3.1"],
+        "text": "Quizás. O quizás, después de tanto tiempo entre muros, lo que más temía era mirar atrás. Ver cuántos se perdieron para que él siguiera caminando recto."
+      },
+      {
+        "requiredFlags": ["SMD3_3.2"],
+        "text": "Exacto. Dédalo no dejó marcas de sangre. Solo planos. Solo órdenes. Pero cada niño que no volvió... cada grito que no se escuchó... también era suyo. Igual que el silencio."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Si... algunos laberintos están hechos de costumbre. De lo que uno aprende a no ver.",
+        "next": "8SMD3",
+        "requiredFlags": ["SMD3_3.1"],
+        "setFlags": ["SMD3_3.1.1"]
+      },
+      {
+        "text": "El verdadero castigo de Dédalo no fue el laberinto... sino ver a su hijo creer que la única salida era volar hasta morir.",
+        "next": "8SMD3",
+        "requiredFlags": ["SMD3_3.1"],
+        "setFlags": ["SMD3_3.1.2"]
+      },
+      {
+        "text": "No basta con no ser el Minotauro... también hay que tener el valor de romper los planos.",
+        "next": "8SMD3",
+        "requiredFlags": ["SMD3_3.2"],
+        "setFlags": ["SMD3_3.2.1"]
+      },
+      {
+        "text": "Pues si el arquitecto no quiere volar, habrá que empujarle. O prenderle fuego a los planos.",
+        "next": "8SMD3",
+        "requiredFlags": ["SMD3_3.2"],
+        "setFlags": ["SMD3_3.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "8SMD3",
+    "speaker": "Señor Mayor Desconocido",
+    "text": "*El coche llega al puerto. El anciano mira el mar en silencio*",
+    "end": true
+  }
+]

@@ -1,0 +1,488 @@
+[
+  {
+    "id": "start",
+    "speaker": "El Huérfano",
+    "text": "Vamos al pueblo, por favor.",
+    "setFlags": ["InicioV1"],
+    "choices": [
+      {
+        "text": "Tú... ¿Estás bien? Joder, pensábamos que te había pasado algo.",
+        "next": "1V1",
+        "setFlags": ["V1.1"]
+      },
+      {
+        "text": "¿Tres semanas desaparecido y ahora me dices 'Vamos al pueblo, por favor' como si nada?",
+        "next": "1V1",
+        "setFlags": ["V1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1"],
+        "text": "Bien... mejor que antes, ya no estoy perdido."
+      },
+      {
+        "requiredFlags": ["V1.2"],
+        "text": "No es como si nada. Es como debe ser. Las cosas se están alineando."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Dónde has estado todo este tiempo? La gente está preocupada. Te estaban buscando.",
+        "next": "2V1",
+        "requiredFlags": ["V1.1"],
+        "setFlags": ["V1.1.1"]
+      },
+      {
+        "text": "¿Por qué no dijiste nada? Podrías haber pedido ayuda, tus hermanas llevan solas todo este tiempo.",
+        "next": "2V1",
+        "requiredFlags": ["V1.1", "V1.2"],
+        "setFlags": ["V1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "2V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1.1"],
+        "text": "Donde... donde necesitaba estar. No estaba listo antes. Ahora... ahora creo que sí."
+      },
+      {
+        "requiredFlags": ["V1.1.2"],
+        "text": "Mis hermanas... esto también es por ellas. Para que algún día no tengan que vivir como yo."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Y ahora estás listo para qué, Abel? Ayúdame a entenderte, porque hablas como si estuvieras decidido.",
+        "next": "3V1",
+        "requiredFlags": ["V1.1.1"],
+        "setFlags": ["V1.1.1.1"]
+      },
+      {
+        "text": "¿Y no puede ser que a la Bencomo la paga de viuda se le quede corta...?",
+        "next": "3V1",
+        "requiredFlags": ["V1.1.1", "V1.1.2"],
+        "setFlags": ["V1.1.1.2"]
+      },
+      {
+        "text": "¿Y perderte es lo que ellas necesitan? ¿Crees que eso va a ayudarles a vivir mejor?",
+        "next": "3V1",
+        "requiredFlags": ["V1.1.2"],
+        "setFlags": ["V1.1.2.1"]
+      },
+      {
+        "text": "Entonces ahora vuelves con ellas ¿Ahora has entendido que tienes que estar con ellas?.",
+        "next": "3V1",
+        "requiredFlags": ["V1.1.2"],
+        "setFlags": ["V1.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1.1.1"],
+        "text": "Para cumplir. Para no volver atrás. Para pagar lo que pedí. Si alguien hace un voto, tiene que cumplirlo. Aunque duela."
+      },
+      {
+        "requiredFlags": ["V1.1.1.2"],
+        "text": "En silencio, soledad... nadie puede distraerme... tengo que tener el valor... cuando llegue el momento."
+      },
+      {
+        "requiredFlags": ["V1.1.2.1"],
+        "text": "No me he perdido... tenía que protegerlas... desde la distancia. A veces la presencia pesa más que la ausencia."
+      },
+      {
+        "requiredFlags": ["V1.1.2.2"],
+        "text": "Vuelvo por ellas, sí... pero ya no es como antes... nunca volverá a ser como antes... ahora sé cuál es la manera... la única forma de asegurar su futuro."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Voto? ¿Qué voto Abel? ¿Qué has prometido?",
+        "next": "4V1",
+        "requiredFlags": ["V1.1.1.1"],
+        "setFlags": ["V1.1.1.1.1"]
+      },
+      {
+        "text": "¿Pagar? ¿A quién? ¿Esto va de dinero, Abel?",
+        "next": "4V1",
+        "requiredFlags": ["V1.1.1.1"],
+        "setFlags": ["V1.1.1.1.2"]
+      },
+      {
+        "text": "¿El valor para qué? ¿Qué tienes que hacer?",
+        "next": "4V1",
+        "requiredFlags": ["V1.1.1.2"],
+        "setFlags": ["V1.1.1.2.1"]
+      },
+      {
+        "text": "Soledad... ¿Has estado solo estas semanas? ¿En ese peñón?",
+        "next": "4V1",
+        "requiredFlags": ["V1.1.1.2"],
+        "setFlags": ["V1.1.1.2.2"]
+      },
+      {
+        "text": "Nadie quería que te fueses, Abel. Todo el mundo te ha estado buscando, en serio.",
+        "next": "4V1",
+        "requiredFlags": ["V1.1.2.1"],
+        "setFlags": ["V1.1.2.1.1"]
+      },
+      {
+        "text": "¿Protegerlas de qué? ¿Alguien os amenazó? A mí me lo puedes contar, chaval.",
+        "next": "4V1",
+        "requiredFlags": ["V1.1.2.1"],
+        "setFlags": ["V1.1.2.1.2"]
+      },
+      {
+        "text": "Ya no es como antes... el pasado nunca vuelve Abel, sólo queda avanzar, no hay otra.",
+        "next": "4V1",
+        "requiredFlags": ["V1.1.2.2"],
+        "setFlags": ["V1.1.2.2.1"]
+      },
+      {
+        "text": "¿Cuál es la manera, Abel? ¿Qué quieres hacer?",
+        "next": "4V1",
+        "requiredFlags": ["V1.1.2.2"],
+        "setFlags": ["V1.1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1.1.1.1"],
+        "text": "Hice un voto... como Jefté. Me daría claridad, vencería al miedo... y yo ofrecería lo más preciado."
+      },
+      {
+        "requiredFlags": ["V1.1.1.1.2"],
+        "text": "No se puede... no se puede... romper un pacto sagrado... no se puede..."
+      },
+      {
+        "requiredFlags": ["V1.1.1.2.1", "V1.1.2.2.2"],
+        "text": "Jueces, capítulo 11, versículos 30 y 31, Jueces, capítulo 11, versículos 30 y 31"
+      },
+      {
+        "requiredFlags": ["V1.1.1.2.2"],
+        "text": "Nunca estamos solos... Él siempre nos acompaña, Él me guía."
+      },
+      {
+        "requiredFlags": ["V1.1.2.1.1"],
+        "text": "No me podían encontrar... yo estaba con Él... Él cumplirá con su parte... yo tengo que cumplir con la mía."
+      },
+      {
+        "requiredFlags": ["V1.1.2.1.2"],
+        "text": "Ellas lo entenderán, es mi deber... ellas lo entenderán... sí... lo entenderán, antes o después lo entenderán."
+      },
+      {
+        "requiredFlags": ["V1.1.2.2.1"],
+        "text": "No... ya no es como antes... y nunca volverá... lo hecho no se puede deshacer..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Jefté? ¿De que me estás hablando, chaval? ¿Que has estado leyendo?",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.1.1.1"],
+        "setFlags": ["V1.1.1.1.1.1"]
+      },
+      {
+        "text": "¿Ofrecer lo más preciado? ¿De qué estás hablando Abel? Explícame que estás diciendo o paro el coche ahora mismo.",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.1.1.1"],
+        "setFlags": ["V1.1.1.1.1.2"]
+      },
+      {
+        "text": "Ningún pacto es sagrado, Abel. No sé qué le has prometido a quién pero tú no le debes nada a nadie, necesitar irte a casa y descansar. La gente os va a ayudar, seguro.",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.1.1.2"],
+        "setFlags": ["V1.1.1.1.2.1"]
+      },
+      {
+        "text": "Sagrado... Abel ¿Qué te ha contado El Padre? ¿Qué pacto?",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.1.1.2"],
+        "setFlags": ["V1.1.1.1.2.2"]
+      },
+      {
+        "text": "Joder, tenía que haber atendido más en catequesis... ¿Qué cojones dices chaval?, ¿Qué se supone que es eso?",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.1.2.1"],
+        "setFlags": ["V1.1.1.2.1.1"]
+      },
+      {
+        "text": "Abel... estas semanas... no has estado solo en El Diente del Santo ¿verdad? ¿Has estado con El Padre?",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.1.2.1", "V1.1.1.2.2", "V1.1.2.1.1"],
+        "setFlags": ["V1.1.1.2.1.2"]
+      },
+      {
+        "text": "Ya... supongo que a algo hay que agarrarse...",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.1.2.2"],
+        "setFlags": ["V1.1.1.2.2.1"]
+      },
+      {
+        "text": "¿Con Él... ¿Con quién has estado Abel? ¿Qué parte? ¿Qué vas a hacer?",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.2.1.1"],
+        "setFlags": ["V1.1.2.1.1.1"]
+      },
+      {
+        "text": "¿Cuál es tu deber, Abel? ¿Qué es lo que piensas hacer que haya que entender?",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.2.1.2"],
+        "setFlags": ["V1.1.2.1.2.1"]
+      },
+      {
+        "text": "¿Qué dices Abel? ¿Quién tiene que entender qué? Explícate y habla claro si no quieres que pare el coche aquí en medio y te sigan buscando.",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.2.1.2"],
+        "setFlags": ["V1.1.2.1.2.2"]
+      },
+      {
+        "text": "No, lo hecho no se puede deshacer pero la mayoría de cosas se pueden olvidar, o al menos, aceptar, a la larga... no hay prisa.",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.2.2.1"],
+        "setFlags": ["V1.1.2.2.1.1"]
+      },
+      {
+        "text": "Exacto, no sé en qué estás pensando pero ten por seguro que lo hecho hecho está y no se puede deshacer.",
+        "next": "5V1",
+        "requiredFlags": ["V1.1.2.2.1"],
+        "setFlags": ["V1.1.2.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "5V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1.1.1.1.1", "V1.1.1.1.2.2"],
+        "text": "Si entregares a los amonitas en mis manos, cualquiera que saliere de las puertas de mi casa a recibirme, lo ofreceré en holocausto. Jueces, capítulo 11, versículos 30 y 31."
+      },
+      {
+        "requiredFlags": ["V1.1.1.1.1.2", "V1.1.2.1.2.2"],
+        "text": "No... lo entenderán... lo entenderéis... no pares... tengo que hacerlo... *Abel acaricia su chaqueta, llora en silencio.*"
+      },
+      {
+        "requiredFlags": ["V1.1.1.1.2.1"],
+        "text": "No necesito más ayuda... él me los entregará en las manos..."
+      },
+      {
+        "requiredFlags": ["V1.1.1.2.1.1"],
+        "text": "Si entregares a los amonitas en mis manos, cualquiera que saliere de las puertas de mi casa a recibirme, lo ofreceré en holocausto. Jueces, capítulo 11, versículos 30 y 31."
+      },
+      {
+        "requiredFlags": ["V1.1.1.2.1.2", "V1.1.1.2.2.1"],
+        "text": "Él me los entregará en las manos, Dios hará su parte... yo debo hacer la mía *Abel agarra con fuerza su chaqueta*"
+      },
+      {
+        "requiredFlags": ["V1.1.2.1.1.1", "V1.1.2.1.2.1"],
+        "text": "Lo entenderán... lo entenderéis... tengo que hacerlo... *Abel acaricia su chaqueta, llora en silencio.*"
+      },
+      {
+        "requiredFlags": ["V1.1.2.2.1.1"],
+        "text": "No voy a tener que esperar más... Él me lo entregará en las manos... yo sólo tengo que hacer mi parte... *Abel agarra con fuerza su chaqueta*"
+      },
+      {
+        "requiredFlags": ["V1.1.2.2.1.2"],
+        "text": "No... lo hecho no se puede deshacer... nada vuelve... *Abel rompe a llorar*"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Se acabó, hasta que no me expliques de qué va esto no nos movemos.",
+        "next": "A_V1",
+        "requiredFlags": ["V1.1.1.1.1.1", "V1.1.1.1.2.1", "V1.1.2.1.2.2"],
+        "setFlags": ["A_Trigger"]
+      },
+      {
+        "text": "¿Y qué te va a dar a tí, Abel? ¿Qué estás buscando?",
+        "next": "6V1",
+        "requiredFlags": ["V1.1.1.1.1.1"],
+        "setFlags": ["V1.1.1.1.1.1.1"]
+      },
+      {
+        "text": "Tranquilo... vamos, cuéntame. No te preocupes, no va a pasar nada.",
+        "next": "6V1",
+        "requiredFlags": ["V1.1.1.1.1.2", "V1.1.1.2.1.1"],
+        "setFlags": ["V1.1.1.1.1.2.1"]
+      },
+      {
+        "text": "Claro que puedes tener una buena vida... Esto va de luchar, muchacho, hay que seguir pase lo que pase.",
+        "next": "6V1",
+        "requiredFlags": ["V1.1.1.1.1.1"],
+        "setFlags": ["V1.1.1.1.1.1.2"]
+      },
+      {
+        "text": "No... la buena vida está reservada para unos pocos afortunados, los demás tenemos que conformarnos con la vida que nos toca.",
+        "next": "6V1",
+        "requiredFlags": ["V1.1.1.1.1.1"],
+        "setFlags": ["V1.1.1.1.1.1.3"]
+      }
+    ]
+  },
+  {
+    "id": "6V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V1.1.1.1.1.1.1"],
+        "text": "Una buena vida... no para mí, yo ya no la puedo tener... nada vuelve... nada vuelve..."
+      },
+      {
+        "requiredFlags": ["V1.1.1.1.1.2.1"],
+        "text": "No... no puedo... es mejor si... si... *saca un revólver de su chaqueta*"
+      },
+      {
+        "requiredFlags": ["V1.1.1.1.1.2"],
+        "text": "Si... luchar, hay que luchar por lo nuestro. (Final de El Huérfano, Jefté)"
+      },
+      {
+        "requiredFlags": ["V1.1.1.1.1.3"],
+        "text": "No... podemos hacer más que conformarnos...podemos conquistar. (Final de El Huérfano, Jefté)"
+      }
+    ],
+    "end": true
+  },
+  {
+    "id": "A_V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["A_Trigger"],
+        "text": "No... no puedes...hice un trato con Dios... tengo que llegar... no puedes... *agarra con fuerza su chaqueta, en la que se intuye un objeto*"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Qué llevas ahí, Abel?",
+        "next": "A1_V1",
+        "setFlags": ["A1_Trigger"]
+      },
+      {
+        "text": "¿Cuál era el trato, Abel? ¿Que ibas a hacer una vez llegases al pueblo?",
+        "next": "A2_V1",
+        "setFlags": ["A2_Trigger"]
+      }
+    ]
+  },
+  {
+    "id": "A1_V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["A1_Trigger"],
+        "text": "Dios... Dios me daría una buena vida... a mí y a una de mis hermanas..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Una de tus hermanas? ¿Qué pasa que la otra es una causa perdida?",
+        "next": "A1_1_V1",
+        "setFlags": ["A1_1_Trigger"]
+      },
+      {
+        "text": "¿Qué ibas a dar a cambio, Abel? ¿Cuál era el trato?",
+        "next": "A1_2_V1",
+        "setFlags": ["A1_2_Trigger"]
+      }
+    ]
+  },
+  {
+    "id": "A2_V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["A2_Trigger"],
+        "text": "Señor, no soy digno de que entres en mi casa, pero una palabra tuya bastará para sanarme... *coloca el cañón del revólver bajo la mandíbula*"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¡NO, ABEL! Estoy seguro de que tiene solución, no sé que has hecho, no sé que has prometido pero seguro que tiene solución, baja eso, joder.",
+        "next": "A2_1_V1",
+        "setFlags": ["A2_1_Trigger"]
+      },
+      {
+        "text": "Dios es sabio... ¿Por qué no le dejas a él hacer su trabajo?",
+        "next": "A2_2_V1",
+        "setFlags": ["A2_2_Trigger"]
+      }
+    ]
+  },
+  {
+    "id": "A1_1_V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["A1_1_Trigger"],
+        "text": "\"Padre mío -respondió ella-, si le has dado tu palabra al Señor, haz conmigo como lo prometiste, ya que el Señor te ha concedido venganza sobre tus enemigos.\" Jueces, capítulo 11, versículo 36. Ellas lo entenderán, entenderán que es la palabra de nuestro señor."
+      }
+    ],
+    "end": true
+  },
+  {
+    "id": "A1_2_V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["A1_2_Trigger"],
+        "text": "*llora desconsolado* \"No puedo... no puedo...\" *saca un revólver de la chaqueta y se pone el cañón bajo la mandíbula*"
+      }
+    ],
+    "end": true
+  },
+  {
+    "id": "A2_1_V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["A2_1_Trigger"],
+        "text": "¿Y cuál es? ¿Cuál es la solución?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Ahora mismo? La mejor que se me ocurre es que me des la pistola antes de que te hagas daño. A lo demás, tiempo, el tiempo lo cura todo...",
+        "next": "A2_1_1_V1",
+        "setFlags": ["A2_1_1_Trigger"]
+      }
+    ]
+  },
+  {
+    "id": "A2_2_V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["A2_2_Trigger"],
+        "text": "Dios guía mi mano, si le valía una de mis hermanas por qué no le voy a valer yo. Que ellas tengan las vidas que me prometió a mí. *Un estallido seco sacude el interior del coche. Abel queda sentado, con la cabeza hacia atrás, la luna trasera del coche completamente teñida de rojo.* (Final El Huérfano Suicidio)"
+      }
+    ],
+    "end": true
+  },
+  {
+    "id": "A2_1_1_V1",
+    "speaker": "El Huérfano",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["A2_1_1_Trigger"],
+        "text": "Si... toma... llévame a mi casa, por favor. (Final de El Huérfano, Desarticulado)"
+      }
+    ],
+    "end": true
+  }
+]

@@ -1,0 +1,392 @@
+[
+  {
+    "id": "start",
+    "speaker": "Policía",
+    "text": "¿Me acerca al pueblo, por favor?",
+    "choices": [
+      {
+        "text": "Por supuesto, no parece usted un turista, pero tampoco me suena su cara. ¿Puedo preguntar quién es?",
+        "next": "1Policia",
+        "setFlags": ["Policia.1.1"]
+      },
+      {
+        "text": "Ahora mismo, ¿Visitando algún familiar o viene usted también para hacer negocios?",
+        "next": "1Policia",
+        "setFlags": ["Policia.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1Policia",
+    "speaker": "Policía",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Policia.1.1"],
+        "text": "Tomás Cuéllar, inspector, vengo a investigar la desaparición de Abel Ramos ¿Conocía al muchacho?"
+      },
+      {
+        "requiredFlags": ["Policia.1.2"],
+        "text": "Supongo que de esas dos la correcta es negocios. Vengo por la desaparición de Abel Ramos ¿Conocía al muchacho?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, claro. Conocía aún más a su padre.",
+        "next": "2Policia",
+        "requiredFlags": ["Policia.1.1", "Policia.1.2"],
+        "setFlags": ["Policia.1.1.1", "Policia.1.2.1"]
+      },
+      {
+        "text": "Todo el pueblo conoce a esa familia, todo el pueblo conoce a todo el pueblo básicamente.",
+        "next": "2Policia",
+        "requiredFlags": ["Policia.1.1", "Policia.1.2"],
+        "setFlags": ["Policia.1.1.2", "Policia.1.2.2"]
+      },
+      {
+        "text": "Disculpe ¿Usted es?",
+        "next": "2Policia",
+        "requiredFlags": ["Policia.1.2"],
+        "setFlags": ["Policia.1.2.3"]
+      }
+    ]
+  },
+  {
+    "id": "2Policia",
+    "speaker": "Policía",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Policia.1.1.1"],
+        "text": "Su padre... Elías Ramos, falleció hace 2 años ¿Cierto?"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2"],
+        "text": "Claro... ¿Entonces cómo es que no lo han encontrado todavía?"
+      },
+      {
+        "requiredFlags": ["Policia.1.2.3"],
+        "text": "Tomás Cuéllar, inspector, vengo a investigar la desaparición de Abel Ramos ¿Conocía al muchacho?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Correcto.",
+        "next": "3Policia",
+        "requiredFlags": ["Policia.1.1.1"],
+        "setFlags": ["Policia.1.1.1.1"]
+      },
+      {
+        "text": "Falleció, es una manera de decirlo, supongo que sí.",
+        "next": "3Policia",
+        "requiredFlags": ["Policia.1.1.1"],
+        "setFlags": ["Policia.1.1.1.2"]
+      },
+      {
+        "text": "El pueblo es pequeño, la isla no tanto. Además nosotros no tenemos drones, por no tener no tenemos ni perros, nuestra búsqueda son señoras jubiladas que no tienen nada mejor que hacer, los demás tenemos que seguir trabajando.",
+        "next": "3Policia",
+        "requiredFlags": ["Policia.1.1.2"],
+        "setFlags": ["Policia.1.1.2.1"]
+      },
+      {
+        "text": "No le queríamos quitar el trabajo, señor agente.",
+        "next": "3Policia",
+        "requiredFlags": ["Policia.1.1.2"],
+        "setFlags": ["Policia.1.1.2.2"]
+      },
+      {
+        "text": "-> 1.1.1",
+        "next": "3Policia",
+        "requiredFlags": ["Policia.1.2.3"],
+        "setFlags": ["Policia.1.2.3.1"]
+      },
+      {
+        "text": "-> 1.1.2",
+        "next": "3Policia",
+        "requiredFlags": ["Policia.1.2.3"],
+        "setFlags": ["Policia.1.2.3.2"]
+      }
+    ]
+  },
+  {
+    "id": "3Policia",
+    "speaker": "Policía",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Policia.1.1.1.1"],
+        "text": "Ya me avisaron de que los locales seríais... herméticos. ¿Qué tenéis por aquí montado? ¿Es algún tipo secta? ¿Habéis sacrificado al muchacho al volcán? ¿Me vais a hacer lo mismo?"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.1.2"],
+        "text": "¿A qué se refiere con \"es una manera de decirlo\"?"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2.1"],
+        "text": "Entiendo... bueno, ahora estoy yo aquí para hacer de sabueso, si no le importa responderme algunas preguntas."
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2.2"],
+        "text": "*Con una sonrisa cansada* \"Muy gracioso, ¿Le parece cosa de broma todo esto a usted?\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "Inmediatamente, de hecho no le estoy llevando al pueblo, vamos directos al cráter, conozco un atajo",
+        "next": "4Policia",
+        "requiredFlags": ["Policia.1.1.1.1"],
+        "setFlags": ["Policia.1.1.1.1.1"]
+      },
+      {
+        "text": "No sé si la mejor estrategia para ganarse al pueblo es tratarlos como indios de las películas, señor agente",
+        "next": "4Policia",
+        "requiredFlags": ["Policia.1.1.1.1"],
+        "setFlags": ["Policia.1.1.1.1.2"]
+      },
+      {
+        "text": "Murió por comer pescado de aguas contaminadas por residuos tóxicos. En aquel momento no mandaron a nadie, supongo que no había nada que investigar si todo el mundo conocía a los culpables.",
+        "next": "4Policia",
+        "requiredFlags": ["Policia.1.1.1.2"],
+        "setFlags": ["Policia.1.1.1.2.1"]
+      },
+      {
+        "text": "Falleció es una forma de decirlo ¿No? Hay muchas: se murió, estiró la pata, seguro que usted conoce unas cuantas también.",
+        "next": "4Policia",
+        "requiredFlags": ["Policia.1.1.1.2"],
+        "setFlags": ["Policia.1.1.1.2.2"]
+      },
+      {
+        "text": "Adelante.",
+        "next": "4Policia",
+        "requiredFlags": ["Policia.1.1.2.1"],
+        "setFlags": ["Policia.1.1.2.1.1"]
+      },
+      {
+        "text": "¿De que yo esté dispuesto depende su trabajo?",
+        "next": "4Policia",
+        "requiredFlags": ["Policia.1.1.2.1"],
+        "setFlags": ["Policia.1.1.2.1.2"]
+      },
+      {
+        "text": "¿La desaparición de Abel? No. Me parece una broma de mal gusto que esta sea la primera vez en 20 años que veo un policía para algo que no sea reclamar multas por pescar en zonas prohibidas ¿Cómo saben donde pescamos desde allí?",
+        "next": "4Policia",
+        "requiredFlags": ["Policia.1.1.2.2"],
+        "setFlags": ["Policia.1.1.2.2.1"]
+      },
+      {
+        "text": "Perdone, no confunda mi escepticismo con falta de ganas de colaborar, quiero que ese pobre desgraciado aparezca sano tanto o más como cualquiera.",
+        "next": "4Policia",
+        "requiredFlags": ["Policia.1.1.2.2"],
+        "setFlags": ["Policia.1.1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4Policia",
+    "speaker": "Policía",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Policia.1.1.1.1.1"],
+        "text": "-> 1.1.2.2"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.1.1.2"],
+        "text": "No vengo a ganarme al pueblo, no soy político ni cura, soy funcionario, vengo a hacer mi trabajo."
+      },
+      {
+        "requiredFlags": ["Policia.1.1.1.2.1"],
+        "text": "Intoxicación de aguas... sí, sale en los informes, se enviaron barcos de salvamento con agua y comida a la isla. No figura ningún imputado."
+      },
+      {
+        "requiredFlags": ["Policia.1.1.1.2.2"],
+        "text": "-> 1.1.2.2"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2.1.1"],
+        "text": "¿Cuándo vió usted por última vez a Abel Ramos?"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2.2.1"],
+        "text": "-> 1.1.2.2"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2.2.2"],
+        "text": "Entiendo, en ese caso ¿Cuándo fue la última vez que vió usted a Abel?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Me alegra oírlo, aunque no lo parezca, de verdad que estoy dispuesto a colaborar tanto como sea posible.",
+        "next": "5Policia",
+        "requiredFlags": ["Policia.1.1.1.1.2"],
+        "setFlags": ["Policia.1.1.1.1.2.1"]
+      },
+      {
+        "text": "Bueno, ya veremos cuál es tu trabajo exactamente...",
+        "next": "5Policia",
+        "requiredFlags": ["Policia.1.1.1.1.2"],
+        "setFlags": ["Policia.1.1.1.1.2.2"]
+      },
+      {
+        "text": "No, claro que no.",
+        "next": "5Policia",
+        "requiredFlags": ["Policia.1.1.1.2.1"],
+        "setFlags": ["Policia.1.1.1.2.1.1"]
+      },
+      {
+        "text": "Venga agente, quién va a contaminar el agua en una isla con una planta química enorme en el centro.",
+        "next": "5Policia",
+        "requiredFlags": ["Policia.1.1.1.2.1"],
+        "setFlags": ["Policia.1.1.1.2.1.2"]
+      },
+      {
+        "text": "Hace 3 viernes, lo ví recoger a su hermana pequeña de la escuela.",
+        "next": "5Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1", "Policia.1.1.2.2.2"],
+        "setFlags": ["Policia.1.1.2.1.1.1", "Policia.1.1.2.2.2.1"]
+      },
+      {
+        "text": "No soy muy útil para estas preguntas, yo me paso el día metido en el taxi, será mejor que le pregunte a las vecinas.",
+        "next": "5Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1", "Policia.1.1.2.2.2"],
+        "setFlags": ["Policia.1.1.2.1.1.2", "Policia.1.1.2.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "5Policia",
+    "speaker": "Policía",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Policia.1.1.1.1.2.1"],
+        "text": "-> 1.1.2.2.2"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.1.1.2.2"],
+        "text": "-> 1.1.2.1.1"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.1.2.1.1", "Policia.1.1.2.2.2.2"],
+        "text": "Usted también sabe mirar a otro lado con bastante soltura, ¿eh?"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.1.2.1.2"],
+        "text": "Ya ¿Y nadie denunció? ¿Cómo consiguieron ayudas sin que nadie preguntase por responsabilidades?"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2.1.1.1"],
+        "text": "¿Tiene alguna idea de alguien que tuviese algo en su contra?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Uno se acostumbra con los años.",
+        "next": "6Policia",
+        "requiredFlags": ["Policia.1.1.1.2.1.1"],
+        "setFlags": ["Policia.1.1.1.2.1.1.1"]
+      },
+      {
+        "text": "Disculpe, agente, es la falta de costumbre. No solemos hablar con la ley por aquí.",
+        "next": "6Policia",
+        "requiredFlags": ["Policia.1.1.1.2.1.1"],
+        "setFlags": ["Policia.1.1.1.2.1.1.2"]
+      },
+      {
+        "text": "Y que quiere, ¿Que un particular demande? Algunos protestamos, pedimos al cabildo que buscasen responsables, pero claro, usted se puede imaginar cuántos fuimos.",
+        "next": "6Policia",
+        "requiredFlags": ["Policia.1.1.1.2.1.2"],
+        "setFlags": ["Policia.1.1.1.2.1.2.1"]
+      },
+      {
+        "text": "Eso es una muy buena pregunta...",
+        "next": "6Policia",
+        "requiredFlags": ["Policia.1.1.1.2.1.2"],
+        "setFlags": ["Policia.1.1.1.2.1.2.2"]
+      },
+      {
+        "text": "¿Del huérfano? No. El chaval solo es un pobre desgraciado que intentaba ayudar a sus hermanas a salir adelante. Robaba de vez en cuando pero para comer, cosas que la gente le habría dado si las hubiese pedido.",
+        "next": "6Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1.1"],
+        "setFlags": ["Policia.1.1.2.1.1.1.1"]
+      },
+      {
+        "text": "El pobre desgraciado estaba mal de la cabeza, en su día estuvo enfermo por lo del agua y le quedaron secuelas cerebrales. Sumales eso a la situación psicológica y a mí no me extrañaría si él mismo ha querido desaparecer.",
+        "next": "6Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1.1"],
+        "setFlags": ["Policia.1.1.2.1.1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "6Policia",
+    "speaker": "Policía",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Policia.1.1.1.2.1.1.1", "Policia.1.1.1.2.1.1.2"],
+        "text": "Ahora entiendo por qué me mandan aquí...",
+        "end": true
+      },
+      {
+        "requiredFlags": ["Policia.1.1.1.2.1.2.1", "Policia.1.1.1.2.1.2.2"],
+        "text": "Ya... Aquí nadie ha visto nada, nadie sabe nada, y todos duermen tranquilos. Curioso."
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2.1.1.1.1"],
+        "text": "Entiendo, entonces ¿No hay ninguna teoría rodando por la isla? ¿Simplemente se ha desvanecido?"
+      },
+      {
+        "requiredFlags": ["Policia.1.1.2.1.1.1.2"],
+        "text": "Ya, ¿Con eso quiere decir que el chico ha podido suicidarse? ¿Hay siquiera forma de que esté sobreviviendo en la isla sin que nadie lo sepa?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Bienvenido a Las Lajas, agente.",
+        "next": "7Policia",
+        "requiredFlags": ["Policia.1.1.1.2.1.2.1"],
+        "setFlags": ["Policia.1.1.1.2.1.2.1.1"]
+      },
+      {
+        "text": "Estoy seguro de que podrá conseguir buena información, señor agente.",
+        "next": "7Policia",
+        "requiredFlags": ["Policia.1.1.1.2.1.2.1"],
+        "setFlags": ["Policia.1.1.1.2.1.2.1.2"]
+      },
+      {
+        "text": "Según me comentó su hermana, el chaval llevaba un tiempo hablando de temas religiosos, incluso dejó la casa llena de unas \"plegarias\". Debería hablar con ella, agente.",
+        "next": "7Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1.1.1", "Policia.1.1.2.1.1.1.2"],
+        "setFlags": ["Policia.1.1.2.1.1.1.1.1", "Policia.1.1.2.1.1.1.2.1"],
+        "requiredPreviousFlags": ["Judit_Plegarias"]
+      },
+      {
+        "text": "Debería hablar con la hermana del muchacho, Judit, la mediana. Haga el favor de no molestar a la pequeña que ya tiene bastante como para tener que lidiar con usted, agente.",
+        "next": "7Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1.1.1", "Policia.1.1.2.1.1.1.2"],
+        "setFlags": ["Policia.1.1.2.1.1.1.1.2", "Policia.1.1.2.1.1.1.2.2"],
+        "requiredPreviousFlags": ["Judit_Plegarias"]
+      },
+      {
+        "text": "Si las hay yo no las conozco, no me preocupan los cotilleos que circulen por aquí, agente, por mucho que le sorprenda.",
+        "next": "7Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1.1.1"],
+        "setFlags": ["Policia.1.1.2.1.1.1.1.3"]
+      },
+      {
+        "text": "No lo sé, para hablar de suicidio habría que considerar premeditación. No creo que ese pobre desgraciado pudiese premeditar nada.",
+        "next": "7Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1.1.2"],
+        "setFlags": ["Policia.1.1.2.1.1.1.2.3"]
+      },
+      {
+        "text": "Supongo que eso es lo que tiene usted que averiguar, señor agente.",
+        "next": "7Policia",
+        "requiredFlags": ["Policia.1.1.2.1.1.1.1", "Policia.1.1.2.1.1.1.2"],
+        "setFlags": ["Policia.1.1.2.1.1.1.1.4", "Policia.1.1.2.1.1.1.2.4"]
+      }
+    ]
+  },
+  {
+    "id": "7Policia",
+    "speaker": "Policía",
+    "text": "Inspector, muchas gracias.",
+    "end": true
+  }
+]

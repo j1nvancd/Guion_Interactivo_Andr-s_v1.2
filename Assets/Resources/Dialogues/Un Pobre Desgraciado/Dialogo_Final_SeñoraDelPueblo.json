@@ -1,0 +1,218 @@
+[
+  {
+    "id": "start",
+    "speaker": "SdP",
+    "text": "A la playa norte por favor",
+    "choices": [
+      {
+        "text": "Sin problema",
+        "next": "1SdP",
+        "setFlags": ["SdP.0.1"]
+      },
+      {
+        "text": "¿A la zona vacacional?¿Qué tienes tú que hacer allí?",
+        "next": "1SdP",
+        "setFlags": ["SdP.0.2"]
+      }
+    ]
+  },
+  {
+    "id": "1SdP",
+    "speaker": "SdP",
+    "text": "Estamos buscando a ese pobre chico, vamos a ir a distintas partes de la isla a ver si lo encontramos, visto que la policía no hace nada...",
+    "choices": [
+      {
+        "text": "Todavía no ha venido nadie de continente eh, salvo para venir a la playa les damos igual",
+        "next": "2SdP",
+        "setFlags": ["SdP.1.1"]
+      },
+      {
+        "text": "No sé si el chaval querrá que lo encuentren",
+        "next": "2SdP",
+        "setFlags": ["SdP.1.2"]
+      },
+      {
+        "text": "No creo que nos guste lo que podáis encontrar",
+        "next": "2SdP",
+        "setFlags": ["SdP.1.3"]
+      }
+    ]
+  },
+  {
+    "id": "2SdP",
+    "speaker": "SdP",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SdP.1.1"],
+        "text": "Mejor, aquí nos sabemos cuidar solos, cuanto más se metan en nuestros asuntos menos poder tendremos"
+      },
+      {
+        "requiredFlags": ["SdP.1.2", "SdP.1.3"],
+        "text": "No es por él, ni por nosotros, es para que al menos esas pobres chiquillas puedan descansar tranquilas"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Igualmente nos dedicamos a llevarlos a la playa o a mandarles materiales baratos por la diferencia de impuestos, antes podíamos vivir por nosotros mismos, la mayoría ya no saben ni pescar",
+        "next": "3SdP",
+        "requiredFlags": ["SdP.1.1"],
+        "setFlags": ["SdP.1.1.1"]
+      },
+      {
+        "text": "Sin policía no podemos estar, y más con tantos desconocidos saliendo y entrando",
+        "next": "3SdP",
+        "requiredFlags": ["SdP.1.1"],
+        "setFlags": ["SdP.1.1.2"]
+      },
+      {
+        "text": "Una niña de 16 cuidando sola de otra niña de 10, va a descansar bastante sí",
+        "next": "3SdP",
+        "requiredFlags": ["SdP.1.2"],
+        "setFlags": ["SdP.1.2.1"]
+      },
+      {
+        "text": "Si alguien se hubiese preocupado por esa familia cuando pasó lo del agua ahora no estaríais buscando a nadie",
+        "next": "3SdP",
+        "requiredFlags": ["SdP.1.2"],
+        "setFlags": ["SdP.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3SdP",
+    "speaker": "SdP",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SdP.1.1.1"],
+        "text": "Ahora nos dedicamos a otra cosa, pero la isla sigue siendo nuestra, eso no va a cambiar"
+      },
+      {
+        "requiredFlags": ["SdP.1.1.2"],
+        "text": "La gente que viene es tranquila, vienen a relajarse en la playa, los del pueblo ni siquiera nos los cruzamos casi nunca, ellos al norte y nosotros a lo nuestro"
+      },
+      {
+        "requiredFlags": ["SdP.1.2.1"],
+        "text": "Bueno, en mi época muchas tenían su primer hijo con esa edad, y la pequeña no es ningún bebé, esa está ya criada"
+      },
+      {
+        "requiredFlags": ["SdP.1.2.2"],
+        "text": "... Qué fácil es hablar cuando la comida de tu mesa no es la que está en peligro"
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Nuestra? Más de la mitad de los hombres del pueblo trabajan en La Fábrica, la isla no es nuestra, es del Dueño",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.1.1"],
+        "setFlags": ["SdP.1.1.1.1"]
+      },
+      {
+        "text": "A servir nos dedicamos, dueños de un decorado precioso, eso es verdad, después ellos se van a vivir en sus edificios altos, con sus trabajos de verdad, que un mes de su sueldo pueden ser los reyes del mambo aquí",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.1.1"],
+        "setFlags": ["SdP.1.1.1.2"]
+      },
+      {
+        "text": "Ahora, después querrán vivir \"La experiencia autóctona\" alguno pondrá en alquiler la casa de sus padres y acabaremos poniendo las carteles de la cafetería en inglés",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.1.2"],
+        "setFlags": ["SdP.1.1.2.1"]
+      },
+      {
+        "text": "Sí, la verdad que la carrera Puerto-Playa Norte es la más rentable que hay en este sitio",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.1.2"],
+        "setFlags": ["SdP.1.1.2.2"]
+      },
+      {
+        "text": "No vaya a ser que alguno nos cuente cómo se vive fuera y se nos ocurra querer irnos",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.1.2"],
+        "setFlags": ["SdP.1.1.2.3"]
+      },
+      {
+        "text": "¿En su época los padres también se morían por contaminación de aguas? ¿Y el pueblo también se callaba sabiendo el responsable de la muerte de un padre de familia?",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.2.1"],
+        "setFlags": ["SdP.1.2.1.1"]
+      },
+      {
+        "text": "Claro, algunas cosas no cambian nunca, aquí podríamos estar paralizados en el tiempo",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.2.1"],
+        "setFlags": ["SdP.1.2.1.2"]
+      },
+      {
+        "text": "Mientras haya comida en la mesa, todo el mundo callado, que hablar con la boca llena es de mala educación",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.2.2"],
+        "setFlags": ["SdP.1.2.2.1"]
+      },
+      {
+        "text": "Si no hubiésemos abandonado el mar a la primera de cambio, la comida no sería un problema",
+        "next": "4SdP",
+        "requiredFlags": ["SdP.1.2.2"],
+        "setFlags": ["SdP.1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4SdP",
+    "speaker": "SdP",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SdP.1.1.1.1", "SdP.1.1.1.2", "SdP.1.1.2.3", "SdP.1.2.1.1", "SdP.1.2.2.1", "SdP.1.2.2.2"],
+        "text": "La envidia es pecado ¿Sabes? Deberías intentar ayudar a encontrar al Pobre Desgraciado y dejarte de revoluciones de momento, a la gente no le va a hacer gracia que el marido de la Maestra ande hablando así"
+      },
+      {
+        "requiredFlags": ["SdP.1.1.2.1"],
+        "text": "Bueno, que cada uno haga con su casa lo que quiera"
+      },
+      {
+        "requiredFlags": ["SdP.1.1.2.2"],
+        "text": "¿Ves? si al final todo en esta vida es dinero"
+      },
+      {
+        "requiredFlags": ["SdP.1.2.1.2"],
+        "text": "El tiempo no perdona a nadie, y a tí se te va despotricando en este taxi"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ya estamos llegando, si descubre algo del chaval o necesitan ayuda, llámeme, por favor",
+        "next": "5SdP",
+        "setFlags": ["SdP.2.1"]
+      },
+      {
+        "text": "Ya estamos llegando, no me cuente nada, no vaya a ser que deje de masticar y me dé por hablar",
+        "next": "5SdP",
+        "setFlags": ["SdP.2.2"]
+      },
+      {
+        "text": "Yo intenté ayudarlo y todo el pueblo se me puso en contra, ahora que el chaval intenta desaparecer os puede la culpa y si no ayudo vuelvo a ser el malo, todo porque nadie enfade al que pone el dinero, ¿la avaricia no es pecado también?",
+        "next": "5SdP",
+        "requiredFlags": ["SdP.1.1.1.1", "SdP.1.1.1.2", "SdP.1.1.2.3", "SdP.1.2.1.1", "SdP.1.2.2.1", "SdP.1.2.2.2"],
+        "setFlags": ["SdP.2.3"]
+      }
+    ]
+  },
+  {
+    "id": "5SdP",
+    "end": true,
+    "speaker": "SdP",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["SdP.2.1"],
+        "text": "Gracias, lo tendremos en cuenta"
+      },
+      {
+        "requiredFlags": ["SdP.2.2"],
+        "text": "*Suspira y mira por la ventana*"
+      },
+      {
+        "requiredFlags": ["SdP.2.3"],
+        "text": "Dios te oiga... pero mientras tanto, más nos vale encontrar al chico"
+      }
+    ]
+  }
+]

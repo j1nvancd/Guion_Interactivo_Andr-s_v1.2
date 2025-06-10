@@ -1,0 +1,440 @@
+[
+  {
+    "id": "start",
+    "speaker": "HdN",
+    "text": "(Se deja caer en el asiento, riendo solo para sí. Claramente borracho) \"A los apartamentos Midas por favor.\"",
+    "choices": [
+      {
+        "text": "¿Una noche divertida?",
+        "next": "1Negocios2",
+        "setFlags": ["Negocios2.0.1"]
+      },
+      {
+        "text": "No vomite en el coche, por favor, o le tendré que pasar la factura de la tapicería.",
+        "next": "1Negocios2",
+        "setFlags": ["Negocios2.0.2"]
+      }
+    ]
+  },
+  {
+    "id": "1Negocios2",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios2.0.1"],
+        "text": "*risita incontrolable* \"Mucho, mucho...\""
+      },
+      {
+        "requiredFlags": ["Negocios2.0.2"],
+        "text": "\"No te preocupes, si vomito te compro otro taxi directamente\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "\"Me alegro, no todo son negocios en esta vida\"",
+        "next": "2Negocios2",
+        "requiredFlags": ["Negocios2.0.1"],
+        "setFlags": ["Negocios2.0.1.1"]
+      },
+      {
+        "text": "\"Ya se ve...\"",
+        "next": "2Negocios2",
+        "requiredFlags": ["Negocios2.0.1"],
+        "setFlags": ["Negocios2.0.1.2"]
+      },
+      {
+        "text": "\"Suena como un trato justo\"",
+        "next": "2Negocios2",
+        "requiredFlags": ["Negocios2.0.2"],
+        "setFlags": ["Negocios2.0.2.1"]
+      },
+      {
+        "text": "\"Me temo que eso no será posible... hay un cierto 'valor sentimental'.\"",
+        "next": "2Negocios2",
+        "requiredFlags": ["Negocios2.0.2"],
+        "setFlags": ["Negocios2.0.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2Negocios2",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios2.0.1.1"],
+        "text": "*gesticulando ampliamente* \"No... a veces hay que recoger lo sembrado, que el campeón beba de su copa\""
+      },
+      {
+        "requiredFlags": ["Negocios2.0.1.2"],
+        "text": "*se ríe mientras se agarra a la puerta*"
+      },
+      {
+        "requiredFlags": ["Negocios2.0.2.1"],
+        "text": "\"No... hoy no hay tratos... no hay números, no hay reuniones... somos todos vecinos y amigos...\""
+      },
+      {
+        "requiredFlags": ["Negocios2.0.2.2"],
+        "text": "\"Ahh... sentimientos... sí, no suelen hacer favores negociando...\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "\"...\"",
+        "next": "3Negocios2",
+        "requiredFlags": ["Negocios2.0.1.1"],
+        "setFlags": ["Negocios2.0.1.1.1"]
+      },
+      {
+        "text": "\"El campeón ha bebido de sus muchas copas\"",
+        "next": "3Negocios2",
+        "requiredFlags": ["Negocios2.0.1.1"],
+        "setFlags": ["Negocios2.0.1.1.2"]
+      },
+      {
+        "text": "\"Ha bebido tanto que se ha convertido en nuestro amigo y vecino Spiderman\"",
+        "next": "3Negocios2",
+        "requiredFlags": ["Negocios2.0.2.1"],
+        "setFlags": ["Negocios2.0.2.1.1"]
+      },
+      {
+        "text": "\"Lo que tú digas...\"",
+        "next": "3Negocios2",
+        "requiredFlags": ["Negocios2.0.2.1"],
+        "setFlags": ["Negocios2.0.2.1.2"]
+      },
+      {
+        "text": "\"Ya... no vomites en el coche\"",
+        "next": "3Negocios2",
+        "requiredFlags": ["Negocios2.0.2.2"],
+        "setFlags": ["Negocios2.0.2.2.1"]
+      },
+      {
+        "text": "\"No estoy negociando, es mi coche y tú no estás en tus facultades\"",
+        "next": "3Negocios2",
+        "requiredFlags": ["Negocios2.0.2.2"],
+        "setFlags": ["Negocios2.0.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3Negocios2",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios2.0.1.1.2"],
+        "text": "*riendo entre dientes* \"Si...\""
+      },
+      {
+        "requiredFlags": ["Negocios2.0.2.1.1"],
+        "text": "\"Un gran poder conlleva una gran rep- resps-... ya sabes\""
+      },
+      {
+        "requiredFlags": ["Negocios2.0.2.1.2", "Negocios2.0.2.2.1"],
+        "text": "*cabeceando* \"Hmm\""
+      },
+      {
+        "requiredFlags": ["Negocios2.0.2.2.2"],
+        "text": "\"No te creas que estoy tan mal... hace falta mucho más para tumbarme...\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "Tras unos minutos de silencio",
+        "next": "4Negocios2"
+      }
+    ]
+  },
+  {
+    "id": "4Negocios2",
+    "speaker": "HdN",
+    "text": "\"¿Sabes una cosa...? A veces me pregunto qué coño hago aquí.\"",
+    "choices": [
+      {
+        "text": "¿En la isla o a la vida en general?",
+        "next": "5Negocios2",
+        "setFlags": ["Negocios2.1.1"]
+      },
+      {
+        "text": "Todos nos preguntamos eso alguna vez.",
+        "next": "5Negocios2",
+        "setFlags": ["Negocios2.1.2"]
+      },
+      {
+        "text": "Debería irse a casa a descansar.",
+        "next": "5Negocios2",
+        "setFlags": ["Negocios2.1.3"]
+      }
+    ]
+  },
+  {
+    "id": "5Negocios2",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios2.1.1"],
+        "text": "\"A todo... a todo. La isla, La Fábrica... mi vida...\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.2"],
+        "text": "\"¿Verdad que sí? Aunque algunos lo pensamos más que otros...\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.3"],
+        "text": "\"¿Casa? ¿Qué casa?\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿No le gusta su trabajo?",
+        "next": "6Negocios2",
+        "requiredFlags": ["Negocios2.1.1"],
+        "setFlags": ["Negocios2.1.1.1"]
+      },
+      {
+        "text": "¿Viene de vez en cuando, no?",
+        "next": "6Negocios2",
+        "requiredFlags": ["Negocios2.1.1"],
+        "setFlags": ["Negocios2.1.1.2"]
+      },
+      {
+        "text": "Tampoco hay que ponerse dramático hombre, parece usted un hombre de éxito en su campo.",
+        "next": "6Negocios2",
+        "requiredFlags": ["Negocios2.1.1"],
+        "setFlags": ["Negocios2.1.1.3"]
+      },
+      {
+        "text": "Bueno, ni te imaginas en lo que puede estar pensando la gente.",
+        "next": "6Negocios2",
+        "requiredFlags": ["Negocios2.1.2"],
+        "setFlags": ["Negocios2.1.2.1"]
+      },
+      {
+        "text": "A veces hay que saber parar.",
+        "next": "6Negocios2",
+        "requiredFlags": ["Negocios2.1.2"],
+        "setFlags": ["Negocios2.1.2.2"]
+      },
+      {
+        "text": "¿Tienes familia?",
+        "next": "6Negocios2",
+        "requiredFlags": ["Negocios2.1.3"],
+        "setFlags": ["Negocios2.1.3.1"]
+      },
+      {
+        "text": "A veces uno se pierde un poco.",
+        "next": "6Negocios2",
+        "requiredFlags": ["Negocios2.1.3"],
+        "setFlags": ["Negocios2.1.3.2"]
+      }
+    ]
+  },
+  {
+    "id": "6Negocios2",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios2.1.1.1"],
+        "text": "\"Cuando era joven... quería ser arquitecto. Imagínese. Dibujar casas bonitas, no transformar islas enteras para satisfacer a los accionistas.\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.1.2"],
+        "text": "\"Sí, vengo casi todos los meses desde hace... no me acuerdo desde hace cuantos años ¿Cuándo abrieron la cantera?\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.1.3"],
+        "text": "\"Éxito... oh sí, mucho éxito.\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.2.1"],
+        "text": "\"No... nunca sabes lo que esconde la gente.\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.2.2"],
+        "text": "\"Parar... (risa sarcástica) No todos podemos parar sin que todo se derrumbe.\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.3.1"],
+        "text": "\"Mi mujer... bueno, mi ex mujer. No aguantó el ritmo. No la culpo.\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.3.2"],
+        "text": "\"Perderse... es tan fácil perderse...puedes hacerlo sin darte cuenta.\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "\"Nunca es tarde para empezar de nuevo.\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.1.1"],
+        "setFlags": ["Negocios2.1.1.1.1"]
+      },
+      {
+        "text": "\"Un segundo ¿Quién eres exactamente?\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.1.1", "Negocios2.1.1.2", "Negocios2.1.1.3"],
+        "setFlags": ["Negocios2.1.1.1.2", "Negocios2.1.1.2.2", "Negocios2.1.1.3.2"]
+      },
+      {
+        "text": "\"La Cantera... abrió un par de años antes de que trasladasen la producción aquí y abriesen La Fábrica ¿Seis años quizás?\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.1.2"],
+        "setFlags": ["Negocios2.1.1.2.1"]
+      },
+      {
+        "text": "\"Más del que nunca quisiste, parece.\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.1.3"],
+        "setFlags": ["Negocios2.1.1.3.1"]
+      },
+      {
+        "text": "\"Es complicado conocer la verdad de la gente\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.2.1"],
+        "setFlags": ["Negocios2.1.2.1.1"]
+      },
+      {
+        "text": "\"A veces basta con pararse un segundo y escuchar\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.2.1"],
+        "setFlags": ["Negocios2.1.2.1.2"]
+      },
+      {
+        "text": "\"Es complicado que el plan de vida de dos personas coincida si ninguno está dispuesto a cambiarlo por el otro, eso es así\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.3.1"],
+        "setFlags": ["Negocios2.1.3.1.1"]
+      },
+      {
+        "text": "\"Supongo que el amor no todo lo puede en realidad.\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.3.1"],
+        "setFlags": ["Negocios2.1.3.1.2"]
+      },
+      {
+        "text": "\"Lo más complicado diría que es perderse a propósito\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.3.2"],
+        "setFlags": ["Negocios2.1.3.2.1"]
+      },
+      {
+        "text": "\"Tiene su punto, descubres cosas, incluso a veces de tí mismo, cuando te pierdes, en sentido literal o metafórico.\"",
+        "next": "7Negocios2",
+        "requiredFlags": ["Negocios2.1.3.2"],
+        "setFlags": ["Negocios2.1.3.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "7Negocios2",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios2.1.1.1.1"],
+        "text": "\"¿Empezar de nuevo? Con esta cara y esta cuenta bancaria, ya sólo puedo cambiar de coche, no de vida.\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.1.1.2", "Negocios2.1.1.2.2", "Negocios2.1.1.3.2"],
+        "text": "\"Venga ya... No me digas que no reconoces al dueño de La Fábrica ni teniéndolo en tu taxi\"",
+        "end": true,
+        "setFlags": ["HdN_EsDueño"]
+      },
+      {
+        "requiredFlags": ["Negocios2.1.1.2.1"],
+        "text": "\"Seis años... no sé si decir que se han pasado volando o que ha pasado toda una vida en ese tiempo...\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.1.3.1"],
+        "text": "\"El mío, el que me corresponde... Ni más ni menos.\"",
+        "end": true
+      },
+      {
+        "requiredFlags": ["Negocios2.1.2.1.1"],
+        "text": "(Se ríe, triste) \"Si quieres seguir siendo feliz, imposible. Se vive mejor en la ignorancia, sin saber lo que tu mujer piensa de tí, sin conocer más que lo que te cuentan. No escarbes, no preguntes, que ninguna respuesta te va a hacer más feliz que el no saber.\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.2.1.2"],
+        "text": "\"Escuchar... escuchando sólo aprendes lo que te quieren decir. Palabras, palabras, más palabras...\""
+      },
+      {
+        "requiredFlags": ["Negocios2.1.3.1.1"],
+        "text": "\"Me río yo del plan de vida de la gente. ¿Por qué lo llaman plan de vida si no tienen ningún plan? Yo soy muy malo por tenerlo todo controlado pero ¿Sabes qué? Después todos quieren recoger, quieren que me relaje, que delegue, pero cuando toca ver los resultados nadie está relajado para venir a por 'su parte'.\"",
+        "end": true
+      },
+      {
+        "requiredFlags": ["Negocios2.1.3.1.2"],
+        "text": "\"Amor... ¿Quién cojones cree en el amor hoy en día? Un día 'eres el amor de mi vida' y al siguiente 'estoy conociendo a otra persona'; 'te miento pero es porque te quiero'. Todo se puede solucionar pero solucionalo tú que seguro que es tu culpa.\"",
+        "end": true
+      },
+      {
+        "requiredFlags": ["Negocios2.1.3.2.1", "Negocios2.1.3.2.2"],
+        "text": "\"Eso ya lo sé. Por eso estoy aquí, supongo. Perdiéndome.\"",
+        "end": true
+      }
+    ],
+    "choices": [
+      {
+        "text": "\"Un segundo ¿Quién eres exactamente?\"",
+        "next": "8Negocios2",
+        "requiredFlags": ["Negocios2.1.1.1.1", "Negocios2.1.1.2.1"],
+        "setFlags": ["Negocios2.1.1.1.1.1", "Negocios2.1.1.2.1.1"]
+      },
+      {
+        "text": "\"Yo diría que la cuenta bancaria es una ventaja para empezar de nuevo sin preocuparte\"",
+        "next": "8Negocios2",
+        "requiredFlags": ["Negocios2.1.1.1.1"],
+        "setFlags": ["Negocios2.1.1.1.1.2"]
+      },
+      {
+        "text": "\"El tiempo es sólo una cuestión de perspectiva.\"",
+        "next": "8Negocios2",
+        "requiredFlags": ["Negocios2.1.1.2.1"],
+        "setFlags": ["Negocios2.1.1.2.1.2"]
+      },
+      {
+        "text": "\"Supongo que no eres de los que se fía de lo que le dicen\"",
+        "next": "8Negocios2",
+        "requiredFlags": ["Negocios2.1.2.1.1", "Negocios2.1.2.1.2"],
+        "setFlags": ["Negocios2.1.2.1.1.1", "Negocios2.1.2.1.2.1"]
+      },
+      {
+        "text": "\"Yo prefiero confiar en lo que me dicen y llevarme una decepción de vez en cuando que vivir pensando que todo es mentira\"",
+        "next": "8Negocios2",
+        "requiredFlags": ["Negocios2.1.2.1.1", "Negocios2.1.2.1.2"],
+        "setFlags": ["Negocios2.1.2.1.1.2", "Negocios2.1.2.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "8Negocios2",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios2.1.1.1.1.1", "Negocios2.1.1.2.1.1"],
+        "text": "\"Venga ya... No me digas que no reconoces al dueño de La Fábrica ni teniéndolo en tu taxi\"",
+        "end": true,
+        "setFlags": ["HdN_EsDueño"]
+      },
+      {
+        "requiredFlags": ["Negocios2.1.1.1.1.2"],
+        "text": "\"Yo no sé vivir sin preocuparme\"",
+        "end": true
+      },
+      {
+        "requiredFlags": ["Negocios2.1.1.2.1.2"],
+        "text": "*asiente y mira por la ventanilla*",
+        "end": true
+      },
+      {
+        "requiredFlags": ["Negocios2.1.2.1.2.1"],
+        "text": "\"¿Cómo vas a fiarte de lo que te dicen? Un día 'eres el amor de mi vida' y al siguiente 'estoy conociendo a otra persona'; 'te miento pero es porque te quiero'. Todo se puede solucionar pero solucionalo tú que seguro que es tu culpa.\"",
+        "end": true
+      },
+      {
+        "requiredFlags": ["Negocios2.1.2.1.2.2"],
+        "text": "\"Bien hecho, en la ignorancia es donde más cómodo se duerme.\"",
+        "end": true
+      }
+    ],
+    "end": true
+  }
+]

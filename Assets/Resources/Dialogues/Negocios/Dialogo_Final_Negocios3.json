@@ -1,0 +1,255 @@
+[
+  {
+    "id": "start",
+    "speaker": "HdN",
+    "text": "Al puerto, por favor",
+    "choices": [
+      {
+        "text": "¿De vuelta al continente?",
+        "next": "1Negocios3",
+        "setFlags": ["Negocios3.0.1"]
+      },
+      {
+        "text": "¿Día de excursión fuera de la oficina?",
+        "next": "1Negocios3",
+        "setFlags": ["Negocios3.0.2"]
+      },
+      {
+        "text": "Hay que volver al trabajo, eh.",
+        "next": "1Negocios3",
+        "requiredFlags": ["HechoNegocios2"],
+        "setFlags": ["Negocios3.0.3"]
+      }
+    ]
+  },
+  {
+    "id": "1Negocios3",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios3.0.1"],
+        "text": "No, voy a revisar personalmente unas entregas."
+      },
+      {
+        "requiredFlags": ["Negocios3.0.2"],
+        "text": "*Entre risas* \"Sí, toca revisar personalmente unas entregas.\""
+      },
+      {
+        "requiredFlags": ["Negocios3.0.3"],
+        "text": "Siento mucho lo de la otra noche, no es el tipo de imagen que uno quiere dar."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Si quieres que algo se haga bien, hazlo tú mismo, supongo",
+        "next": "2Negocios3",
+        "requiredFlags": ["Negocios3.0.1"],
+        "setFlags": ["Negocios3.0.1.1"]
+      },
+      {
+        "text": "A los gordos de arriba no les gusta que les dé el sol y le mandan a usted ¿eh?",
+        "next": "2Negocios3",
+        "requiredFlags": ["Negocios3.0.1"],
+        "excludeFlags": ["HechoNegocios2"],
+        "setFlags": ["Negocios3.0.1.2A"]
+      },
+      {
+        "text": "¿Y eso? ¿Tan mal está la cosa para que el jefe tenga que bajar a los muelles?",
+        "next": "2Negocios3",
+        "requiredFlags": ["Negocios3.0.1", "HechoNegocios2"],
+        "setFlags": ["Negocios3.0.1.2B"]
+      }
+    ]
+  },
+  {
+    "id": "2Negocios3",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios3.0.1.1"],
+        "text": "Eso es lo que digo yo. Por cierto ¿Usted sabe algo de un periodista del continente que está por la isla?"
+      },
+      {
+        "requiredFlags": ["Negocios3.0.1.2A"],
+        "text": "Si me quedo todo el día sentado delante del ordenador me van a empezar a crecer algas en el culo, no me viene mal alguna excursión de vez en cuando. Por cierto ¿Usted sabe algo de un periodista del continente que está por la isla?"
+      },
+      {
+        "requiredFlags": ["Negocios3.0.1.2B"],
+        "text": "A veces hay que demostrar que te interesa lo que hace la empresa, que hay personas y no sólo números. Por cierto ¿Usted sabe algo de un periodista del continente que está por la isla?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, lo he llevado en el taxi alguna vez, ha venido a hacer un reportaje de la isla como destino turístico.",
+        "next": "3Negocios3",
+        "setFlags": ["Negocios3.1.1"]
+      },
+      {
+        "text": "¿Periodista? No, no sé que haría aquí, aquí solo hay turistas y trabajadores, como no quieran hablar de la desaparición del pobre desgraciado.",
+        "next": "3Negocios3",
+        "setFlags": ["Negocios3.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "3Negocios3",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios3.1.1"],
+        "text": "Eso es lo que había escuchado, pero por lo visto ahora el tipo está metiendo las narices en los asuntos de la isla, preguntando por ese pobre desgraciado que desapareció hace un par de semanas"
+      },
+      {
+        "requiredFlags": ["Negocios3.1.2"],
+        "text": "Ya lo conocerás, supongo que se irá moviendo por la isla intentando conocerlo todo, olfateando por ahí. No sé por qué no se queda en el norte, que es lo que le interesa a los del continente."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Bueno, es normal. Hay un muchacho que ha desaparecido como si se lo hubiese tragado la tierra. Es una historia que puede atraer bastante morbo.",
+        "next": "4Negocios3",
+        "requiredFlags": ["Negocios3.1.1"],
+        "setFlags": ["Negocios3.1.1.1"]
+      },
+      {
+        "text": "Lo típico, vienen del continente y se creen que tienen la verdad absoluta, como si nosotros necesitásemos que nos educasen o nos salvasen.",
+        "next": "4Negocios3",
+        "requiredFlags": ["Negocios3.1.1"],
+        "setFlags": ["Negocios3.1.1.2"]
+      },
+      {
+        "text": "Supongo que la playa da poco de lo que hablar.",
+        "next": "4Negocios3",
+        "requiredFlags": ["Negocios3.1.2"],
+        "setFlags": ["Negocios3.1.2.1"]
+      },
+      {
+        "text": "Sería lo mejor, ellos que se queden en sus apartamentos y nos dejen vivir tranquilos.",
+        "next": "4Negocios3",
+        "requiredFlags": ["Negocios3.1.2"],
+        "setFlags": ["Negocios3.1.2.2"]
+      },
+      {
+        "text": "Bueno, quizás sea una oportunidad de mostrar transparencia. Si en un reportaje de la isla incluye La Fábrica, mejor que haya hablado contigo que con otros ¿no?",
+        "next": "4Negocios3",
+        "requiredFlags": ["Negocios3.1.1", "Negocios3.1.2", "HdN_EsDueño"],
+        "setFlags": ["Negocios3.1.1.3", "Negocios3.1.2.3"]
+      }
+    ]
+  },
+  {
+    "id": "4Negocios3",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios3.1.1.1"],
+        "text": "Morbo... claro, lo único que les interesa es el morbo, vienen a un sitio tranquilo a remover la tierra a ver si sacan algo turbio."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.1.2"],
+        "text": "..."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.2.1"],
+        "text": "¿No es eso lo que buscan? Si vienen de vacaciones lo que querrán es tranquilidad, que no haya nada de lo que hablar. ¿Desde cuándo uno se va de vacaciones buscando morbo?"
+      },
+      {
+        "requiredFlags": ["Negocios3.1.2.2"],
+        "text": "Claro, para eso está el barrio vacacional en el norte, no sé para qué, teniendo aquella zona maravillosa, se querrían meter en la isla."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.1.3", "Negocios3.1.2.3"],
+        "text": "¿Tú crees? No sé... no creo que a la gente le interese mucho escuchar sobre una planta química."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Bueno, aquí hace años que ya vino gente de fuera a remover la tierra.",
+        "next": "5Negocios3",
+        "requiredFlags": ["Negocios3.1.1.1"],
+        "setFlags": ["Negocios3.1.1.1.1"]
+      },
+      {
+        "text": "Quizás estamos demasiado tranquilos...",
+        "next": "5Negocios3",
+        "requiredFlags": ["Negocios3.1.1.1"],
+        "setFlags": ["Negocios3.1.1.1.2"]
+      },
+      {
+        "text": "No se moleste hombre, todos somos hipócritas de vez en cuando.",
+        "next": "5Negocios3",
+        "requiredFlags": ["Negocios3.1.1.2"],
+        "setFlags": ["Negocios3.1.1.2.1"]
+      },
+      {
+        "text": "¿Qué pasa? ¿Se ha acordado usted ahora de que ni su empresa ni usted nacieron aquí?",
+        "next": "5Negocios3",
+        "requiredFlags": ["Negocios3.1.1.2"],
+        "setFlags": ["Negocios3.1.1.2.2"]
+      },
+      {
+        "text": "Bueno, la gente se aburre. Todo el mundo quiere desconectar y eso pero al tercer día de dormir y estar en la playa ya te crees detective.",
+        "next": "5Negocios3",
+        "requiredFlags": ["Negocios3.1.2.1", "Negocios3.1.2.2"],
+        "setFlags": ["Negocios3.1.2.1.1", "Negocios3.1.2.2.1"]
+      },
+      {
+        "text": "Ya, la verdad que no lo entiendo. Vienes hasta aquí para relajarte y te pones a buscar dramas.",
+        "next": "5Negocios3",
+        "requiredFlags": ["Negocios3.1.2.1", "Negocios3.1.2.2"],
+        "setFlags": ["Negocios3.1.2.1.2", "Negocios3.1.2.2.2"]
+      },
+      {
+        "text": "Bueno, no sé cuánto les interesará, pero al menos así hay información de La Fábrica y la gente de fuera no puede inventarse historias.",
+        "next": "5Negocios3",
+        "requiredFlags": ["Negocios3.1.1.3"],
+        "setFlags": ["Negocios3.1.1.3.1"]
+      },
+      {
+        "text": "Ya, seguramente no sea muy buena idea hablar con la prensa. No creo que si lo que interesa de la isla es el turismo vayan a hablar muy bien de una planta química.",
+        "next": "5Negocios3",
+        "requiredFlags": ["Negocios3.1.1.3"],
+        "setFlags": ["Negocios3.1.1.3.2"]
+      }
+    ]
+  },
+  {
+    "id": "5Negocios3",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["Negocios3.1.1.1.1"],
+        "text": "..."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.1.1.2"],
+        "text": "¿Qué se supone que significa eso? ¿Qué más puede pedir una comunidad que tranquilidad? Está todo cubierto, todo el mundo tiene lo que necesita."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.1.2.1"],
+        "text": "..."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.1.2.2"],
+        "text": ""
+      },
+      {
+        "requiredFlags": ["Negocios3.1.2.1.1", "Negocios3.1.2.2.1"],
+        "text": "Problemas de verdad es lo que necesita la gente."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.2.1.2", "Negocios3.1.2.2.2"],
+        "text": "Problemas de verdad es lo que necesita la gente."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.1.3.1"],
+        "text": "No te falta razón..."
+      },
+      {
+        "requiredFlags": ["Negocios3.1.1.3.2"],
+        "text": "Claro, lo único que quieren es sacar titulares..."
+      }
+    ],
+    "end": true
+  }
+]

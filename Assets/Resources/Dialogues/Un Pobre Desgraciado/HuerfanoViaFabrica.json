@@ -1,0 +1,249 @@
+{
+  "dialogo": {
+    "id": "start",
+    "speaker": "El Huérfano",
+    "text": "A La Fábrica, por favor.",
+    "tension": 0,
+    "choices": [
+      {
+        "text": "Tú... ¿Estás bien? Joder, pensábamos que te había pasado algo.",
+        "next": "1Huérfano",
+        "setFlags": ["Huérfano.0.1"],
+        "tensionEffect": 0
+      },
+      {
+        "text": "¿Tres semanas desaparecido y ahora me dices 'a la Fábrica, por favor' como si nada?",
+        "next": "1Huérfano",
+        "setFlags": ["Huérfano.0.2"],
+        "tensionEffect": 1
+      }
+    ]
+  },
+  "ramas": [
+    {
+      "id": "1Huérfano",
+      "speaker": "El Huérfano",
+      "conditionalTexts": [
+        {
+          "requiredFlags": ["Huérfano.0.1"],
+          "text": "Estoy aquí, ¿No es eso lo que importa?",
+          "tensionEffect": -1
+        },
+        {
+          "requiredFlags": ["Huérfano.0.2"],
+          "text": "El tiempo no cambia lo que debe hacerse.",
+          "tensionEffect": 1
+        }
+      ],
+      "choices": [
+        {
+          "text": "¿Dónde has estado todo este tiempo? La gente está preocupada. Te estaban buscando.",
+          "next": "2Huérfano",
+          "setFlags": ["Huérfano.1.1"],
+          "tensionEffect": 0
+        },
+        {
+          "text": "¿Por qué no dijiste nada? Podrías haber pedido ayuda, tus hermanas llevan solas todo este tiempo.",
+          "next": "2Huérfano",
+          "setFlags": ["Huérfano.1.2"],
+          "tensionEffect": 1
+        }
+      ]
+    },
+    {
+      "id": "2Huérfano",
+      "speaker": "El Huérfano",
+      "conditionalTexts": [
+        {
+          "requiredFlags": ["Huérfano.1.1"],
+          "text": "Donde... donde debía estar. Entre sombras... preparando... el amanecer que quema cadenas. No es tiempo de palabras, ahora no... no es tiempo de palabras...",
+          "tensionEffect": 1
+        },
+        {
+          "requiredFlags": ["Huérfano.1.2"],
+          "text": "Mis hermanas... mis hermanas sabrán. No están solas... nunca... yo no las dejé solas",
+          "tensionEffect": -1
+        }
+      ],
+      "choices": [
+        {
+          "text": "¿A quién le estás repitiendo eso? Parece que ni tú lo crees del todo.",
+          "next": "3Huérfano",
+          "requiredFlags": ["Huérfano.1.1"],
+          "setFlags": ["Huérfano.1.1.1"],
+          "tensionEffect": 1
+        },
+        {
+          "text": "Siempre es tiempo de palabras, Abel. Habla conmigo ¿Qué ha pasado?",
+          "next": "3Huérfano",
+          "requiredFlags": ["Huérfano.1.1"],
+          "setFlags": ["Huérfano.1.1.2"],
+          "tensionEffect": -1
+        },
+        {
+          "text": "¿A qué te refieres con que no las dejaste solas? ¿Alguien sabía que te ibas?",
+          "next": "3Huérfano",
+          "requiredFlags": ["Huérfano.1.2"],
+          "setFlags": ["Huérfano.1.2.1"],
+          "tensionEffect": 0
+        },
+        {
+          "text": "Ya... las dejaste rodeadas de plegarias. ¿Ese era tu plan? ¿Que las protegiese San Jorge?",
+          "next": "3Huérfano",
+          "requiredFlags": ["Huérfano.1.2", "Info_Plegarias"],
+          "setFlags": ["Huérfano.1.2.2"],
+          "tensionEffect": 1
+        }
+      ]
+    },
+    {
+      "id": "3Huérfano",
+      "speaker": "El Huérfano",
+      "conditionalTexts": [
+        {
+          "requiredFlags": ["Huérfano.1.1.1"],
+          "text": "¿Repetir? No, no... esto no es un rezo aprendido. Es verdad. La he visto. La claridad. Como una chispa en medio del humo. Solo los ciegos piden más explicaciones.",
+          "tensionEffect": 1
+        },
+        {
+          "requiredFlags": ["Huérfano.1.1.2"],
+          "text": "¿Y qué quieres que diga? ¿Que tengo miedo? Lo tenía... cuando creía que esto era todo lo que había. Pero ahora sé que hay más. Que podemos hacer más. Y si no lo entiendes... está bien. No todos llegan al mismo tiempo.",
+          "tensionEffect": -1
+        },
+        {
+          "requiredFlags": ["Huérfano.1.2.1"],
+          "text": "No lo sabían. No podían saberlo. Pero yo sí. Yo escuché. Sabía lo que tenía que hacer. Las estoy protegiendo, aunque aún no lo vean, aunque no lo entiendan",
+          "tensionEffect": 0
+        },
+        {
+          "requiredFlags": ["Huérfano.1.2.2"],
+          "text": "Las plegarias son puentes... No las dejé solas, las dejé envueltas. En fe, en luz. San Jorge... fe, eso era lo que tenían. Eso... y a mí, haciendo lo que debo.",
+          "tensionEffect": 1
+        }
+      ],
+      "choices": [
+        {
+          "text": "¿Te oyes hablar? No es claridad eso. Es niebla. Estás huyendo de la realidad. Vamos, cuéntame ¿Por qué vamos a La Fábrica?",
+          "next": "4Huérfano",
+          "requiredFlags": ["Huérfano.1.1.1"],
+          "setFlags": ["Huérfano.1.1.1.1"],
+          "tensionEffect": 1
+        },
+        {
+          "text": "No te juzgo por tener miedo, Abel. Si de verdad crees que hay un camino nuevo, enséñamelo. Cuéntame, ¿Qué pasa? ¿Por qué vamos a La Fábrica?",
+          "next": "4Huérfano",
+          "requiredFlags": ["Huérfano.1.1.2"],
+          "setFlags": ["Huérfano.1.1.2.1"],
+          "tensionEffect": -1
+        },
+        {
+          "text": "Vale, estoy contigo, Abel, ayúdame a entender ¿Por qué estamos yendo a La Fábrica?",
+          "next": "4Huérfano",
+          "requiredFlags": ["Huérfano.1.2.1"],
+          "setFlags": ["Huérfano.1.2.1.1"],
+          "tensionEffect": -1
+        },
+        {
+          "text": "Estoy seguro de que sí, Abel. Seguro que estás haciendo lo que debes ¿Por qué no me cuentas qué es en concreto lo que debes hacer en La Fábrica?",
+          "next": "4Huérfano",
+          "requiredFlags": ["Huérfano.1.2.2"],
+          "setFlags": ["Huérfano.1.2.2.1"],
+          "tensionEffect": 0
+        },
+        {
+          "text": "(Parar el coche) \"¿Sabes qué? No. No vamos a seguir así. No te voy a llevar a ningún sitio si no me dices qué está pasando.\"",
+          "next": "A_Huérfano",
+          "tensionEffect": 2
+        }
+      ]
+    },
+    {
+      "id": "4Huérfano",
+      "speaker": "El Huérfano",
+      "conditionalTexts": [
+        {
+          "requiredFlags": ["Huérfano.1.1.1.1", "Huérfano.1.1.2.1", "Huérfano.1.2.1.1", "Huérfano.1.2.2.1"],
+          "text": "Vamos a cumplir una misión divina, a matar nuestro dragón, tu serás mi caballo blanco. Todos nos recordarán.",
+          "tensionEffect": 2
+        }
+      ],
+      "choices": [
+        {
+          "text": "Vale... Abel, antes de llegar... necesito que me confirmes que no vas a matar a nadie. Voy a ignorar lo del caballo blanco y centrarme en que no matemos a nadie...",
+          "next": "5Huérfano",
+          "requiredFlags": ["Huérfano.1.1.1.1"],
+          "setFlags": ["Huérfano.1.1.1.1.1"],
+          "tensionEffect": -1
+        },
+        {
+          "text": "*asentir y seguir adelante* (Decisión final, llegar a la Fábrica)",
+          "next": "final_fabrica",
+          "tensionEffect": 3
+        }
+      ]
+    },
+    {
+      "id": "A_Huérfano",
+      "speaker": "El Huérfano",
+      "text": "No puedo echarme atrás. Si lo hago... entonces todo esto no habrá servido. Ni las voces, ni las noches sin dormir, ni ellas... *agarra su chaqueta*",
+      "choices": [
+        {
+          "text": "Entonces usa este momento para parar. Para respirar. No tienes que demostrarle nada a nadie, Abel. Ni a voces, ni a sombras. Ahora dime ¿Para qué quieres ir a La Fábrica?",
+          "next": "A1_Huérfano",
+          "tensionEffect": -1
+        },
+        {
+          "text": "Te queda esto, Abel. Este coche, esta conversación. Yo estoy aquí, ahora. No hace falta que lleguemos a la Fábrica para que algo cambie.",
+          "next": "A2_Huérfano",
+          "tensionEffect": -2
+        }
+      ]
+    },
+    {
+      "id": "final_fabrica",
+      "type": "ending",
+      "description": "Llegas a la Fábrica con Abel. Los eventos posteriores dependen de las decisiones tomadas durante el viaje.",
+      "variations": [
+        {
+          "requiredTension": 3,
+          "description": "Abel comete un acto violento en la Fábrica"
+        },
+        {
+          "requiredTension": 0,
+          "description": "Abel abandona su plan y regresa con sus hermanas"
+        }
+      ]
+    },
+    {
+      "id": "final_suicidio",
+      "type": "ending",
+      "description": "Abel se suicida en el taxi",
+      "trigger": {
+        "requiredPath": "A_Huérfano",
+        "requiredTension": 3
+      }
+    },
+    {
+      "id": "final_entrega",
+      "type": "ending",
+      "description": "Abel entrega el arma y regresa con sus hermanas",
+      "trigger": {
+        "requiredPath": "A_Huérfano",
+        "requiredTension": -3
+      }
+    }
+  ],
+  "sistema_tension": {
+    "min": -3,
+    "max": 3,
+    "efectos": {
+      "-3": "Abandona su plan completamente",
+      "-2": "Considera alternativas",
+      "-1": "Duda de su misión",
+      "0": "Neutral",
+      "1": "Se muestra agitado",
+      "2": "Amenaza veladamente",
+      "3": "Acción violenta inminente"
+    }
+  }
+}
