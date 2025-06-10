@@ -55,19 +55,19 @@
       {
         "text": "Para que unos ganen otros deben perder ¿No es así?",
         "next": "3HdN",
-        "requiredFlags": ["HdN.1.1"],
+        "requiredFlags": ["HdN.1.1", "HdN.1.3"],
         "setFlags": ["HdN.1.1.1"]
       },
       {
         "text": "Que se lo digan a los pescadores",
         "next": "3HdN",
-        "requiredFlags": ["HdN.1.1"],
+        "requiredFlags": ["HdN.1.1", "HdN.1.3"],
         "setFlags": ["HdN.1.1.2"]
       },
       {
         "text": "No me meto en eso.",
         "next": "3HdN",
-        "requiredFlags": ["HdN.1.1"],
+        "requiredFlags": ["HdN.1.1", "HdN.1.3"],
         "setFlags": ["HdN.1.1.3"]
       },
       {

@@ -693,8 +693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 44}
-  m_SizeDelta: {x: 200, y: 0}
+  m_AnchoredPosition: {x: -4.268402, y: 44}
+  m_SizeDelta: {x: 755.4631, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1340698527
 MonoBehaviour:
@@ -743,8 +743,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -781,7 +781,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -157.11615, w: 0}
+  m_margin: {x: 0, y: 0, z: 10.188721, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -897,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812b2aa3e9f782b4fa7ee190c82982a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueJSON: {fileID: 4900000, guid: a7329f468c154314cb1c6a396bd4e5ea, type: 3}
+  dialogueJSON: {fileID: 4900000, guid: 7f40b4c7ddab16e41be3c996f2900d6d, type: 3}
 --- !u!1 &2067340489
 GameObject:
   m_ObjectHideFlags: 0
