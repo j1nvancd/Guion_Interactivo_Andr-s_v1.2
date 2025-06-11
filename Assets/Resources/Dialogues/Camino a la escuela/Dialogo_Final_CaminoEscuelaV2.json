@@ -1,0 +1,149 @@
+[
+  {
+    "id": "startV2",
+    "speaker": "Verónica",
+    "text": "Al final me acordé del sueño, bueno, en realidad es que esta noche he vuelto a soñar lo mismo.",
+    "setFlags": ["InicioV2"],
+    "choices": [
+      {
+        "text": "¿Sí? ¿Qué pasaba?",
+        "next": "1V2",
+        "setFlags": ["V2_1.1"]
+      },
+      {
+        "text": "Espero que no sea muy malo entonces.",
+        "next": "1V2",
+        "setFlags": ["V2_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1V2",
+    "speaker": "Verónica",
+    "text": "Estaba en una casa que no era la nuestra, más grande. Todo era de madera, vieja pero bonita. Y había muchas puertas cerradas, como si cada habitación guardara algo distinto, pero no podías entrar.",
+    "choices": [
+      {
+        "text": "¿Intentabas abrirlas?",
+        "next": "2V2",
+        "setFlags": ["V2_2.1"]
+      },
+      {
+        "text": "¿Cómo sabías que cada habitación guardaba algo distinto?",
+        "next": "2V2",
+        "setFlags": ["V2_2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2V2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V2_2.1"],
+        "text": "No. Solo caminaba por el pasillo. Las tocaba con la mano. Una tenía música detrás. Otra olía a sopa. En una, creo que había alguien llorando. Pero no abrí ninguna."
+      },
+      {
+        "requiredFlags": ["V2_2.2"],
+        "text": "Mientras andaba por el pasillo una tenía música detrás. Otra olía a sopa. En una, creo que había alguien llorando. Pero no abrí ninguna."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Y te quedabas ahí?",
+        "next": "3V2",
+        "requiredFlags": ["V2_2.1", "V2_2.2"],
+        "setFlags": ["V2_2.1.1"]
+      },
+      {
+        "text": "¿Por qué no?",
+        "next": "3V2",
+        "requiredFlags": ["V2_2.1", "V2_2.2"],
+        "setFlags": ["V2_2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "3V2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V2_2.1.1"],
+        "text": "Sí. Como esperando que alguna se abriera sola."
+      },
+      {
+        "requiredFlags": ["V2_2.1.2"],
+        "text": "No sé, me quedaba esperando. Como si alguna se tuviese que abrir sola."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Y se abría?",
+        "next": "4V2",
+        "setFlags": ["V2_3.1"]
+      },
+      {
+        "text": "¿Por qué no abrirlas tú?",
+        "next": "4V2",
+        "setFlags": ["V2_3.2"]
+      }
+    ]
+  },
+  {
+    "id": "4V2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V2_3.1"],
+        "text": "No. Pero justo antes de despertarme oí un ruido. Como si una estuviera a punto."
+      },
+      {
+        "requiredFlags": ["V2_3.2"],
+        "text": "Yo que sé, era un sueño, no podía controlar lo que pasaba. Además, justo antes de despertarme oí un ruido. Como si una estuviera a punto."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ya.",
+        "next": "5V2",
+        "setFlags": ["V2_4.1"]
+      },
+      {
+        "text": "¿Cuál?",
+        "next": "5V2",
+        "setFlags": ["V2_4.2"]
+      }
+    ]
+  },
+  {
+    "id": "5V2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["V2_4.1"],
+        "text": "Desperté con esa sensación de... algo que se iba a decir y no se dijo. ¿Sabes?"
+      },
+      {
+        "requiredFlags": ["V2_4.2"],
+        "text": "No lo sé, desperté con esa sensación de... algo que se iba a decir y no se dijo. ¿Sabes?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí.",
+        "next": "6V2",
+        "setFlags": ["V2_5.1"]
+      },
+      {
+        "text": "...",
+        "next": "6V2",
+        "setFlags": ["V2_5.2"]
+      }
+    ]
+  },
+  {
+    "id": "6V2",
+    "speaker": "Verónica",
+    "text": "...",
+    "end": true
+  }
+]

@@ -1,0 +1,255 @@
+[
+  {
+    "id": "startL3",
+    "speaker": "Verónica",
+    "text": "Mira eso.",
+    "setFlags": ["InicioL3"],
+    "choices": [
+      {
+        "text": "¿El qué?",
+        "next": "1L3",
+        "setFlags": ["L3_1.1"]
+      },
+      {
+        "text": "¿En el parabrisas?",
+        "next": "1L3",
+        "setFlags": ["L3_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1L3",
+    "speaker": "Verónica",
+    "text": "Ahí. Las marcas en el cristal. Son huellas.",
+    "choices": [
+      {
+        "text": "Un gato, seguro.",
+        "next": "2L3",
+        "setFlags": ["L3_2.1"]
+      },
+      {
+        "text": "Será tu amigo de la ventana",
+        "next": "2L3",
+        "requiredFlags": ["HaVistoTardeEnCasaD2"],
+        "setFlags": ["L3_2.2"]
+      },
+      {
+        "text": "Ahora que deja de llover voy a tener que lavar el coche.",
+        "next": "2L3",
+        "setFlags": ["L3_2.3"]
+      }
+    ]
+  },
+  {
+    "id": "2L3",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L3_2.1", "L3_2.2"],
+        "text": "Tiene que haberse subido por la noche. Mira cómo están marcadas, con barro. Caminó de un lado al otro, se sentó un rato..."
+      },
+      {
+        "requiredFlags": ["L3_2.3"],
+        "text": "¿No puedes estar ni un minuto sin ser productivo?"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Habrá estado buscando calor.",
+        "next": "3L3",
+        "requiredFlags": ["L3_2.1"],
+        "setFlags": ["L3_2.1.1"]
+      },
+      {
+        "text": "A la gente no le gusta montarse en un taxi sucio...",
+        "next": "3L3",
+        "requiredFlags": ["L3_2.3"],
+        "setFlags": ["L3_2.3.1"]
+      },
+      {
+        "text": "¿Se supone que tengo que disfrutar de que un gato me manche el coche?",
+        "next": "3L3",
+        "requiredFlags": ["L3_2.3"],
+        "setFlags": ["L3_2.3.2"]
+      }
+    ]
+  },
+  {
+    "id": "3L3",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L3_2.1.1"],
+        "text": "O altura. Les gusta mirar desde arriba."
+      },
+      {
+        "requiredFlags": ["L3_2.3.1"],
+        "text": "Es un taxi con 35 años, no creo que nadie se queje de las huellas."
+      },
+      {
+        "requiredFlags": ["L3_2.3.2"],
+        "text": "No te preocupes, no tienes por qué disfrutar de nada..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "*poner los limpiaparabrisas* Ya está.",
+        "next": "4L3",
+        "setFlags": ["L3_3"]
+      },
+      {
+        "text": "Tampoco es que haya mucho que ver.",
+        "next": "4L3",
+        "requiredFlags": ["L3_2.1.1"],
+        "setFlags": ["L3_2.1.1.1"]
+      },
+      {
+        "text": "Digo yo que para eso se podía haber subido a un tejado.",
+        "next": "4L3",
+        "requiredFlags": ["L3_2.1.1"],
+        "setFlags": ["L3_2.1.1.2"]
+      },
+      {
+        "text": "...",
+        "next": "4L3",
+        "requiredFlags": ["L3_2.3.1"],
+        "setFlags": ["L3_2.3.1.1"]
+      },
+      {
+        "text": "No te metas con el taxi que lo conocí antes que a tí.",
+        "next": "4L3",
+        "requiredFlags": ["L3_2.3.1"],
+        "setFlags": ["L3_2.3.1.2"]
+      },
+      {
+        "text": "Menos mal.",
+        "next": "4L3",
+        "requiredFlags": ["L3_2.3.2"],
+        "setFlags": ["L3_2.3.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4L3",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L3_3"],
+        "text": "No del todo. Se queda la marca, ¿vez?"
+      },
+      {
+        "requiredFlags": ["L3_2.1.1.1", "L3_2.1.1.2", "L3_2.3.1.1", "L3_2.3.1.2", "L3_2.3.2.2"],
+        "text": "¿No te intriga? Todas las cosas que pasan mientras dormimos, como alguien puede pasearse por el coche sin que lo sepamos."
+      },
+      {
+        "requiredFlags": ["L3_2.3.2.1"],
+        "text": "Poco más y naces en él, con eso es complicado competir."
+      }
+    ],
+    "choices": [
+      {
+        "text": "No sabía que te molestara tanto.",
+        "next": "5L3",
+        "requiredFlags": ["L3_3"],
+        "setFlags": ["L3_4.1"]
+      },
+      {
+        "text": "Lo llevaré al lavadero.",
+        "next": "5L3",
+        "requiredFlags": ["L3_3"],
+        "setFlags": ["L3_4.2"],
+        "end": true
+      },
+      {
+        "text": "¿Estás bien?",
+        "next": "5L3",
+        "requiredFlags": ["L3_2.1.1.1"],
+        "setFlags": ["L3_2.1.1.1.1"]
+      },
+      {
+        "text": "Creo que sería peor saberlo todo ¿No crees?",
+        "next": "5L3",
+        "requiredFlags": ["L3_2.1.1.1"],
+        "setFlags": ["L3_2.1.1.1.2"]
+      },
+      {
+        "text": "Te aconsejo que no lo intentes...",
+        "next": "5L3",
+        "requiredFlags": ["L3_2.3.2.1"],
+        "setFlags": ["L3_2.3.2.1.1"],
+        "end": true
+      },
+      {
+        "text": "Es un coche viejo, no te tienes que poner celosa.",
+        "next": "5L3",
+        "requiredFlags": ["L3_2.3.2.1"],
+        "setFlags": ["L3_2.3.2.1.2"],
+        "end": true
+      }
+    ]
+  },
+  {
+    "id": "5L3",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L3_4.1"],
+        "text": "No me molesta, me intriga. Mientras dormimos pasan tantas cosas que no sabemos..."
+      },
+      {
+        "requiredFlags": ["L3_2.1.1.1.1"],
+        "text": "Si... sí. Sólo necesito dormir un poco..."
+      },
+      {
+        "requiredFlags": ["L3_2.1.1.1.2"],
+        "text": "Puede ser, en la ignorancia se vive más tranquila..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Los lunes son duros...",
+        "next": "6L3",
+        "requiredFlags": ["L3_2.1.1.1.1"],
+        "setFlags": ["L3_2.1.1.1.1.1"]
+      },
+      {
+        "text": "Bebe del termo, el café todavía debe estar caliente. Te vendrá bien.",
+        "next": "6L3",
+        "requiredFlags": ["L3_2.1.1.1.1"],
+        "setFlags": ["L3_2.1.1.1.1.2"]
+      },
+      {
+        "text": "...",
+        "next": "6L3",
+        "requiredFlags": ["L3_2.1.1.1.2"],
+        "setFlags": ["L3_2.1.1.1.2.1"],
+        "end": true
+      },
+      {
+        "text": "Hoy estás especialmente críptica...",
+        "next": "6L3",
+        "requiredFlags": ["L3_2.1.1.1.2"],
+        "setFlags": ["L3_2.1.1.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "6L3",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L3_2.1.1.1.1.1"],
+        "text": "..."
+      },
+      {
+        "requiredFlags": ["L3_2.1.1.1.1.2"],
+        "text": "Gracias"
+      },
+      {
+        "requiredFlags": ["L3_2.1.1.1.2.2"],
+        "text": "Solo necesito dormir..."
+      }
+    ],
+    "end": true
+  }
+]

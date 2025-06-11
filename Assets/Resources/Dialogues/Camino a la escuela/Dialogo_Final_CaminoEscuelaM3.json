@@ -1,0 +1,158 @@
+[
+  {
+    "id": "startM3",
+    "speaker": "Verónica",
+    "text": "¿Tú sabes qué ha sido del vasito ese verde? El que tenía el borde un poco desconchado.",
+    "setFlags": ["InicioM3"],
+    "choices": [
+      {
+        "text": "¿Uno bajito?",
+        "next": "1M3",
+        "setFlags": ["M3_1.1"]
+      },
+      {
+        "text": "¿El que usabas para los zumos?",
+        "next": "1M3",
+        "setFlags": ["M3_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1M3",
+    "speaker": "Verónica",
+    "text": "Ese mismo. Lo he buscado en todos lados.",
+    "choices": [
+      {
+        "text": "Igual lo tiraste tú. Dijiste hace un mes que ibas a hacer limpieza.",
+        "next": "2M3",
+        "setFlags": ["M3_2.1"]
+      },
+      {
+        "text": "Ni lo recordaba, no sé cuánto hará que no lo veo.",
+        "next": "2M3",
+        "setFlags": ["M3_2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2M3",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["M3_2.1"],
+        "text": "Si lo tiré, no me acuerdo. Era de esos que me gustaban, de los de antes."
+      },
+      {
+        "requiredFlags": ["M3_2.2"],
+        "text": "Si lo rompiste me lo puedes decir, no me voy a enfadar."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Sí, es de esos antiguos que no se rompían ni queriendo.",
+        "next": "3M3",
+        "requiredFlags": ["M3_2.1"],
+        "setFlags": ["M3_2.1.1"]
+      },
+      {
+        "text": "Puede que esté en el armario alto. El de encima del horno.",
+        "next": "3M3",
+        "requiredFlags": ["M3_2.1"],
+        "setFlags": ["M3_2.1.2"]
+      },
+      {
+        "text": "Yo no he roto nada, ¿Por qué siempre tengo que tener la culpa yo?",
+        "next": "3M3",
+        "requiredFlags": ["M3_2.2"],
+        "setFlags": ["M3_2.2.1"]
+      },
+      {
+        "text": "Si lo rompí no me acuerdo. Y si no te lo conté es que ya estarías enfadada por algo.",
+        "next": "3M3",
+        "requiredFlags": ["M3_2.2"],
+        "setFlags": ["M3_2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3M3",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["M3_2.1.2"],
+        "text": "No, ahí ya miré. Solo quedan tres tazas desportilladas y un tarro vacío con arroz viejo."
+      },
+      {
+        "requiredFlags": ["M3_2.2.1"],
+        "text": "Porque no vive nadie más en casa ¿Quién va a romper los vasos?"
+      },
+      {
+        "requiredFlags": ["M3_2.2.2"],
+        "text": "Algo harías."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Pues entonces se habrá ido, como todo lo demás.",
+        "next": "4M3",
+        "requiredFlags": ["M3_2.1.2"],
+        "setFlags": ["M3_2.1.2.1"]
+      },
+      {
+        "text": "Que podíamos tirar, la verdad.",
+        "next": "4M3",
+        "requiredFlags": ["M3_2.1.2"],
+        "setFlags": ["M3_2.1.2.2"]
+      },
+      {
+        "text": "Tus amigos los gatos, lo mismo han descubierto cómo entrar.",
+        "next": "4M3",
+        "requiredFlags": ["M3_2.2.1"],
+        "setFlags": ["M3_2.2.1.1"]
+      },
+      {
+        "text": "Lo mismo lo hemos roto alguno en sueños.",
+        "next": "4M3",
+        "requiredFlags": ["M3_2.2.1"],
+        "setFlags": ["M3_2.2.1.2"]
+      },
+      {
+        "text": "Seguramente.",
+        "next": "4M3",
+        "requiredFlags": ["M3_2.2.2"],
+        "setFlags": ["M3_2.2.2.1"],
+        "end": true
+      },
+      {
+        "text": "O no, qué más da.",
+        "next": "4M3",
+        "requiredFlags": ["M3_2.2.2"],
+        "setFlags": ["M3_2.2.2.2"],
+        "end": true
+      }
+    ]
+  },
+  {
+    "id": "4M3",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["M3_2.1.2.1"],
+        "text": "Uno acaba fijándose solo en lo que todavía queda."
+      },
+      {
+        "requiredFlags": ["M3_2.1.2.2"],
+        "text": "Supongo que sí, la verdad."
+      },
+      {
+        "requiredFlags": ["M3_2.2.1.1"],
+        "text": "Y qué ¿Se están montando una vajilla? ¿Están amueblando un callejón?"
+      },
+      {
+        "requiredFlags": ["M3_2.2.1.2"],
+        "text": "Somos sonámbulos y no lo sabemos, entonces."
+      }
+    ],
+    "end": true
+  }
+]

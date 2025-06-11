@@ -1,0 +1,363 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Hoy ha vuelto a salir el gato del vecino. Se ha metido entre los geranios de Rosario otra vez, le ha tirado tres macetas a la pobre. Dice que lo va a denunciar, pero nunca lo hace.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Ese gato sigue vivo? Pensé que con la última ventolera...",
+                "next": "1D2",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Los geranios aguantan, de todas formas. Son duros, como Rosario.",
+                "next": "1D2",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1D2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Ese aguanta lo que le echen...Rosario dice que todo aquí es más duro de lo que debería, hasta las flores. No sé si tiene razón o si es solo que nos estamos quedando."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Rosario dice que todo aquí es más duro de lo que debería, hasta las flores. No sé si tiene razón o si es solo que nos estamos quedando."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Quedando dónde?",
+                "next": "2D2",
+                "requiredFlags": ["1.1", "1.2"],
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "*canturrea* \"Los resistentes de nacimiento son los hijos del mar.\"",
+                "next": "2D2",
+                "requiredFlags": ["1.1", "1.2"],
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2D2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1"],
+                "text": "Aquí, en la isla. Como los geranios, que nadie los planta, pero ahí están."
+            },
+            {
+                "requiredFlags": ["2.2"],
+                "text": "Míralo, si todavía le queda orgullo patrio y todo..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Hasta que un gato los tira.",
+                "next": "3D2",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.1"]
+            },
+            {
+                "text": "No somos flores. Podemos irnos si queremos.",
+                "next": "3D2",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.2"]
+            },
+            {
+                "text": "Yo también me crié aquí, ¿De qué te crees que me conoces?",
+                "next": "3D2",
+                "requiredFlags": ["2.2"],
+                "setFlags": ["2.2.1"]
+            },
+            {
+                "text": "No sé por qué, hay cosas que no se pueden cambiar.",
+                "next": "3D2",
+                "requiredFlags": ["2.2"],
+                "setFlags": ["2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3D2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1"],
+                "text": "Tendría que ser grande el gato, para tirar a la Rosario."
+            },
+            {
+                "requiredFlags": ["2.1.2"],
+                "text": "¿Queremos?"
+            },
+            {
+                "requiredFlags": ["2.2.1"],
+                "text": "*Entre risas* \"Ah ¿Nos conocemos?\""
+            },
+            {
+                "requiredFlags": ["2.2.2"],
+                "text": "No deja de ser tu casa, por mucho que te quejes."
+            }
+        ],
+        "choices": [
+            {
+                "text": "*reírse*",
+                "next": "4D2",
+                "requiredFlags": ["2.1.1"],
+                "setFlags": ["2.1.1.1"]
+            },
+            {
+                "text": "El gato es una metáfora, mujer.",
+                "next": "4D2",
+                "requiredFlags": ["2.1.1"],
+                "setFlags": ["2.1.1.2"]
+            },
+            {
+                "text": "No lo sé, a veces pienso que sí, otras, que ya sería tarde.",
+                "next": "4D2",
+                "requiredFlags": ["2.1.2"],
+                "setFlags": ["2.1.2.1"]
+            },
+            {
+                "text": "Hombre por querer no será, querer me querría ir al continente, trabajar de ingeniero, tener un niño...",
+                "next": "4D2",
+                "requiredFlags": ["2.1.2"],
+                "setFlags": ["2.1.2.2"]
+            },
+            {
+                "text": "*reírse*",
+                "next": "4D2",
+                "requiredFlags": ["2.2.1"],
+                "setFlags": ["2.2.1.1"]
+            },
+            {
+                "text": "Un poco, creo",
+                "next": "4D2",
+                "requiredFlags": ["2.2.1"],
+                "setFlags": ["2.2.1.2"]
+            },
+            {
+                "text": "Ya... eso no va a cambiar.",
+                "next": "4D2",
+                "requiredFlags": ["2.2.2"],
+                "setFlags": ["2.2.2.1"]
+            },
+            {
+                "text": "Puedes salir de La Isla, pero La Isla no va a salir de tí.",
+                "next": "4D2",
+                "requiredFlags": ["2.2.2"],
+                "setFlags": ["2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4D2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1.1"],
+                "text": "En fin, por mucho que moleste, yo prefiero al gato antes que a los geranios."
+            },
+            {
+                "requiredFlags": ["2.1.1.2"],
+                "text": "No me digas, menos mal que me lo has explicado, que si no me quedo esperando al ataque de los felinos gigantes."
+            },
+            {
+                "requiredFlags": ["2.1.2.1"],
+                "text": "¿Y si no es cuestión de tiempo, sino de ganas?"
+            },
+            {
+                "requiredFlags": ["2.1.2.2"],
+                "text": {
+                    "conditional": "conversationPercentage",
+                    "greaterThan50": "Ya... la verdad que no suena del todo mal.",
+                    "lessThan50": "Ya... lejos de nuestra familia, con un colegio de niños solos..."
+                }
+            },
+            {
+                "requiredFlags": ["2.2.1.1", "2.2.1.2"],
+                "text": "¿Tú crees que si nos conociéramos ahora volveríamos a juntarnos?"
+            },
+            {
+                "requiredFlags": ["2.2.2.1"],
+                "text": "Pase lo que pase, casa siempre será casa."
+            },
+            {
+                "requiredFlags": ["2.2.2.2"],
+                "text": "Ahora suenas como si acabases de salir de la cárcel"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Bueno, los geranios dejan la calle más bonita, el gato...",
+                "next": "5D2",
+                "requiredFlags": ["2.1.1.1"],
+                "setFlags": ["2.1.1.1.1"]
+            },
+            {
+                "text": "Hombre tampoco es cuestión de comparar un animal con unas flores.",
+                "next": "5D2",
+                "requiredFlags": ["2.1.1.1"],
+                "setFlags": ["2.1.1.1.2"]
+            },
+            {
+                "text": "Perdón, perdón, no puedo evitarlo.",
+                "next": "5D2",
+                "requiredFlags": ["2.1.1.2"],
+                "setFlags": ["2.1.1.2.1"]
+            },
+            {
+                "text": "Así te quedas más tranquila.",
+                "next": "5D2",
+                "requiredFlags": ["2.1.1.2"],
+                "setFlags": ["2.1.1.2.2"]
+            },
+            {
+                "text": "Todo es cuestión de ganas, supongo.",
+                "next": "5D2",
+                "requiredFlags": ["2.1.2.1"],
+                "setFlags": ["2.1.2.1.1"]
+            },
+            {
+                "text": "No es tiempo en realidad, son más bien las circunstancias.",
+                "next": "5D2",
+                "requiredFlags": ["2.1.2.1"],
+                "setFlags": ["2.1.2.1.2"]
+            },
+            {
+                "text": "Nos tenemos que sentar un día a hablarlo seriamente.",
+                "next": "5D2",
+                "requiredFlags": ["2.1.2.2"],
+                "setFlags": ["2.1.2.2A.1"],
+                "conditions": {
+                    "conversationPercentage": ">50"
+                }
+            },
+            {
+                "text": "Poco a poco te voy convenciendo...",
+                "next": "5D2",
+                "requiredFlags": ["2.1.2.2"],
+                "setFlags": ["2.1.2.2A.2"],
+                "conditions": {
+                    "conversationPercentage": ">50"
+                }
+            },
+            {
+                "text": "Lejos de nuestra familia no estaríamos, estaríamos formando la nuestra.",
+                "next": "5D2",
+                "requiredFlags": ["2.1.2.2"],
+                "setFlags": ["2.1.2.2B.1"],
+                "conditions": {
+                    "conversationPercentage": "<50"
+                }
+            },
+            {
+                "text": "...",
+                "next": "5D2",
+                "requiredFlags": ["2.1.2.2"],
+                "setFlags": ["2.1.2.2B.2"],
+                "conditions": {
+                    "conversationPercentage": "<50"
+                }
+            },
+            {
+                "text": "Eso depende de tí la primera vez y dependería de tí siempre.",
+                "next": "5D2",
+                "requiredFlags": ["2.2.1.1"],
+                "setFlags": ["2.2.1.1.1"]
+            },
+            {
+                "text": "¿Te interesaría el taxista lo mismo que te interesaba el ingeniero?",
+                "next": "5D2",
+                "requiredFlags": ["2.2.1.1"],
+                "setFlags": ["2.2.1.1.2"]
+            },
+            {
+                "text": "Si... esta isla es un cachito de nosotros.",
+                "next": "5D2",
+                "requiredFlags": ["2.2.2.1"],
+                "setFlags": ["2.2.2.1.1"]
+            },
+            {
+                "text": "Yo hace años que conocí a mi casa...y desde entonces he ido con ella a todas partes",
+                "next": "5D2",
+                "requiredFlags": ["2.2.2.1"],
+                "setFlags": ["2.2.2.1.2"]
+            },
+            {
+                "text": "Salí y volví a entrar voluntariamente...",
+                "next": "5D2",
+                "requiredFlags": ["2.2.2.2"],
+                "setFlags": ["2.2.2.2.1"]
+            },
+            {
+                "text": "En la cárcel no te intentan convencer de que te quedes...",
+                "next": "5D2",
+                "requiredFlags": ["2.2.2.2"],
+                "setFlags": ["2.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5D2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1.1.1"],
+                "text": "Ya... la verdad que lo único que hace es ensuciar. Bueno, eso y entretenernos, que sin sus líos con la Rosario habría poco de lo que hablar."
+            },
+            {
+                "requiredFlags": ["2.1.1.1.2"],
+                "text": "Bueno, pero a los animales hay que controlarlos, si no ya ves."
+            },
+            {
+                "requiredFlags": ["2.1.1.2.1"],
+                "text": "Ya...no, si te conozco, sé que no lo puedes evitar."
+            },
+            {
+                "requiredFlags": ["2.1.1.2.2"],
+                "text": "En fin... no cambiarás nunca."
+            },
+            {
+                "requiredFlags": ["2.1.2.1.1"],
+                "text": "¿Y si no es de ganas, sino de agallas?"
+            },
+            {
+                "requiredFlags": ["2.1.2.1.2"],
+                "text": "Las circunstancias son parte de nosotros, todo depende de las circunstancias."
+            },
+            {
+                "requiredFlags": ["2.1.2.2A.1", "2.1.2.2A.2"],
+                "text": "Si... cuando acabe el curso hay que pensar en muchas cosas..."
+            },
+            {
+                "requiredFlags": ["2.1.2.2B.1"],
+                "text": "*Resopla*"
+            },
+            {
+                "requiredFlags": ["2.2.1.1.1", "2.2.2.1.2"],
+                "text": "La capacidad de ser romántico la sigues teniendo, sólo te la reservas para ocasiones de necesidad, visto lo visto."
+            },
+            {
+                "requiredFlags": ["2.2.1.1.2"],
+                "text": "Cuando me empezaste a interesar apenas eras proyecto de ingeniero. Además, creo que no hay nada que me interese menos que tus chips y tus circuitos"
+            },
+            {
+                "requiredFlags": ["2.2.2.1.1"],
+                "text": "Desde hace años, nosotros también somos un cachito de esta isla."
+            },
+            {
+                "requiredFlags": ["2.2.2.2.1", "2.2.2.2.2"],
+                "text": "Cuánto drama, por favor..."
+            }
+        ],
+        "end": true
+    }
+]

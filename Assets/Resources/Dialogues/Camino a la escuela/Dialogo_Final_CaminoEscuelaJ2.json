@@ -1,0 +1,90 @@
+[
+  {
+    "id": "startJ2",
+    "speaker": "Verónica",
+    "text": "Tuve un sueño esta noche… creo. Pero se me ha ido al abrir los ojos.",
+    "setFlags": ["InicioJ2"],
+    "choices": [
+      {
+        "text": "¿Era malo?",
+        "next": "1J2",
+        "setFlags": ["J2_1.1"]
+      },
+      {
+        "text": "¿Algo divertido?",
+        "next": "1J2",
+        "setFlags": ["J2_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1J2",
+    "speaker": "Verónica",
+    "text": "No lo sé, me he despertado con una sensación rara. Como si hubiera olvidado algo importante.",
+    "choices": [
+      {
+        "text": "¿Intentaste volver a dormirte?",
+        "next": "2J2",
+        "setFlags": ["J2_2.1"]
+      },
+      {
+        "text": "A veces vuelve, horas después. Te llega una imagen suelta, una frase...",
+        "next": "2J2",
+        "setFlags": ["J2_2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2J2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["J2_2.1"],
+        "text": "Sí, pero ya estaba escuchando la cafetera... tú saliendo de la ducha. Todo ese ruido pequeño que te va sacando del sueño sin querer."
+      },
+      {
+        "requiredFlags": ["J2_2.2"],
+        "text": "Una vez me pasó. Me vino a la cabeza una escalera… y al final del día supe que había soñado con mi madre. Hoy no, solo me ha quedado esa cosa en el pecho. Como cuando ves a alguien que se parece a alguien, pero no era."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Bueno, mejor esos sonidos que la alarma, supongo.",
+        "next": "3J2",
+        "requiredFlags": ["J2_2.1"],
+        "setFlags": ["J2_2.1.1"]
+      },
+      {
+        "text": "Quizás no tenías que recordarlo.",
+        "next": "3J2",
+        "requiredFlags": ["J2_2.2"],
+        "setFlags": ["J2_2.2.1"]
+      },
+      {
+        "text": "Quizás te acuerdes durante el día.",
+        "next": "3J2",
+        "requiredFlags": ["J2_2.2"],
+        "setFlags": ["J2_2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3J2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["J2_2.1.1"],
+        "text": "Supongo que sí..."
+      },
+      {
+        "requiredFlags": ["J2_2.2.1"],
+        "text": "O quizás sí, pero no hoy."
+      },
+      {
+        "requiredFlags": ["J2_2.2.2"],
+        "text": "No sé si quiero acordarme..."
+      }
+    ],
+    "end": true
+  }
+]

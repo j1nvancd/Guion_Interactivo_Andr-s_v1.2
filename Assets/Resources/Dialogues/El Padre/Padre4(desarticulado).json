@@ -1,0 +1,525 @@
+[
+    {
+        "id": "start",
+        "speaker": "El Padre",
+        "text": "Finalmente apareció ese pobre desgraciado ayer ¿No?",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Si... por lo visto acabó llegando a su casa, se echó a dormir y lleva acostado desde entonces.",
+                "next": "1D4",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "¿Le sorprendió a usted? Con las historias que contaba el chico parece evidente como ha podido sobrevivir semanas en la isla. Estaba hasta limpio.",
+                "next": "1D4",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1D4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "A casa...sí. Y ¿Alguien sabe dónde estaba? ¿Cómo volvió?"
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "¿Insinúa algo, Teodoro? Tenga cuidado con hacer acusaciones sin pruebas, es un delito grave..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Si... yo mismo lo recogí en El Diente del Santo.",
+                "next": "2D4",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Supongo que cuando se recupere nos enteramos de qué ha pasado, si es que no se lo llevan al continente.",
+                "next": "2D4",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "La tenencia de armas también es un delito grave, Padre. Y el tráfico. Permítame aventurarme a decir que ese pobre desgraciado no ha podido conseguir una pistola sin algo de \"intervención divina\".",
+                "next": "2D4",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "No hay que ser detective para saber que alguien le ayudó y le metió en la cabeza atacar al dueño. Eso no quiere decir que no esté de acuerdo en que en el fondo era una cruzada justa.",
+                "next": "2D4",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Fábrica"]
+            },
+            {
+                "text": "No hay que ser detective para saber que alguien le ayudó y le metió en la cabeza atacar a sus propias hermanas.",
+                "next": "2D4",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            }
+        ]
+    },
+    {
+        "id": "2D4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Ah... entonces supongo que hablarías con él ¿Te contó algo?."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "¿Llevárselo? ¿Quién se lo va a llevar? ¿Qué ha hecho para que se lo lleven?"
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "¿Quién ha hablado de armas? ¿De dónde sacas eso, Teodoro?"
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "¿Atacar al dueño? ¿No se suponía que el chaval se había ido a casa con sus hermanas?",
+                "requiredGlobalFlags": ["Huérfano-Fábrica"]
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "¿A sus hermanas? ¿Qué pasó? ¿Qué ha hecho ese pobre desgraciado?",
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            }
+        ],
+        "choices": [
+            {
+                "text": "No, se montó en el coche, me dijo que lo llevase a casa y lo dejé allí con sus hermanas. No quería agobiarlo con preguntas después de lo que haya tenido que pasar. Ahora está donde tiene que estar.",
+                "next": "3D4",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Un par de cosas, historias, sobre todo. Desvaríos, el chaval necesita ayuda profesional.",
+                "next": "3D4",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "No sé si se lo van a llevar, pero es lo que más sentido tendría. El muchacho no está bien, desvaría, ha estado desaparecido durante semanas. Necesita ayuda profesional.",
+                "next": "3D4",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Nada, pero después de desaparecer durante semanas quizás la policía quiera tenerlo en custodia un tiempo",
+                "next": "3D4",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "Abel llevaba un revólver en su chaqueta cuando se subió al taxi. Supongo que la policía será capaz de rastrear a alguien a partir del arma.",
+                "next": "3D4",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "Abel hablaba de un \"arma divina\" y de una misión que debía cumplir. ¿Le suena de algo?",
+                "next": "3D4",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            },
+            {
+                "text": "Sí, pero inicialmente donde quería ir era a La Fábrica. A obrar justicia. Que entendería si buscase venganza por lo de su padre, pero si no lo ha hecho en todo este tiempo, algo o alguien ha tenido que hacerle cambiar de idea.",
+                "next": "3D4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.1"],
+                "requiredGlobalFlags": ["Huérfano-Fábrica"]
+            },
+            {
+                "text": "¿De verdad me va a decir usted que ese pobre desgraciado citaba La Biblia de memoria y usted no sabe nada?",
+                "next": "3D4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Fábrica"]
+            },
+            {
+                "text": "¿Conoce usted el libro de Los Jueces? Porque aparentemente Abel lo había estudiado a conciencia.",
+                "next": "3D4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "Nada, no ha hecho nada. Aunque estaba convencido de que había hecho un pacto con Dios y debía \"cumplir su parte\".",
+                "next": "3D4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            }
+        ]
+    },
+    {
+        "id": "3D4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Bueno, supongo que nos iremos enterando durante estos días."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "¿Desvaríos? También decían que Jeremías deliraba , hasta que Jerusalén ardió."
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "¿Desvaríos? También decían que Jeremías deliraba , hasta que Jerusalén ardió."
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "“Creéis que la celda lo silencia… pero si calla él, las piedras gritarán.” Evangelio según San Lucas capítulo 19, versículo 40."
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "“Bienaventurados los que padecen persecución por causa de la justicia…Mateo capítulo 5, versículo 10."
+            },
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "*se ríe* \"Estás muy confundido, Teodoro. La espada del espíritu no es sino la palabra de Dios.\""
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "“El Señor no retarda su promesa, según algunos la tienen por tardanza, sino que es paciente… no queriendo que ninguno perezca, sino que todos procedan al arrepentimiento.”",
+                "requiredGlobalFlags": ["Huérfano-Fábrica"]
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "...",
+                "requiredGlobalFlags": ["Huérfano-Fábrica"]
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "Pues claro que conozco el Libro de los Jueces. Aunque una parte de mí quiera sentirse halagada, me temo que La Biblia no es precisamente una lectura desconocida.",
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "¿Y cómo estáis los demás seguros de que no era así?",
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            }
+        ],
+        "choices": [
+            {
+                "text": "Sí...",
+                "next": "4D4",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "No lo sé, en esta isla se mantienen muy bien los secretos.",
+                "next": "4D4",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "No se le da muy bien a usted hacer ver que no está involucrado en este tema.",
+                "next": "4D4",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "FinPasajeD4",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"]
+            },
+            {
+                "text": "Si las piedras le gritan, aproveche y vaya usted también a donde sea que vayan a llevar a Abel, Padre",
+                "next": "4D4",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "FinPasajeD4",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"]
+            },
+            {
+                "text": "¿Eso significa que bienaventurados sean aquellos a los que persigue la justicia o que son perseguidos a pesar de ser justos?",
+                "next": "4D4",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.1"]
+            },
+            {
+                "text": "Su concepto de justicia me parece peligrosamente similar al de Abel, Padre",
+                "next": "4D4",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.2"]
+            },
+            {
+                "text": "Ya, estoy bastante seguro de que Abel no se refería a su dialéctica con lo de \"arma divina\"",
+                "next": "4D4",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "Si... supongo que se referiría a eso.",
+                "next": "4D4",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            },
+            {
+                "text": "...",
+                "next": "FinPasajeD4",
+                "requiredFlags": ["1.2.2.2"],
+                "setFlags": ["1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Fábrica"]
+            },
+            {
+                "text": "Ya, es cierto que no es una lectura especialmente \"indie\".",
+                "next": "4D4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.1"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "Tampoco creo que Abel sea un lector habitual.",
+                "next": "4D4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "No lo estamos, yo al menos no lo estoy. Lo que sí sé es que nadie merece sufrir por la palabra de Dios.",
+                "next": "4D4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            }
+        ]
+    },
+    {
+        "id": "4D4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2"],
+                "text": "Veremos, normalmente la gente calla por miedo. Veremos si hay silencio también por caridad."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1"],
+                "text": "Seguiremos hablando, Teodoro. Nos esperan días interesantes."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1"],
+                "text": "Muy gracioso, el humor es un buen sistema para ignorar la realidad."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1"],
+                "text": "La justicia no es más que la forma de los poderosos de mantener el status quo"
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2"],
+                "text": "Las ideas correctas, aunque infrecuentes, son en algunos casos compartidas."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "... ¿A qué te refieres, Teodoro?"
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2"],
+                "text": "¿Qué te inquieta, Teodoro?"
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "Seguiremos hablando, Teodoro. Nos esperan días interesantes.",
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "Las apariencias engañan, Teodoro. El diablo tiene muchas formas.",
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "Dios Padre envió a su hijo a sufrir por nosotros ¿Por qué nos debería privar del sufrimiento?",
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            }
+        ],
+        "choices": [
+            {
+                "text": "...",
+                "next": "FinPasajeD4",
+                "requiredFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "FinPasajeD4",
+                "requiredFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "Y que lo diga, Padre.",
+                "next": "FinPasajeD4",
+                "requiredFlags": ["1.1.1.2.1"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "(Mostrar arma) \"¿Tan interesantes como esto que me dejaron en el coche ayer?\" *abre la guantera dejando ver un revólver*",
+                "next": "5D4",
+                "requiredFlags": ["1.1.1.2.1"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"],
+                "setFlags": ["1.1.1.2.1.2"]
+            },
+            {
+                "text": "Se me da bastante bien ignorar la realidad. Hace tiempo que descubrí que era necesario para sobrevivir.",
+                "next": "5D4",
+                "requiredFlags": ["1.1.2.2.1"],
+                "setFlags": ["1.1.2.2.1.1"]
+            },
+            {
+                "text": "Padre, créame que ahora mismo lo que más le interesa a usted es que yo ignore la realidad.",
+                "next": "5D4",
+                "requiredFlags": ["1.1.2.2.1"],
+                "setFlags": ["1.1.2.2.1.2"]
+            },
+            {
+                "text": "Le recomiendo que disimule un poco más su desdén por el sistema judicial, Padre. No genera confianza.",
+                "next": "5D4",
+                "requiredFlags": ["1.2.1.1.1"],
+                "setFlags": ["1.2.1.1.1.1"]
+            },
+            {
+                "text": "Usted es más de tomarse la justicia por su mano ¿No? Mejor dicho, de encargar a manos inocentes que tomen la justicia por usted.",
+                "next": "5D4",
+                "requiredFlags": ["1.2.1.1.1"],
+                "setFlags": ["1.2.1.1.1.2"]
+            },
+            {
+                "text": "Entiendo qué cree usted que siendo críptico disimula sus responsabilidad. No es el caso, se lo juro.",
+                "next": "5D4",
+                "requiredFlags": ["1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.2.1"]
+            },
+            {
+                "text": "Sí, a usted le gusta mucho compartir ¿No es así?",
+                "next": "5D4",
+                "requiredFlags": ["1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.2.2"]
+            },
+            {
+                "text": "*Abrir guantera, revelando el revólver*",
+                "next": "5D4",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.1"]
+            },
+            {
+                "text": "*Abrir guantera, revelando el revólver*",
+                "next": "5D4",
+                "requiredFlags": ["1.2.1.2.2"],
+                "setFlags": ["1.2.1.2.2.1"]
+            },
+            {
+                "text": "Nada, no se preocupe, ya casi hemos llegado.",
+                "next": "5D4",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.2"]
+            },
+            {
+                "text": "Nada, no se preocupe, ya casi hemos llegado.",
+                "next": "5D4",
+                "requiredFlags": ["1.2.1.2.2"],
+                "setFlags": ["1.2.1.2.2.2"]
+            },
+            {
+                "text": "Sí... en eso no se preocupe que estamos de acuerdo.",
+                "next": "FinPasajeD4",
+                "requiredFlags": ["1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"],
+                "setFlags": ["1.2.2.2.1"]
+            },
+            {
+                "text": "¿Sabe una cosa? Mi madre siempre decía algo parecido a eso \"De noche todos los gatos son pardos\". A mí siempre me gustó más la de mi padre \"Hay muchos zorros con el mismo pelo\" Así se entiende mejor que no todo lo que nos engaña se esconde en la oscuridad ¿No cree?",
+                "next": "5D4",
+                "requiredFlags": ["1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"],
+                "setFlags": ["1.2.2.2.2"]
+            },
+            {
+                "text": "Dios Padre envió a su hijo a morir por nuestros pecados. ¿Se cree usted en la potestad de actuar como si de Dios se tratase?",
+                "next": "5D4",
+                "requiredFlags": ["1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"],
+                "setFlags": ["1.2.2.2.1"]
+            },
+            {
+                "text": "Ningún Dios todopoderoso puede considerarse bueno si permite el sufrimiento de los inocentes.",
+                "next": "5D4",
+                "requiredFlags": ["1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"],
+                "setFlags": ["1.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5D4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.2.1.2"],
+                "text": "La posesión de armas sin licencia es un delito grave, Teodoro. Consideraré que esto entra bajo el secreto de confesión, pero te recomiendo que se lo entregues a ese supuesto policía lo antes posible, o dejes la guantera bien cerrada."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1.1"],
+                "text": "La posesión de armas sin licencia es un delito grave, Teodoro. Consideraré que esto entra bajo el secreto de confesión, pero te recomiendo que se lo entregues a ese supuesto policía lo antes posible, o dejes la guantera bien cerrada."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2.1"],
+                "text": "La posesión de armas sin licencia es un delito grave, Teodoro. Consideraré que esto entra bajo el secreto de confesión, pero te recomiendo que se lo entregues a ese supuesto policía lo antes posible, o dejes la guantera bien cerrada."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.1"],
+                "text": "Por eso Cristo hablaba en parábolas: porque viendo no ven, y oyendo no oyen, ni entienden."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.2"],
+                "text": "... ¿A qué te refieres, Teodoro?"
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1.1"],
+                "text": "Uno no necesita confianza cuando tiene la razón."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1.2"],
+                "text": "... ¿A qué te refieres, Teodoro?"
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2.1"],
+                "text": "... ¿A qué te refieres, Teodoro?"
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2.2"],
+                "text": "... ¿A qué te refieres, Teodoro?"
+            },
+            {
+                "requiredFlags": ["1.2.2.2.1"],
+                "text": "... ¿A qué te refieres, Teodoro?",
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "requiredFlags": ["1.2.2.2.2"],
+                "text": "Sólo los débiles consideran el sufrimiento un castigo. No es sino a través del sufrimiento que vivimos, que progresamos.",
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            }
+        ],
+        "end": true
+    },
+    {
+        "id": "FinPasajeD4",
+        "end": true
+    }
+]

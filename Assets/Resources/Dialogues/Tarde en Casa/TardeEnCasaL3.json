@@ -1,0 +1,203 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "*volviendo del balcón* \"Los geranios se están viniendo abajo otra vez. Debe de ser el viento.\"",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Ya es la tercera vez este mes.",
+                "next": "1L3",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Tendrás que cambiarles la maceta o algo.",
+                "next": "1L3",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "¿Y qué hago, dejo que se mueran?"
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Lo digo cada año, nunca lo hago."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Yo no he dicho eso",
+                "next": "2L3",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Visto lo visto, a lo mejor no están hechos para estar aquí.",
+                "next": "2L3",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "Igual que con lo del médico.",
+                "next": "2L3",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Bueno, tampoco es que sea una cosa de vida o muerte.",
+                "next": "2L3",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Ya, claro. Tú eres más de matarlas callando, nunca mejor dicho."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Claro, si es que en esta isla no se puede vivir ¿No?"
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "¿Qué pasa con el médico?"
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "*resopla* \"Ya...claro.\""
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y eso a qué viene ahora?",
+                "next": "3L3",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "end",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"],
+                "end": true
+            },
+            {
+                "text": "Yo no he dicho eso, esta vez al menos.",
+                "next": "3L3",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Si tú lo dices...",
+                "next": "3L3",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "Hace semanas que dijiste que ibas a hacerte esa revisión.",
+                "next": "3L3",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "¿Te dieron los resultados?",
+                "next": "3L3",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "3L3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Nada, olvídalo. El lunes iré a buscar una maceta.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "Ya... Esta vez lo he dicho yo...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "Sí, justo soy yo la que lo dice, claro.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "Y tú dijiste que ibas a arreglar la lámpara del pasillo."
+            },
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Qué tendrá eso que ver?",
+                "next": "4L3",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.1"]
+            },
+            {
+                "text": "Ya compré los recambios, este finde lo cambio...",
+                "next": "4L3",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.2"]
+            },
+            {
+                "text": "¿Qué pasa? ¿Qué te dijeron?",
+                "next": "4L3",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "No has ido... ¿A que no?",
+                "next": "4L3",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4L3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.2.1.1.1"],
+                "text": "Yo que sé, ya iré. Si estoy bien..."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2"],
+                "text": "Este finde..."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "No fui. Ya iré, no hay prisa. Si total, estoy bien."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2"],
+                "text": "Déjame, ya iré."
+            }
+        ],
+        "end": true
+    },
+    {
+        "id": "end",
+        "end": true
+    }
+]

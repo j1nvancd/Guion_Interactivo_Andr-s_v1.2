@@ -1,0 +1,94 @@
+[
+  {
+    "id": "startX3",
+    "speaker": "Verónica",
+    "text": "¿Sabes lo que hablamos el otro día de ser sonámbulos?",
+    "setFlags": ["InicioX3"],
+    "choices": [
+      {
+        "text": "Sí ¿Por?",
+        "next": "1X3",
+        "setFlags": ["X3_0.1"]
+      },
+      {
+        "text": "¿Te has levantado esta noche?",
+        "next": "1X3",
+        "setFlags": ["X3_0.2"]
+      }
+    ]
+  },
+  {
+    "id": "1X3",
+    "speaker": "Verónica",
+    "text": "He soñado que se nos inundaba la casa.",
+    "choices": [
+      {
+        "text": "¿Esta vez sí era nuestra casa?",
+        "next": "2X3",
+        "setFlags": ["X3_1.1"]
+      },
+      {
+        "text": "¿Sabes por qué? En plan era lluvia, los grifos, el mar...",
+        "next": "2X3",
+        "setFlags": ["X3_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "2X3",
+    "speaker": "Verónica",
+    "text": "Sí. Era como si brotara agua del suelo, como un manantial que se abría bajo el salón. Iba subiendo despacio… muy claro, transparente.",
+    "choices": [
+      {
+        "text": "¿Y qué hacíamos?",
+        "next": "3X3",
+        "setFlags": ["X3_2.1"]
+      },
+      {
+        "text": "Despacio... ¿Nos daba tiempo a irnos entonces?",
+        "next": "3X3",
+        "setFlags": ["X3_2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3X3",
+    "speaker": "Verónica",
+    "text": "Tú no estabas. Yo subía las sillas a la mesa, intentaba poner a salvo los libros. Pero lo hacía sin prisa, como si supiera que no servía de nada.",
+    "choices": [
+      {
+        "text": "Eso suena más a resignación que a miedo.",
+        "next": "4X3",
+        "setFlags": ["X3_3.1"]
+      },
+      {
+        "text": "No suena a que lo hayas pasado muy mal...",
+        "next": "4X3",
+        "setFlags": ["X3_3.2"]
+      }
+    ]
+  },
+  {
+    "id": "4X3",
+    "speaker": "Verónica",
+    "text": "*Sonriendo levemente* Era tranquilo, incluso bonito. Como si la casa se hundiera en silencio.",
+    "choices": [
+      {
+        "text": "¿Quieres que repasemos lo del seguro, por si pasa algo de verdad?",
+        "next": "5X3",
+        "setFlags": ["X3_4.1"]
+      },
+      {
+        "text": "¿Crees que significa algo?",
+        "next": "5X3",
+        "setFlags": ["X3_4.2"]
+      }
+    ]
+  },
+  {
+    "id": "5X3",
+    "speaker": "Verónica",
+    "text": "No. Era sólo un sueño.",
+    "end": true
+  }
+]

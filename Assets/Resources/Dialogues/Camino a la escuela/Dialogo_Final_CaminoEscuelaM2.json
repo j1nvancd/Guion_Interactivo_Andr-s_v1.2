@@ -1,0 +1,150 @@
+[
+  {
+    "id": "startM2",
+    "speaker": "Verónica",
+    "text": "Esta mañana había un gorrión en el suelo, justo afuera de la ventana de la cocina.",
+    "setFlags": ["InicioM2"],
+    "choices": [
+      {
+        "text": "¿Vivo?",
+        "next": "1M2",
+        "setFlags": ["M2_1.1"]
+      },
+      {
+        "text": "¿Y qué pasa? Siempre hay pájaros por el jardín.",
+        "next": "1M2",
+        "setFlags": ["M2_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1M2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["M2_1.1"],
+        "text": "No. Supongo que se dio contra el cristal. Era muy pequeño."
+      },
+      {
+        "requiredFlags": ["M2_1.2"],
+        "text": "Pero este estaba muerto, se daría contra el cristal. Era muy pequeño."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ya.",
+        "next": "2M2",
+        "requiredFlags": ["M2_1.1", "M2_1.2"],
+        "setFlags": ["M2_1.1.1"]
+      },
+      {
+        "text": "Los gorriones son pequeños, no creo que fuese una cría si volaba tan rápido como para matarse.",
+        "next": "2M2",
+        "requiredFlags": ["M2_1.1", "M2_1.2"],
+        "setFlags": ["M2_1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "2M2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["M2_1.1.1"],
+        "text": "He tenido que salir con el recogedor. Se le habían doblado las patitas."
+      },
+      {
+        "requiredFlags": ["M2_1.1.2"],
+        "text": "Supongo que parecen más pequeños cuando los tienes en la mano."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Lo has tirado al cubo?",
+        "next": "3M2",
+        "requiredFlags": ["M2_1.1.1"],
+        "setFlags": ["M2_1.1.1.1"]
+      },
+      {
+        "text": "¿Estás bien? Parece que te ha afectado mucho el gorrión.",
+        "next": "3M2",
+        "requiredFlags": ["M2_1.1.1"],
+        "setFlags": ["M2_1.1.1.2"]
+      },
+      {
+        "text": "Lo frágil que es la vida cuando eres así de pequeño...",
+        "next": "3M2",
+        "requiredFlags": ["M2_1.1.2"],
+        "setFlags": ["M2_1.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3M2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["M2_1.1.1.1"],
+        "text": "Al jardín. Detrás del seto. Me parecía más… correcto."
+      },
+      {
+        "requiredFlags": ["M2_1.1.1.2"],
+        "text": "Sí, sí. Es solo que era tan pequeño... tan poquita cosa"
+      },
+      {
+        "requiredFlags": ["M2_1.1.2.2"],
+        "text": "Sí..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Siempre piensan que pueden seguir volando.",
+        "next": "4M2",
+        "requiredFlags": ["M2_1.1.1.1", "M2_1.1.1.2", "M2_1.1.2.2"],
+        "setFlags": ["M2_2.1"]
+      },
+      {
+        "text": "Un entierro con todos los honores.",
+        "next": "4M2",
+        "requiredFlags": ["M2_1.1.1.1"],
+        "setFlags": ["M2_2.2"]
+      },
+      {
+        "text": "Has visto algo en ese pobre pájaro, eh.",
+        "next": "4M2",
+        "requiredFlags": ["M2_1.1.1.2"],
+        "setFlags": ["M2_2.3"]
+      },
+      {
+        "text": "Da igual lo grande que seas, la vida es así.",
+        "next": "4M2",
+        "requiredFlags": ["M2_1.1.2.2"],
+        "setFlags": ["M2_2.4"]
+      }
+    ]
+  },
+  {
+    "id": "4M2",
+    "speaker": "Verónica",
+    "text": "Sí... no era tan bonito de cerca. Tenía el ojo abierto, pero vacío.",
+    "choices": [
+      {
+        "text": "A veces siguen con el ojo abierto un rato, como si aún no supieran qué ha pasado.",
+        "next": "5M2",
+        "setFlags": ["M2_3.1"]
+      },
+      {
+        "text": "...",
+        "next": "5M2",
+        "setFlags": ["M2_3.2"],
+        "end": true
+      }
+    ]
+  },
+  {
+    "id": "5M2",
+    "speaker": "Verónica",
+    "text": "...",
+    "end": true
+  }
+]

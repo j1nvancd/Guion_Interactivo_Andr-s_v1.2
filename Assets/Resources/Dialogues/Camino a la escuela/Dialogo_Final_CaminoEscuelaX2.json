@@ -1,0 +1,111 @@
+[
+  {
+    "id": "startX2",
+    "speaker": "Verónica",
+    "text": "¿Has visto la bombilla del pasillo? Lleva desde el lunes con ese parpadeo tonto.",
+    "setFlags": ["InicioX2"],
+    "choices": [
+      {
+        "text": "Sí, la vi. Pensé que se iba a fundir del todo, pero ahí sigue.",
+        "next": "1X2",
+        "setFlags": ["X2_1.1"]
+      },
+      {
+        "text": "¿Quieres que la cambie o espero a que se funda del todo?",
+        "next": "1X2",
+        "setFlags": ["X2_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1X2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["X2_1.1"],
+        "text": "Hace que todo parezca más gris, como si la casa respirara mal."
+      },
+      {
+        "requiredFlags": ["X2_1.2"],
+        "text": "No es urgente. Total, tampoco pasamos tanto por ahí."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Puedo cambiarla esta tarde, creo que queda una de repuesto en el cajón.",
+        "next": "2X2",
+        "requiredFlags": ["X2_1.1", "X2_1.2"],
+        "setFlags": ["X2_1.1.1"]
+      },
+      {
+        "text": "Da un poco impresión de película de miedo, sí.",
+        "next": "2X2",
+        "requiredFlags": ["X2_1.1"],
+        "setFlags": ["X2_1.1.2"]
+      },
+      {
+        "text": "No, pero... es incómodo. Te da la sensación de que algo va a pasar, y no pasa.",
+        "next": "2X2",
+        "requiredFlags": ["X2_1.2"],
+        "setFlags": ["X2_1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2X2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["X2_1.1.2"],
+        "text": "Me da escalofríos..."
+      },
+      {
+        "requiredFlags": ["X2_1.2.2"],
+        "text": "Exacto. Como si la casa estuviera esperando algo."
+      }
+    ],
+    "choices": [
+      {
+        "text": "No sé si es para tanto tampoco...",
+        "next": "3X2",
+        "requiredFlags": ["X2_1.1.2", "X2_1.2.2"],
+        "setFlags": ["X2_1.1.2.1"]
+      },
+      {
+        "text": "La cambio, no te preocupes",
+        "next": "3X2",
+        "requiredFlags": ["X2_1.1.2"],
+        "setFlags": ["X2_1.1.2.2"]
+      },
+      {
+        "text": "...",
+        "next": "3X2",
+        "requiredFlags": ["X2_1.2.2"],
+        "setFlags": ["X2_1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3X2",
+    "speaker": "Verónica",
+    "text": "No le pongas una de las frías, esas hacen que todo parezca de hospital.",
+    "choices": [
+      {
+        "text": "Buscaré una de las cálidas.",
+        "next": "4X2",
+        "setFlags": ["X2_2.1"]
+      },
+      {
+        "text": "Pondré de la que tengamos en el cajón",
+        "next": "4X2",
+        "setFlags": ["X2_2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4X2",
+    "speaker": "Verónica",
+    "text": "Si no, déjala como está, ya nos acostumbraremos.",
+    "end": true
+  }
+]

@@ -1,0 +1,881 @@
+[
+    {
+        "id": "start",
+        "speaker": "El Padre",
+        "text": "¿Es cierto eso que dicen? ¿Del chico que había desaparecido?",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Abel? ¿Qué dicen de Abel?",
+                "next": "1PH",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Apareció ayer en El Diente del Santo, sí. Yo mismo lo llevé al pueblo, acabé insistiendo en que lo dejase en la plaza en lugar de en su puerta. Querría que le diera un poco de aire.",
+                "next": "1PH",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1PH",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Según me han dicho asesinó a su hermana pequeña al llegar a casa. A eso bajó al pueblo, aunque el cuerpo se lo vayan a llevar al continente por ser producto de un crimen, quiero dedicarle una oración en persona antes ¿No habías escuchado nada?"
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "¿Y ya está, no sabes nada más? ¿Una vez que llegó al pueblo?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Qué? ¿Quién le ha contado eso? No es posible, yo le dejé... le dejé en la plaza, insistió en que le dejase allí y no en su puerta aunque le dije que no le iba a cobrar nada...",
+                "next": "2PH",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Jefté...",
+                "next": "2PH",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "No, lo dejé en la plaza y me fui a casa, tenía que ayudar a mi mujer con una puerta que chirriaba. Esta mañana la he dejado en la escuela y he venido a recogerla. ¿Tenía que haberme enterado de algo?",
+                "next": "2PH",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Desvariaba por el camino... hablaba de La Biblia y de algún pacto. Pensé que lo que necesitaba era dormir y olvidarse de lo que sea que hubiese hecho para sobrevivir por su cuenta estas semanas.",
+                "next": "2PH",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2PH",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Me llamaron de madrugada para que tocase la agonía. Habría bajado anoche pero... no había taxis operativos."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "¿Cómo?"
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "Según me han dicho asesinó a su hermana pequeña al llegar a casa. A eso bajó al pueblo, aunque el cuerpo se lo vayan a llevar al continente por ser producto de un crimen, quiero dedicarle una oración en persona antes ¿No habías escuchado nada?"
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "Según me han dicho asesinó a su hermana pequeña al llegar a casa. A eso bajó al pueblo, aunque el cuerpo se lo vayan a llevar al continente por ser producto de un crimen, quiero dedicarle una oración en persona antes ¿No habías escuchado nada?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ciriaco estaría malo de la espalda, no querría molestarnos pensando que ya nadie iba a necesitar un taxi a esas horas... ¿Está seguro de que es cierto?",
+                "next": "3PH",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "No puede ser... ese pobre muchacho... esos delirios sobre pactos con Dios...",
+                "next": "3PH",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "En el camino al pueblo no paraba de hablar de pactos con Dios y cosas así. Decía que él era como un tal Jefté, del libro de los Jueces.",
+                "next": "3PH",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Decía que conseguiría una buena vida para él y para sus hermanas... no, decía que conseguiría una buena vida para una de sus hermanas...",
+                "next": "3PH",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "¿Qué? ¿Quién le ha contado eso? No es posible, yo le dejé... le dejé en la plaza, insistió en que le dejase allí y no en su puerta aunque le dije que no le iba a cobrar nada...",
+                "next": "3PH",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "Jefté...",
+                "next": "3PH",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            },
+            {
+                "text": "¿Qué? ¿Quién le ha contado eso? No es posible, yo le dejé... le dejé en la plaza, insistió en que le dejase allí y no en su puerta aunque le dije que no le iba a cobrar nada...",
+                "next": "3PH",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.1"]
+            },
+            {
+                "text": "Jefté...",
+                "next": "3PH",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3PH",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "En un momento lo podremos confirmar, aunque si no lo fuese, sería la primera vez en los 35 años que llevo de párroco en la que hay agonía sin muerte."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "¿Qué delirios? ¿Te dijo algo Abel ayer?"
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "Jefté... claro...."
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "¿Dijo algo más? Sobre cómo pretendía conseguirlo..."
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "Me llamaron de madrugada para que tocase la agonía. Habría bajado anoche pero... no había taxis operativos."
+            },
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "¿Cómo?"
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "Me llamaron de madrugada para que tocase la agonía. Habría bajado anoche pero... no había taxis operativos."
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "¿Cómo?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "No puede ser... ese pobre muchacho... esos delirios sobre pactos con Dios...",
+                "next": "4PH",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "La pequeña Agar... No me lo puedo creer. ¿Cómo ha podido hacer algo así Abel? ¿Qué te lleva a hacer algo como eso?",
+                "next": "4PH",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "Supuestamente Dios se lo había prometido, habían hecho un pacto divino, o algo así.",
+                "next": "4PH",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "Decía algo de entregar en holocausto como hizo Jefté.",
+                "next": "4PH",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "¿Claro? ¿Qué sabe usted?",
+                "next": "4PH",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.1"]
+            },
+            {
+                "text": "Claro, claro que lo sabe usted. Porque es usted quien le ha metido esos cuentos en la cabeza estas semanas. Todo esto es culpa suya.",
+                "next": "4PH",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.2"]
+            },
+            {
+                "text": "Supuestamente Dios se lo había prometido, habían hecho un pacto divino, o algo así.",
+                "next": "4PH",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "Decía algo de entregar en holocausto como hizo Jefté.",
+                "next": "4PH",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "Ciriaco estaría malo de la espalda, no querría molestarnos pensando que ya nadie iba a necesitar un taxi a esas horas... ¿Está seguro de que es cierto?",
+                "next": "4PH",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.1"]
+            },
+            {
+                "text": "No puede ser... ese pobre muchacho... esos delirios sobre pactos con Dios...",
+                "next": "4PH",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.2"]
+            },
+            {
+                "text": "En el camino al pueblo no paraba de hablar de pactos con Dios y cosas así. Decía que él era como un tal Jefté, del libro de los Jueces.",
+                "next": "4PH",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "Decía que conseguiría una buena vida para él y para sus hermanas... no, decía que conseguiría una buena vida para una de sus hermanas...",
+                "next": "4PH",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            },
+            {
+                "text": "Ciriaco estaría malo de la espalda, no querría molestarnos pensando que ya nadie iba a necesitar un taxi a esas horas... ¿Está seguro de que es cierto?",
+                "next": "4PH",
+                "requiredFlags": ["1.2.2.1"],
+                "setFlags": ["1.2.2.1.1"]
+            },
+            {
+                "text": "No puede ser... ese pobre muchacho... esos delirios sobre pactos con Dios...",
+                "next": "4PH",
+                "requiredFlags": ["1.2.2.1"],
+                "setFlags": ["1.2.2.1.2"]
+            },
+            {
+                "text": "En el camino al pueblo no paraba de hablar de pactos con Dios y cosas así. Decía que él era como un tal Jefté, del libro de los Jueces.",
+                "next": "4PH",
+                "requiredFlags": ["1.2.2.2"],
+                "setFlags": ["1.2.2.2.1"]
+            },
+            {
+                "text": "Decía que conseguiría una buena vida para él y para sus hermanas... no, decía que conseguiría una buena vida para una de sus hermanas...",
+                "next": "4PH",
+                "requiredFlags": ["1.2.2.2"],
+                "setFlags": ["1.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4PH",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1"],
+                "text": "También decían que Jeremías deliraba , hasta que Jerusalén ardió. Quizás él sabía algo que los demás no podemos ver."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2"],
+                "text": "Los caminos del señor son inescrutables, hijo mío."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1"],
+                "text": "Claro... el muchacho es nuestro Jefté."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.2"],
+                "text": "Jefté... claro...."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1"],
+                "text": "Jefté era un guerrero valiente, hijo de Galaad y de una prostituta. Por esta razón, sus hermanastros lo expulsaron de su casa, y terminó liderando una banda de forajidos en la tierra de Tob. Tiempo después, cuando los amonitas amenazaron a Israel, los ancianos de Galaad recurrieron a Jefté para que liderara al pueblo en la batalla. Jefté aceptó, pero con la condición de que, si Dios le daba la victoria, sería el jefe de todos los habitantes de Galaad."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2"],
+                "text": "Tus acusaciones son tan infundadas como peligrosas, Teodoro. Deberías tener cuidado."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1"],
+                "text": "Claro... el muchacho es nuestro Jefté."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.2"],
+                "text": "Jefté... claro...."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1"],
+                "text": "En un momento lo podremos confirmar, aunque si no lo fuese, sería la primera vez en los 35 años que llevo de párroco en la que hay agonía sin muerte."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2"],
+                "text": "¿Qué delirios? ¿Te dijo algo Abel ayer?"
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "Jefté... claro...."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2"],
+                "text": "¿Dijo algo más? Sobre cómo pretendía conseguirlo..."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1"],
+                "text": "En un momento lo podremos confirmar, aunque si no lo fuese, sería la primera vez en los 35 años que llevo de párroco en la que hay agonía sin muerte."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.2"],
+                "text": "¿Qué delirios? ¿Te dijo algo Abel ayer?"
+            },
+            {
+                "requiredFlags": ["1.2.2.2.1"],
+                "text": "Jefté... claro...."
+            },
+            {
+                "requiredFlags": ["1.2.2.2.2"],
+                "text": "¿Dijo algo más? Sobre cómo pretendía conseguirlo..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Padre, si sabe usted algo de todo esto... no me lo diga. Tendría que lanzar el coche por el primer acantilado que vea y eso me mataría a mí también.",
+                "next": "5PH",
+                "requiredFlags": ["1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.1"]
+            },
+            {
+                "text": "¿Cómo? ¿De qué habla? ¿Ahora van a resultar que Agar era el demonio o algo así?",
+                "next": "5PH",
+                "requiredFlags": ["1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.2"]
+            },
+            {
+                "text": "Padre, si sabe usted algo de todo esto... no me lo diga. Tendría que lanzar el coche por el primer acantilado que vea y eso me mataría a mí también.",
+                "next": "5PH",
+                "requiredFlags": ["1.1.1.1.2"],
+                "setFlags": ["1.1.1.1.2.1"]
+            },
+            {
+                "text": "¿Cómo? ¿De qué habla? ¿Ahora van a resultar que Agar era el demonio o algo así?",
+                "next": "5PH",
+                "requiredFlags": ["1.1.1.1.2"],
+                "setFlags": ["1.1.1.1.2.2"]
+            },
+            {
+                "text": "¿Claro? ¿Qué sabe usted?",
+                "next": "5PH",
+                "requiredFlags": ["1.1.1.2.1"],
+                "setFlags": ["1.1.1.2.1.1"]
+            },
+            {
+                "text": "Claro, claro que lo sabe usted. Porque es usted quien le ha metido esos cuentos en la cabeza estas semanas. Todo esto es culpa suya.",
+                "next": "5PH",
+                "requiredFlags": ["1.1.1.2.1"],
+                "setFlags": ["1.1.1.2.1.2"]
+            },
+            {
+                "text": "¿Llega algún momento en el que veo el paralelismo?.",
+                "next": "5PH",
+                "requiredFlags": ["1.1.2.1.1"],
+                "setFlags": ["1.1.2.1.1.2"]
+            },
+            {
+                "text": "Usted también, Padre. Infundir violencia sólo genera más violencia.",
+                "next": "5PH",
+                "requiredFlags": ["1.1.2.1.2"],
+                "setFlags": ["1.1.2.1.2.2"]
+            },
+            {
+                "text": "¿Claro? ¿Qué sabe usted?",
+                "next": "5PH",
+                "requiredFlags": ["1.1.2.2.1"],
+                "setFlags": ["1.1.2.2.1.1"]
+            },
+            {
+                "text": "Claro, claro que lo sabe usted. Porque es usted quien le ha metido esos cuentos en la cabeza estas semanas. Todo esto es culpa suya.",
+                "next": "5PH",
+                "requiredFlags": ["1.1.2.2.1"],
+                "setFlags": ["1.1.2.2.1.2"]
+            },
+            {
+                "text": "No puede ser... ese pobre muchacho... esos delirios sobre pactos con Dios...",
+                "next": "5PH",
+                "requiredFlags": ["1.2.1.1.1"],
+                "setFlags": ["1.2.1.1.1.1"]
+            },
+            {
+                "text": "La pequeña Agar... No me lo puedo creer. ¿Cómo ha podido hacer algo así Abel? ¿Qué te lleva a hacer algo como eso?",
+                "next": "5PH",
+                "requiredFlags": ["1.2.1.1.1"],
+                "setFlags": ["1.2.1.1.1.2"]
+            },
+            {
+                "text": "Supuestamente Dios se lo había prometido, habían hecho un pacto divino, o algo así.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.2.1"]
+            },
+            {
+                "text": "Decía algo de entregar en holocausto como hizo Jefté.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "¿Claro? ¿Qué sabe usted?",
+                "next": "5PH",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.1"]
+            },
+            {
+                "text": "Claro, claro que lo sabe usted. Porque es usted quien le ha metido esos cuentos en la cabeza estas semanas. Todo esto es culpa suya.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.2"]
+            },
+            {
+                "text": "Supuestamente Dios se lo había prometido, habían hecho un pacto divino, o algo así.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.1.2.2"],
+                "setFlags": ["1.2.1.2.2.1"]
+            },
+            {
+                "text": "Decía algo de entregar en holocausto como hizo Jefté.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.1.2.2"],
+                "setFlags": ["1.2.1.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "No puede ser... ese pobre muchacho... esos delirios sobre pactos con Dios...",
+                "next": "5PH",
+                "requiredFlags": ["1.2.2.1.1"],
+                "setFlags": ["1.2.2.1.1.1"]
+            },
+            {
+                "text": "La pequeña Agar... No me lo puedo creer. ¿Cómo ha podido hacer algo así Abel? ¿Qué te lleva a hacer algo como eso?",
+                "next": "5PH",
+                "requiredFlags": ["1.2.2.1.1"],
+                "setFlags": ["1.2.2.1.1.2"]
+            },
+            {
+                "text": "Supuestamente Dios se lo había prometido, habían hecho un pacto divino, o algo así.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.2.1.2"],
+                "setFlags": ["1.2.2.1.2.1"]
+            },
+            {
+                "text": "Decía algo de entregar en holocausto como hizo Jefté.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.2.1.2"],
+                "setFlags": ["1.2.2.1.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            },
+            {
+                "text": "¿Claro? ¿Qué sabe usted?",
+                "next": "5PH",
+                "requiredFlags": ["1.2.2.2.1"],
+                "setFlags": ["1.2.2.2.1.1"]
+            },
+            {
+                "text": "Claro, claro que lo sabe usted. Porque es usted quien le ha metido esos cuentos en la cabeza estas semanas. Todo esto es culpa suya.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.2.2.1"],
+                "setFlags": ["1.2.2.2.1.2"]
+            },
+            {
+                "text": "Supuestamente Dios se lo había prometido, habían hecho un pacto divino, o algo así.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.2.2.2"],
+                "setFlags": ["1.2.2.2.2.1"]
+            },
+            {
+                "text": "Decía algo de entregar en holocausto como hizo Jefté.",
+                "next": "5PH",
+                "requiredFlags": ["1.2.2.2.2"],
+                "setFlags": ["1.2.2.2.2.2"],
+                "requiredGlobalFlags": ["Huérfano-Hermana"]
+            }
+        ]
+    },
+    {
+        "id": "5PH",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1.1"],
+                "text": "Es un punto interesante. Elegirías la justicia antes que la vida de un inocente, pero, si puedes, prefieres la ignorancia."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.1.2"],
+                "text": "No... Jefté nunca prometió acabar con el demonio, en un pacto uno debe dar algo valioso para uno mismo."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2.1"],
+                "text": "Es un punto interesante. Elegirías la justicia antes que la vida de un inocente, pero, si puedes, prefieres la ignorancia."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2.2"],
+                "text": "No... Jefté nunca prometió acabar con el demonio, en un pacto uno debe dar algo valioso para uno mismo."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1.1"],
+                "text": "Jefté era un guerrero valiente, hijo de Galaad y de una prostituta. Por esta razón, sus hermanastros lo expulsaron de su casa, y terminó liderando una banda de forajidos en la tierra de Tob. Tiempo después, cuando los amonitas amenazaron a Israel, los ancianos de Galaad recurrieron a Jefté para que liderara al pueblo en la batalla. Jefté aceptó, pero con la condición de que, si Dios le daba la victoria, sería el jefe de todos los habitantes de Galaad."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1.2"],
+                "text": "Tus acusaciones son tan infundadas como peligrosas, Teodoro. Deberías tener cuidado."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1.2"],
+                "text": "Antes de la batalla, Jefté hizo un voto a Dios: \"Si entregas a los amonitas en mis manos, cualquiera que salga de la puerta de mi casa a recibirme, cuando regrese victorioso, será para el Señor, y lo ofreceré en holocausto.\"."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2.2"],
+                "text": "Las guerras deben acabar algún día, Teodoro."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.1"],
+                "text": "Jefté era un guerrero valiente, hijo de Galaad y de una prostituta. Por esta razón, sus hermanastros lo expulsaron de su casa, y terminó liderando una banda de forajidos en la tierra de Tob. Tiempo después, cuando los amonitas amenazaron a Israel, los ancianos de Galaad recurrieron a Jefté para que liderara al pueblo en la batalla. Jefté aceptó, pero con la condición de que, si Dios le daba la victoria, sería el jefe de todos los habitantes de Galaad."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.2"],
+                "text": "Tus acusaciones son tan infundadas como peligrosas, Teodoro. Deberías tener cuidado."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1.1"],
+                "text": "También decían que Jeremías deliraba , hasta que Jerusalén ardió. Quizás él sabía algo que los demás no podemos ver."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1.2"],
+                "text": "Los caminos del señor son inescrutables, hijo mío."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2.1"],
+                "text": "Claro... el muchacho es nuestro Jefté."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2.2"],
+                "text": "Jefté... claro...."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1.1"],
+                "text": "Jefté era un guerrero valiente, hijo de Galaad y de una prostituta. Por esta razón, sus hermanastros lo expulsaron de su casa, y terminó liderando una banda de forajidos en la tierra de Tob. Tiempo después, cuando los amonitas amenazaron a Israel, los ancianos de Galaad recurrieron a Jefté para que liderara al pueblo en la batalla. Jefté aceptó, pero con la condición de que, si Dios le daba la victoria, sería el jefe de todos los habitantes de Galaad."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1.2"],
+                "text": "Tus acusaciones son tan infundadas como peligrosas, Teodoro. Deberías tener cuidado."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2.1"],
+                "text": "Claro... el muchacho es nuestro Jefté."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2.2"],
+                "text": "Jefté... claro...."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1.1"],
+                "text": "También decían que Jeremías deliraba , hasta que Jerusalén ardió. Quizás él sabía algo que los demás no podemos ver."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1.2"],
+                "text": "Los caminos del señor son inescrutables, hijo mío."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.2.1"],
+                "text": "Claro... el muchacho es nuestro Jefté."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.2.2"],
+                "text": "Jefté... claro...."
+            },
+            {
+                "requiredFlags": ["1.2.2.2.1.1"],
+                "text": "Jefté era un guerrero valiente, hijo de Galaad y de una prostituta. Por esta razón, sus hermanastros lo expulsaron de su casa, y terminó liderando una banda de forajidos en la tierra de Tob. Tiempo después, cuando los amonitas amenazaron a Israel, los ancianos de Galaad recurrieron a Jefté para que liderara al pueblo en la batalla. Jefté aceptó, pero con la condición de que, si Dios le daba la victoria, sería el jefe de todos los habitantes de Galaad."
+            },
+            {
+                "requiredFlags": ["1.2.2.2.1.2"],
+                "text": "Tus acusaciones son tan infundadas como peligrosas, Teodoro. Deberías tener cuidado."
+            },
+            {
+                "requiredFlags": ["1.2.2.2.2.1"],
+                "text": "Claro... el muchacho es nuestro Jefté."
+            },
+            {
+                "requiredFlags": ["1.2.2.2.2.2"],
+                "text": "Jefté... claro...."
+            }
+        ],
+        "choices": [
+            {
+                "text": "El no matarás siempre me quedó bastante claro. Eso de amar al prójimo siempre lo he visto más complicado.",
+                "next": "6PH",
+                "requiredFlags": ["1.1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.1.1"]
+            },
+            {
+                "text": "En este coche no hay ningún inocente, Padre, eso lo puede tener claro.",
+                "next": "6PH",
+                "requiredFlags": ["1.1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.1.2"]
+            },
+            {
+                "text": "¿Llega algún momento en el que veo el paralelismo?.",
+                "next": "6PH",
+                "requiredFlags": ["1.1.1.1.1.2"],
+                "setFlags": ["1.1.1.1.1.2"]
+            },
+            {
+                "text": "El no matarás siempre me quedó bastante claro. Eso de amar al prójimo siempre lo he visto más complicado.",
+                "next": "6PH",
+                "requiredFlags": ["1.1.1.1.2.1"],
+                "setFlags": ["1.1.1.1.2.1.1"]
+            },
+            {
+                "text": "En este coche no hay ningún inocente, Padre, eso lo puede tener claro.",
+                "next": "6PH",
+                "requiredFlags": ["1.1.1.1.2.1"],
+                "setFlags": ["1.1.1.1.2.1.2"]
+            },
+            {
+                "text": "¿Llega algún momento en el que veo el paralelismo?.",
+                "next": "6PH",
+                "requiredFlags": ["1.1.1.1.2.2"],
+                "setFlags": ["1.1.1.1.2.2"]
+            },
+            {
+                "text": "Vale, ahora sí veo el paralelismo...",
+                "next": "6PH",
+                "requiredFlags": ["1.1.2.1.1.2"],
+                "setFlags": ["1.1.2.1.1.2.1"]
+            },
+            {
+                "text": "Y usted por supuesto no sabe como se le ha metido esto en la cabeza a Abel...",
+                "next": "6PH",
+                "requiredFlags": ["1.1.2.1.1.2"],
+                "setFlags": ["1.1.2.1.1.2.2"]
+            },
+            {
+                "text": "...",
+                "next": "FinPasajePH",
+                "requiredFlags": ["1.1.2.1.2.2"],
+                "setFlags": ["1.1.2.1.2.2.1"]
+            },
+            {
+                "text": "Pero que habla de guerras, un muchacho ha matado a su hermana de 12 años.",
+                "next": "6PH",
+                "requiredFlags": ["1.1.2.1.2.2"],
+                "setFlags": ["1.1.2.1.2.2.2"]
+            },
+            {
+                "text": "Vale, ahora sí veo el paralelismo...",
+                "next": "6PH",
+                "requiredFlags": ["1.1.2.2.1.2"],
+                "setFlags": ["1.1.2.2.1.2.1"]
+            },
+            {
+                "text": "Y usted por supuesto no sabe como se le ha metido esto en la cabeza a Abel...",
+                "next": "6PH",
+                "requiredFlags": ["1.1.2.2.1.2"],
+                "setFlags": ["1.1.2.2.1.2.2"]
+            },
+            {
+                "text": "Padre, si sabe usted algo de todo esto... no me lo diga. Tendría que lanzar el coche por el primer acantilado que vea y eso me mataría a mí también.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.1.1.1"],
+                "setFlags": ["1.2.1.1.1.1.1"]
+            },
+            {
+                "text": "¿Cómo? ¿De qué habla? ¿Ahora van a resultar que Agar era el demonio o algo así?",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.1.1.1"],
+                "setFlags": ["1.2.1.1.1.1.2"]
+            },
+            {
+                "text": "Padre, si sabe usted algo de todo esto... no me lo diga. Tendría que lanzar el coche por el primer acantilado que vea y eso me mataría a mí también.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.1.1.2"],
+                "setFlags": ["1.2.1.1.1.2.1"]
+            },
+            {
+                "text": "¿Cómo? ¿De qué habla? ¿Ahora van a resultar que Agar era el demonio o algo así?",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.1.1.2"],
+                "setFlags": ["1.2.1.1.1.2.2"]
+            },
+            {
+                "text": "¿Claro? ¿Qué sabe usted?",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.1.2.1"],
+                "setFlags": ["1.2.1.1.2.1.1"]
+            },
+            {
+                "text": "Claro, claro que lo sabe usted. Porque es usted quien le ha metido esos cuentos en la cabeza estas semanas. Todo esto es culpa suya.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.1.2.1"],
+                "setFlags": ["1.2.1.1.2.1.2"]
+            },
+            {
+                "text": "¿Llega algún momento en el que veo el paralelismo?.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.1.2.2"],
+                "setFlags": ["1.2.1.1.2.2"]
+            },
+            {
+                "text": "Usted también, Padre. Infundir violencia sólo genera más violencia.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.2.1.2"],
+                "setFlags": ["1.2.1.2.1.2.2"]
+            },
+            {
+                "text": "¿Claro? ¿Qué sabe usted?",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.2.2.1"],
+                "setFlags": ["1.2.1.2.2.1.1"]
+            },
+            {
+                "text": "Claro, claro que lo sabe usted. Porque es usted quien le ha metido esos cuentos en la cabeza estas semanas. Todo esto es culpa suya.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.1.2.2.1"],
+                "setFlags": ["1.2.1.2.2.1.2"]
+            },
+            {
+                "text": "Padre, si sabe usted algo de todo esto... no me lo diga. Tendría que lanzar el coche por el primer acantilado que vea y eso me mataría a mí también.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.2.1.1.1"],
+                "setFlags": ["1.2.2.1.1.1.1"]
+            },
+            {
+                "text": "¿Cómo? ¿De qué habla? ¿Ahora van a resultar que Agar era el demonio o algo así?",
+                "next": "6PH",
+                "requiredFlags": ["1.2.2.1.1.1"],
+                "setFlags": ["1.2.2.1.1.1.2"]
+            },
+            {
+                "text": "Padre, si sabe usted algo de todo esto... no me lo diga. Tendría que lanzar el coche por el primer acantilado que vea y eso me mataría a mí también.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.2.1.1.2"],
+                "setFlags": ["1.2.2.1.1.2.1"]
+            },
+            {
+                "text": "¿Cómo? ¿De qué habla? ¿Ahora van a resultar que Agar era el demonio o algo así?",
+                "next": "6PH",
+                "requiredFlags": ["1.2.2.1.1.2"],
+                "setFlags": ["1.2.2.1.1.2.2"]
+            },
+            {
+                "text": "¿Claro? ¿Qué sabe usted?",
+                "next": "6PH",
+                "requiredFlags": ["1.2.2.2.1.1"],
+                "setFlags": ["1.2.2.2.1.1.1"]
+            },
+            {
+                "text": "Claro, claro que lo sabe usted. Porque es usted quien le ha metido esos cuentos en la cabeza estas semanas. Todo esto es culpa suya.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.2.2.1.1"],
+                "setFlags": ["1.2.2.2.1.1.2"]
+            },
+            {
+                "text": "¿Llega algún momento en el que veo el paralelismo?.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.2.2.1.2"],
+                "setFlags": ["1.2.2.2.1.2"]
+            },
+            {
+                "text": "Usted también, Padre. Infundir violencia sólo genera más violencia.",
+                "next": "6PH",
+                "requiredFlags": ["1.2.2.2.2.1"],
+                "setFlags": ["1.2.2.2.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "6PH",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1.1.1"],
+                "text": "Las sagradas escrituras hay que interpretarlas, muchacho."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.1.1.2"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2.1.1"],
+                "text": "Las sagradas escrituras hay que interpretarlas, muchacho."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2.1.2"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1.2.1"],
+                "text": "Veremos cómo se desarrolla esto..."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1.2.2"],
+                "text": "Iremos hablando, Abel..."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2.2.2"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.2.1"],
+                "text": "Veremos cómo se desarrolla esto..."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.2.2"],
+                "text": "Iremos hablando, Abel..."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1.1.1"],
+                "text": "Es un punto interesante. Elegirías la justicia antes que la vida de un inocente, pero, si puedes, prefieres la ignorancia."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1.1.2"],
+                "text": "No... Jefté nunca prometió acabar con el demonio, en un pacto uno debe dar algo valioso para uno mismo."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1.2.1"],
+                "text": "Es un punto interesante. Elegirías la justicia antes que la vida de un inocente, pero, si puedes, prefieres la ignorancia."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1.2.2"],
+                "text": "No... Jefté nunca prometió acabar con el demonio, en un pacto uno debe dar algo valioso para uno mismo."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1.2.2"],
+                "text": "Las guerras deben acabar algún día, Teodoro."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1.1.1"],
+                "text": "Es un punto interesante. Elegirías la justicia antes que la vida de un inocente, pero, si puedes, prefieres la ignorancia."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1.1.2"],
+                "text": "No... Jefté nunca prometió acabar con el demonio, en un pacto uno debe dar algo valioso para uno mismo."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1.2.1"],
+                "text": "Es un punto interesante. Elegirías la justicia antes que la vida de un inocente, pero, si puedes, prefieres la ignorancia."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1.2.2"],
+                "text": "No... Jefté nunca prometió acabar con el demonio, en un pacto uno debe dar algo valioso para uno mismo."
+            },
+            {
+                "requiredFlags": ["1.2.2.2.2.1.2"],
+                "text": "Las guerras deben acabar algún día, Teodoro."
+            }
+        ],
+        "end": true
+    },
+    {
+        "id": "FinPasajePH",
+        "end": true
+    }
+]

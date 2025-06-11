@@ -1,0 +1,508 @@
+[
+    {
+        "id": "start",
+        "speaker": "Periodista",
+        "text": "Lléveme al pueblo, por favor.",
+        "choices": [
+            {
+                "text": "¿Eso es lo que me vas a decir? Me tendrás que contar cómo te fue en La Fábrica.",
+                "next": "1L1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "En seguida, parece que a tu historia cada vez le faltan menos piezas ¿No?",
+                "next": "1L1",
+                "setFlags": ["1.2A"],
+                "requiredFlags": ["Huérfano Fábrica", "Desarticulado"]
+            },
+            {
+                "text": "Yo te llevo pero, te aviso, el ambiente por ahí no va a estar muy receptivo.",
+                "next": "1L1",
+                "setFlags": ["1.2B"],
+                "requiredFlags": ["Huérfano Suicidio", "Hermana"]
+            }
+        ]
+    },
+    {
+        "id": "1L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Hombre, mira quién está interesado ahora... No te preocupes, te lo iba a contar de camino."
+            },
+            {
+                "requiredFlags": ["1.2A"],
+                "text": "Algo he oído, para eso quería ir al pueblo. Bueno, si te soy sincero confiaba más en que me llevases tú y me pudieses contar algo que en conseguir información de los del pueblo."
+            },
+            {
+                "requiredFlags": ["1.2B"],
+                "text": "Algo he oído... es una tragedia. No se equivoque, no voy al pueblo a husmear. Lo que ha pasado es una tragedia... y no hay nadie más culpable que los que pusieron a esa familia en esa situación. Ahora la gente hablará de ellos, algunos dirán que se lo esperaban..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Claro que me interesa, todo lo que sea gente que no coma de La Fábrica le viene bien a la Isla.",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Me lo ibas a contar igual aunque no me interesase...",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "Estás de suerte, al muchacho lo recogí yo mismo del Diente del Santo.",
+                "next": "2L1",
+                "requiredFlags": ["1.2A"],
+                "setFlags": ["1.2A.1"]
+            },
+            {
+                "text": "Información a cambio de información. Suena como un trato justo.",
+                "next": "2L1",
+                "requiredFlags": ["1.2A"],
+                "setFlags": ["1.2A.2"]
+            },
+            {
+                "text": "¿Y si no es a husmear a que vas, exactamente?",
+                "next": "2L1",
+                "requiredFlags": ["1.2B"],
+                "setFlags": ["1.2B.1"]
+            },
+            {
+                "text": "Sí... ahora es una desgracia para todos que nadie podía prever. En un tiempo se convertirá en... una anécdota que los niños se sentirán mayores al contar.",
+                "next": "2L1",
+                "requiredFlags": ["1.2B"],
+                "setFlags": ["1.2B.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Sí, sobre eso... Me dejaron entrar, la verdad que me trataron bastante bien. Les conté que estaba escribiendo un reportaje sobre La Isla y su creciente desarrollo en los últimos tiempos, evidentemente no podía no hablar del mayor motor económico de La Isla.",
+                "setFlags": ["Periodista admitido"]
+            },
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Ya, sobre eso... no me dejaron entrar. A los de seguridad no les parece ninguna locura, pero cuando llamaron dentro a preguntar les dijeron que no querían periodistas...",
+                "setFlags": ["Periodista denegado"]
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "La verdad es que sí, fui el miércoles. Me dejaron entrar, la verdad que me trataron bastante bien..."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Pues la verdad es que sí, pero bueno, te interesa. Y menos mal porque no son muy buenas noticias. No me dejaron entrar..."
+            },
+            {
+                "requiredFlags": ["1.2A.1"],
+                "text": "Por qué será que me lo esperaba. Vamos, cuéntame ¿Qué ha pasado?"
+            },
+            {
+                "requiredFlags": ["1.2A.2"],
+                "text": "Suena como un trato, sí. Vamos, cuéntame ¿Qué ha pasado?"
+            },
+            {
+                "requiredFlags": ["1.2B.1"],
+                "text": "A investigar, a sentir, a tomarle el pulso al pueblo del que escribo."
+            },
+            {
+                "requiredFlags": ["1.2B.2"],
+                "text": "Eso es lo que vamos a intentar evitar, ya sabemos que ningún juez va a darnos la justicia que queremos, la opinión pública puede, si les contamos la historia correcta."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Bien, bien una vez dentro ¿Qué?",
+                "next": "3L1",
+                "requiredFlags": ["Periodista admitido"],
+                "setFlags": ["1.1.1C.1"]
+            },
+            {
+                "text": "Bailando con las medias verdades, uno tiene que hacer lo que uno tiene que hacer, supongo.",
+                "next": "3L1",
+                "requiredFlags": ["Periodista admitido"],
+                "setFlags": ["1.1.1C.2"]
+            },
+            {
+                "text": "¿Realmente esperabas que los trabajadores te dijesen algo malo en el bus de la empresa?",
+                "next": "3L1",
+                "requiredFlags": ["Periodista denegado"],
+                "setFlags": ["1.1.1D.1"]
+            },
+            {
+                "text": "¿Te fuiste sin hablar con el jefe?",
+                "next": "3L1",
+                "requiredFlags": ["Periodista denegado"],
+                "setFlags": ["1.1.1D.2"]
+            },
+            {
+                "text": "*contárselo todo (omitiendo el dato del revólver en caso de tener el arma)*",
+                "next": "3L1",
+                "requiredFlags": ["1.2A.1"],
+                "setFlags": ["1.2A.1.1"]
+            },
+            {
+                "text": "*explicarle la situación de El Huérfano, sin dar detalles de la conversación en el taxi*",
+                "next": "3L1",
+                "requiredFlags": ["1.2A.1"],
+                "setFlags": ["1.2A.1.2"]
+            },
+            {
+                "text": "Suena como jerga periodística de husmear.",
+                "next": "3L1",
+                "requiredFlags": ["1.2B.1"],
+                "setFlags": ["1.2B.1.1"]
+            },
+            {
+                "text": "¿Qué pulso vas a tomar? ¿Cómo crees que va a estar el pueblo?",
+                "next": "3L1",
+                "requiredFlags": ["1.2B.1"],
+                "setFlags": ["1.2B.1.2"]
+            },
+            {
+                "text": "A montar un circo...",
+                "next": "3L1",
+                "requiredFlags": ["1.2B.2"],
+                "setFlags": ["1.2B.2.1"]
+            },
+            {
+                "text": "Por una vez me toca apoyar que los del continente estén pendientes de nosotros.",
+                "next": "3L1",
+                "requiredFlags": ["1.2B.2"],
+                "setFlags": ["1.2B.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1C.1"],
+                "text": "Me hicieron un tour por La Fábrica, yo intentaba hacer ver que me interesaba muchísimo los procesos de obtención y procesamiento del azufre..."
+            },
+            {
+                "requiredFlags": ["1.1.1C.2"],
+                "text": "Me hicieron un tour por La Fábrica, yo intentaba hacer ver que me interesaba muchísimo los procesos de obtención y procesamiento del azufre..."
+            },
+            {
+                "requiredFlags": ["1.1.1D.1"],
+                "text": "Ya... no lo pensé mucho. Aún así parecían creer lo que decían. Están realmente contentos y satisfechos con la situación."
+            },
+            {
+                "requiredFlags": ["1.1.1D.2"],
+                "text": "Sí... Se me presentó la oportunidad y pensé que hablar con los trabajadores sería un buen inicio... no lo fue si lo que queremos es presentarlos como una corporación que está jodiendo el ecosistema... todos parecen contentos."
+            },
+            {
+                "requiredFlags": ["1.2A.1.1"],
+                "text": "Vale... vale... pero esto es un histrión. Da más para una novela que para un reportaje."
+            },
+            {
+                "requiredFlags": ["1.2A.1.2"],
+                "text": "Está claro que el muchacho tenía un plan... o al menos un objetivo. ¿Está con la policía o crees que será posible hablar con él?"
+            },
+            {
+                "requiredFlags": ["1.2B.1.1"],
+                "text": "Sí... supongo que básicamente es husmear profesionalmente."
+            },
+            {
+                "requiredFlags": ["1.2B.1.2"],
+                "text": "Ya... lo siento, es una forma de hablar. Tengo que estar ahí, intentaré no llamar mucho la atención. Si no voy, escribir de esto ahora sería como hacerlo desde El Continente."
+            },
+            {
+                "requiredFlags": ["1.2B.2.1"],
+                "text": "Exacto, hay que montar un circo, hay que llamar la atención para que la gente mire y vea lo que esta gente hace."
+            },
+            {
+                "requiredFlags": ["1.2B.2.2"],
+                "text": "Pues claro, más de la mitad de La Isla depende de esta gente, necesitamos que venga gente de fuera a hacer pagar a esta gente."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Un poquito de peloteo...",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1C.1"],
+                "setFlags": ["1.1.1C.1.1"]
+            },
+            {
+                "text": "No sé como de sólido es ese plan",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1C.1"],
+                "setFlags": ["1.1.1C.1.2"]
+            },
+            {
+                "text": "Entonces ahora qué, ¿Perdonados? Se cargaron a un hombre y cientos de animales contaminando el agua...",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1D.1"],
+                "setFlags": ["1.1.1D.1.1"]
+            },
+            {
+                "text": "Sí... la gente en general está contenta y satisfecha con ellos...",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1D.1"],
+                "setFlags": ["1.1.1D.1.2"]
+            },
+            {
+                "text": "Sí, pero no es ninguna novela, es la realidad...",
+                "next": "4L1",
+                "requiredFlags": ["1.2A.1.1"],
+                "setFlags": ["1.2A.1.1.1"]
+            },
+            {
+                "text": "Tú eres el que escribe, tú decides el formato.",
+                "next": "4L1",
+                "requiredFlags": ["1.2A.1.1"],
+                "setFlags": ["1.2A.1.1.2"]
+            },
+            {
+                "text": "De profesión, cotilla.",
+                "next": "4L1",
+                "requiredFlags": ["1.2B.1.1"],
+                "setFlags": ["1.2B.1.1.1"]
+            },
+            {
+                "text": "Sí, te entiendo. Hasta en la guerra hay reporteros...",
+                "next": "4L1",
+                "requiredFlags": ["1.2B.1.2"],
+                "setFlags": ["1.2B.1.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "4L1",
+                "requiredFlags": ["1.2B.2.1"],
+                "setFlags": ["1.2B.2.1.1"]
+            },
+            {
+                "text": "Ten cuidado chaval, hay gente que lo está pasando mal.",
+                "next": "4L1",
+                "requiredFlags": ["1.2B.2.2"],
+                "setFlags": ["1.2B.2.2.1"]
+            }
+        ]
+    },
+    {
+        "id": "4L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1C.1.1"],
+                "text": "Era un poco extraño, pero funcionó. Me presentaron la parte de oficinas..."
+            },
+            {
+                "requiredFlags": ["1.1.1C.1.2"],
+                "text": "Era un poco extraño, pero funcionó. Me presentaron la parte de oficinas..."
+            },
+            {
+                "requiredFlags": ["1.1.1D.1.1"],
+                "text": "Yo no he dicho eso pero... ¿Realmente merece la pena? Si le dan de comer a media isla..."
+            },
+            {
+                "requiredFlags": ["1.1.1D.1.2"],
+                "text": "Sí, los trabajadores es raro que puedan ver los problemas que trae la empresa en general a La Isla..."
+            },
+            {
+                "requiredFlags": ["1.2A.1.1.1"],
+                "text": "De verdad, no me interesa una mierda gustar con esto. Mis blogs de vacaciones me gustaban..."
+            },
+            {
+                "requiredFlags": ["1.2A.1.1.2"],
+                "text": "Ya... pero yo nunca he escrito una novela."
+            },
+            {
+                "requiredFlags": ["1.2B.1.1.1"],
+                "text": "Sí, para contar las cosas hay que conocerlas..."
+            },
+            {
+                "requiredFlags": ["1.2B.1.2.1"],
+                "text": "Pues claro que hay que contarla, esto es una tragedia..."
+            },
+            {
+                "requiredFlags": ["1.2B.2.1.1"],
+                "text": "¿Qué pasa? ¿Ahora tú te vas a acojonar? ¿Ya está? ¿Se acabó?"
+            },
+            {
+                "requiredFlags": ["1.2B.2.2.1"],
+                "text": "Lo sé, lo sé. Pero esa gente necesita que se haga justicia..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Te dejaron entrevistar al dueño?",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1C.1.1"],
+                "setFlags": ["1.1.1C.1.1.1"]
+            },
+            {
+                "text": "Dime que has sacado algo de lo de los residuos en el agua...",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1C.1.1"],
+                "setFlags": ["1.1.1C.1.1.2"]
+            },
+            {
+                "text": "Entonces qué ¿eh? Mientras paguen a tiempo está todo bien...",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1D.1.1"],
+                "setFlags": ["1.1.1D.1.1.1"]
+            },
+            {
+                "text": "¿La gente es feliz así?...",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1D.1.1"],
+                "setFlags": ["1.1.1D.1.1.2"]
+            },
+            {
+                "text": "Lo conseguirás, muchacho...",
+                "next": "5L1",
+                "requiredFlags": ["1.2A.1.1.1"],
+                "setFlags": ["1.2A.1.1.1.1"]
+            },
+            {
+                "text": "A veces la ficción es tanto o más efectiva que la realidad...",
+                "next": "5L1",
+                "requiredFlags": ["1.2A.1.1.1"],
+                "setFlags": ["1.2A.1.1.1.2"]
+            },
+            {
+                "text": "Llámalo impacto, llámalo porno emocional...",
+                "next": "5L1",
+                "requiredFlags": ["1.2B.1.1.1"],
+                "setFlags": ["1.2B.1.1.1.1"]
+            },
+            {
+                "text": "Bueno, si consigues hablar con Judit...",
+                "next": "5L1",
+                "requiredFlags": ["1.2B.1.1.1"],
+                "setFlags": ["1.2B.1.1.1.2"]
+            },
+            {
+                "text": "Te recuerdo que yo sí vivo aquí...",
+                "next": "5L1",
+                "requiredFlags": ["1.2B.2.1.1"],
+                "setFlags": ["1.2B.2.1.1.1"]
+            },
+            {
+                "text": "Eres un tipo sorprendentemente honrado...",
+                "next": "5L1",
+                "requiredFlags": ["1.2B.2.2.1"],
+                "setFlags": ["1.2B.2.1.2.1"]
+            }
+        ]
+    },
+    {
+        "id": "5L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1C.1.1.1"],
+                "text": "El tipo parecía contento de que hubiese ido, me contó su historia..."
+            },
+            {
+                "requiredFlags": ["1.1.1C.1.1.2"],
+                "text": "Le pregunté por su relación con políticos y por el hecho de que el antiguo delegado de gobierno está ahora dentro de su comité directivo..."
+            },
+            {
+                "requiredFlags": ["1.1.1D.1.1.1"],
+                "text": "...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.1.1D.1.1.2"],
+                "text": "¿En serio? ¿Esa es tu comparación? Mira, yo voy a hacer esto igualmente..."
+            },
+            {
+                "requiredFlags": ["1.2A.1.1.1.1"],
+                "text": "De verdad, no me interesa una mierda gustar con esto..."
+            },
+            {
+                "requiredFlags": ["1.2A.1.1.1.2"],
+                "text": "Ya, también es verdad. Vamos a hacer algo de lo que al menos estemos orgullosos.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2B.1.1.1.1"],
+                "text": "No es esa mi intención, si quieres creer eso no te preocupes..."
+            },
+            {
+                "requiredFlags": ["1.2B.2.1.1.1"],
+                "text": "Precisamente porque vives aquí querrías que la gente tuviese el poder de lo que pase en La Isla..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Un tío íntegro...",
+                "next": "6L1",
+                "requiredFlags": ["1.1.1C.1.1.1"],
+                "setFlags": ["1.1.1C.1.1.1.1"]
+            },
+            {
+                "text": "Dime que has sacado algo de lo de los residuos en el agua...",
+                "next": "6L1",
+                "requiredFlags": ["1.1.1C.1.1.1"],
+                "setFlags": ["1.1.1C.1.1.1.2"]
+            },
+            {
+                "text": "No me preocupo entonces.",
+                "next": "6L1",
+                "requiredFlags": ["1.1.1D.1.1.2"],
+                "setFlags": ["1.1.1D.1.1.2.1"]
+            },
+            {
+                "text": "Tranquilo, tranquilo. No te envalentones tanto...",
+                "next": "6L1",
+                "requiredFlags": ["1.1.1D.1.1.2"],
+                "setFlags": ["1.1.1D.1.1.2.2"]
+            },
+            {
+                "text": "Todo está relacionado...",
+                "next": "6L1",
+                "requiredFlags": ["1.2B.2.1.1.2.1"],
+                "setFlags": ["1.2B.2.1.1.2.1.1"]
+            },
+            {
+                "text": "Nada, olvídalo, tú céntrate en lo tuyo.",
+                "next": "6L1",
+                "requiredFlags": ["1.2B.2.1.1.2.1"],
+                "setFlags": ["1.2B.2.1.1.2.1.2"],
+                "end": true
+            }
+        ]
+    },
+    {
+        "id": "6L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1C.1.1.1.1"],
+                "text": "Le pregunté, primero por su relación con políticos y por el hecho de que el antiguo delegado de gobierno está ahora dentro de su comité directivo..."
+            },
+            {
+                "requiredFlags": ["1.1.1C.1.1.1.2"],
+                "text": "Le pregunté por su relación con políticos y por el hecho de que el antiguo delegado de gobierno está ahora dentro de su comité directivo..."
+            },
+            {
+                "requiredFlags": ["1.1.1D.1.1.2.1"],
+                "text": "...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.1.1D.1.1.2.2"],
+                "text": "¿En serio? ¿Esa es tu comparación? Mira, yo voy a hacer esto igualmente...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2B.2.1.1.2.1.1"],
+                "text": "¿A qué te refieres?"
+            }
+        ],
+        "end": true
+    }
+]

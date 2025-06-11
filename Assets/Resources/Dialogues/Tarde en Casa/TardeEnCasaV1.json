@@ -1,0 +1,339 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Cuando acabe el curso, ¿Intentamos irnos a algún sitio? Aunque sea un par de días",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "No sé, tendría que hablarlo con los otros y ver si me pueden cubrir los turnos. En verano ya sabes que viene más turista y hay más trabajo...",
+                "next": "1V1",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "¿Dónde querrías ir?",
+                "next": "1V1",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1V1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1"],
+                "text": "Ya... claro pero entonces no podemos irnos nunca, cuando yo tengo vacaciones es temporada alta y hacen falta los taxis, cuando no hay turistas yo tengo que trabajar..."
+            },
+            {
+                "requiredFlags": ["0.2"],
+                "text": "Ni lo había pensado... algún sitio distinto... algo en la montaña quizás, o una ciudad más grande para ver museos e Iglesias ¿Tú tienes alguna idea?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y yo qué hago? Si me voy y dejo la isla sintaxis jodo bastante a bastante gente",
+                "next": "2V1",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["0.1.1"]
+            },
+            {
+                "text": "Si no tuviésemos que estar aquí o yo pudiese tener otro trabajo, sería mucho más fácil irnos de vacaciones.",
+                "next": "2V1",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["0.1.2"]
+            },
+            {
+                "text": "La montaña suena bien... una cabaña, fresquito, tranquilos, solos...",
+                "next": "2V1",
+                "requiredFlags": ["0.2"],
+                "setFlags": ["0.2.1"]
+            },
+            {
+                "text": "Creo que los dos agradeceríamos el cambio de ambiente de ir a una ciudad. Ir a museos, al teatro...",
+                "next": "2V1",
+                "requiredFlags": ["0.2"],
+                "setFlags": ["0.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2V1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1"],
+                "text": "Bueno, jodes sobre todo a los turistas... los de la isla saben los horarios de los autobuses... ¿Ahora te preocupas por el turismo?"
+            },
+            {
+                "requiredFlags": ["0.1.2"],
+                "text": "Ya... así no nos podemos ir de vacaciones pero tú sabes que yo no me puedo ir en general. Tú no te puedes ir en verano porque jodes a los turistas ¿Y quieres que yo me vaya y deje tirados a los niños?"
+            },
+            {
+                "requiredFlags": ["0.2.1"],
+                "text": "¿Tú crees? Lo mismo acabamos más hartos el uno del otro que..."
+            },
+            {
+                "requiredFlags": ["0.2.2"],
+                "text": "Todo el año trabajando y después nos vamos de vacaciones a intentar agobiarnos con ver cosas... que suena bien, pero al final nunca estamos los dos tranquilos."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y qué quieres? Aunque me queje de que se están cargando La Isla no los voy a dejar tirados por ahí. Si ni siquiera es por ellos, es por los otros taxistas, que no van a poder parar ni un poco en esos días si me voy.",
+                "next": "3V1",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.1"]
+            },
+            {
+                "text": "¿Ahora quieres que mande a tomar por culo a los turistas? ¿Ya no te preocupa lo que diga la gente de mí?",
+                "next": "3V1",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.2"]
+            },
+            {
+                "text": "Dejar tirados a los niños sería irte sin avisar, digo yo que si avisas de que dejas el puesto con tiempo la delegación tendrá que mandar otra profesora que se haga cargo.",
+                "next": "3V1",
+                "requiredFlags": ["0.1.2"],
+                "setFlags": ["0.1.2.1"]
+            },
+            {
+                "text": "Suena como un buen plan, seguro que los chavales lo entienden.",
+                "next": "3V1",
+                "requiredFlags": ["0.1.2"],
+                "setFlags": ["0.1.2.2"]
+            },
+            {
+                "text": "¿\"Más\" hartos? ¿A qué te refieres?",
+                "next": "3V1",
+                "requiredFlags": ["0.2.1"],
+                "setFlags": ["0.2.1.1"]
+            },
+            {
+                "text": "Pues nada, vamos de turismo entonces...",
+                "next": "3V1",
+                "requiredFlags": ["0.2.1"],
+                "setFlags": ["0.2.1.2"]
+            },
+            {
+                "text": "Habrá que aprovechar, si nos vamos que sea por algo que valga la pena. En un paraje natural tranquilo ya vivimos.",
+                "next": "3V1",
+                "requiredFlags": ["0.2.2"],
+                "setFlags": ["0.2.2.1"]
+            },
+            {
+                "text": "¿Y aquí por qué no estamos los dos tranquilos nunca? ¿Qué va a cambiar entre estar en casa o en la montaña con eso?",
+                "next": "3V1",
+                "requiredFlags": ["0.2.2"],
+                "setFlags": ["0.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3V1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1"],
+                "text": "Bueno, ya les cubrirás turnos tú, igualmente, ya haces turnos dobles muchos días ahora que Ciriaco está con la ciática."
+            },
+            {
+                "requiredFlags": ["0.1.1.2"],
+                "text": "Eh eh tranquilo conmigo. Qué más da lo que digan de tí, no te ha importado nunca criticar a la gente de la isla, ahora te vas a preocupar por los turistas..."
+            },
+            {
+                "requiredFlags": ["0.1.2.1"],
+                "text": "Ya ¿Y quién se supone que va a aceptar el puesto? ¿Va a venir alguien del continente a mantener todo el colegio?."
+            },
+            {
+                "requiredFlags": ["0.1.2.2"],
+                "text": "Graciosísimo, como siempre."
+            },
+            {
+                "requiredFlags": ["0.2.1.1"],
+                "text": "No hombre, iba a hacer alguna comparación pero no se me ha ocurrido nada, no digo que ahora estemos hartos..."
+            },
+            {
+                "requiredFlags": ["0.2.1.2"],
+                "text": "No te hace mucha ilusión tampoco, eh"
+            },
+            {
+                "requiredFlags": ["0.2.2.1"],
+                "text": "Hombre ya pero tampoco es lo mismo ¿No? Salir de la rutina y eso..."
+            },
+            {
+                "requiredFlags": ["0.2.2.2"],
+                "text": "Ya, supongo que ahí tienes razón, aquí no hacemos nada juntos nunca..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Claro, yo cubro los turnos cuando vuelva, vacaciones con recargo.",
+                "next": "4V1",
+                "requiredFlags": ["0.1.1.1"],
+                "setFlags": ["0.1.1.1.1"]
+            },
+            {
+                "text": "¿Y si Ciriaco se pone malo con lo suyo qué hacemos?",
+                "next": "4V1",
+                "requiredFlags": ["0.1.1.1"],
+                "setFlags": ["0.1.1.1.2"]
+            },
+            {
+                "text": "Claro, a mí siempre me ha dado igual de todo.",
+                "next": "4V1",
+                "requiredFlags": ["0.1.1.2"],
+                "setFlags": ["0.1.1.2.1"]
+            },
+            {
+                "text": "Hombre, a mí me da igual lo que digan de mí, a no ser que tengan razón.",
+                "next": "4V1",
+                "requiredFlags": ["0.1.1.2"],
+                "setFlags": ["0.1.1.2.2"]
+            },
+            {
+                "text": "Claro, te tienes que quedar haciendo lo que nadie quiere hacer, porque nadie quiere hacerlo.",
+                "next": "4V1",
+                "requiredFlags": ["0.1.2.1"],
+                "setFlags": ["0.1.2.1.1"]
+            },
+            {
+                "text": "¿Y si tú te mueres o te pasa algo? ¿Cierran el colegio? ¿Cierran la isla?",
+                "next": "4V1",
+                "requiredFlags": ["0.1.2.1"],
+                "setFlags": ["0.1.2.1.2"]
+            },
+            {
+                "text": "Por eso te enamoraste de mí.",
+                "next": "4V1",
+                "requiredFlags": ["0.2.1.1"],
+                "setFlags": ["0.2.1.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "4V1",
+                "requiredFlags": ["0.2.1.1"],
+                "setFlags": ["0.2.1.1.2"]
+            },
+            {
+                "text": "Ya, si estás harta de mí también me lo puedes decir, eh",
+                "next": "4V1",
+                "requiredFlags": ["0.2.1.1"],
+                "setFlags": ["0.2.1.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "4V1",
+                "requiredFlags": ["0.2.1.1"],
+                "setFlags": ["0.2.1.1.2"]
+            },
+            {
+                "text": "Bueno, qué le vamos a hacer. Si a tí te hace ilusión...",
+                "next": "4V1",
+                "requiredFlags": ["0.2.1.2"],
+                "setFlags": ["0.2.1.2.1"]
+            },
+            {
+                "text": "Que sí mujer, que sí. Ya verás como algo conseguimos hacer.",
+                "next": "4V1",
+                "requiredFlags": ["0.2.1.2"],
+                "setFlags": ["0.2.1.2.2"]
+            },
+            {
+                "text": "No, supongo que no, claro.",
+                "next": "4V1",
+                "requiredFlags": ["0.2.2.1"],
+                "setFlags": ["0.2.2.1.1"]
+            },
+            {
+                "text": "No sé, no entiendo que cambia si lo único que vamos a hacer es estar y relajarnos.",
+                "next": "4V1",
+                "requiredFlags": ["0.2.2.1"],
+                "setFlags": ["0.2.2.1.2"]
+            },
+            {
+                "text": "No sé, no entiendo que cambia si lo único que vamos a hacer es estar y relajarnos.",
+                "next": "4V1",
+                "requiredFlags": ["0.2.2.2"],
+                "setFlags": ["0.2.2.2.2"]
+            },
+            {
+                "text": "Si es que no tenemos tiempo para nada últimamente...",
+                "next": "4V1",
+                "requiredFlags": ["0.2.2.2"],
+                "setFlags": ["0.2.2.2.1"]
+            }
+        ]
+    },
+    {
+        "id": "4V1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1.1"],
+                "text": "Pues nada, ya iremos cuando Ciriaco esté mejor."
+            },
+            {
+                "requiredFlags": ["0.1.1.1.2"],
+                "text": "Pues que se vaya al médico, ni que tú le pudieses arreglar la espalda."
+            },
+            {
+                "requiredFlags": ["0.1.1.2.1"],
+                "text": "Si yo sé que en realidad no, pero es que lo disimulas estupendamente."
+            },
+            {
+                "requiredFlags": ["0.1.1.2.2"],
+                "text": "Dar la razón te cuesta, eso desde luego..."
+            },
+            {
+                "requiredFlags": ["0.1.2.1.1"],
+                "text": "...."
+            },
+            {
+                "requiredFlags": ["0.1.2.1.2"],
+                "text": "Más te vale morirte tú primero, porque si no te va a atormentar mi fantasma"
+            },
+            {
+                "requiredFlags": ["0.2.1.1.1"],
+                "text": "Eso debió ser..."
+            },
+            {
+                "requiredFlags": ["0.2.1.1.2"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["0.2.1.1.1"],
+                "text": "Harta estoy, pero no era lo que iba a decir esta vez."
+            },
+            {
+                "requiredFlags": ["0.2.1.1.2"],
+                "text": "Pero no te enfades, hombre, que no quería decir eso."
+            },
+            {
+                "requiredFlags": ["0.2.1.2.1"],
+                "text": "Hombre a mí sí, pero con esa actitud a dónde vamos a ir."
+            },
+            {
+                "requiredFlags": ["0.2.1.2.2"],
+                "text": "Sí, algo conseguiremos..."
+            },
+            {
+                "requiredFlags": ["0.2.2.1.1"],
+                "text": "La ilusión hecha hombre..."
+            },
+            {
+                "requiredFlags": ["0.2.2.1.2"],
+                "text": "No si ya, ya sé que no lo entiendes..."
+            },
+            {
+                "requiredFlags": ["0.2.2.2.2"],
+                "text": "No si ya, ya sé que no lo entiendes..."
+            },
+            {
+                "requiredFlags": ["0.2.2.2.1"],
+                "text": "..."
+            }
+        ],
+        "end": true
+    }
+]

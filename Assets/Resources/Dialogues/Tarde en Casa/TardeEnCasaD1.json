@@ -1,0 +1,301 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "¿Qué miras tanto por la ventana? ¿Esperas a alguien?",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Te has fijado que el membrillo ha echado flor otra vez?",
+                "next": "1D1",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "¿A quién voy a esperar? ¿Al cartero? ¿Hoy domingo?",
+                "next": "1D1",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1D1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1"],
+                "text": "Mm. Y eso que lo dabas por muerto en enero."
+            },
+            {
+                "requiredFlags": ["0.2"],
+                "text": "También es verdad, ya nunca viene a visitarnos nadie"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Es que parecía muerto.",
+                "next": "2D1",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["0.1.1"]
+            },
+            {
+                "text": "Igual que el jazmín, aunque ese sí que no se recupera.",
+                "next": "2D1",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["0.1.2"]
+            },
+            {
+                "text": "Antes venían tus padres...tu madre desde que se quedó sola no quiere ir a ningún sitio",
+                "next": "2D1",
+                "requiredFlags": ["0.2"],
+                "setFlags": ["0.2.1"]
+            },
+            {
+                "text": "Ahora que tus amigas tienen bebés o vas tú a verlas o como si no las tuvieses, eh",
+                "next": "2D1",
+                "requiredFlags": ["0.2"],
+                "setFlags": ["0.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2D1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1"],
+                "text": "Sí, la verdad. No todo es lo que parece ¿no?"
+            },
+            {
+                "requiredFlags": ["0.1.2"],
+                "text": "¿Lo podaste?"
+            },
+            {
+                "requiredFlags": ["0.2.1"],
+                "text": "\"Se quedó sola\" Que poco me gusta esa expresión. Mi madre se quedó viuda, como la tuya. Solas no están ninguna de las dos."
+            },
+            {
+                "requiredFlags": ["0.2.2"],
+                "text": "No digas eso, todo el mundo tiene cosas que hacer, que no nos veamos no quiere decir que ya no seamos amigas"
+            }
+        ],
+        "choices": [
+            {
+                "text": "No, desde luego.",
+                "next": "3D1",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.1"]
+            },
+            {
+                "text": "No se puede dar nada por muerto sin descartar todas las otras opciones antes.",
+                "next": "3D1",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.2"]
+            },
+            {
+                "text": "No. Pensaba hacerlo hoy, pero…",
+                "next": "3D1",
+                "requiredFlags": ["0.1.2"],
+                "setFlags": ["0.1.2.1"]
+            },
+            {
+                "text": "Es que estaba convencido de que estaba muerto, aunque viendo el membrillo...",
+                "next": "3D1",
+                "requiredFlags": ["0.1.2"],
+                "setFlags": ["0.1.2.2"]
+            },
+            {
+                "text": "Ya, solas no están...",
+                "next": "3D1",
+                "requiredFlags": ["0.2.1"],
+                "setFlags": ["0.2.1.1"]
+            },
+            {
+                "text": "Aunque sea verdad ¿Tú no crees que se sienten solas? Aunque fuesen al mercado todos los días. Aunque vean a sus hijos todos los días. Tiene que ser una mierda después irte a la cama...",
+                "next": "3D1",
+                "requiredFlags": ["0.2.1"],
+                "setFlags": ["0.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "3D1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1"],
+                "text": "En fin...Hay arroz del mediodía si te entra hambre luego."
+            },
+            {
+                "requiredFlags": ["0.1.1.2"],
+                "text": "Y tanto...en fin. Hay arroz al mediodía si te entra hambre luego."
+            },
+            {
+                "requiredFlags": ["0.1.2.1"],
+                "text": "Hoy es domingo."
+            },
+            {
+                "requiredFlags": ["0.1.2.2"],
+                "text": "No se puede dar nada por muerto sin descartar todas las otras opciones antes."
+            },
+            {
+                "requiredFlags": ["0.2.1.1"],
+                "text": "Pero no es lo mismo, ya..."
+            },
+            {
+                "requiredFlags": ["0.2.1.2"],
+                "text": "¿Y qué van a hacer? ¿Esconderse lo que les queda de vida?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Mejor me lo guardas para mañana.",
+                "next": "4D1",
+                "requiredFlags": ["0.1.1.1", "0.1.1.2"],
+                "setFlags": ["0.1.1.1.1", "0.1.1.2.1"]
+            },
+            {
+                "text": "Vale, gracias.",
+                "next": "4D1",
+                "requiredFlags": ["0.1.1.1", "0.1.1.2"],
+                "setFlags": ["0.1.1.1.2", "0.1.1.2.2"]
+            },
+            {
+                "text": "Exacto, hoy no se hacen esas cosas.",
+                "next": "4D1",
+                "requiredFlags": ["0.1.2.1"],
+                "setFlags": ["0.1.2.1.1"]
+            },
+            {
+                "text": "En el fondo creo que me da miedo podarlo, que se termine de morir después y que sea culpa mía.",
+                "next": "4D1",
+                "requiredFlags": ["0.1.2.1"],
+                "setFlags": ["0.1.2.1.2"]
+            },
+            {
+                "text": "Definitivamente.",
+                "next": "4D1",
+                "requiredFlags": ["0.1.2.2"],
+                "setFlags": ["0.1.2.2.1"]
+            },
+            {
+                "text": "Se ha puesto oscura la conversación de repente.",
+                "next": "4D1",
+                "requiredFlags": ["0.1.2.2"],
+                "setFlags": ["0.1.2.2.2"]
+            },
+            {
+                "text": "No... nada es lo mismo.",
+                "next": "4D1",
+                "requiredFlags": ["0.2.1.1"],
+                "setFlags": ["0.2.1.1.1"]
+            },
+            {
+                "text": "La vida es cambio, supongo.",
+                "next": "4D1",
+                "requiredFlags": ["0.2.1.1"],
+                "setFlags": ["0.2.1.1.2"]
+            },
+            {
+                "text": "No creo que se estén escondiendo, pero antes harían muchas cosas por ellos. Y ahora ya no es que hayan dejado de querer hacerlas, es que no tienen un motivo.",
+                "next": "4D1",
+                "requiredFlags": ["0.2.1.2"],
+                "setFlags": ["0.2.1.2.1"]
+            },
+            {
+                "text": "Yo no sé lo que haría, la verdad. No me lo puedo ni imaginar.",
+                "next": "4D1",
+                "requiredFlags": ["0.2.1.2"],
+                "setFlags": ["0.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4D1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1.1", "0.1.1.2.1"],
+                "text": "*con una sonrisa triste* \"El lunes siempre viene solo, ¿eh?\"",
+                "next": "5D1"
+            },
+            {
+                "requiredFlags": ["0.1.2.1.1", "0.1.2.2.1", "0.1.2.2.2", "0.2.1.1.1", "0.2.1.2.1"],
+                "text": "En fin...Hay arroz del mediodía si te entra hambre luego.",
+                "next": "5D1"
+            },
+            {
+                "requiredFlags": ["0.1.2.1.2"],
+                "text": "Si se muere porque no lo podas ¿No es tu culpa?"
+            },
+            {
+                "requiredFlags": ["0.2.1.1.2"],
+                "text": "Es inevitable, en fin...Hay arroz del mediodía si te entra hambre luego.",
+                "next": "5D1"
+            },
+            {
+                "requiredFlags": ["0.2.1.2.2"],
+                "text": "Pues seguir, que ibas a hacer. Vivir. Morir sólo te mueres una vez... vivir hay que vivir todos los días."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Como los atascos. Y las facturas.",
+                "next": "5D1",
+                "requiredFlags": ["0.1.1.1.1"],
+                "setFlags": ["0.1.1.1.1.1"]
+            },
+            {
+                "text": "Esto no es para nadie.",
+                "next": "5D1",
+                "requiredFlags": ["0.1.1.1.1"],
+                "setFlags": ["0.1.1.1.1.2"]
+            },
+            {
+                "text": "Supongo que sí, pero es diferente.",
+                "next": "5D1",
+                "requiredFlags": ["0.1.2.1.2"],
+                "setFlags": ["0.1.2.1.2.1"]
+            },
+            {
+                "text": "Es un jazmín, no me hagas tener una crisis existencial por él",
+                "next": "5D1",
+                "requiredFlags": ["0.1.2.1.2"],
+                "setFlags": ["0.1.2.1.2.2"]
+            },
+            {
+                "text": "Sí... supongo que sí.",
+                "next": "5D1",
+                "requiredFlags": ["0.2.1.2.2"],
+                "setFlags": ["0.2.1.2.2.1"]
+            },
+            {
+                "text": "Pero peor. Viviría todos los días, pero peor.",
+                "next": "5D1",
+                "requiredFlags": ["0.2.1.2.2"],
+                "setFlags": ["0.2.1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5D1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1.1.1", "0.1.1.1.1.2"],
+                "text": "Pero el arroz lo tienes hecho. Algo es algo.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["0.1.2.1.2.1", "0.1.2.1.2.2", "0.2.1.2.2.1"],
+                "text": "En fin...Hay arroz del mediodía si te entra hambre luego.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["0.2.1.2.2.2"],
+                "text": "Te acostumbrarías, como te acostumbras a todo. En fin...Hay arroz del mediodía si te entra hambre luego.",
+                "end": true
+            }
+        ],
+        "end": true
+    }
+]

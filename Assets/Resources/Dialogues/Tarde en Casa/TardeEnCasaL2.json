@@ -1,0 +1,363 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Ha llamado mi hermana. Que si el sábado pasamos por su casa.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Este sábado ya?",
+                "next": "1L2",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "¿Y eso?",
+                "next": "1L2",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1"],
+                "text": "Eso ha dicho, que hace barbacoa, que irán sus sobrinos."
+            },
+            {
+                "requiredFlags": ["0.2"],
+                "text": "Hace barbacoa, irán sus sobrinos."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Hace barbacoa cuando sabe que estoy con la tensión por las nubes.",
+                "next": "2L2",
+                "requiredFlags": ["0.1", "0.2"],
+                "setFlags": ["0.1.1", "0.2.1"]
+            },
+            {
+                "text": "Los sobrinos no son los que molestan, el hermano de tu querido cuñado en cambio...",
+                "next": "2L2",
+                "requiredFlags": ["0.1", "0.2"],
+                "setFlags": ["0.1.2", "0.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1"],
+                "text": "Le puedes decir que no, que estás a zanahoria y pescado al vapor."
+            },
+            {
+                "requiredFlags": ["0.1.2"],
+                "text": "Su mujer tampoco es mucho mejor, si te sirve de consuelo"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Y se ríe en mi cara, como siempre.",
+                "next": "3L2",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.1"]
+            },
+            {
+                "text": "Para eso creo que prefiero no ir a una barbacoa...",
+                "next": "3L2",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.2"]
+            },
+            {
+                "text": "¿Por qué me iba a consolar? Si ella no fuese insufrible me iría a hablar con ella en vez de con el cansancio de su marido.",
+                "next": "3L2",
+                "requiredFlags": ["0.1.2"],
+                "setFlags": ["0.1.2.1"]
+            },
+            {
+                "text": "El único consuelo que tengo es que esas dos personas inaguantables tienen unos mellizos majísimos.",
+                "next": "3L2",
+                "requiredFlags": ["0.1.2"],
+                "setFlags": ["0.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3L2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1"],
+                "text": "Bueno, tú también te reías cuando mi madre traía acelgas."
+            },
+            {
+                "requiredFlags": ["0.1.1.2"],
+                "text": "Si la cosa no es comer hombre, es juntarnos con ellos, que si no se nos va la vida entre el trabajo y casa"
+            },
+            {
+                "requiredFlags": ["0.1.2.1"],
+                "text": "*se ríe* \"Ya... supongo que en este caso mal de muchos, consuelo de nadie.\""
+            },
+            {
+                "requiredFlags": ["0.1.2.2"],
+                "text": "Ya, te da un poco de esperanzas en la humanidad"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y cómo estaba tu madre, por cierto?",
+                "next": "4L2",
+                "requiredFlags": ["0.1.1.1"],
+                "setFlags": ["0.1.1.1.1"]
+            },
+            {
+                "text": "Ya... todo vuelve.",
+                "next": "4L2",
+                "requiredFlags": ["0.1.1.1"],
+                "setFlags": ["0.1.1.1.2"]
+            },
+            {
+                "text": "Ya, pero después tú sabes. Estás allí y es raro sacarte un tupper porque no puedo comer esto o no debo comer aquello...",
+                "next": "4L2",
+                "requiredFlags": ["0.1.1.2"],
+                "setFlags": ["0.1.1.2.1"]
+            },
+            {
+                "text": "Si, supongo que sí.",
+                "next": "4L2",
+                "requiredFlags": ["0.1.1.2"],
+                "setFlags": ["0.1.1.2.2"]
+            },
+            {
+                "text": "Me dan pena los niños, tener que aguantar a unos padres tan insoportables.",
+                "next": "4L2",
+                "requiredFlags": ["0.1.2.1"],
+                "setFlags": ["0.1.2.1.1"]
+            },
+            {
+                "text": "Será un tema de compatibilidad, digo yo que entre ellos se caerán bien...",
+                "next": "4L2",
+                "requiredFlags": ["0.1.2.1"],
+                "setFlags": ["0.1.2.1.2"]
+            },
+            {
+                "text": "En todos sitios crecen flores...",
+                "next": "4L2",
+                "requiredFlags": ["0.1.2.2"],
+                "setFlags": ["0.1.2.2.1"]
+            },
+            {
+                "text": "Eso o que cuando crezcan se van a volver como los padres...",
+                "next": "4L2",
+                "requiredFlags": ["0.1.2.2"],
+                "setFlags": ["0.1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4L2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1.1"],
+                "text": "Callada. Dice que el tiempo le cambia los huesos."
+            },
+            {
+                "requiredFlags": ["0.1.1.1.2"],
+                "text": "No se puede escupir hacia arriba..."
+            },
+            {
+                "requiredFlags": ["0.1.1.2.1"],
+                "text": "La edad es lo que tiene..."
+            },
+            {
+                "requiredFlags": ["0.1.1.2.2"],
+                "text": "Pero vamos, si no quieres ir te coges el turno que coincida y fuera, ya vendrás otro día."
+            },
+            {
+                "requiredFlags": ["0.1.2.1.1"],
+                "text": "No digas eso hombre, tampoco son mala gente."
+            },
+            {
+                "requiredFlags": ["0.1.2.1.2"],
+                "text": "Malo será que ni entre ellos se aguanten claro...Seguramente ellos de nosotros dirán lo mismo."
+            },
+            {
+                "requiredFlags": ["0.1.2.2.1"],
+                "text": "Es bonito eso."
+            },
+            {
+                "requiredFlags": ["0.1.2.2.2"],
+                "text": "Bueno... ¿Tú crees que nosotros con los años no hemos vuelto nuestros padres?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "A todos nos cambia algo. El tiempo, digo.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.1.1.1"],
+                "setFlags": ["0.1.1.1.1.1"]
+            },
+            {
+                "text": "Si que está lloviendo mucho este año.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.1.1.1"],
+                "setFlags": ["0.1.1.1.1.2"]
+            },
+            {
+                "text": "Bueno... tampoco creo que tenga la tensión alta por reírme de las acelgas de tu madre.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.1.1.2"],
+                "setFlags": ["0.1.1.1.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "5L2",
+                "requiredFlags": ["0.1.1.1.2"],
+                "setFlags": ["0.1.1.1.2.2"]
+            },
+            {
+                "text": "Joder, lo dices como si tuviese 60 años.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.1.2.1"],
+                "setFlags": ["0.1.1.2.1.1"]
+            },
+            {
+                "text": "No hables tanto que tenemos la misma edad.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.1.2.1"],
+                "setFlags": ["0.1.1.2.1.2"]
+            },
+            {
+                "text": "Puede ser, ya veré. De aquí al sábado quien sabe...",
+                "next": "5L2",
+                "requiredFlags": ["0.1.1.2.2"],
+                "setFlags": ["0.1.1.2.2.1"]
+            },
+            {
+                "text": "Estaría feo ¿No?",
+                "next": "5L2",
+                "requiredFlags": ["0.1.1.2.2"],
+                "setFlags": ["0.1.1.2.2.2"]
+            },
+            {
+                "text": "No, mala gente no son. Que sepamos...",
+                "next": "5L2",
+                "requiredFlags": ["0.1.2.1.1"],
+                "setFlags": ["0.1.2.1.1.1"]
+            },
+            {
+                "text": "Me da igual, no los aguanto.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.2.1.1"],
+                "setFlags": ["0.1.2.1.1.2"]
+            },
+            {
+                "text": "Venga ya, si nosotros somos gente interesantísima.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.2.1.2"],
+                "setFlags": ["0.1.2.1.2.1"]
+            },
+            {
+                "text": "Tampoco me sorprendería mucho que no se aguantan, yo creo que hay bastante gente que aunque estén todo el día juntos tienen más cosas malas que decir del otro que buenas.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.2.1.2"],
+                "setFlags": ["0.1.2.1.2.2"]
+            },
+            {
+                "text": "Es la verdad.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.2.2.1"],
+                "setFlags": ["0.1.2.2.1.1"]
+            },
+            {
+                "text": "De vez en cuando parezco sensible y todo.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.2.2.1"],
+                "setFlags": ["0.1.2.2.1.2"]
+            },
+            {
+                "text": "No lo sé, no conocí a nuestros padres con nuestra edad.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.2.2.2"],
+                "setFlags": ["0.1.2.2.2.1"]
+            },
+            {
+                "text": "Bueno, nuestra juventud fue muy distinta de la de nuestros padres.",
+                "next": "5L2",
+                "requiredFlags": ["0.1.2.2.2"],
+                "setFlags": ["0.1.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5L2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1.1.1"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["0.1.1.1.1.2"],
+                "text": "Ya llegará el calor..."
+            },
+            {
+                "requiredFlags": ["0.1.1.1.2.1"],
+                "text": "*riéndose* \"No tientes al karma.\""
+            },
+            {
+                "requiredFlags": ["0.1.1.1.2.2"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["0.1.1.2.1.1"],
+                "text": "Bueno, tienes las analíticas de un señor mayor."
+            },
+            {
+                "requiredFlags": ["0.1.1.2.1.2"],
+                "text": "Qué dices, si yo soy 6 meses más joven que usted, señor."
+            },
+            {
+                "requiredFlags": ["0.1.1.2.2.1"],
+                "text": "Sí, no hay prisa."
+            },
+            {
+                "requiredFlags": ["0.1.1.2.2.2"],
+                "text": "Ahora te vas a preocupar de lo que diga la gente..."
+            },
+            {
+                "requiredFlags": ["0.1.2.1.1.1"],
+                "text": "Que sepamos..."
+            },
+            {
+                "requiredFlags": ["0.1.2.1.1.2"],
+                "text": "Estás en tu derecho."
+            },
+            {
+                "requiredFlags": ["0.1.2.1.2.1"],
+                "text": "*riéndose* \"Bueno, esa es tu opinión.\""
+            },
+            {
+                "requiredFlags": ["0.1.2.1.2.2"],
+                "text": "Ya... triste pero cierto."
+            },
+            {
+                "requiredFlags": ["0.1.2.2.1.1"],
+                "text": "Supongo que sí."
+            },
+            {
+                "requiredFlags": ["0.1.2.2.1.2"],
+                "text": "*se ríe*"
+            },
+            {
+                "requiredFlags": ["0.1.2.2.2.1", "0.1.2.2.2.2"],
+                "text": "Ya, eso también es verdad."
+            }
+        ],
+        "end": true
+    }
+]

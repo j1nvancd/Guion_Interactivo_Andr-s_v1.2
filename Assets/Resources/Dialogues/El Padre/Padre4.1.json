@@ -1,0 +1,350 @@
+[
+    {
+        "id": "start",
+        "speaker": "El Padre",
+        "text": "Finalmente apareció ese pobre desgraciado ayer ¿No?",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Si...la seguridad de La Fábrica lo detuvo, al parecer apareció armado y balbuceando.",
+                "next": "1F4",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "¿Le sorprendió a usted? Con las historias que contaba el chico parece evidente como ha podido sobrevivir semanas en la isla. Estaba hasta limpio.",
+                "next": "1F4",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1F4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Armado... la seguridad estos días es cada vez peor, quizás deberías considerar poner un cristal en el taxi. Por protección..."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "¿Insinúa algo, Teodoro? Tenga cuidado con hacer acusaciones sin pruebas, es un delito grave..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Sí, la verdad es que lo he considerado, mi mujer también es de la opinión de que la seguridad va de mal en peor. Yo confío en que el pueblo no ataca al pueblo",
+                "next": "2F4",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "A mí lo que me sorprende es que consiguiera un arma en La Isla, aquí que de normal no hay ni policía, es raro.",
+                "next": "2F4",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "La tenencia de armas también es un delito grave, Padre. Y el tráfico, permítame aventurarme a decir que ese pobre desgraciado no ha podido conseguir una pistola sin algo de \"intervención divina\".",
+                "next": "2F4",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "No hay que ser detective para saber que alguien le ayudó y le metió en la cabeza atacar al dueño. Eso no quiere decir que no esté de acuerdo en que en el fondo era una cruzada justa.",
+                "next": "2F4",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2F4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "El pueblo no ataca al pueblo... Me gusta esa manera de pensar. Somos todos tan sólo corderos de Dios, y el rebaño debe permanecer junto en tiempos de tormenta."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "¿De normal? ¿A qué te refieres?"
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "Si fue \"intervención divina\" es que era parte del plan de Nuestro Señor. La ley humana y la celestial a veces no comparten opinión. Todo delito tiene perdón si se hace de forma justa."
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "Cómo hizo Finees en el libro de los Números, alguien debe levantar la mano y detener la plaga"
+            }
+        ],
+        "choices": [
+            {
+                "text": "No creo que seamos todos corderos... el ecosistema necesita lobos, si no, los corderos se comen todo el pasto.",
+                "next": "3F4",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "¿Cree usted que se avecinan tiempos de tormenta?",
+                "next": "3F4",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "A que la mayor parte del año aquí no hay policía, pero ahora con la desaparición de Abel vino uno del continente. No creo que después de que el chaval reaparezca con una pistola se haya largado...",
+                "next": "3F4",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"],
+                "requiredGlobalFlags": ["Policía1"]
+            },
+            {
+                "text": "De normal no hay policía en La Isla ¿Qué es lo raro?",
+                "next": "3F4",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "Que pasa, ¿Le incomodan las fuerzas de la ley?",
+                "next": "3F4",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.3"]
+            },
+            {
+                "text": "¿No comparte usted opinión con la \"ley humana\"?",
+                "next": "3F4",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "¿Y usted le había prometido el perdón a Abel por cometer un pecado justo?",
+                "next": "3F4",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            },
+            {
+                "text": "¿Y ese alguien es usted?",
+                "next": "3F4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.1"]
+            },
+            {
+                "text": "¿De qué plaga estamos hablando?",
+                "next": "3F4",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3F4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Si... pero nuestro ecosistema castiga a los lobos, a nadie le caen bien los malos. Aunque sean necesarios."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "¿Se avecinan? No, la borrasca ya está aquí."
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "Un policía... Ahora vienen a aplicar los del continente a aplicar su justicia ¿Sabe lo que yo creo? Que lo que ellos llaman justicia no es más que su forma de mantener el poder en sus manos."
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "Lo raro entonces sería que hubiese."
+            },
+            {
+                "requiredFlags": ["1.1.2.3"],
+                "text": "Yo soy un hombre de Dios. Sólo ante el Señor respondo."
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "Yo soy un hombre de Dios. Sólo ante el Señor respondo."
+            },
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "El muchacho haría lo que creyese correcto. Nosotros no tenemos que entenderlo si es parte del plan divino."
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "Ese alguien debemos ser todos los que no nos alimentamos de los frutos del pecado."
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "Lo sabes bien, Teodoro. Sabes que no es una sino muchas las plagas que asolan nuestra isla. Aunque todas nacen del mismo arroyo."
+            }
+        ],
+        "choices": [
+            {
+                "text": "No me esperaba yo de usted esta defensa del mal en la Tierra.",
+                "next": "4F4",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "Todos somos criaturas de Dios ¿No era así?",
+                "next": "4F4",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "¿Me tengo que asustar?",
+                "next": "4F4",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "Parece usted muy tranquilo.",
+                "next": "4F4",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "Bueno, ha desaparecido un muchacho y luego reapareció con una pistola. No creo que tenga mucho que ver con el poder establecido.",
+                "next": "4F4",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.1"]
+            },
+            {
+                "text": "¿Usted cree que nosotros estamos lidiando bien con nuestros propios problemas?",
+                "next": "4F4",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.2"]
+            },
+            {
+                "text": "Con un chaval desaparecido no sería tan raro ¿No?",
+                "next": "4F4",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "4F4",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"]
+            },
+            {
+                "text": "Suena a algo que diría un inocente, definitivamente.",
+                "next": "4F4",
+                "requiredFlags": ["1.1.2.3"],
+                "setFlags": ["1.1.2.3.1"]
+            },
+            {
+                "text": "Creo que va a tener muchas preguntas que responder cuando llegue su día, entonces.",
+                "next": "4F4",
+                "requiredFlags": ["1.1.2.3"],
+                "setFlags": ["1.1.2.3.2"]
+            },
+            {
+                "text": "El muchacho no estaba bien de la cabeza, pero no tenía malas ideas tampoco. Alguien le ha metido delirios de justicia en la cabeza, alguien que quería sacar provecho de un pobre desgraciado. No creo que eso pueda ser ningún plan de Dios..",
+                "next": "4F4",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "En algo tiene razón, entenderlo no lo puedo entender. Si me deja darle un consejo, al menos haga ver que usted tampoco lo entiende o Dios va a ser el único que le considere inocente si lo es.",
+                "next": "4F4",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            },
+            {
+                "text": "Estos discursos revolucionarios son más dignos de políticos y plazas de pueblo que de la Iglesia, Padre. No se lo tome a mal, no digo que no esté de acuerdo.",
+                "next": "4F4",
+                "requiredFlags": ["1.2.2.1"],
+                "setFlags": ["1.2.2.1.1"]
+            },
+            {
+                "text": "¿Hay realmente alguien lo suficientemente libre de pecado como para tirar la primera piedra?.",
+                "next": "4F4",
+                "requiredFlags": ["1.2.2.1"],
+                "setFlags": ["1.2.2.1.2"]
+            },
+            {
+                "text": "De este arroyo también bebe mucha gente, padre. Entre beber del arroyo del pecado y morir de sed, seamos sinceros, todos elegimos vivir.",
+                "next": "4F4",
+                "requiredFlags": ["1.2.2.2"],
+                "setFlags": ["1.2.2.2.1"]
+            },
+            {
+                "text": "Hay que tener muy claro que tu opinión es la correcta para atacar el arroyo del que toda una isla bebe, Padre...",
+                "next": "4F4",
+                "requiredFlags": ["1.2.2.2"],
+                "setFlags": ["1.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4F4",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1"],
+                "text": "¿Del mal? No, del equilibrio. Una oveja es bonita, 400 dejan sin pasto a una isla."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2"],
+                "text": "Todos nacemos de Dios, no todos eligen su senda."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "No, sólo prepárate para el cambio. Puedes abrocharse el cinturón y subir las ventanillas si te sientes más tranquilo así."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "\"En memoria eterna será lo justo. No tendrá temor de malas noticias; su corazón está firme, confiado en Jehová. Asegurado está su corazón; no temerá...\" Proverbios, capítulo 112, versículos 6 a 8."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1"],
+                "text": "Nada es coincidencia, muchacho. Todo es parte de un plan divino, todos debemos hacer nuestra parte."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2"],
+                "text": "Los problemas mortales no siempre se resuelven en esta vida, muchacho."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1"],
+                "text": "Ya no hay ningún desaparecido, no hay nada que buscar."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.2"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.1.2.3.1"],
+                "text": "¿Quién podrá decir: Yo he limpiado mi corazón, limpio estoy de mi pecado?"
+            },
+            {
+                "requiredFlags": ["1.1.2.3.2"],
+                "text": "¿Quién subirá al monte de Jehová? ¿Y quién estará en su lugar santo? El limpio de manos y puro de corazón..."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "El corazón del hombre piensa su camino, mas Jehová endereza sus pasos."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2"],
+                "text": "Si decimos que no tenemos pecado, nos engañamos a nosotros mismos, y la verdad no está en nosotros. Si confesamos nuestros pecados, él es fiel y justo para perdonar nuestros pecados..."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1"],
+                "text": "La política no es más que la glorificación del hombre. Glorificar a Dios es mi ideario."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.2"],
+                "text": "Si decimos que no tenemos pecado, nos engañamos a nosotros mismos, y la verdad no está en nosotros. Si confesamos nuestros pecados, él es fiel y justo para perdonar nuestros pecados..."
+            },
+            {
+                "requiredFlags": ["1.2.2.2.1"],
+                "text": "El corazón del hombre piensa su camino, mas Jehová endereza sus pasos."
+            },
+            {
+                "requiredFlags": ["1.2.2.2.2"],
+                "text": "El que camina en justicia y habla lo recto... Él habitará en las alturas; tendrá su lugar de refugio; se le dará su pan y sus aguas no le faltarán."
+            }
+        ],
+        "end": true
+    }
+]

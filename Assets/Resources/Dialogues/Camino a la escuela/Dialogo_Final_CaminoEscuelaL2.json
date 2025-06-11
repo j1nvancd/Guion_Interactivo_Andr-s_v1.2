@@ -1,0 +1,198 @@
+[
+  {
+    "id": "startL2",
+    "speaker": "Verónica",
+    "text": "Creo que el viernes me dejé la chaqueta en la sala de profesores.",
+    "setFlags": ["InicioL2"],
+    "choices": [
+      {
+        "text": "¿La azul?",
+        "next": "1L2",
+        "setFlags": ["L2_1.1"]
+      },
+      {
+        "text": "¿Y hasta ahora no la has echado de menos?",
+        "next": "1L2",
+        "setFlags": ["L2_1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1L2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L2_1.1"],
+        "text": "No, la otra. La de los botones de madera."
+      },
+      {
+        "requiredFlags": ["L2_1.2"],
+        "text": "Ha hecho calor todo el finde, pero esta mañana, al salir, me ha dado frío en los hombros."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ah. La que tiene el forro deshilachado en la manga.",
+        "next": "2L2",
+        "requiredFlags": ["L2_1.1"],
+        "setFlags": ["L2_1.1.1"]
+      },
+      {
+        "text": "Ah. La verde que te regaló mi madre.",
+        "next": "2L2",
+        "requiredFlags": ["L2_1.1"],
+        "setFlags": ["L2_1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "2L2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L2_1.1.1", "L2_1.1.2"],
+        "text": "Esa, sí."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Seguro que sigue allí cuando vuelvas. No creo que nadie la haya cogido.",
+        "next": "3L2",
+        "requiredFlags": ["L2_1.1.1"],
+        "setFlags": ["L2_1.1.1.1"]
+      },
+      {
+        "text": "Bueno, si alguien se la ha llevado y mi madre la ve. Se va a arrepentir de llevársela.",
+        "next": "3L2",
+        "requiredFlags": ["L2_1.1.1"],
+        "setFlags": ["L2_1.1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "3L2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L2_1.1.1.1", "L2_1.1.1.2"],
+        "text": "Dudo que alguien quiera una chaqueta así."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Ya. Pero a veces lo que uno deja tirado... otro lo recoge.",
+        "next": "4L2",
+        "requiredFlags": ["L2_1.1.1.1"],
+        "setFlags": ["L2_1.1.1.1.1"]
+      },
+      {
+        "text": "¿Así?",
+        "next": "4L2",
+        "requiredFlags": ["L2_1.1.1.1"],
+        "setFlags": ["L2_1.1.1.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "4L2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L2_1.1.1.1.1"],
+        "text": "No es que se me olvidase, solo... no me la puse para volver. Hacía calor."
+      },
+      {
+        "requiredFlags": ["L2_1.1.1.1.2"],
+        "text": "Tiene varios años ya, tiene el forro deshilachado... el botón de una manga nuevo..."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Claro.",
+        "next": "5L2",
+        "requiredFlags": ["L2_1.1.1.1.1"],
+        "setFlags": ["L2_1.1.1.1.1.1"]
+      },
+      {
+        "text": "Tampoco pasaría nada si te la hubieses olvidado, las cosas pasan.",
+        "next": "5L2",
+        "requiredFlags": ["L2_1.1.1.1.1"],
+        "setFlags": ["L2_1.1.1.1.1.2"],
+        "end": true
+      },
+      {
+        "text": "Ya...",
+        "next": "5L2",
+        "requiredFlags": ["L2_1.1.1.1.2"],
+        "setFlags": ["L2_1.1.1.1.2.1"]
+      },
+      {
+        "text": "Como la sigas arreglando no va a ser ni la misma chaqueta...",
+        "next": "5L2",
+        "requiredFlags": ["L2_1.1.1.1.2"],
+        "setFlags": ["L2_1.1.1.1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "5L2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L2_1.1.1.1.1.1"],
+        "text": "Pero esta mañana, al salir, me ha dado frío en los hombros."
+      },
+      {
+        "requiredFlags": ["L2_1.1.1.1.2.1"],
+        "text": "Es lo que tiene el desgaste, me la he puesto bastante estos años. El tiempo no pasa en balde para nadie."
+      },
+      {
+        "requiredFlags": ["L2_1.1.1.1.2.2"],
+        "text": "Siempre será la chaqueta de tu madre."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Siempre pasa, uno sale con una idea... y luego el día cambia.",
+        "next": "6L2",
+        "requiredFlags": ["L2_1.1.1.1.1.1"],
+        "setFlags": ["L2_1.1.1.1.1.1.1"],
+        "end": true
+      },
+      {
+        "text": "Puedes coger la mía si quieres, yo aquí dentro no voy a pasar frío.",
+        "next": "6L2",
+        "requiredFlags": ["L2_1.1.1.1.1.1"],
+        "setFlags": ["L2_1.1.1.1.1.1.2"]
+      },
+      {
+        "text": "Dejó de ser de mi madre en el momento en el que te la regaló.",
+        "next": "6L2",
+        "requiredFlags": ["L2_1.1.1.1.2.2"],
+        "setFlags": ["L2_1.1.1.1.2.2.1"]
+      },
+      {
+        "text": "Sí... supongo que sí.",
+        "next": "6L2",
+        "requiredFlags": ["L2_1.1.1.1.2.2"],
+        "setFlags": ["L2_1.1.1.1.2.2.2"],
+        "end": true
+      }
+    ]
+  },
+  {
+    "id": "6L2",
+    "speaker": "Verónica",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["L2_1.1.1.1.1.1.2"],
+        "text": "No hace falta, si no me hubieses traído en coche habría pasado frío, pero estando ya aquí qué más da."
+      },
+      {
+        "requiredFlags": ["L2_1.1.1.1.2.2.1"],
+        "text": "Ya, sí, supongo que técnicamente sí."
+      }
+    ],
+    "end": true
+  }
+]

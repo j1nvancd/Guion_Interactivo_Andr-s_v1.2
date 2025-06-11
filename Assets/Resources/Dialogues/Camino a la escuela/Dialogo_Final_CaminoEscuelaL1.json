@@ -138,7 +138,8 @@
             {"requiredFlags": ["1.1.1.2"], "text": "No te preocupes que ya no tienes que hablar más, ya hemos llegado"},
             {"requiredFlags": ["1.2.1.1"], "text":"Pues mira algo que me llevo, ya hemos llegado, hasta luego"},
             {"requiredFlags": ["1.2.1.2"], "text":"*se ríe* Qué tonto que eres, ya estamos aquí, muchas gracias"}
-        ]
+        ],
+        "end": true
     },
     {
         "id":"FinPasajeL1",
@@ -148,6 +149,7 @@
             {"requiredFlags": ["1.2.2"], "text": "Sí mejor cállate si no tienes nada bueno que decir"},
             {"requiredFlags": ["1.3.1"], "text":"..."},
             {"requiredFlags": ["1.3.2"], "text":"Nada, no te preocupes"}
-        ]        
+        ],
+        "end": true      
     }  
 ]

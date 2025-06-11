@@ -1,0 +1,232 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Hoy no ha llamado nadie.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Esperabas a alguien?",
+                "next": "1S2",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Con razón estaba yo tan tranquilo.",
+                "next": "1S2",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1S2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "No... no. Es solo que… es sábado, eso antes significaba ruido, movida... ¿No?"
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Si, tú ni te lo habías planteado."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Yo ya he tenido bastante ruido esta semana, créeme.",
+                "next": "2S2",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Antes todo era más ruidoso.",
+                "next": "2S2",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "Mientras todo vaya bien yo no pregunto.",
+                "next": "2S2",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "¿Por qué me iba a plantear que algo no pasa?",
+                "next": "2S2",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2S2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Ya, también es verdad. Para cenar ¿Quieres sopa esta noche o calentamos lo de ayer?"
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Y tanto, no creo que La Isla pueda ser tan ruidosa como el barrio donde vivíamos de estudiantes aunque lo intentase."
+            },
+            {
+                "requiredFlags": ["1.2.1", "1.2.2"],
+                "text": "Claro, si algo no está roto no lo arregles, a veces se me olvida que eres ingeniero."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Lo de ayer está bien.",
+                "next": "3S2",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "¿Y si salimos a cenar?",
+                "next": "3S2",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"],
+                "excludeFlags": ["suicidio", "hermana"]
+            },
+            {
+                "text": "Sopa suena bien...",
+                "next": "3S2",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.3"]
+            },
+            {
+                "text": "Ni aunque el volcán entre en erupción...",
+                "next": "3S2",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Aquí todo es más como susurrado, todo es secreto.",
+                "next": "3S2",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "A mí también, a mi también...",
+                "next": "3S2",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "3S2",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "3S2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Mejor, no me apetece moverme...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "Vaya ¿Qué se celebra?"
+            },
+            {
+                "requiredFlags": ["1.1.1.3"],
+                "text": "Sí que suena bien ¿Me ayudas?"
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "No mientes desgracias...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "Hay que estar en silencio para enterarse si tiembla la tierra."
+            },
+            {
+                "requiredFlags": ["1.2.1.1", "1.2.1.2"],
+                "text": "Para cenar ¿Quieres que haga sopa o calentamos lo de ayer?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Por qué se tiene que celebrar nada? Es sábado, nosotros no tenemos por qué escondernos.",
+                "next": "4S2",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "Que las cosas están cambiando por aquí... y creo que va a haber jaleo",
+                "next": "4S2",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"]
+            },
+            {
+                "text": "Sí, te hago de pinche no te preocupes",
+                "next": "end",
+                "requiredFlags": ["1.1.1.3"],
+                "setFlags": ["1.1.1.3.1"],
+                "end": true
+            },
+            {
+                "text": "Creo que me toca salir en el próximo turno...",
+                "next": "4S2",
+                "requiredFlags": ["1.1.1.3"],
+                "setFlags": ["1.1.1.3.2"]
+            },
+            {
+                "text": "Eso parece.",
+                "next": "4S2",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "Yo creo que un día va a temblar la tierra y nadie va a querer correr la voz, por costumbre.",
+                "next": "4S2",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"]
+            },
+            {
+                "text": "Lo de ayer está bien.",
+                "next": "end",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.1.1.1"],
+                "end": true
+            }
+        ]
+    },
+    {
+        "id": "4S2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.2.1"],
+                "text": "Ya, supongo que tienes razón..."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.2"],
+                "text": "A veces das un poco de miedo..."
+            },
+            {
+                "requiredFlags": ["1.1.1.3.2"],
+                "text": "*riéndose* \"Ya, claro\""
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1"],
+                "text": "Esperemos que eso no pase de momento."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.2"],
+                "text": "..."
+            }
+        ],
+        "end": true
+    },
+    {
+        "id": "end",
+        "end": true
+    }
+]

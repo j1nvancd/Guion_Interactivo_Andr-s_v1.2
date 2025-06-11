@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 public class DialogueUI : MonoBehaviour 
 {
@@ -14,6 +15,9 @@ public class DialogueUI : MonoBehaviour
     private DialogueNode currentNode;
 
     public DialogueLoader loader;
+
+    public Button continueButton; 
+
 
     //accede a las flaags activas desde el DialogueLoader
     private HashSet<string> activeFlags => loader.activeFlags;
@@ -42,17 +46,17 @@ public class DialogueUI : MonoBehaviour
         {
             foreach (var ct in currentNode.conditionalTexts)
             {
-                if (ct.requiredFlags == null || ct.requiredFlags.TrueForAll(flag => activeFlags.Contains(flag)))
+                if (ct.requiredFlags == null || ct.requiredFlags.Any(flag => activeFlags.Contains(flag)))
                 {
                     selectedText = ct.text;
                     break;
                 }
-            }        
+            }
         }
 
-        
+
         dialogueText.text = selectedText;
-        
+
         //limpiar los botones de antes
         foreach (Transform child in choiceContainer)
         {
@@ -63,9 +67,11 @@ public class DialogueUI : MonoBehaviour
         foreach (DialogueChoice choice in currentNode.choices)
         {
             //si hay requiredFlags, comprueba que todas estén activas
-            if (choice.requiredFlags != null && !choice.requiredFlags.TrueForAll(flag => activeFlags.Contains(flag)))
+            if (choice.requiredFlags != null && choice.requiredFlags.Count > 0)
             {
-                continue; //no mostrar si falta alguna flag requerida
+                bool anyActive = choice.requiredFlags.Any(flag => activeFlags.Contains(flag));
+                if (!anyActive)
+                    continue; //no mostrar si falta alguna flag requerida
             }
             GameObject buttonObj = Instantiate(choiceButtonPrefab, choiceContainer);
             buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
@@ -80,7 +86,34 @@ public class DialogueUI : MonoBehaviour
                     }
                 }
                 ShowNode(choice.next);
-            }); 
+            });
         }
+        
+        continueButton.gameObject.SetActive(false); // Ocultarlo por defecto
+
+        if (currentNode.choices == null || currentNode.choices.Count == 0)
+        {
+            // Si es nodo final
+            if (currentNode.end)
+            {
+                if (loader.LoadNextDialogue())
+                {
+                    continueButton.gameObject.SetActive(true);
+                    continueButton.onClick.RemoveAllListeners();
+                    continueButton.onClick.AddListener(() =>
+                    {
+                        nodes = loader.LoadDialogue();
+                        ShowNode("start");
+                        continueButton.gameObject.SetActive(false);
+                    });
+                }
+                else
+                {
+                    // No hay más diálogos
+                    Debug.Log("Fin de todos los diálogos.");
+                }
+            }
+        }
+
     }
 }

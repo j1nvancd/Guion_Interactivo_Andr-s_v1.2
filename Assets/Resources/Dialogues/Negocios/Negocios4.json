@@ -1,0 +1,250 @@
+[
+    {
+        "id": "start",
+        "speaker": "Hombre de Negocios",
+        "text": "*el HdN va claramente borracho*\n(Arrastrando las palabras) \"Buenas noches, vamos a los Midas, por favor\"",
+        "choices": [
+            {
+                "text": "¿Una noche divertida?",
+                "next": "1N4",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Ahora mismo.",
+                "next": "1N4",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1N4",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Sí... hay que celebrar que todo va bien"
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Hay veces que uno se siente invencible..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Todo va bien?",
+                "next": "2N4",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Sí, el que pueda que celebre mientras se pueda.",
+                "next": "2N4",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "¿Cómo?",
+                "next": "2N4",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Supongo que usted tiene esa sensación con más frecuencia que los demás",
+                "next": "2N4",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2N4",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "No me puedo quejar... hay gente que no soporta tener enemigos, yo no soportaría tener enemigos que puedan tocarme los cojones."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "El que se tenga que preocupar de si puede o no puede... o de si va a dejar de poder. Ese no tiene nada que celebrar, se celebra cuando te has pasado el juego."
+            },
+            {
+                "requiredFlags": ["1.2.1", "1.2.2"],
+                "text": "*se ríe* \"Invencible, intocable... Ayer vino un pobre diablo a intentar amenazarme...\" *se ríe* \"No pasó del parking...\""
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ya, supongo que la parte mala de tener enemigos es esa.",
+                "next": "3N4",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "No suele ser buena señal tenerlos, tengan el poder que tengan.",
+                "next": "3N4",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "¿Y usted ya se lo ha pasado?",
+                "next": "3N4",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Bueno, hay muchos que si esperan a celebrar a no tener nada de lo que preocuparse no van a celebrar nada nunca.",
+                "next": "3N4",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "¿Abel? ¿El huérfano de Ramos? Espero que los de seguridad no se pasasen con él.",
+                "next": "3N4",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "¿Sabe usted quién era ese pobre diablo?",
+                "next": "3N4",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "3N4",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1", "1.1.1.2"],
+                "text": "*se ríe* \"Es hasta divertido que te odien cuando no te pueden hacer nada.\""
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "\"¿Tú qué crees? Estoy yendo a los apartamentos y ni he avisado ni me hace falta reservar nada. ¿Qué van hacer para no darme una habitación?\" *se ríe*"
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "\"No todos están destinados a la grandeza, hay que tener algo para conseguir esto... si no, te quedas por el camino.\""
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "\"Le tenían que haber dado una buena lección, que se entere de dónde no se tiene que meter.\""
+            },
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "\"¿Qué más da? Ya habrá aprendido a no meter las narices.\""
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿No cree usted que significa algo? Y no precisamente bueno...",
+                "next": "4N4",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "Supongo que es una forma de demostrar poder, claro.",
+                "next": "4N4",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "¿Para qué va a reservar si básicamente el edificio es suyo?",
+                "next": "4N4",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.1"]
+            },
+            {
+                "text": "No sé si mi concepto de pasarme la vida es poder dormir en apartamentos aleatorios sin que nadie me eche de menos.",
+                "next": "4N4",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.2"]
+            },
+            {
+                "text": "¿Tener algo? Yo diría que es más que te tiene que faltar algo. Escrúpulos, humanidad...",
+                "next": "4N4",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "Hay gente a la que le gusta disfrutar del camino. Total, al final del camino ¿Qué hay?",
+                "next": "4N4",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"]
+            },
+            {
+                "text": "¿Una buena lección? ¿Una buena lección? ¿Usted sabe de quién está hablando? ¿Qué más lecciones quiere que aprenda el muchacho?",
+                "next": "4N4",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.1"]
+            },
+            {
+                "text": "Si le puedo dar un consejo, no se crea tan invencible. Aquí, por ejemplo, no tiene usted la seguridad de La Fábrica, tenga un poco más de empatía con un chaval que no ha tenido ni una mísera oportunidad en la vida.",
+                "next": "4N4",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.2"]
+            },
+            {
+                "text": "¿Qué más da? ¿Usted sabe de quién está hablando? Tenga un poco más de empatía con un chaval que no ha tenido ni una mísera oportunidad en la vida.",
+                "next": "4N4",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "¿Aprender? No creo que en general este pobre muchacho haya aprendido nada correcto en muchos años.",
+                "next": "4N4",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4N4",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1"],
+                "text": "\"Nada irrita más que la virtud ajena.\""
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2"],
+                "text": "*se ríe* \"Si...\""
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1"],
+                "text": "\"Exacto.\""
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2"],
+                "text": "\"No lo entenderías, no sabes lo que es poder hacer lo que quieras, cuando quieras.\""
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1"],
+                "text": "\"Sí, también. Uno no puede dedicarse a la filantropía y hacerse rico al mismo tiempo.\""
+            },
+            {
+                "requiredFlags": ["1.1.2.2.2"],
+                "text": "\"Éxito, libertad, poder...\""
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1"],
+                "text": "\"A no meterse con quien está por encima, uno tiene que asumir su lugar en el mundo.\""
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2"],
+                "text": "\"¿Me estás amenazando?\" *se ríe* \"Empatía... ni yo puedo acercarme a identificarme con esa gente ni ellos tienen ni idea de lo que es estar en mi posición.\""
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "\"Empatía... ni yo puedo acercarme a identificarme con esa gente ni ellos tienen ni idea de lo que es estar en mi posición.\""
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2"],
+                "text": "\"Pues eso, espero que con esto haya aprendido a no meterse donde no le llaman.\""
+            }
+        ],
+        "end": true
+    }
+]

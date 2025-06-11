@@ -1,0 +1,288 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "¿Estás viendo eso o solo lo tienes puesto?",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Lo tengo puesto. Pero no lo estoy viendo.",
+                "next": "1M2",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "¿Por? ¿Te molesta el ruido?",
+                "next": "1M2",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1M2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1", "0.2"],
+                "text": "Podríamos quitarlo. Poner música, quizás."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ponla tú. Yo nunca acierto con lo que te apetece.",
+                "next": "2M2",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["0.1.1"]
+            },
+            {
+                "text": "¿Qué quieres escuchar?",
+                "next": "2M2",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["0.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "2M2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1", "0.1.2"],
+                "text": "Antes no te importaba eso, ponías lo que querías y punto."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Antes era más fácil no pensarlo tanto.",
+                "next": "3M2",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.1"]
+            },
+            {
+                "text": "Voy aprendiendo.",
+                "next": "3M2",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "3M2",
+        "speaker": "Verónica",
+        "text": "Hoy me crucé con Manuel, el del taller.",
+        "choices": [
+            {
+                "text": "¿Y qué tal?",
+                "next": "4M2",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Yo espero no tener que verlo de momento.",
+                "next": "4M2",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "4M2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Me preguntó si iremos a la feria este año. Le dije que aún no sabemos."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Bueno, con los años que tiene el coche lo normal es que os veáis habitualmente. Me preguntó si iremos a la feria este año. Le dije que aún no sabemos."
+            }
+        ],
+        "choices": [
+            {
+                "text": "No sé si me apetece. Últimamente me cansa todo antes de empezar.",
+                "next": "5M2",
+                "requiredFlags": ["1.1", "1.2"],
+                "setFlags": ["1.1.1", "1.2.1"]
+            },
+            {
+                "text": "Y que vamos a hacer si no.",
+                "next": "5M2",
+                "requiredFlags": ["1.1", "1.2"],
+                "setFlags": ["1.1.2", "1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5M2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "A mí también. Pero igual por eso habría que ir."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Ya, sí, supongo que iremos, pero ahora mismo me da pereza sólo de pensarlo."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Para qué?",
+                "next": "6M2",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Hombre es que si no vamos a la feria a dónde vamos a ir.",
+                "next": "6M2",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "¿Y entonces para qué vamos?",
+                "next": "6M2",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "¿Tú crees que nos hemos vuelto tristes?",
+                "next": "6M2",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "6M2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1", "1.1.2.1"],
+                "text": "Para mover el cuerpo, la cabeza. Lo que sea."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "Ya... ¿Tú crees que nos hemos vuelto tristes?"
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "No. Solo... callados."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Si... despejarnos un poco nos vendría bien.",
+                "next": "7M2",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "Bueno, ya veremos cuando llegue el día.",
+                "next": "7M2",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "No. Solo... callados.",
+                "next": "7M2",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "La rutina es lo que tiene, al final si todos los años es lo mismo te deja de hacer ilusión.",
+                "next": "7M2",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"]
+            },
+            {
+                "text": "A veces el silencio da miedo.",
+                "next": "7M2",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "7M2",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"],
+                "end": true
+            }
+        ]
+    },
+    {
+        "id": "7M2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1", "1.1.1.1.2", "1.1.1.2.2", "1.1.2.2.1"],
+                "text": "¿Sabes qué música podríamos poner?"
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1"],
+                "text": "A veces el silencio da miedo."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ya se me había olvidado que estábamos hablando de eso",
+                "next": "8M2",
+                "requiredFlags": ["1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.1"]
+            },
+            {
+                "text": "¿Cuál?",
+                "next": "8M2",
+                "requiredFlags": ["1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.2"]
+            },
+            {
+                "text": "A veces es lo único que no miente.",
+                "next": "8M2",
+                "requiredFlags": ["1.1.1.2.1"],
+                "setFlags": ["1.1.1.2.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "8M2",
+                "requiredFlags": ["1.1.1.2.1"],
+                "setFlags": ["1.1.1.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "8M2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1.1", "1.1.1.1.1.2"],
+                "text": "Esa que ponías en el coche cuando volvíamos tarde y no hablábamos de nada."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1.1", "1.1.1.2.1.2"],
+                "text": "¿Sabes qué música podríamos poner?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Sé cuál dices.",
+                "next": "9M2",
+                "requiredFlags": ["1.1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.1.1"]
+            },
+            {
+                "text": "Me sorprende que te acuerdes.",
+                "next": "9M2",
+                "requiredFlags": ["1.1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.1.2"]
+            },
+            {
+                "text": "A veces es lo único que no miente.",
+                "next": "9M2",
+                "requiredFlags": ["1.1.1.2.1.1"],
+                "setFlags": ["1.1.1.2.1.1.1"]
+            }
+        ]
+    },
+    {
+        "id": "9M2",
+        "end": true
+    }
+]

@@ -1,0 +1,233 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "¿Hoy te quedas aquí por la tarde?",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Si te molesto mucho me voy",
+                "next": "1J1",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "Hay que descansar de vez en cuando",
+                "next": "1J1",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1J1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1"],
+                "text": "No, mucho no, de hecho me podrías ayudar. La puerta del baño chirría, mira a ver si puedes echarle un ojo."
+            },
+            {
+                "requiredFlags": ["0.2"],
+                "text": "¿Quieres hacer algo? ¿Salimos a dar un paseo por ahí? ¿O te piensas quedar tirado toda la tarde?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ni cuando descanso puedo descansar",
+                "next": "2J1",
+                "requiredFlags": ["0.1", "0.2"],
+                "setFlags": ["0.1.1", "0.2.1"]
+            },
+            {
+                "text": "Ahora lo miro, no te preocupes. Aunque una puerta que chirría salvo echarle 10 en 1 no sé qué más voy a hacer",
+                "next": "2J1",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["0.1.2"]
+            },
+            {
+                "text": "Podemos ir, pero todavía no sé si por la noche saldré con el taxi. Así que, si vamos, mejor ir temprano.",
+                "next": "2J1",
+                "requiredFlags": ["0.2"],
+                "setFlags": ["0.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2J1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1"],
+                "text": "Nada no te preocupes, no vaya a ser que te hernies... para trabajar sentado después te apetece poco moverte."
+            },
+            {
+                "requiredFlags": ["0.1.2"],
+                "text": "Tienes una ingeniería, algo se te ocurrirá para arreglar una puerta."
+            },
+            {
+                "requiredFlags": ["0.2.2"],
+                "text": "A ver, siendo un día entre semana tampoco es que pretenda estar por ahí hasta las tantas."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Que esté sentado no significa que esté descansando, a mí me cansa lo mismo que a tí, aguantar gente.",
+                "next": "3J1",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.1"]
+            },
+            {
+                "text": "Moverme me puede apetecer... para otra cosa.",
+                "next": "3J1",
+                "requiredFlags": ["0.1.1"],
+                "setFlags": ["0.1.1.2"]
+            },
+            {
+                "text": "Sí... para eso estudié, para llevar un taxi y arreglar puertas.",
+                "next": "3J1",
+                "requiredFlags": ["0.1.2"],
+                "setFlags": ["0.1.2.1"]
+            },
+            {
+                "text": "Lo primero que te enseñan en ingeniería es \"si funciona no lo arregles\" y, que yo sepa, la puerta funciona.",
+                "next": "3J1",
+                "requiredFlags": ["0.1.2"],
+                "setFlags": ["0.1.2.2"]
+            },
+            {
+                "text": "¿No prefieres que nos quedemos aquí y veamos una peli o algo?",
+                "next": "3J1",
+                "requiredFlags": ["0.2.2"],
+                "setFlags": ["0.2.2.1"]
+            },
+            {
+                "text": "¿Y qué quieres hacer?",
+                "next": "3J1",
+                "requiredFlags": ["0.2.2"],
+                "setFlags": ["0.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3J1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1"],
+                "text": "¿A mí también me tienes que aguantar? Para hacer algo juntos, dar un paseo...algo"
+            },
+            {
+                "requiredFlags": ["0.1.1.2"],
+                "text": "Muy gracioso... pues nada, no te preocupes",
+                "end": true
+            },
+            {
+                "requiredFlags": ["0.1.2.1"],
+                "text": "Nada, aquí cada uno a lo suyo...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["0.1.2.2"],
+                "text": "Pues nada, deja la puerta, que más da"
+            },
+            {
+                "requiredFlags": ["0.2.2.1"],
+                "text": "¿En serio? A ver, buen día no hace, la verdad, pero es que al final nunca hacemos nada..."
+            },
+            {
+                "requiredFlags": ["0.2.2.2"],
+                "text": "Salir... damos un paseo, nos tomamos un café fuera..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Hombre claro que te tengo que aguantar, para eso nos casamos.",
+                "next": "4J1",
+                "requiredFlags": ["0.1.1.1"],
+                "setFlags": ["0.1.1.1.1"]
+            },
+            {
+                "text": "Juntos estamos ¿No?",
+                "next": "4J1",
+                "requiredFlags": ["0.1.1.1"],
+                "setFlags": ["0.1.1.1.2"]
+            },
+            {
+                "text": "No mujer, voy a ver si puedo hacer algo.",
+                "next": "4J1",
+                "requiredFlags": ["0.1.2.2"],
+                "setFlags": ["0.1.2.2.1"]
+            },
+            {
+                "text": "Si no está roto...",
+                "next": "4J1",
+                "requiredFlags": ["0.1.2.2"],
+                "setFlags": ["0.1.2.2.2"]
+            },
+            {
+                "text": "Pues eso, podemos ver una peli o algo.",
+                "next": "4J1",
+                "requiredFlags": ["0.2.2.1"],
+                "setFlags": ["0.2.2.1.1"]
+            },
+            {
+                "text": "Tampoco es que haya mucha oferta cultural en esta Isla...",
+                "next": "4J1",
+                "requiredFlags": ["0.2.2.1"],
+                "setFlags": ["0.2.2.1.2"]
+            },
+            {
+                "text": "Pero si va a llover...",
+                "next": "4J1",
+                "requiredFlags": ["0.2.2.2"],
+                "setFlags": ["0.2.2.2.1"]
+            },
+            {
+                "text": "Venga, vamos, me pongo algo y salimos.",
+                "next": "4J1",
+                "requiredFlags": ["0.2.2.2"],
+                "setFlags": ["0.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4J1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1.1.1.1"],
+                "text": "Te tengo atado por contrato..."
+            },
+            {
+                "requiredFlags": ["0.1.1.1.2"],
+                "text": "Sí hijo sí, aunque no lo parezca..."
+            },
+            {
+                "requiredFlags": ["0.1.2.2.1"],
+                "text": "*sorprendida* \"Hombre, muchas gracias.\"",
+                "end": true
+            },
+            {
+                "requiredFlags": ["0.1.2.2.2"],
+                "text": "Y así con todo..."
+            },
+            {
+                "requiredFlags": ["0.2.2.1.1"],
+                "text": "Sí, supongo, a ver que vemos..."
+            },
+            {
+                "requiredFlags": ["0.2.2.1.2"],
+                "text": "Pues nada, con quejarse se queda tranquilo..."
+            },
+            {
+                "requiredFlags": ["0.2.2.2.1"],
+                "text": "Pues nada, otro día ya..."
+            },
+            {
+                "requiredFlags": ["0.2.2.2.2"],
+                "text": "*sorprendido* \"Vale, te espero aquí\"",
+                "end": true
+            }
+        ],
+        "end": true
+    }
+]

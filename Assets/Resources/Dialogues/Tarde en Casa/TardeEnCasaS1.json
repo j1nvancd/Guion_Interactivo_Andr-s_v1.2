@@ -1,0 +1,180 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Hoy te quedas aquí, pero te vas a poner a ver el fútbol ¿no?",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Ese era el plan, sí",
+                "next": "1S1",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "¿Te molesta?",
+                "next": "1S1",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1S1",
+        "speaker": "Verónica",
+        "text": "Si lo dejas sin sonido, me puedo quedar aquí leyendo.",
+        "choices": [
+            {
+                "text": "Verlo sin sonido es más o menos lo mismo que no verlo",
+                "next": "2S1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Pero si te voy a molestar, no será mejor que leas en otro sitio",
+                "next": "2S1",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "2S1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Bueno, por lo menos no grites, al ruido me acostumbro pero..."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Con que no grites no me molestas, vamos, si te molesto yo a tí me voy a leer a la habitación."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Lo intento, pero no prometo nada",
+                "next": "3S1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Lo intento, pero no prometo nada",
+                "next": "3S1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "A ver, ruido, el normal, lo que tiene no vivir en un monasterio",
+                "next": "3S1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "Por qué me ibas a molestar, si vas a estar leyendo.",
+                "next": "3S1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3S1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Tampoco vivo en un estadio"
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "Si te intento dar conversación sí te molesto, entonces"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Que exageración, por Dios. Me pintas como si fuese un ultra.",
+                "next": "4S1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "No, desde luego. Y llevo sin ir a uno...",
+                "next": "4S1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "Pues sí",
+                "next": "4S1",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.1"]
+            },
+            {
+                "text": "Mientras no esperes que te conteste, estamos bien.",
+                "next": "4S1",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4S1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "Pues porque no puedes ir al estadio..."
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "*entre risas* \"Yo creo que es lo que más te molesta de vivir aquí\""
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "Hombre, claro..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "No me lo recuerdes...",
+                "next": "5S1",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.1"]
+            },
+            {
+                "text": "¿Por eso me tienes aquí retenido en La Isla, no?",
+                "next": "5S1",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.2"]
+            },
+            {
+                "text": "Puede ser, puede ser...",
+                "next": "5S1",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "La cosa más importante de las cosas que no son importantes...",
+                "next": "5S1",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5S1",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.2.1.2"],
+                "text": "*resopla*"
+            }
+        ],
+        "end": true
+    }
+]

@@ -1,0 +1,296 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Este jersey ya no te lo pones nunca.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Cuál?",
+                "next": "1X2",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "No es época de jerseys ahora ¿no?",
+                "next": "1X2",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1X2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "*Levantando un jersey verde oscuro, algo deshilachado en los puños.* \"Este, el de los botones torcidos. Te lo pusiste el día que te presenté a mis padres.\""
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "*Levantando un jersey verde oscuro, algo deshilachado en los puños.* \"No me refiero a ahora, no te lo pusiste en todo el invierno.\""
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y cómo no huyeron?",
+                "next": "2X2",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Ay Dios, qué viejo está",
+                "next": "2X2",
+                "requiredFlags": ["1.1", "1.2"],
+                "setFlags": ["1.1.2", "1.2.2"]
+            },
+            {
+                "text": "Siempre me acabo poniendo algo fino debajo de la chaqueta. En el taxi acabó pasando calor con eso, tampoco es que esté como para ponérselo en misa.",
+                "next": "2X2",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            }
+        ]
+    },
+    {
+        "id": "2X2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Porque les caíste bien. Porque yo insistí. *Dobla el jersey con cuidado* Siempre lo dejas en el fondo del armario. ¿Por qué lo sigues guardando?"
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Si... siempre lo dejas en el fondo del armario. *Dobla el jersey con cuidado* ¿Por qué lo sigues guardando?"
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "La verdad es que está bastante viejo *Dobla el jersey con cuidado* ¿Por qué lo sigues guardando?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "No lo sé, quizá por lo que dices.",
+                "next": "3X2",
+                "requiredFlags": ["1.1.1", "1.1.2"],
+                "setFlags": ["1.1.1.1", "1.1.2.1"]
+            },
+            {
+                "text": "¿Por qué guardas tú la cazadora de cuero?",
+                "next": "3X2",
+                "requiredFlags": ["1.1.1", "1.1.2"],
+                "setFlags": ["1.1.1.2", "1.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3X2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Es un bonito recuerdo, supongo."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "Porque a veces me gusta recordar cómo me sentía al llevarla. No sé cómo me veía, cómo me sentía..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Por qué guardas tú la cazadora de cuero?",
+                "next": "4X2",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "Sí, claro que lo es. No es una foto ni un imán para la nevera. Es algo nuestro.",
+                "next": "4X2",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "Yo me sentía invencible con este jersey. Aunque estuviera hecho polvo.",
+                "next": "4X2",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "Te quedaba bien, seguro que te sigue quedando bien.",
+                "next": "4X2",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4X2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1"],
+                "text": "Porque a veces me gusta recordar cómo me sentía al llevarla. No sé cómo me veía, cómo me sentía..."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2"],
+                "text": "¿Entonces no lo tiro?"
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1"],
+                "text": "¿El jersey o tú?"
+            },
+            {
+                "requiredFlags": ["1.1.1.2.2"],
+                "text": "Si... el mundo era nuestro. Al menos lo parecía."
+            }
+        ],
+        "choices": [
+            {
+                "text": "No. Déjalo ahí. A veces es bueno tener algo viejo entre tanto cambio.",
+                "next": "5X2",
+                "requiredFlags": ["1.1.1.1.2"],
+                "setFlags": ["1.1.1.1.2.1"]
+            },
+            {
+                "text": "¿Tú qué dices? ¿Nos deshacemos de estos trapos?",
+                "next": "5X2",
+                "requiredFlags": ["1.1.1.1.2"],
+                "setFlags": ["1.1.1.1.2.2"]
+            },
+            {
+                "text": "Los dos, al principio uno, luego el otro... a ratos los dos.",
+                "next": "5X2",
+                "requiredFlags": ["1.1.1.2.1"],
+                "setFlags": ["1.1.1.2.1.1"]
+            },
+            {
+                "text": "Muy graciosa... ¿Siempre ha tenido los botones torcidos?",
+                "next": "5X2",
+                "requiredFlags": ["1.1.1.2.1"],
+                "setFlags": ["1.1.1.2.1.2"]
+            },
+            {
+                "text": "Un mundo de posibilidades...",
+                "next": "5X2",
+                "requiredFlags": ["1.1.1.2.2"],
+                "setFlags": ["1.1.1.2.2.1"]
+            },
+            {
+                "text": "Lo era... para nosotros lo era.",
+                "next": "5X2",
+                "requiredFlags": ["1.1.1.2.2"],
+                "setFlags": ["1.1.1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5X2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.2.1"],
+                "text": "¿Y si no cambia nada?"
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2.2"],
+                "text": "No... son recuerdos. Son nuestros."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1.1"],
+                "text": "Ya... esa historia me suena."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1.2"],
+                "text": "Se jodieron la primera vez que probamos aquella secadora ¿Te acuerdas? En el primer piso que compartimos"
+            },
+            {
+                "requiredFlags": ["1.1.1.2.2.1", "1.1.1.2.2.2"],
+                "text": "Lo sigue siendo... lo sigue siendo"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Entonces al menos no estará solo.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.1.2.1"],
+                "setFlags": ["1.1.1.1.2.1.1"],
+                "end": true
+            },
+            {
+                "text": "Seguiremos juntos... y con los botones torcidos.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.1.2.1"],
+                "setFlags": ["1.1.1.1.2.1.2"],
+                "end": true
+            },
+            {
+                "text": "No... no son nuestros, somos nosotros.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.1.2.2"],
+                "setFlags": ["1.1.1.1.2.2.1"],
+                "end": true
+            },
+            {
+                "text": "Eso pensaba.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.1.2.2"],
+                "setFlags": ["1.1.1.1.2.2.2"],
+                "end": true
+            },
+            {
+                "text": "No te suena, la recuerdas.",
+                "next": "6X2",
+                "requiredFlags": ["1.1.1.2.1.1"],
+                "setFlags": ["1.1.1.2.1.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "end",
+                "requiredFlags": ["1.1.1.2.1.1"],
+                "setFlags": ["1.1.1.2.1.1.2"],
+                "end": true
+            },
+            {
+                "text": "Claro que me acuerdo, era enano, podías fregar los platos sentado en el váter.",
+                "next": "6X2",
+                "requiredFlags": ["1.1.1.2.1.2"],
+                "setFlags": ["1.1.1.2.1.2.1"]
+            },
+            {
+                "text": "Aquel trasto solo trajo desgracias, no dejamos de usarlo hasta que no me quedé sin camisas.",
+                "next": "6X2",
+                "requiredFlags": ["1.1.1.2.1.2"],
+                "setFlags": ["1.1.1.2.1.2.2"]
+            },
+            {
+                "text": "Sí... supongo que sí.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.2.2.1"],
+                "setFlags": ["1.1.1.2.2.1.1"],
+                "end": true
+            },
+            {
+                "text": "...",
+                "next": "end",
+                "requiredFlags": ["1.1.1.2.2.1"],
+                "setFlags": ["1.1.1.2.2.1.2"],
+                "end": true
+            }
+        ]
+    },
+    {
+        "id": "6X2",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.2.1.1.1"],
+                "text": "Claro que lo recuerdo, lo viví"
+            }
+        ],
+        "end": true
+    },
+    {
+        "id": "end",
+        "end": true
+    }
+]
