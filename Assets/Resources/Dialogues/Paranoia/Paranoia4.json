@@ -1,0 +1,202 @@
+[
+    {
+        "id": "start",
+        "speaker": "Señor Mayor Desconocido",
+        "text": "Al puerto, por favor",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Hombre, mi momento favorito del día.",
+                "next": "1P4",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "Por supuesto, si le soy sincero creo que las noches que no tenga clientes voy a empezar a ir. Aunque no esté usted.",
+                "next": "1P4",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1P4",
+        "speaker": "Señor Mayor Desconocido",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1"],
+                "text": "Me alegro, muchacho, aunque creo que se me están acabando las historias... la brisa últimamente sopla en direcciones diferentes."
+            },
+            {
+                "requiredFlags": ["0.2"],
+                "text": "Me alegro, muchacho, porque creo que a mí se me empiezan a acabar las historias... quizás la brisa necesite oídos nuevos"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Vientos de cambio... sí, la isla está en ese tipo de clima estos días.",
+                "next": "2P4",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["0.1.1"]
+            },
+            {
+                "text": "¿Se están acabando? Supongo que la brisa ha estado ocupada estos días...",
+                "next": "2P4",
+                "requiredFlags": ["0.1", "0.2"],
+                "setFlags": ["0.1.2", "0.2.2"]
+            },
+            {
+                "text": "No diga eso hombre, seguro que aún tiene mucho que contar.",
+                "next": "2P4",
+                "requiredFlags": ["0.2"],
+                "setFlags": ["0.2.1"]
+            }
+        ]
+    },
+    {
+        "id": "2P4",
+        "speaker": "Señor Mayor Desconocido",
+        "text": "¿Conoces la historia del cazador que miró donde no debía?",
+        "choices": [
+            {
+                "text": "No, me queda poco en la ignorancia supongo.",
+                "next": "3P4",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Cuénteme",
+                "next": "3P4",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "3P4",
+        "speaker": "Señor Mayor Desconocido",
+        "text": "Acteón era un joven cazador de Beocia, nieto de Cadmo, el fundador de Tebas. Amado por los suyos y respetado por su destreza con el arco, pasaba los días recorriendo los bosques con su jauría, siguiendo las huellas de ciervos, jabalíes y lobos.",
+        "choices": [
+            {
+                "text": "Seguir a lobos no parece buena idea...",
+                "next": "4P4",
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "*entre risas* \"Muchos nombres muy cerca\"",
+                "next": "4P4",
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4P4",
+        "speaker": "Señor Mayor Desconocido",
+        "text": "Una tarde calurosa, mientras exploraba una parte del bosque sagrado del monte Citerón, se separó de sus compañeros de caza. El sol caía pesado sobre los árboles y el rumor del agua lo guió hasta un claro que nunca había visto antes. Allí, una pequeña cascada alimentaba una gruta, y en el centro del remanso, bañándose entre vapores de luz y bruma, se encontraba Artemisa, la diosa de la caza y la pureza, rodeada de sus ninfas.",
+        "choices": [
+            {
+                "text": "Eso tenía que ser digno de ver, desde luego",
+                "next": "5P4",
+                "setFlags": ["3.1"]
+            },
+            {
+                "text": "Sabiendo cómo has presentado la historia, mala cosa supongo.",
+                "next": "5P4",
+                "setFlags": ["3.2"]
+            }
+        ]
+    },
+    {
+        "id": "5P4",
+        "speaker": "Señor Mayor Desconocido",
+        "text": "Acteón se detuvo, no dijo palabra, no hizo ruido. Solo observó, pero las diosas no toleran ser vistas en su desnudez por ojos humanos. Artemisa volvió y lo vio. No gritó, no se cubrió. Tomó agua en sus manos, la lanzó sobre él y pronunció una maldición. Acteón sintió cómo su cuerpo cambiaba. Sus manos se alargaban, su piel se cubría de pelo. Su rostro se estiró, su voz desapareció, se convirtió en ciervo.",
+        "choices": [
+            {
+                "text": "¿Por qué los dioses antiguos siempre se comportan como niños?",
+                "next": "6P4",
+                "setFlags": ["4.1"]
+            },
+            {
+                "text": "Miró donde no debía, definitivamente.",
+                "next": "6P4",
+                "setFlags": ["4.2"]
+            }
+        ]
+    },
+    {
+        "id": "6P4",
+        "speaker": "Señor Mayor Desconocido",
+        "text": "Confuso, huyó entre los árboles, pero no tardaron en encontrarlo. Su propia jauría, los perros que él había criado, siguieron el olor del animal que él ahora era. No lo reconocieron. Lo alcanzaron, lo rodearon… y lo despedazaron. Sus compañeros de caza solo encontraron restos: un cráneo astillado, sangre entre las hojas, y perros jadeando, con espuma en el hocico. Nadie volvió a entrar a ese claro...",
+        "choices": [
+            {
+                "text": "Cría cuervos...",
+                "next": "7P4",
+                "setFlags": ["5.1"]
+            },
+            {
+                "text": "Supongo que Artemisa consiguió lo que quería, puso un ejemplo y ya nadie metió más las narices. El chaval pagó por todos.",
+                "next": "7P4",
+                "setFlags": ["5.2"]
+            }
+        ]
+    },
+    {
+        "id": "7P4",
+        "speaker": "Señor Mayor Desconocido",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["5.1"],
+                "text": "Es complicado culpar a los perros, no se volvieron contra él, sólo hicieron lo que él les enseñó."
+            },
+            {
+                "requiredFlags": ["5.2"],
+                "text": "No todos los que miran son inocentes. A veces uno mira para ver. Otras, para poseer."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Criados para matar... supongo que no nos podemos sorprender de que maten, claro.",
+                "next": "8P4",
+                "requiredFlags": ["5.1"],
+                "setFlags": ["5.1.1"]
+            },
+            {
+                "text": "Si la orden siempre fue matar... llega un punto que deja de hacer falta dar la orden.",
+                "next": "8P4",
+                "requiredFlags": ["5.1"],
+                "setFlags": ["5.1.2"]
+            },
+            {
+                "text": "¿Cómo puede ser delito mirar? ¿Acaso nos tenemos que tapar los ojos porque otros no quieren que veamos?",
+                "next": "8P4",
+                "requiredFlags": ["5.2"],
+                "setFlags": ["5.2.1"]
+            },
+            {
+                "text": "En la ignorancia se vive mejor o, en este caso, vives.",
+                "next": "8P4",
+                "requiredFlags": ["5.2"],
+                "setFlags": ["5.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "8P4",
+        "speaker": "Señor Mayor Desconocido",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["5.1.1"],
+                "text": "Pegan al lobo hasta que muerde para luego decir que está en su naturaleza ser malo"
+            },
+            {
+                "requiredFlags": ["5.1.2"],
+                "text": "El hábito hace al monje."
+            },
+            {
+                "requiredFlags": ["5.2.1"],
+                "text": "Mirar nunca es delito, pero detrás de la mirada puede haber oscuras intenciones."
+            },
+            {
+                "requiredFlags": ["5.2.2"],
+                "text": "Eso es lo importante, para poder luchar hay que estar vivo."
+            }
+        ],
+        "end": true
+    }
+]

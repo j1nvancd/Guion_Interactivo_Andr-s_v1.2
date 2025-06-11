@@ -1,0 +1,332 @@
+[
+    {
+        "id": "start",
+        "speaker": "Policía",
+        "text": "Buenos días, según tengo entendido, fue usted quien llevó a Abel Ramos a la Fábrica en el día de ayer.",
+        "choices": [
+            {
+                "text": "Sí, me he enterado de que lo retuvieron los de seguridad. Supongo que ahora usted querrá que yo le cuente algo.",
+                "next": "1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "También fui a visitar a mi madre, pero supongo que eso no le interesa a usted.",
+                "next": "1",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {"requiredFlags": ["1.1"], "text": "Y yo supongo que usted me dirá que no sabe nada, o me responderá en acertijos, como todos los locos que vivís en esta isla."},
+            {"requiredFlags": ["1.2"], "text": "No, la verdad es que no. Le tengo que preguntar unas cosas, aunque mi experiencia en la isla me dice que no me va a dar ninguna respuesta satisfactoria."}
+        ],
+        "choices": [
+            {
+                "text": "Lo va pillando.",
+                "next": "2",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Algunos no tememos que al abrir la boca nos saquen la comida, si es lo que espera de mí.",
+                "next": "2",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "Le sorprendería lo satisfactorio que puedo llegar a ser.",
+                "next": "2",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Me las va a hacer de todas formas, así que déjese de preparar el terreno.",
+                "next": "2",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "speaker": "Policía",
+        "text": "¿Sabía usted que Abel Ramos iba armado el día de ayer cuando lo dejó en La Fábrica?",
+        "choices": [
+            {
+                "text": "Sí.",
+                "next": "3",
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "No.",
+                "next": "3",
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "speaker": "Policía",
+        "text": "¿Fue usted coaccionado por Abel Ramos para llevarlo a La Fábrica?",
+        "choices": [
+            {
+                "text": "Sí.",
+                "next": "4",
+                "setFlags": ["3.1"]
+            },
+            {
+                "text": "No.",
+                "next": "4",
+                "setFlags": ["3.2"]
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {"requiredFlags": ["3.1"], "text": "¿De qué manera?"},
+            {"requiredFlags": ["3.2"], "text": "¿Trató usted de abortar los planes de Abel Ramos durante el trayecto?"}
+        ],
+        "choices": [
+            {
+                "text": "Insinuó llevar un arma de fuego",
+                "next": "5",
+                "requiredFlags": ["3.1"],
+                "setFlags": ["3.1.1"]
+            },
+            {
+                "text": "Afirmaba ser un enviado de Dios que debía matar al dragón para permitir al pueblo beber libremente de la fuente.",
+                "next": "5",
+                "requiredFlags": ["3.1"],
+                "setFlags": ["3.1.2"]
+            },
+            {
+                "text": "Sí.",
+                "next": "5",
+                "requiredFlags": ["3.2"],
+                "setFlags": ["3.2.1"]
+            },
+            {
+                "text": "No.",
+                "next": "5",
+                "requiredFlags": ["3.2"],
+                "setFlags": ["3.2.2"]
+            },
+            {
+                "text": "Desconocía sus planes.",
+                "next": "5",
+                "requiredFlags": ["3.2"],
+                "setFlags": ["3.2.3"]
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {"requiredFlags": ["3.1.1", "2.1"], "text": "¿Trató usted de abortar los planes de Abel Ramos durante el trayecto?", "next": "6"},
+            {"requiredFlags": ["3.1.1", "2.2"], "text": "¿No decía que no sabía de la existencia del arma?", "next": "6"},
+            {"requiredFlags": ["3.1.2"], "text": "No sé si yo consideraría eso coacción...", "next": "6"},
+            {"requiredFlags": ["3.2.1"], "text": "¿Cuáles eran esos planes?", "next": "6"},
+            {"requiredFlags": ["3.2.2"], "text": "¿Conocía sus planes?", "next": "6"},
+            {"requiredFlags": ["3.2.3"], "text": "¿No le pareció extraño que le pidiese ir a La Fábrica después de semanas desaparecido?", "next": "6"}
+        ],
+        "choices": [
+            {
+                "text": "He dicho que insinuó, yo temí que la llevase. Nunca fui consciente de su existencia.",
+                "next": "6",
+                "requiredFlags": ["3.1.1", "2.2"],
+                "setFlags": ["3.1.1B.1"]
+            },
+            {
+                "text": "...",
+                "next": "6",
+                "requiredFlags": ["3.1.1", "2.2"],
+                "setFlags": ["3.1.1B.2"]
+            },
+            {
+                "text": "Llámelo como usted quiera, a mí fue suficiente para convencerme.",
+                "next": "6",
+                "requiredFlags": ["3.1.2"],
+                "setFlags": ["3.1.2.1"]
+            },
+            {
+                "text": "La fe es un arma peligrosísima, agente.",
+                "next": "6",
+                "requiredFlags": ["3.1.2"],
+                "setFlags": ["3.1.2.2"]
+            },
+            {
+                "text": "Los desconozco, sólo sabía que lo correcto era ir al pueblo.",
+                "next": "6",
+                "requiredFlags": ["3.2.1"],
+                "setFlags": ["3.2.1.1"]
+            },
+            {
+                "text": "Afirmaba ser un enviado de Dios que debía matar al dragón para permitir al pueblo beber libremente de la fuente.",
+                "next": "6",
+                "requiredFlags": ["3.2.1"],
+                "setFlags": ["3.2.1.2"]
+            },
+            {
+                "text": "Soy taxista, me dedico a llevar a la gente a sitios, a hacer preguntas se dedica usted, agente.",
+                "next": "6",
+                "requiredFlags": ["3.2.3"],
+                "setFlags": ["3.2.3.1"]
+            },
+            {
+                "text": "Sí",
+                "next": "6",
+                "requiredFlags": ["3.2.3"],
+                "setFlags": ["3.2.3.2"]
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {"requiredFlags": ["3.1.1B.1"], "text": "¿Trató usted de abortar los planes de Abel Ramos durante el trayecto?", "next": "7"},
+            {"requiredFlags": ["3.1.1B.2"], "text": "Obstruir una investigación policial también es delito.", "next": "7"},
+            {"requiredFlags": ["3.1.2.1", "3.1.2.2", "3.2.1.2", "3.2.3.1"], "text": "¿Tenía Abel algún motivo para querer atacar La Fábrica?", "next": "7"},
+            {"requiredFlags": ["3.2.1.1"], "text": "¿Por qué no fue entonces?", "next": "7"},
+            {"requiredFlags": ["3.2.3.2"], "text": "¿Puede desarrollar su respuesta?", "next": "7"}
+        ],
+        "choices": [
+            {
+                "text": "Ignoran todas las investigaciones necesarias durante seis años y ahora yo soy un criminal por no hablar de un muchacho que lo único que hace es sobrevivir.",
+                "next": "7",
+                "requiredFlags": ["3.1.1B.2"],
+                "setFlags": ["3.1.1B.2.1"]
+            },
+            {
+                "text": "Amenazar no le va a ayudar a sacar respuestas, aquí somos expertos en callarnos.",
+                "next": "7",
+                "requiredFlags": ["3.1.1B.2"],
+                "setFlags": ["3.1.12.2"]
+            },
+            {
+                "text": "¿Estás de broma? Ese chaval ya tenía una vida de mierda sin que nadie se la cogiese. Aún así vino esta gente y consiguió terminar de joderla.",
+                "next": "7",
+                "requiredFlags": ["3.1.2.1"],
+                "setFlags": ["3.1.2.1.1"]
+            },
+            {
+                "text": "No creo que fuese idea suya atacar a nadie. Si fuese ese tipo de persona habría volado ese sitio por los aires hace tiempo.",
+                "next": "7",
+                "requiredFlags": ["3.1.2.1"],
+                "setFlags": ["3.1.2.1.2"]
+            },
+            {
+                "text": "Vi a Abel convencido. Él sabía lo que tenía que hacer, yo no soy nadie para decidir por el destino de otros.",
+                "next": "7",
+                "requiredFlags": ["3.2.1.1"],
+                "setFlags": ["3.2.1.1.2"]
+            },
+            {
+                "text": "La verdad es que no, me pareció extraño y punto.",
+                "next": "7",
+                "requiredFlags": ["3.2.3.2"],
+                "setFlags": ["3.2.3.2.1"]
+            },
+            {
+                "text": "Nadie va al Diente del Santo para nada, aunque no me hubiese pedido ir a La Fábrica o no llevase 3 semanas desaparecido, sólo eso ya habría sido extraño.",
+                "next": "7",
+                "requiredFlags": ["3.2.3.2"],
+                "setFlags": ["3.2.3.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {"requiredFlags": ["3.1.1B.2.1"], "text": "¿Para sobrevivir se plantó en La Fábrica con un revólver en la mano?", "next": "8"},
+            {"requiredFlags": ["3.1.12.2", "3.1.2.1.1", "3.2.1.1.2", "3.2.3.2.1", "3.2.3.2.2"], "text": "Bien... ¿Usted tiene alguna idea de de dónde pudo sacar el arma?", "next": "8"},
+            {"requiredFlags": ["3.1.2.1.2"], "text": "Entonces ¿Por qué se presentó en La Fábrica con un revólver?.", "next": "8"}
+        ],
+        "choices": [
+            {
+                "text": "Sobrevivir lleva sobreviviendo años, a este muchacho alguien lo tuvo que convencer de hacer justicia.",
+                "next": "8",
+                "requiredFlags": ["3.1.1B.2.1", "3.1.2.1.2"],
+                "setFlags": ["3.1.1B.2.1.1", "3.1.2.1.2.1"]
+            },
+            {
+                "text": "Según él un dragón estaba bloqueando la fuentes todo el pueblo, si eso no es supervivencia...",
+                "next": "8",
+                "requiredFlags": ["3.1.1B.2.1", "3.1.2.1.2"],
+                "setFlags": ["3.1.1B.2.1.2", "3.1.2.1.2.2"]
+            },
+            {
+                "text": "Pregúntele al cura, él es el que sabe cosas.",
+                "next": "end",
+                "requiredFlags": ["3.1.12.2"],
+                "setFlags": ["3.1.12.2.1"],
+                "end": true
+            },
+            {
+                "text": "Los únicos que van armados por aquí son ustedes.",
+                "next": "end",
+                "requiredFlags": ["3.1.12.2"],
+                "setFlags": ["3.1.12.2.2"],
+                "end": true
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {"requiredFlags": ["3.1.1B.2.1.1"], "text": "Y ese alguien ¿Sabe usted quién es?", "next": "9"},
+            {"requiredFlags": ["3.1.1B.2.1.2"], "text": "Entonces, ¿Usted estaba de acuerdo en que había que matar al dragón?", "next": "9"}
+        ],
+        "choices": [
+            {
+                "text": "¿Quién en un pueblo le cuenta historias de la Biblia a la gente?",
+                "next": "end",
+                "requiredFlags": ["3.1.1B.2.1.1"],
+                "setFlags": ["3.1.1B.2.1.1.1"],
+                "end": true
+            },
+            {
+                "text": "Cualquiera que estuviese harto de esperar.",
+                "next": "end",
+                "requiredFlags": ["3.1.1B.2.1.1"],
+                "setFlags": ["3.1.1B.2.1.1.2"],
+                "end": true
+            },
+            {
+                "text": "¿Usted querría un dragón en su fuente, agente?",
+                "next": "end",
+                "requiredFlags": ["3.1.1B.2.1.2"],
+                "setFlags": ["3.1.1B.2.1.2.1"],
+                "end": true
+            },
+            {
+                "text": "Yo soy taxista, me dedico a llevar a gente a los sitios, no a juzgar lo que hagan una vez los deje allí.",
+                "next": "end",
+                "requiredFlags": ["3.1.1B.2.1.2"],
+                "setFlags": ["3.1.1B.2.1.2.2"],
+                "end": true
+            }
+        ]
+    },
+    {
+        "id": "end",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {"requiredFlags": ["3.1.12.2.1"], "text": "Lo haré, muchas gracias. Eso es todo por el momento, esté atento por si le vuelvo a necesitar Teodoro."},
+            {"requiredFlags": ["3.1.12.2.2"], "text": "Ya... Eso es todo por el momento, esté atento por si le vuelvo a necesitar Teodoro."},
+            {"requiredFlags": ["3.1.1B.2.1.1.1"], "text": "Ya. Eso es todo por el momento, esté atento por si le vuelvo a necesitar Teodoro."},
+            {"requiredFlags": ["3.1.1B.2.1.1.2"], "text": "...."},
+            {"requiredFlags": ["3.1.1B.2.1.2.1"], "text": "Inspector. Sin comentarios"},
+            {"requiredFlags": ["3.1.1B.2.1.2.2"], "text": "Entiendo..."}
+        ],
+        "end": true
+    }
+]

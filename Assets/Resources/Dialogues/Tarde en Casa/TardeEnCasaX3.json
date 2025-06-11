@@ -1,0 +1,269 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Hoy he visto al gato del vecino en el bordillo de la ventana. Se quedó mirándome un rato, como si esperara que le dijera algo.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Quizá pensaba que esta era su casa. Los gatos no tienen mucho respeto por la propiedad privada.",
+                "next": "1X3",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Mientras esperes a que se lo digas tú estamos bien. Si te habla él nos largamos ese mismo día.",
+                "next": "1X3",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1X3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "O quizás solo quería que le abriera la ventana, siguió esperando un buen rato antes de irse."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "*riéndose* Ni dudes que si un día me habla el gato le abro la ventana"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y por qué no la abriste?",
+                "next": "2X3",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "A lo mejor solo estaba cotilleando, si hubieses bajado la persiana seguro que se habría ido.",
+                "next": "2X3",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "Si un día te habla el gato, más te vale llevarte bien con él porque va a ser con el único que te dejen hablar en el psiquiátrico",
+                "next": "2X3",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Si te habla el gato, llámame. Si yo también lo escuchó somos ricos.",
+                "next": "2X3",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2X3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "No sé. Me pareció que si lo hacía una vez, volvería mañana. Y al siguiente. Y al final ya no sabríamos de quién era la casa."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Si hubiese bajado la ventana no habría sabido cuando se iba, si es que se iba."
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "Pues claro que me voy a llevar bien con él, viene a verme todas las semanas, aunque no le hable."
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "¿Quién te ha dado permiso para vender al gato parlante? Habla conmigo, es mi amigo."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Bueno, igual eso no está tan mal. Al menos alguien seguiría viniendo todos los días.",
+                "next": "3X3",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Le podíamos alquilar una habitación, parece que se está poniendo de moda en el pueblo.",
+                "next": "3X3",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "Bueno, si hubieses bajado la ventana se habría ido directamente y nunca al mismo tiempo.",
+                "next": "3X3",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Osea que no es que él te estuviese cotilleando a tí, sino al contrario.",
+                "next": "3X3",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "A lo mejor te llevas mejor con él precisamente porque no habláis.",
+                "next": "3X3",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "Sí, supongo que eso debe significar algo.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            },
+            {
+                "text": "¿Quién ha hablado de vender nada? Podríamos llevarlo a la tele. Sería una estrella de cine.",
+                "next": "3X3",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.1"]
+            },
+            {
+                "text": "¿Qué? El butanero habla contigo y no es tu amigo.",
+                "next": "3X3",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3X3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Sí... hay que buscar algo bonito mires donde mires."
+            },
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "*se lo piensa un rato* No... no creo que me hartase por verlo todas las semanas..."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "A veces me das un poco de miedo."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "Ya... la verdad que está para poco más que coger polvo."
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "Sí... creo que lo he leído alguna vez."
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "Claro... ahora me pregunto a qué partido votaría el gato...."
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "Es el mejor plan. Tendríamos un gato que habla."
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "No sé que decirte a eso, la verdad. Parece un gato bastante normal..."
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "*se ríe*"
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "Justo va a ser eso, sí."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Hay catedrales en todas partes para aquellos con ojos para verlas, supongo.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Supongo que si viene todas las semanas te acabarás hartando, o al menos, dejará de llamarte la atención.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Lo primero seguro que tiene cierto negocio.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "Tampoco es que le saquemos mucha más rentabilidad a la oficina, la verdad.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "¿El Gato de Schrödinger? ¿Vivo y muere al mismo tiempo hasta que se abra la caja? ¿No te suena?",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Da igual, es una gilipollez.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Dejémoslo ahí, sí.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "...",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "Yo jamás diría algo así",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "Bueno, al no hablar es menos probable que el misterioso felino y tú encontréis... discrepancias políticas, por ejemplo.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "Es un buen plan también.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.2.2.1"]
+            },
+            {
+                "text": "Seguro que después hace algo más que hablar, que es algo en plan las tortugas ninja.",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.2.2.1"]
+            },
+            {
+                "text": "En este país no se puede emprender...",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.2.2.2"]
+            },
+            {
+                "text": "¿Ves como al final le has cogido cariño y todo?",
+                "next": "FinPasajeX3",
+                "requiredFlags": ["1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "FinPasajeX3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "Pues claro, es mi amigo."
+            }
+        ],
+        "end": true
+    }
+]

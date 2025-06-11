@@ -1,0 +1,636 @@
+[
+    {
+        "id": "start",
+        "speaker": "Policía",
+        "text": "Buenos días, lamento tener que estar haciendo esto pero, como comprenderá, le tengo que hacer unas preguntas.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Evidentemente, no me esperaba que me quisiera interrogar en el propio taxi, pero asumió que me tendría que interrogar.",
+                "next": "1L1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "...",
+                "next": "1L1",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Ya, lo lamento, pero lo primero que le voy a pedir es que vayamos a donde sea que recogiese usted a Abel ayer."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Evidentemente, puede elegir permanecer en silencio pero, le aviso, esto no es un tribunal y usted no está acusado de nada. Obstruir una investigación policial no es un derecho civil."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Al Diente del Santo, sí.",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Le llevó, sí. La verdad que no me esperaba tener que hacer esto ya. Suponía que tendría más trabajo con él y la otra hermana...",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "No es mi intención, usted pregunte y yo responderé.",
+                "next": "2L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "2L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Perfecto, muchas gracias."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Cuando el caso se ha elevado a asesinato, han venido varios compañeros. Abel ya está en custodia policial camino al continente."
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "Perfecto, muchas gracias."
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "Entendido."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Conoce usted al muchacho?",
+                "next": "3L1",
+                "setFlags": ["nextQuestion"]
+            }
+        ]
+    },
+    {
+        "id": "3L1",
+        "speaker": "Policía",
+        "text": "¿Conoce usted al muchacho?",
+        "choices": [
+            {
+                "text": "Más o menos como todos los de la Isla.",
+                "next": "4L1",
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "Apenas, cuando él entró al colegio yo estaba en mi último año, como comprenderá no tuvimos mucha conversación. Cuando yo volví del continente esa familia era la comidilla del pueblo por lo de su madre, pero a mí esas cosas nunca me han interesado demasiado.",
+                "next": "4L1",
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1"],
+                "text": "Ya, con el muchacho desaparecido la gente hablaba pero tampoco mucho. ¿Usted también es de la cofradía de la boca cerrada?"
+            },
+            {
+                "requiredFlags": ["2.2"],
+                "text": "Sí, usted no es el prototipo de isleño local. Espero que sea más colaborativo de lo que sus convecinos han sido estos días."
+            }
+        ],
+        "choices": [
+            {
+                "text": "...",
+                "next": "5L1",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.1"]
+            },
+            {
+                "text": "La gente aquí aprendió a callarse hace años, yo hablo más de la cuenta, en comparación.",
+                "next": "5L1",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.2"]
+            },
+            {
+                "text": "...",
+                "next": "5L1",
+                "requiredFlags": ["2.2"],
+                "setFlags": ["2.2.1"]
+            },
+            {
+                "text": "Mucha gente de La Isla tiene motivos para guardar silencio con lo que rodea a esa familia, yo no.",
+                "next": "5L1",
+                "requiredFlags": ["2.2"],
+                "setFlags": ["2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1"],
+                "text": "Ya veo ¿Conocía usted alguna motivación de Abel para asesinar a su hermana Agar?"
+            },
+            {
+                "requiredFlags": ["2.1.2"],
+                "text": "Ya veo ¿Conocía usted alguna motivación de Abel para asesinar a su hermana Agar?"
+            },
+            {
+                "requiredFlags": ["2.2.2"],
+                "text": "¿A qué se refiere?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Se pasó todo el trayecto balbuceando cosas sobre un pacto divino y cumpliendo su parte del trato. Ahora supongo que ya sabemos cuál era su parte.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.1"],
+                "setFlags": ["2.1.1.1"]
+            },
+            {
+                "text": "Su madre se fue cuando nació Agar. Hace dos años La Fábrica contaminó las aguas, su padre falleció y él quedó con secuelas cerebrales importantes. Cuando desapareció no eran pocos los que pensaban que se habría tirado desde algún acantilado al mar.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.1"],
+                "setFlags": ["2.1.1.2"]
+            },
+            {
+                "text": "Su padre falleció hace dos años por una intoxicación en las aguas que hubo, todo el mundo sabía de quién era la culpa, todos sabían quién tenía que tomar responsabilidades, casi todos callaron.",
+                "next": "6L1",
+                "requiredFlags": ["2.2.2"],
+                "setFlags": ["2.2.2.1"]
+            },
+            {
+                "text": "¿Por qué no hace su trabajo e investiga la muerte de su padre, Elías Ramos?",
+                "next": "6L1",
+                "requiredFlags": ["2.2.2"],
+                "setFlags": ["2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "6L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1.1"],
+                "text": "¿Era un chico religioso?"
+            },
+            {
+                "requiredFlags": ["2.1.1.2"],
+                "text": "¿La Fábrica? En mis informes no aparece nada sobre eso..."
+            },
+            {
+                "requiredFlags": ["2.2.2.1"],
+                "text": "Y ahora usted sigue callando."
+            },
+            {
+                "requiredFlags": ["2.2.2.2"],
+                "text": "¿Por qué no me lo cuenta usted?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Nunca lo fue, por lo visto antes de desaparecer dejó la casa llena de plegarias y cosas de ese estilo",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.1"],
+                "setFlags": ["2.1.1.1.1"]
+            },
+            {
+                "text": "Pregúntele al cura, yo nunca voy a La Ermita, así que no sé quién va o no.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.1"],
+                "setFlags": ["2.1.1.1.2"]
+            },
+            {
+                "text": "No, claro que no...",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.2"],
+                "setFlags": ["2.1.1.2.1"]
+            },
+            {
+                "text": "Pues consiga mejores informes. Toda la Isla tuvo que lidiar con aguas contaminadas de fosfatos y azufre. Sólo una familia que no trabajase para La Fábrica era lo suficientemente pobre como para arriesgarse y volver a pescar, ellos pagaron el riesgo, pero los responsables no salen en sus informes.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.2"],
+                "setFlags": ["2.1.1.2.2"]
+            },
+            {
+                "text": "¿Yo? No, los responsables de aquello tienen la mitad de La Isla a sueldo. Y seguramente a alguno de sus superiores también, porque nadie vino a investigarlos ni nadie pagó por aquello.",
+                "next": "7L1",
+                "requiredFlags": ["2.2.2.1"],
+                "setFlags": ["2.2.2.1.1"]
+            },
+            {
+                "text": "Algunos ya hablamos en su día y no recibimos ni un amago de justicia por vuestra parte.",
+                "next": "7L1",
+                "requiredFlags": ["2.2.2.1"],
+                "setFlags": ["2.2.2.1.2"]
+            },
+            {
+                "text": "Hace dos años toda La Isla tuvo que lidiar con aguas contaminadas de fosfatos y azufre. Sólo una familia que no trabajase para La Fábrica era lo suficientemente pobre como para arriesgarse, ellos pagaron el riesgo, pero los responsables no salen en sus informes.",
+                "next": "7L1",
+                "requiredFlags": ["2.2.2.2"],
+                "setFlags": ["2.2.2.2.1"]
+            },
+            {
+                "text": "Porque no creo que tenga ninguna relación con esto. El chaval lleva tirando de sí mismo y de sus hermanas dos años ¿Por qué iba a hacer algo así ahora?",
+                "next": "7L1",
+                "requiredFlags": ["2.2.2.2"],
+                "setFlags": ["2.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "7L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1.1.1"],
+                "text": "Tendré que hablar con el cura..."
+            },
+            {
+                "requiredFlags": ["2.1.1.1.2"],
+                "text": "Tendré que hablar con el cura..."
+            },
+            {
+                "requiredFlags": ["2.1.1.2.1"],
+                "text": "¿Perdón?"
+            },
+            {
+                "requiredFlags": ["2.1.1.2.2"],
+                "text": "*toma apuntes en silencio*"
+            },
+            {
+                "requiredFlags": ["2.2.2.1.1"],
+                "text": "*toma apuntes en silencio*"
+            },
+            {
+                "requiredFlags": ["2.2.2.1.2"],
+                "text": "Le diría que lo siento, pero yo no estaba en ese caso..."
+            },
+            {
+                "requiredFlags": ["2.2.2.2.1"],
+                "text": "Le diría que lo siento, pero yo no estaba en ese caso..."
+            },
+            {
+                "requiredFlags": ["2.2.2.2.2"],
+                "text": "¿Cansancio? ¿No cree usted que podía estar harto de tirar? Mucha gente parecía asumir que se habría matado cuando desapareció. Si como dice el muchacho no estaba muy bien de la cabeza en lugar de matarse pudo pensar que sería más fácil con una hermana que con dos."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Se lo recomiendo, sí.",
+                "next": "8L1",
+                "requiredFlags": ["2.1.1.1.1"],
+                "setFlags": ["2.1.1.1.1.1"]
+            },
+            {
+                "text": "Lo traje al pueblo esta mañana ¿No estaba usted con las hermanas?",
+                "next": "8L1",
+                "requiredFlags": ["2.1.1.1.1"],
+                "setFlags": ["2.1.1.1.1.2"]
+            },
+            {
+                "text": "A mí no me tiene que pedir perdón, pídeselo a esa pobre familia.",
+                "next": "8L1",
+                "requiredFlags": ["2.1.1.2.1"],
+                "setFlags": ["2.1.1.2.1.2"]
+            },
+            {
+                "text": "Sí, lo creía cuando desapareció. Lo seguiría creyendo si no se hubiese matado en el asiento de atrás entre lágrimas. Ese muchacho no quería morir, hubiese hablado durante el trayecto, si no me hubiese hablado de pactos divinos y promesas. Él quería darle una buena vida a, al menos, una de sus hermanas y alguien le convenció de que las cosas se consiguen con sangre.",
+                "next": "8L1",
+                "requiredFlags": ["2.2.2.2.2"],
+                "setFlags": ["2.2.2.2.2.1"]
+            },
+            {
+                "text": "Entre todos lo mataron y él sólo se murió ¿Nunca ha escuchado eso?",
+                "next": "8L1",
+                "requiredFlags": ["2.2.2.2.2"],
+                "setFlags": ["2.2.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "8L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.2.2.2.2.1"],
+                "text": "¿Alguna teoría de quién le ha dejado en esa situación?"
+            },
+            {
+                "requiredFlags": ["2.2.2.2.2.2"],
+                "text": "Usted no sabe lo harto que estoy de esta isla y de sus frasecitas..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Pregúntele al cura, a ver si con usted se salta el secreto de confesión.",
+                "next": "9L1",
+                "requiredFlags": ["2.2.2.2.2.1"],
+                "setFlags": ["2.2.2.2.2.1.1"]
+            },
+            {
+                "text": "Pregúntele a los de La Fábrica qué opinan de las muertes de esa familia.",
+                "next": "9L1",
+                "requiredFlags": ["2.2.2.2.2.1"],
+                "setFlags": ["2.2.2.2.2.1.2"]
+            },
+            {
+                "text": "Entonces no hable usted con el cura.",
+                "next": "9L1",
+                "requiredFlags": ["2.2.2.2.2.2"],
+                "setFlags": ["2.2.2.2.2.2.1"]
+            },
+            {
+                "text": "Pues imagínese cómo estoy yo.",
+                "next": "9L1",
+                "requiredFlags": ["2.2.2.2.2.2"],
+                "setFlags": ["2.2.2.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "9L1",
+        "speaker": "Policía",
+        "text": "Entonces ¿Cómo cree que consiguió el arma? Si supuestamente no tenía dinero y en este sitio la criminalidad es nula, no lo entiendo.",
+        "choices": [
+            {
+                "text": "Eso debería preguntárselo al cura.",
+                "next": "10L1",
+                "setFlags": ["3.1"]
+            },
+            {
+                "text": "La criminalidad es nula siempre si no hay justicia.",
+                "next": "10L1",
+                "setFlags": ["3.2"]
+            }
+        ]
+    },
+    {
+        "id": "10L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["3.1"],
+                "text": "Lo haré. Aún así me gustaría que me dijese por qué."
+            },
+            {
+                "requiredFlags": ["3.2"],
+                "text": "Que complicado va a ser esto..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "El chaval desaparece y, después de casi 3 semanas pide un taxi desde El Diente del Santo, un peñón alejado del mundo que la muestra de civilización más cercana que tiene es La Ermita de la Roca. El chaval aparece vivo, limpio y con un revólver. O yo soy tan tonto que me creo listo o no hay que ser el teniente colombo tampoco para pillarlo.",
+                "next": "11L1",
+                "requiredFlags": ["3.1"],
+                "setFlags": ["3.1.1"]
+            },
+            {
+                "text": "Es experto en sacar confesiones, quizás pueda ayudarle.",
+                "next": "11L1",
+                "requiredFlags": ["3.1"],
+                "setFlags": ["3.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "11L1",
+        "speaker": "Policía",
+        "text": "¿Sabes que no dijo nada? Llegó a casa, tocó al timbre, Agar bajó a abrirle la puerta y... tal como asomó, bang. Ni una palabra, le disparó y se echó al suelo a llorar desconsoladamente.",
+        "choices": [
+            {
+                "text": "¿Y qué querías? ¿Un discurso antes de matar a su hermana pequeña? Es un pobre desgraciado, no un villano de película.",
+                "next": "12L1",
+                "setFlags": ["4.1"]
+            },
+            {
+                "text": "Dejó su casa llena de notas antes de desaparecer, debería hablar con Judit, entiendo que es un momento jodido pero antes de que las tire....",
+                "next": "12L1",
+                "setFlags": ["4.2"]
+            },
+            {
+                "text": "Él pensaba que todo estaba escrito en La Biblia, hay que ser muy egocéntrico para pensar que puedes aportar más ahí.",
+                "next": "12L1",
+                "setFlags": ["4.3"]
+            }
+        ]
+    },
+    {
+        "id": "12L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["4.1"],
+                "text": "Sí... supongo que sí."
+            },
+            {
+                "requiredFlags": ["4.2"],
+                "text": "No he querido meterme en esa casa a interrogar aún, quería darle algo de tiempo para asimilar. Se ha quedado completamente sola de la noche a la mañana...."
+            },
+            {
+                "requiredFlags": ["4.3"],
+                "text": "Sí... supongo que sí."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Sí... no sé qué va a hacer.",
+                "next": "13L1",
+                "requiredFlags": ["4.2"],
+                "setFlags": ["4.2.1"]
+            },
+            {
+                "text": "Ahora que estáis aquí ¿Os la llevaréis? No tiene familia ni a nadie aquí. Parece mayor porque la vida le ha obligado a crecer rápido pero no debe tener más de 15 años.",
+                "next": "13L1",
+                "requiredFlags": ["4.2"],
+                "setFlags": ["4.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "13L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["4.2.1"],
+                "text": "Es lo que se debería hacer... veremos. Con 14 años y estas experiencias, entrar ahora a una casa de acogida no suena como un plan perfecto. Es una situación de mierda..."
+            },
+            {
+                "requiredFlags": ["4.2.2"],
+                "text": "Aún tiene 14, o al menos eso pone en los papeles... que situación de mierda."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ningún plan es perfecto, pero no creo que le vaya a venir bien quedarse aquí.",
+                "next": "14L1",
+                "requiredFlags": ["4.2.1"],
+                "setFlags": ["4.2.1.1"]
+            },
+            {
+                "text": "¿Está bien, inspector? No se esperaba todo esto cuando le enviaron aquí, supongo.",
+                "next": "14L1",
+                "requiredFlags": ["4.2.1"],
+                "setFlags": ["4.2.1.2"]
+            },
+            {
+                "text": "Ningún plan es perfecto, pero no creo que le vaya a venir bien quedarse aquí.",
+                "next": "14L1",
+                "requiredFlags": ["4.2.2"],
+                "setFlags": ["4.2.2.1"]
+            },
+            {
+                "text": "¿Está bien, inspector? No se esperaba todo esto cuando le enviaron aquí, supongo.",
+                "next": "14L1",
+                "requiredFlags": ["4.2.2"],
+                "setFlags": ["4.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "14L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["4.2.1.1"],
+                "text": "No... pero de eso se encargan los servicios sociales, no yo."
+            },
+            {
+                "requiredFlags": ["4.2.1.2"],
+                "text": "¿Usted sí se lo esperaba? Venía pensando que me mandaban a buscar a un retrasado que se habría perdido paseando y ahora resulta que tengo un asesinato, un arma que nadie sabe de dónde ha salido"
+            },
+            {
+                "requiredFlags": ["4.2.2.1"],
+                "text": "No... pero de eso se encargan los servicios sociales, no yo."
+            },
+            {
+                "requiredFlags": ["4.2.2.2"],
+                "text": "¿Usted sí se lo esperaba? Venía pensando que me mandaban a buscar a un retrasado que se habría perdido paseando y ahora resulta que tengo un asesinato, un arma que nadie sabe de dónde ha salido"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y usted de qué se encarga? Sí ya todos sabemos quién ha muerto y quién la mató.",
+                "next": "15L1",
+                "requiredFlags": ["4.2.1.1"],
+                "setFlags": ["4.2.1.1.1"]
+            },
+            {
+                "text": "Sí, ustedes vayan lavándose las manos para dejarla tirada otra vez, así se sentirá como en casa.",
+                "next": "15L1",
+                "requiredFlags": ["4.2.1.1"],
+                "setFlags": ["4.2.1.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "15L1",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["4.2.1.1.1"],
+                "text": "Supongo que de saber de dónde salió el arma."
+            },
+            {
+                "requiredFlags": ["4.2.1.1.2"],
+                "text": "Insisto, es la primera vez que piso esta isla o que no he escuchado nada acerca de ella. Lo que pasase hace años no es responsabilidad mía."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Bueno, cuando te deje en El Diente del Santo creo que tendrás una teoría.",
+                "next": "16L1",
+                "requiredFlags": ["4.2.1.1.1"],
+                "setFlags": ["4.2.1.1.1.1"]
+            },
+            {
+                "text": "Sí, supongo que sí.",
+                "next": "16L1",
+                "requiredFlags": ["4.2.1.1.1"],
+                "setFlags": ["4.2.1.1.1.2"]
+            },
+            {
+                "text": "Nada es responsabilidad de nadie...",
+                "next": "16L1",
+                "requiredFlags": ["4.2.1.1.2"],
+                "setFlags": ["4.2.1.1.2.1"]
+            },
+            {
+                "text": "....",
+                "next": "16L1",
+                "requiredFlags": ["4.2.1.1.2"],
+                "setFlags": ["4.2.1.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "16L1",
+        "speaker": "Policía",
+        "text": "Voy a necesitar que me cuentes todo, paso por paso. Desde que le llamó hasta que se bajó.",
+        "choices": [
+            {
+                "text": "Sin problema.",
+                "next": "17L1",
+                "setFlags": ["5.1"]
+            },
+            {
+                "text": "No sé de cuánto me acordaré.",
+                "next": "17L1",
+                "setFlags": ["5.2"]
+            }
+        ]
+    },
+    {
+        "id": "17L1",
+        "speaker": "Policía",
+        "text": "¿Te importa que grabes?",
+        "choices": [
+            {
+                "text": "Haz lo que tengas que hacer.",
+                "next": "end",
+                "setFlags": ["6.1"]
+            },
+            {
+                "text": "¿Realmente me tienes que pedir permiso?",
+                "next": "end",
+                "setFlags": ["6.2"]
+            }
+        ]
+    },
+    {
+        "id": "end",
+        "speaker": "Policía",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["6.1"],
+                "text": "Gracias."
+            },
+            {
+                "requiredFlags": ["6.2"],
+                "text": "No, pero me parecía de buena educación."
+            }
+        ],
+        "end": true
+    }
+]

@@ -73,11 +73,17 @@ public class DialogueUI : MonoBehaviour
                 if (!anyActive)
                     continue; //no mostrar si falta alguna flag requerida
             }
-            GameObject buttonObj = Instantiate(choiceButtonPrefab, choiceContainer);
-            buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
-            buttonObj.GetComponent<Button>().onClick.AddListener(() =>
+            GameObject entryObj = Instantiate(choiceButtonPrefab, choiceContainer);
+
+            // Buscar los componentes internos
+            TextMeshProUGUI textComponent = entryObj.transform.Find("ChoiceText").GetComponent<TextMeshProUGUI>();
+            Button selectButton = entryObj.transform.Find("SelectButton").GetComponent<Button>();
+
+            textComponent.text = choice.text;
+
+            selectButton.onClick.RemoveAllListeners();
+            selectButton.onClick.AddListener(() =>
             {
-                //añade flags si las hay
                 if (choice.setFlags != null)
                 {
                     foreach (string flag in choice.setFlags)

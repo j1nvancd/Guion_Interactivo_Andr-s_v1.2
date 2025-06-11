@@ -1,0 +1,186 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Mañana viene el del butano, le dije que a primera hora. No estés dormido.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "No te preocupes, últimamente apenas duermo.",
+                "next": "1M3",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "¿Tú no vas a estar?",
+                "next": "1M3",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1M3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Ya, no sé si eso realmente me tranquiliza precisamente."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Sí, claro que voy a estar. Pero sí salgo yo intento dar conversación, y no lo aguanto."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Tengo muchas cosas en la cabeza estos días. No te preocupes, se me pasará.",
+                "next": "2M3",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Imagínate a mí...",
+                "next": "2M3",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "No te preocupes, bajo yo.",
+                "next": "2M3",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Por qué será que a ti te intenta sacar conversación.",
+                "next": "2M3",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2M3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1", "1.1.2"],
+                "text": "Te acuerdas de lo que dijiste cuando murió tu padre? ¿Que te quedarías hasta que la isla te echará?"
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "Muchas gracias"
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "Porque soy la simpática de la casa."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Lo dije sin pensar.",
+                "next": "3M3",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Entonces no teníamos aire acondicionado.",
+                "next": "3M3",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "De nada.",
+                "next": "end",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"],
+                "end": true
+            },
+            {
+                "text": "...",
+                "next": "end",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"],
+                "end": true
+            },
+            {
+                "text": "Ahí tienes razón.",
+                "next": "3M3",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.1"]
+            },
+            {
+                "text": "Sí, sobre todo recién levantada...",
+                "next": "3M3",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3M3",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "¿Y si ha llegado ese día? ¿Y si la Isla nos está echando?"
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "Ni las discusiones."
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "Pues claro, siempre la tengo",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "Sí, sobre todo recién levantada..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Nos? No creo que tú tengas que añadir en eso. A mí puede ser que me esté mandando señales.",
+                "next": "4M3",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "La brisa marina está cambiando de dirección",
+                "next": "4M3",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"],
+                "conditions": {
+                    "paranoiaLevel": 4
+                }
+            },
+            {
+                "text": "...",
+                "next": "4M3",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.3"]
+            },
+            {
+                "text": "Tampoco discutimos tanto.",
+                "next": "4M3",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "Fue una tontería, la única que puede echarme de aquí eres tú.",
+                "next": "4M3",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"]
+            },
+            {
+                "text": "Dijo George Clooney",
+                "next": "4M3",
+                "requiredFlags": ["1.2.2.2"],
+                "setFlags": ["1.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4M3",
+        "end": true
+    }
+]
