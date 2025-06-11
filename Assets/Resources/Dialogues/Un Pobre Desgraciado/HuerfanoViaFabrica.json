@@ -212,7 +212,8 @@
           "requiredTension": 0,
           "description": "Abel abandona su plan y regresa con sus hermanas"
         }
-      ]
+      ],
+      "end": true
     },
     {
       "id": "final_suicidio",
@@ -221,7 +222,8 @@
       "trigger": {
         "requiredPath": "A_Huérfano",
         "requiredTension": 3
-      }
+      },
+      "end": true
     },
     {
       "id": "final_entrega",
@@ -230,7 +232,8 @@
       "trigger": {
         "requiredPath": "A_Huérfano",
         "requiredTension": -3
-      }
+      },
+      "end": true
     }
   ],
   "sistema_tension": {

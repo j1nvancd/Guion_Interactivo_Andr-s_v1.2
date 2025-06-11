@@ -146,7 +146,8 @@
                 "requiredFlags": ["M1.2.2.1.2"],
                 "text": "No empecemos otra vez, que no tenemos tiempo de ponernos a discutir. Tú piénsatelo, luego hablamos"
             }
-        ]
+        ],
+        "end": true
     },
     {
         "id":"FinPasajeM1",
@@ -154,6 +155,7 @@
         "conditionalTexts":
         [
             {"requiredFlags": ["M1.1.1.1"], "text": "En La Fábrica no se ha trabajado nunca con carbón y lo sabes perfectamente... Pues nada, no hay noticias entonces"}
-        ]        
+        ],
+        "end": true        
     } 
 ]

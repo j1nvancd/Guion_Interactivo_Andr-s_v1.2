@@ -174,7 +174,8 @@
         "next": "FinVeronica1",
         "setFlags": ["V1_2.1.2.1.2.1.2"]
       }
-    ]
+    ],
+    "end": true
   },
   {
     "id": "FinVeronica1",
@@ -196,6 +197,7 @@
         "requiredFlags": ["V1_2.1.2.1.1.1"],
         "text": "..."
       }
-    ]
+    ],
+    "end": true
   }
 ]

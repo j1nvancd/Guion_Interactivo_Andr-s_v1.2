@@ -256,10 +256,7 @@
     "id": "4P1",
     "speaker": "Periodista",
     "conditionalTexts": [
-      {
-        "requiredFlags": ["P1.1.1.1.1"],
-        "text": "Muchísimas gracias, creo que me ha dejado prácticamente escrita la introducción, hay un par de cosas sobre las que me ha dejado un poco en ascuas, eso sí. Bueno, supongo que estas semanas le veré más veces, aprovecharé para exprimirle sabiduría de viaje en viaje. Gracias de nuevo"
-      },
+      
       {
         "requiredFlags": ["P1.1.1.1.2"],
         "text": "Hombre no sea así, si yo lo único que estoy inentando hacer es el mejor trabajo posible hablando de la isla"
@@ -382,7 +379,7 @@
         "requiredFlags": ["P1.2.2.2.1"],
         "setFlags": ["P1.2.2.2.1.2"]
       }
-    ]
+    ], "end":true
   },
   {
     "id": "5P1",

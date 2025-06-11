@@ -161,6 +161,8 @@
         "requiredFlags": ["J1.2.2.2.2"],
         "text": "Pero si no sabes ni rezar un padrenuestro *se ríe*"
       }
-    ]
+    ],
+    "end": true
+    
   }
 ]

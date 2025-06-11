@@ -257,6 +257,7 @@
         "requiredFlags": ["S2.2.2.1"],
         "text": "Ya... a ver si la próxima vez que la vea puedo sacar el tema"
       }
-    ]
+    ],
+    "end": true
   }
 ]

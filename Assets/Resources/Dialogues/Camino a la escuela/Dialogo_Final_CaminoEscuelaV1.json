@@ -165,6 +165,7 @@
         "requiredFlags": ["V1.2.2.2"],
         "text": "¿Y qué van a hacer? Ahora mismo no hay trabajo para gente formada en la isla, a tí que te van a decir..."
       }
-    ]
+    ],
+    "end": true
   }
 ]

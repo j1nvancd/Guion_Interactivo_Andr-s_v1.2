@@ -183,7 +183,8 @@
         "requiredFlags": ["X1.1.2.2.1"],
         "text": "Con lo bien que ibas hoy... Luego nos vemos"
       }
-    ]
+    ],
+    "end": true
   },
   {
     "id": "FinPasajeX1",
@@ -201,6 +202,7 @@
         "requiredFlags": ["X1.2.1.2"],
         "text": "Sí mejor vamos a callarnos ya para lo que nos queda de camino"
       }
-    ]
+    ],
+    "end": true
   }
 ]

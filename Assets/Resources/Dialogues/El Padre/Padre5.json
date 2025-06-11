@@ -1,0 +1,663 @@
+[
+    {
+        "id": "start",
+        "speaker": "El Padre",
+        "text": "Buenos días, vamos al Diente del Santo, por favor.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Hoy no hay misa?",
+                "next": "1P5",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "¿Va a investigar o qué?",
+                "next": "1P5",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1P5",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1"],
+                "text": "Sí, claro que hay, puedo subir andando después. Primero quiero ir al peñón, si ese muchacho hablaba tanto como dices de Dios después de aparecer allí, quizás haya que convertirlo en un lugar de peregrinación. Quién sabe, puede ser el momento de tener alguna revelación divina."
+            },
+            {
+                "requiredFlags": ["0.2"],
+                "text": "No sé si lo llamaría investigar exactamente, quiero ir al peñón un rato. Si ese muchacho hablaba tanto como dices de Dios después de aparecer allí, quizás haya que convertirlo en un lugar de peregrinación. Quién sabe, puede ser el momento de tener alguna revelación divina."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Viendo las historias que contaba, no sé si yo querría tener esas revelaciones, sinceramente.",
+                "next": "2P5",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Al Diente del Santo se llega andando desde la Ermita, claro. De hecho debe ser el único sitio de la Isla desde el que se puede llegar andando.",
+                "next": "2P5",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "2P5",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Hay que saber interpretar los mensajes del Señor, aunque todos seamos corderos de Dios, las mentes más débiles no siempre están preparadas para oír la palabra."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "A todas partes se puede llegar andando, si tienes el suficiente tiempo y voluntad."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Lo comprobó usted bien ¿no? ¿Fue su experimento? ¿Comprobar si una \"mente débil\" podía resistir sus revelaciones?",
+                "next": "3P5",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "¿Y usted sí los puede interpretar? ¿Usted sí es una mente fuerte?",
+                "next": "3P5",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "Ya, eso es cierto, aunque llegar desde el pueblo por la costa es básicamente imposible. Para llegar desde la zona de los guiris hay que echarle ganas...",
+                "next": "3P5",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Eso está claro, la duda es de dónde sacó la voluntad Abel para irse hasta allí.",
+                "next": "3P5",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3P5",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Aunque muchos lo hayan intentado, la fe no es una ciencia, no se puede experimentar con ella. Al menos no esperando resultados concretos."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Eso es lo que intento descubrir. Aún no sé si mi mente es lo suficientemente fuerte, sólo sé que está entrenada, que ya es bastante."
+            },
+            {
+                "requiredFlags": ["1.2.1", "1.2.2"],
+                "text": "¿Te sorprende que alguien tenga un propósito o una motivación?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Y eso... ¿Usted siempre lo ha creído o es un pensamiento novedoso?",
+                "next": "4P5",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "No es usted muy fan de Santo Tomás de Aquino, por lo que veo.",
+                "next": "4P5",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "¿Alguna vez ha intentado entrenar una mente ajena?",
+                "next": "4P5",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "¿Qué crees que te tienen que decir las revelaciones viendo cómo acabó Abel?",
+                "next": "4P5",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "Me sorprende que Abel encontrase la motivación para ir hasta allí solo y luego casualmente encontrase la motivación para matar a su hermana. Ah, y un revólver, claro, además de la motivación encontró un revólver",
+                "next": "4P5",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1A"],
+                "condition": "Huérfano-Familia"
+            },
+            {
+                "text": "Me sorprende que Abel encontrase la motivación para ir hasta allí solo y luego casualmente encontrase la motivación para matarse. Ah, y un revólver, claro, además de la motivación encontró un revólver.",
+                "next": "4P5",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1B"],
+                "condition": "Huérfano-Suicidio"
+            },
+            {
+                "text": "Me sorprende que Abel encontrase la motivación para ir hasta allí solo y luego casualmente encontrase la motivación para intentar asaltar la Fábrica. Ah, y un revólver, claro, además de la motivación encontró un revólver.",
+                "next": "4P5",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1C"],
+                "condition": "Huérfano-Fábrica"
+            },
+            {
+                "text": "¿Cómo? ¿A qué se refiere?",
+                "next": "4P5",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "4P5",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Aún siendo un hombre de fe, todo merece ser comprobado científicamente."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "No es lo mismo estudiar la existencia de Dios desde una perspectiva científica que confundir la fe con un experimento."
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "Es a lo que me dedico ¿No? Cada domingo entreno las mentes de mis feligreses, tratando de mostrarles la verdad de la palabra."
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "No lo sé, quizás me pidan que deje de intentarlo o, quizás, me pidan todo lo contrario."
+            },
+            {
+                "requiredFlags": ["1.2.1.1A"],
+                "text": "Según entendí yo de lo que Abel hablaba, no es que él estuviese motivado de matarla, sino que sentía que debía hacerlo. Aunque esto fuese una tragedia, evidentemente ¿No te llama la atención la idea? De simplemente sentir que tienes que hacer algo, que no puedes no hacerlo. Tener un destino y, sobretodo, conocerlo.",
+                "condition": "Huérfano-Familia"
+            },
+            {
+                "requiredFlags": ["1.2.1.1B"],
+                "text": "No creo que estuviese motivado para matarse, si lo hubiese estado y ya tenía el revólver antes de entrar al taxi, ¿Para que iba a esperar a estar contigo para matarse? Algo pasó en este taxi que le llevó a matarse.",
+                "condition": "Huérfano-Suicidio"
+            },
+            {
+                "requiredFlags": ["1.2.1.1C"],
+                "text": "Según entendí yo de lo que Abel hablaba, no es que él estuviese motivado de atacar al Dueño, sino que sentía que debía hacerlo. Aunque esto pudiese haber acabado en una tragedia, evidentemente ¿No te llama la atención la idea? De simplemente sentir que tienes que hacer algo, que no puedes no hacerlo. Tener un destino y, sobretodo, conocerlo. Sentir que debes hacer justicia.",
+                "condition": "Huérfano-Fábrica"
+            },
+            {
+                "requiredFlags": ["1.2.1.1C"],
+                "text": "Ese revólver... sí. ¿Sabe ya la policía de él? ¿O sigue en tu guantera, esperando a que tú también tengas una revelación?",
+                "condition": "Huérfano-Desarticulado",
+                "additionalCondition": "mostraste el revólver en El Padre 4"
+            },
+            {
+                "requiredFlags": ["1.2.1.1C"],
+                "text": "¿Revólver? ¿De qué hablas?",
+                "condition": "Huérfano-Desarticulado",
+                "additionalCondition": "no mostraste el revólver en El Padre 4"
+            },
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "Te conozco, Teodoro, más de lo que crees. Conocí a tu padre, bauticé a tu mujer... ¿Cuál es tu propósito? ¿Por qué te levantas por la mañana?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Yo no llamaría a ponerle un arma en la mano a un pobre desgraciado ciencia.",
+                "next": "5P5",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "¿Cuáles son los resultados del experimento? Si puedo preguntar...",
+                "next": "5P5",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "Y usted ¿Qué está intentando hacer?",
+                "next": "5P5",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "5P5",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"]
+            },
+            {
+                "text": "¿Y cuál es esa verdad?",
+                "next": "5P5",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.1"]
+            },
+            {
+                "text": "¿Alguno que le haga sentirse orgulloso de su trabajo?",
+                "next": "5P5",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.2"]
+            },
+            {
+                "text": "¿De intentar qué?",
+                "next": "5P5",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "5P5",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"]
+            },
+            {
+                "text": "¿Está romantizando un asesinato?",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1A"],
+                "setFlags": ["1.2.1.1A.1"],
+                "condition": "Huérfano-Familia"
+            },
+            {
+                "text": "... Supongo que, si esa sensación fuese una dirección correcta sería bastante interesante, sí.",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1A", "1.2.1.1C"],
+                "setFlags": ["1.2.1.1A.2", "1.2.1.1C.Rev.2"]
+            },
+            {
+                "text": "¿Me está acusando de algo, Padre?",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1B"],
+                "setFlags": ["1.2.1.1B.1"],
+                "condition": "Huérfano-Suicidio"
+            },
+            {
+                "text": "Ese muchacho entró a mi taxi con un revólver y muchas ideas equivocadas en la cabeza. No pudo soportar pensar en no poder cumplir la misión que alguien le había convencido era suya.",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1B"],
+                "setFlags": ["1.2.1.1B.2"],
+                "condition": "Huérfano-Suicidio"
+            },
+            {
+                "text": "¿Está romantizando un intento de ataque prácticamente terrorista?",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1C"],
+                "setFlags": ["1.2.1.1C.Rev.1"],
+                "condition": "Huérfano-Fábrica"
+            },
+            {
+                "text": "Últimamente la Isla no parece tan segura como antes ¿No cree?",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1C"],
+                "setFlags": ["1.2.1.1C.Des.1"],
+                "condition": "Huérfano-Desarticulado",
+                "additionalCondition": "mostraste el revólver en El Padre 4"
+            },
+            {
+                "text": "Está puesto a disposición policial, supongo que ahora estarán rastreando su procedencia.",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1C"],
+                "setFlags": ["1.2.1.1C.Des.2"],
+                "condition": "Huérfano-Desarticulado",
+                "additionalCondition": "mostraste el revólver en El Padre 4"
+            },
+            {
+                "text": "Vamos, no se haga el tonto, Padre. Ambos sabemos quién es la voz cantante en esta historia.",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1C"],
+                "setFlags": ["1.2.1.1C.Des.1"],
+                "condition": "Huérfano-Desarticulado",
+                "additionalCondition": "no mostraste el revólver en El Padre 4"
+            },
+            {
+                "text": "Nada, no se preocupe, ya es asunto de la policía.",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.1C"],
+                "setFlags": ["1.2.1.1C.Des.2"],
+                "condition": "Huérfano-Desarticulado",
+                "additionalCondition": "no mostraste el revólver en El Padre 4"
+            },
+            {
+                "text": "Hoy, llevarle a usted a la Ermita, mañana será lunes así que llevar a mi mujer al colegio... y así.",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "Eso dejó de importar hace años.",
+                "next": "5P5",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5P5",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1", "1.1.1.1.2", "1.1.1.2.1", "1.1.1.2.2", "1.1.2.1.1", "1.1.2.1.2", "1.1.2.2.1", "1.1.2.2.2", "1.2.1.1A.2", "1.2.1.1C.Rev.2", "1.2.1.1C.Des.2"],
+                "next": "6P5",
+                "text": "¿Puedo hacerte una pregunta, Teodoro? ¿Crees en la justicia? No me refiero a la policía, ni al sistema judicial... hablo de justicia."
+            },
+            {
+                "requiredFlags": ["1.2.1.1A.1", "1.2.1.1C.Rev.1"],
+                "next": "6P5",
+                "text": "No... por supuesto que no. ¿Puedo hacerte una pregunta, Teodoro? ¿Crees en la justicia? No me refiero a la policía, ni al sistema judicial... hablo de justicia."
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.1"],
+                "next": "6P5",
+                "text": "*Riéndose entre dientes* \"No... yo jamás haría eso ¿Puedo hacerte una pregunta, Teodoro? ¿Crees en la justicia? No me refiero a la policía, ni al sistema judicial... hablo de justicia.\""
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2"],
+                "text": "¿Cómo sabes que las ideas estaban equivocadas? ¿Y si malinterpretó un ideal correcto? ¿Cuántas veces se han cometido atrocidades en el nombre de la justicia?"
+            },
+            {
+                "requiredFlags": ["1.2.1.1C.Des.1"],
+                "text": "Creo que hace años que no es segura, en un sentido en el que no todos lo pueden entender."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "Sé sincero, Teodoro. Si no hubiese límite, tuvieses el valor necesario para hacer lo que desees ¿Seguirías haciendo esto?"
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2"],
+                "text": "¿No te gustaría tener algo por lo que levantarte por las mañanas? ¿Algo de lo que te sientas orgulloso? ¿Un motivo para vivir? Incluso para morir tranquilo..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "No... el mundo es como es. A veces nos gusta más cómo se desarrollan las cosas, al equilibrio lo llamamos justicia. Cuando no hay equilibrio pero nos interesa el resultado lo llamamos mérito... es todo una cadena de acción reacción.",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.1B.2"],
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "Sí, el tiempo pone a todo el mundo en su lugar. Todo el mundo es víctima de sus propias decisiones, aunque no todos quieran admitirlo.",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.1B.2"],
+                "setFlags": ["2.2"]
+            },
+            {
+                "text": "Una buena idea mal entendida es una mala idea. Por eso lo más importante de un mensaje es que se entienda. Andarse con medias tintas es arriesgado.",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.1B.2"],
+                "setFlags": ["1.2.1.1B.2.1"]
+            },
+            {
+                "text": "¿Cuál sería ese ideal correcto, si puedo preguntar?",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.1B.2"],
+                "setFlags": ["1.2.1.1B.2.2"]
+            },
+            {
+                "text": "Ahí tengo que darle la razón, no creo que en general la gente de La Isla sea consciente de la situación en la que estamos.",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.1C.Des.1"],
+                "setFlags": ["1.2.1.1C.Des.1.1"]
+            },
+            {
+                "text": "Deje de intentar meter miedo, Padre. Quizás funcione con las señoras que van a verlo, pero no conmigo.",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.1C.Des.1"],
+                "setFlags": ["1.2.1.1C.Des.1.2"]
+            },
+            {
+                "text": "Nunca fue cuestión de valor, Padre. Es un tema de prioridades. La realidad es que seguiré conduciendo hasta que mis prioridades decidan que estaríamos mejor en el continente haciendo otra cosa.",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.1"]
+            },
+            {
+                "text": "Si usted tuviese lo que hay que tener ¿Seguiría de párroco en esta Isla? ¿No hay un par de cosas que le gustaría hacer usted mismo?",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.2"]
+            },
+            {
+                "text": "Me levanto temprano por la mañana a hacer café para mi mujer. Los curas se dice siempre que estáis casados con Dios, así que supongo que sería el equivalente a que usted le hiciese el café a Cristo todas las mañanas ¿Qué más motivos quiere?",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.2.2"],
+                "setFlags": ["1.2.1.2.2.1"]
+            },
+            {
+                "text": "Diga lo que tenga que decir ya y déjese de previas...",
+                "next": "7P5",
+                "requiredFlags": ["1.2.1.2.2"],
+                "setFlags": ["1.2.1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "6P5",
+        "speaker": "El Padre",
+        "text": "¿Puedo hacerte una pregunta, Teodoro? ¿Crees en la justicia? No me refiero a la policía, ni al sistema judicial... hablo de justicia.",
+        "choices": [
+            {
+                "text": "No... el mundo es como es. A veces nos gusta más cómo se desarrollan las cosas, al equilibrio lo llamamos justicia. Cuando no hay equilibrio pero nos interesa el resultado lo llamamos mérito... es todo una cadena de acción reacción.",
+                "next": "7P5",
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "Sí, el tiempo pone a todo el mundo en su lugar. Todo el mundo es víctima de sus propias decisiones, aunque no todos quieran admitirlo.",
+                "next": "7P5",
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "7P5",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1"],
+                "text": "¿Y tú qué parte de la cadena eres, Teodoro? ¿La acción o la reacción?"
+            },
+            {
+                "requiredFlags": ["2.2"],
+                "text": "El tiempo... sí supongo que el tiempo es medicina universal.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.1"],
+                "text": "Sí... supongo que sí. En ese caso, voy a ser directo contigo Teodoro ¿Qué uso pretendes darle al revólver de Abel?",
+                "condition": "Huérfano-Desarticulado"
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.1"],
+                "text": "...",
+                "end": true,
+                "condition": "Huérfano-Demás variantes"
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.2"],
+                "text": "El de tomar la acción, Jesús contaba parábolas, pero lideraba más con su proceder que con sus palabras."
+            },
+            {
+                "requiredFlags": ["1.2.1.1C.Des.1.1"],
+                "text": "Exacto... tú lo entiendes. Déjame preguntarte algo, Teodoro ¿Qué uso pretendes darle al revólver de Abel?"
+            },
+            {
+                "requiredFlags": ["1.2.1.1C.Des.1.2"],
+                "text": "En ese caso, voy a ser directo contigo Teodoro ¿Qué uso pretendes darle al revólver de Abel?"
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1.1"],
+                "text": "... Cada uno tiene sus votos...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1.2"],
+                "text": "Sí... un par de cosas sí que hay...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2.1"],
+                "text": "... Cada uno tiene sus votos...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2.2"],
+                "text": "De acuerdo, voy a ser directo contigo Teodoro ¿Qué uso pretendes darle al revólver de Abel?",
+                "condition": "Huérfano-Desarticulado"
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2.2"],
+                "text": "De acuerdo, voy a ser directo contigo Teodoro. Esta Isla necesita que la desparasiten... y no somos muchos los que no vivimos de parasitarla.",
+                "condition": "Huérfano-Demás vías"
+            }
+        ],
+        "choices": [
+            {
+                "text": "La reacción es un fenómeno físico, tener voluntad implica actuar.",
+                "next": "8P5",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.1"]
+            },
+            {
+                "text": "Creo que no me ha entendido, Padre. El tiempo es una cadena, nosotros no formamos parte de ella, simplemente nos adaptamos a su movimiento.",
+                "next": "8P5",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.2"]
+            },
+            {
+                "text": "El revólver está a disposición policial, Padre.",
+                "next": "8P5",
+                "requiredFlags": ["1.2.1.1B.2.1"],
+                "setFlags": ["1.2.1.1B.2.1.1"],
+                "condition": "Huérfano-Desarticulado"
+            },
+            {
+                "text": "...",
+                "next": "8P5",
+                "requiredFlags": ["1.2.1.1B.2.1"],
+                "setFlags": ["1.2.1.1B.2.1.2"],
+                "condition": "Huérfano-Desarticulado"
+            },
+            {
+                "text": "¿Y cuál es esa acción?",
+                "next": "8P5",
+                "requiredFlags": ["1.2.1.1B.2.2"],
+                "setFlags": ["1.2.1.1B.2.2.1"]
+            },
+            {
+                "text": "Para hablar de acción, usted no hace más que hablar.",
+                "next": "8P5",
+                "requiredFlags": ["1.2.1.1B.2.2"],
+                "setFlags": ["1.2.1.1B.2.2.2"]
+            },
+            {
+                "text": "¿Y cuál es su plan?",
+                "next": "8P5",
+                "requiredFlags": ["1.2.1.2.2.2"],
+                "setFlags": ["1.2.1.2.2.2.1"],
+                "condition": "Huérfano-Demás vías"
+            },
+            {
+                "text": "Su discurso es muy peligroso, Padre.",
+                "next": "8P5",
+                "requiredFlags": ["1.2.1.2.2.2"],
+                "setFlags": ["1.2.1.2.2.2.2"],
+                "condition": "Huérfano-Demás vías"
+            }
+        ]
+    },
+    {
+        "id": "8P5",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1"],
+                "text": "Exacto... es hora de actuar. La mala hierba hay que arrancarla de raíz.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["2.1.2"],
+                "text": "¿Y ese es tu plan de vida, Teodoro? Flotar mientras te arrastra la corriente?"
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.1.1"],
+                "text": "Entiendo.. Yo creo en la justicia, tú crees en los jueces...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.1.2"],
+                "text": "Vamos, Teodoro, puedes confiar en mí. Cuéntame ¿No te gustaría curar al lugar que te vió crecer del cáncer que padece?"
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.2.1", "1.2.1.2.2.2.1"],
+                "text": "Arrancar de cuajo la mala hierba...",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.2.2"],
+                "text": "Es tan importante la chispa que prende la mecha como la pólvora al final de esta.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2.2.2"],
+                "text": "Llaman peligroso al fuego por no ser misericordioso. Sólo Dios debe decidir a quién perdonar.",
+                "end": true
+            }
+        ],
+        "choices": [
+            {
+                "text": "Me parece un buen plan, tranquilo, sin dramas, cómodo.",
+                "next": "9P5",
+                "requiredFlags": ["2.1.2"],
+                "setFlags": ["2.1.2.1"]
+            },
+            {
+                "text": "No, padre. Yo remo, pero remo en la dirección que le conviene a los míos, a nadie más.",
+                "next": "9P5",
+                "requiredFlags": ["2.1.2"],
+                "setFlags": ["2.1.2.2"]
+            },
+            {
+                "text": "Yo no soy médico, Padre, soy taxista. No le pida a un veterinario que le arregle el motor al coche si no quiere que se quede peor de lo que estaba.",
+                "next": "9P5",
+                "requiredFlags": ["1.2.1.1B.2.1.2"],
+                "setFlags": ["1.2.1.1B.2.1.2.1"]
+            },
+            {
+                "text": "Pues claro que me gustaría. Me encantaría ver La Isla crecer, pero crecer como debe, de hecho ni siquiera tengo claro que lo que estemos viviendo ahora se pueda llamar crecimiento...",
+                "next": "9P5",
+                "requiredFlags": ["1.2.1.1B.2.1.2"],
+                "setFlags": ["1.2.1.1B.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "9P5",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.2.1"],
+                "text": "Proverbios 12:24: \"La mano de los diligentes señoreará; Mas la negligencia será tributaria.\"",
+                "end": true
+            },
+            {
+                "requiredFlags": ["2.1.2.2"],
+                "text": "Proverbios 18:1: \"El egoísta solo piensa en sí mismo, y se entromete en cualquier asunto.\"",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.1.2.1"],
+                "text": "Cualquier tirador es certero si Dios guía su mano.",
+                "end": true
+            },
+            {
+                "requiredFlags": ["1.2.1.1B.2.1.2.2"],
+                "text": "Exacto, para crecer debidamente primero hay que sacar las malas hierbas.",
+                "end": true
+            }
+        ],
+        "end": true
+    }
+]  
