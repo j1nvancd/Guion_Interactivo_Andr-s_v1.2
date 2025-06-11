@@ -1,0 +1,383 @@
+[
+    {
+        "id": "start",
+        "speaker": "Periodista",
+        "text": "A los apartamentos, por favor",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Qué hacías en el pueblo?",
+                "next": "1L1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "¿Al final te has metido en política?",
+                "next": "1L1",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "He estado hablando con Judit, la hermana de Abel. Esperaba bastante menos colaboración pero la muchacha está sorprendentemente tranquila."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Me pasé el otro día por la delegación, me mandaron a paseo. Quería ver documentación y papeles y cosas así pero me dijeron que sin un permiso judicial no hay nada que hacer."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Todavía está aquí? Pensaba que ya se la habrían llevado al continente a algún sitio de esos de acogida.",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Sí... la última vez que hablé con ella Abel aún estaba desaparecido también estaba muy tranquila. Esa muchacha ha visto mucha mierda.",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "No esperaba mucho más de esa gente, ellos se lavan las manos y cierran la boca. Así viven tranquilísimos.",
+                "next": "2L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Se supone que hay cosas municipales que son de dominio público. No sé, las leyes y la burocracia no son lo mío.",
+                "next": "2L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Sí... al parecer se la llevan el lunes. Por lo visto los vecinos se están portando estupendamente. Vamos, en general ella habla de la gente del pueblo bastante mejor que de su padre o su hermano..."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Supongo que sí, no sé qué me esperaba de esa conversación pero no era eso, desde luego."
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "Sí... ¿Sabes? He estado pensando en un título para el reportaje... aunque en realidad todavía no sé si será un reportaje."
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "Ya, lo mío tampoco... ¿Sabes? He estado pensando en un título para el reportaje... aunque en realidad todavía no sé si será un reportaje."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Y una vez allí ¿Qué? ¿Después de todo hay que pensar que va a poder tener una vida normal?",
+                "next": "3L1",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Sí, está muy agradecida con la gente por haberles dado de comer cuando pasó todo aquello. No piensa en quién tenía la culpa de que pasase.",
+                "next": "3L1",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "¿Algo interesante?",
+                "next": "3L1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Yo tampoco sé qué esperabas, ya te dije que era mejor no acercarte mucho a la casa.",
+                "next": "3L1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "¿Cambia el título si es un reportaje o una novela?",
+                "next": "3L1",
+                "requiredFlags": ["1.2.1", "1.2.2"],
+                "setFlags": ["1.2.1.1", "1.2.2.1"]
+            },
+            {
+                "text": "¿Me los piensas decir o sólo me informas de que tienes títulos pensados?",
+                "next": "3L1",
+                "requiredFlags": ["1.2.1", "1.2.2"],
+                "setFlags": ["1.2.1.2", "1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Se supone que hay que confiar. Es como lo de la cárcel y la reinserción, o te lo crees o te vuelves loco."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "Mejor así, el rencor no va a ayudar en nada."
+            },
+            {
+                "requiredFlags": ["1.1.2.1", "1.1.2.2"],
+                "text": "Bueno, me ha dado una caja con cosas que dejó Abel cuando se fue. Plegarias, estampitas de santos... va a ayudar a meter a la gente en situación, sin duda."
+            },
+            {
+                "requiredFlags": ["1.2.1.1", "1.2.2.1"],
+                "text": "No... ¿Quieres que te los presente? No me vendría mal un poco de perspectiva externa."
+            },
+            {
+                "requiredFlags": ["1.2.1.2", "1.2.2.2"],
+                "text": "Voy, voy, no te preocupes. Me vendrá bien un poco de perspectiva externa. El primero que se me ocurrió es un poco demasiado directo \"El Pueblo Duerme\" Ya sabes, como el juego"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Sí... supongo que sí.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "Bueno, si al menos entrase todo el que tiene que entrar a la cárcel, podría pensarme en creer en la reinserción.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "El servilismo tampoco.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "Supongo que saber perdonar es un don, como ser agradecido.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"]
+            },
+            {
+                "text": "¿Eso no serían pruebas? ¿No las debería tener la policía?",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.1"]
+            },
+            {
+                "text": "Sí... al final tengo que estar de acuerdo contigo. Todo esto es para montar un circo... a la gente le dará morbo que tengas cosas de la escena.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.2"]
+            },
+            {
+                "text": "Venga, dispara.",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.1"]
+            },
+            {
+                "text": "¿Tengo otra opción?",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.2"]
+            },
+            {
+                "text": "A ver, obvia es, pero si vas a hablar de todo el tema de La Fábrica y como todos miran a otro lado... no está mal.",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "Sutil precisamente no es, no. ¿Tienes más?",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1"],
+                "text": "> 1.2.1"
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2"],
+                "text": "Ya... supongo que si así fuese yo no tendría que estar haciendo esto."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.1"],
+                "text": "A la larga seguro que no, a corto plazo... la gente vive más tranquila. ¿Sabes? He estado pensando en un título para el reportaje... aunque en realidad todavía no sé si será un reportaje."
+            },
+            {
+                "requiredFlags": ["1.1.1.2.2"],
+                "text": "Sí... supongo que sí. ¿Sabes? He estado pensando en un título para el reportaje... aunque en realidad todavía no sé si será un reportaje."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1"],
+                "text": "Se las enseñó. Por lo visto no les interesó lo más mínimo, así que me las puedo quedar yo."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2"],
+                "text": "Sin llamar la atención no se puede transmitir un mensaje."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1"],
+                "text": "El primero que se me ocurrió es un poco demasiado directo \"El Pueblo Duerme\" Ya sabes, como el juego."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2"],
+                "text": "No. El primero que se me ocurrió es un poco demasiado directo \"El Pueblo Duerme\" Ya sabes, como el juego."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1", "1.2.1.2.2"],
+                "text": "Ya... la segunda que se me ocurrió es Arribazón, es un fenómeno por el que una cantidad absurda de peces aparece en un puerto concreto. No es muy sonoro pero me gusta la metáfora."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Crees en la justicia, pero no en el sistema...",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1.1.2"],
+                "setFlags": ["1.1.1.1.2.1"]
+            },
+            {
+                "text": "No hay reinserción posible para los que no creen que estén haciendo nada malo.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1.1.2"],
+                "setFlags": ["1.1.1.1.2.2"]
+            },
+            {
+                "text": "Si te puedo pedir algo, no las vendas ni hagas mucho negocio con ellas... sé respetuoso.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.1"],
+                "setFlags": ["1.1.2.1.1.1"]
+            },
+            {
+                "text": "La policía tan exhaustiva como siempre.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.1"],
+                "setFlags": ["1.1.2.1.1.2"]
+            },
+            {
+                "text": "Ya... supongo que no.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.2"],
+                "setFlags": ["1.1.2.1.2.1"]
+            },
+            {
+                "text": "Si te puedo pedir algo... no montes mucho circo. Sé respetuoso.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.2"],
+                "setFlags": ["1.1.2.1.2.2"]
+            },
+            {
+                "text": "> 1.2.1.2.1",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.1.1", "1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.1.1", "1.2.1.1.2.1"]
+            },
+            {
+                "text": "> 1.2.1.2.2",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.1.1", "1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.1.2", "1.2.1.1.2.2"]
+            },
+            {
+                "text": "En una metáfora interesante, aunque si es un reportaje va a parecer un artículo de Caza y Pesca.",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.1"]
+            },
+            {
+                "text": "¿Cuánta gente va a entender eso?",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "5L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.2.1"],
+                "text": "Supongo que es una forma de verlo. ¿Sabes? He estado pensando en un título para el reportaje... aunque en realidad todavía no sé si será un reportaje."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2.2"],
+                "text": "El primer paso es aceptarlo, claro. ¿Sabes? He estado pensando en un título para el reportaje... aunque en realidad todavía no sé si será un reportaje."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1.1", "1.1.2.1.2.2"],
+                "text": "No te preocupes, no es mi intención. ¿Sabes? He estado pensando en un título para el reportaje... aunque en realidad todavía no sé si será un reportaje."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1.2"],
+                "text": "Sí, tampoco sé que me esperaba. ¿Sabes? He estado pensando en un título para el reportaje... aunque en realidad todavía no sé si será un reportaje."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2.1"],
+                "text": "> 1.2.1"
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1.1"],
+                "text": "Hombre... no lo había visto así. La otra opción que se me ocurrió es... distinta. Creo que es mucho mejor para la novela... cambiando el punto de vista. Había pensado en Esquife, por el barco que usaba Caronte para cruzar el Estigia."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1.2"],
+                "text": "Bueno, con buscar la palabra en Google tienen bastante. La otra opción que se me ocurrió es... distinta. Creo que es mucho mejor para la novela... cambiando el punto de vista. Había pensado en Esquife, por el barco que usaba Caronte para cruzar el Estigia."
+            }
+        ],
+        "choices": [
+            {
+                "text": "> 1.2.1.1",
+                "next": "6L1",
+                "requiredFlags": ["1.1.1.1.2.1.1", "1.1.2.1.1.1.1", "1.1.2.1.1.2.1"],
+                "setFlags": ["1.1.1.1.2.1.1", "1.1.2.1.1.1.1", "1.1.2.1.1.2.1"]
+            },
+            {
+                "text": "> 1.2.1.2",
+                "next": "6L1",
+                "requiredFlags": ["1.1.1.1.2.2.2", "1.1.2.1.1.2"],
+                "setFlags": ["1.1.1.1.2.2.2", "1.1.2.1.1.2"]
+            },
+            {
+                "text": "Esquife... Caronte ¿eh? ¿Supongo que me tendría que sentir halagado?.",
+                "next": "6L1",
+                "requiredFlags": ["1.2.1.2.1.1", "1.2.1.2.1.2"],
+                "setFlags": ["1.2.1.2.1.1.1", "1.2.1.2.1.2.1"]
+            },
+            {
+                "text": "Bueno, si tú crees que vas a poder justificar el título... sonar suena bien.",
+                "next": "6L1",
+                "requiredFlags": ["1.2.1.2.1.1", "1.2.1.2.1.2"],
+                "setFlags": ["1.2.1.2.1.1.2", "1.2.1.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "6L1",
+        "speaker": "Periodista",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.2.1.2.1.1.1", "1.2.1.2.1.1.2"],
+                "text": "Esquife... sí, creo que se va a quedar así."
+            }
+        ],
+        "end": true
+    }
+]

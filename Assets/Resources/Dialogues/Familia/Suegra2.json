@@ -1,0 +1,411 @@
+[
+    {
+        "id": "start",
+        "speaker": "Suegra",
+        "text": "Buenos días, muchas gracias por llevarme. No me gusta nada coger el autobús.",
+        "choices": [
+            {
+                "text": "A esta hora suele ir lleno, ibas a ir muy incómoda con el equipaje.",
+                "next": "1L1",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "Nada que agradecer, con que traigas algo de recuerdo para Verónica estamos en paz.",
+                "next": "1L1",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1"],
+                "text": "Sí, la verdad que no sé como puedo haber llenado una maleta tan grande para una semana. Una se pone a echar ropa con los \"por si acaso\" y no para nunca..."
+            },
+            {
+                "requiredFlags": ["0.2"],
+                "text": "Algo traeré seguro, aunque no sé dónde voy a meterlo. No me explico como he llenado una maleta tan grande para una semana. Una se pone a echar ropa con los \"por si acaso\" y no para nunca..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Allí el tiempo cambia mucho en estas fechas, me acuerdo el primer año que vivimos allí. Salimos un día a pasear en mangas de camisa, nos tuvimos que esconder en el metro porque se puso a granizar.",
+                "next": "2L1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Los \"por si acaso\" siempre pesan más que la ropa.",
+                "next": "2L1",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Aquí nada más que cambia el nombre del aire. Vamos, la semana pasada estuvo lloviendo pero... ya está aquí el aire caliente otra vez... lo mismo todo el año"
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "La última vez que fuimos, mi Abelardo que en paz descanse se reía de mí. Y después era él el que me pedía a ver si tenía una mantita de sobra."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Allí dicen que aquí todo el año es primavera...",
+                "next": "3L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Menos mal que hoy no llueve, porque si no ibas a tener un paseíto en el barco graciosísimo.",
+                "next": "3L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "¿Cuándo fue eso? Ni me acuerdo de la última vez que fuisteis a ver a Celia.",
+                "next": "3L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "Lo mismo lo hacía solo para tener algo por lo que discutir...",
+                "next": "3L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "Hace la misma temperatura que allí en primavera, que no es lo mismo. Si siempre fuese primavera nunca se me morirían las flores."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "No mientes desgracias, da igual los años que pasen. Me da un miedo el barco..."
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "Yo creo que no haría ni dos años que os habíais vuelto vosotros... Celia todavía estaba de alquiler en el piso aquel con tan mala pinta al que se fue a vivir con Tomás..."
+            },
+            {
+                "requiredFlags": ["1.2.2"],
+                "text": "No te extrañe, a ese hombre yo creo que no le gustaba nada más en el mundo que escucharme."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Eso sería un poco como vivir congelados en el tiempo... no sé si renta por mantener unos geranios.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Y yo me gastaría más en pastillas para la alergia de lo que gano con el taxi.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "Eso no se quita fácil, ¿eh? Pero mira que lo haces igual.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Más miedo da quedarse aquí, visto lo visto.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "No estaba tan mal. Lo que pasa es que no estabas acostumbrada a la ciudad y te asustaban un par de grafitis en la puerta del garaje.",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "Como pasa el tiempo, eh...",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            },
+            {
+                "text": "Para estar 50 años juntos, desde luego que tenía que gustarle.",
+                "next": "4L1",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.1"]
+            },
+            {
+                "text": "A todo se acaba acostumbrando uno.",
+                "next": "4L1",
+                "requiredFlags": ["1.2.2"],
+                "setFlags": ["1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "A mí que me importa que se pare el tiempo, yo lo que no quiero es que se me mueran las lilas."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "Tú puedes sobrevivir con mocos, coges un pañuelo y ya está. No que mis pobres lilas no duran ni tres meses con flores."
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "Hombre, viendo que ella no viene. Al final voy a ser abuela y cuando conozca al niño va a venir conduciendo."
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "Y tanto que me da miedo quedarme aquí. Con lo descastada que es Celia si no voy yo a verla cuando conozca al niño va a venir él mismo conduciendo."
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "Ya, supongo que será problema mío. Yo de verdad que no puedo entender como puede vivir tantísima gente allí. Tanto ruido, tantos coches, todo tan... gris."
+            },
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "Y tanto. Y si no voy yo a visitarla no la veo, si por ella fuera me enteraba de que era abuela por el móvil."
+            },
+            {
+                "requiredFlags": ["1.2.2.1"],
+                "text": "Hombre, digo yo. Vamos es que si no es imposible, si no nos hubiesemos querido nos habríamos matado hace muchos años."
+            },
+            {
+                "requiredFlags": ["1.2.2.2"],
+                "text": "*mirando por la ventanilla* \"Sí... al final, a todo se acostumbra una.\"",
+                "end": true
+            }
+        ],
+        "choices": [
+            {
+                "text": "Cada uno con sus prioridades, definitivamente.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.1"]
+            },
+            {
+                "text": "Bueno, pero ¿Y la ilusión de verlas florecer todos los años?",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["1.1.1.1.2"]
+            },
+            {
+                "text": "¿Cómo? ¿Celia está embarazada?",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.1"]
+            },
+            {
+                "text": "No exagere mujer, estará ocupada. La vida muchas veces te mete en un torbellino y ni te das cuenta de cuánto llevas sin parar.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.2"]
+            },
+            {
+                "text": "Allí es donde está el trabajo, no es que sea el sitio donde la gente quiere criar a sus hijos. Es que es donde pueden tenerlos.",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.1"]
+            },
+            {
+                "text": "Hay que saber mirar, el que venga aquí la primera vez también puede decir que esto está vacío, que no hay nada que hacer, que solo hay piedras... Allí hay tráfico y gente pero también hay museos, parques, palacios, universidades...",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.2"]
+            },
+            {
+                "text": "Sin término medio, eso no cambia nunca.",
+                "next": "5L1",
+                "requiredFlags": ["1.2.2.1"],
+                "setFlags": ["1.2.2.1.1"]
+            },
+            {
+                "text": "Quereros os teníais que querer. Ahora, poneros de acuerdo era misión imposible.",
+                "next": "5L1",
+                "requiredFlags": ["1.2.2.1"],
+                "setFlags": ["1.2.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "5L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1.1"],
+                "text": "Hombre, me dirás tú que hago yo con las prioridades de otro."
+            },
+            {
+                "requiredFlags": ["1.1.1.1.2"],
+                "text": "Tsk... no sé, no es lo mismo... Este año no ha sido lo mismo"
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1"],
+                "text": "¿Cómo? ¿No me digas que Verónica no te lo ha dicho?"
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2"],
+                "text": "Si yo entiendo que no te des cuenta de muchas cosas. Pero de cuánto llevas sin llamar a tu madre... digo yo que un mínimo se debe acordar."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1"],
+                "text": "Ya... Con la ilusión que me haría que tuviesen el niño aquí. Verónica podría ser su profe y todo... en fin, que le vamos a hacer."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2"],
+                "text": "... Supongo..."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.1"],
+                "text": "En el amor no hay término medio, eso es para las conversaciones de negocios y los políticos."
+            },
+            {
+                "requiredFlags": ["1.2.2.1.2"],
+                "text": "Bueno, en lo importante siempre acabamos coincidiendo."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ahí no le puedo quitar la razón... Bueno, le ayudo a bajar la maleta, que más cerca ya no me dejan aparcar.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.1"],
+                "end": true
+            },
+            {
+                "text": "Eso lo he escuchado antes... Bueno, le ayudo a bajar la maleta, que más cerca ya no me dejan aparcar.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.1.1"],
+                "setFlags": ["1.1.1.1.1.2"],
+                "end": true
+            },
+            {
+                "text": "Es complicado que te haga ilusión algo si no tienes con quién compartirlo, te entiendo.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.1.2"],
+                "setFlags": ["1.1.1.1.2.1"],
+                "end": true
+            },
+            {
+                "text": "No... ¿De cuánto está?",
+                "next": "6L1",
+                "requiredFlags": ["1.1.2.1.1"],
+                "setFlags": ["1.1.2.1.1.1"]
+            },
+            {
+                "text": "Últimamente no coincidimos mucho en horarios...",
+                "next": "6L1",
+                "requiredFlags": ["1.1.2.1.1"],
+                "setFlags": ["1.1.2.1.1.2"]
+            },
+            {
+                "text": "No siempre es tan fácil...",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2"],
+                "setFlags": ["1.1.2.1.2.1"],
+                "end": true
+            },
+            {
+                "text": "Sí, supongo que es importante...",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2"],
+                "setFlags": ["1.1.2.1.2.2"],
+                "end": true
+            },
+            {
+                "text": "Bueno... a lo mejor Verónica tampoco puede ser la profe de todos para toda la vida...",
+                "next": "end",
+                "requiredFlags": ["1.2.1.1.1"],
+                "setFlags": ["1.2.1.1.1.2"],
+                "end": true
+            },
+            {
+                "text": "No te preocupes mujer, ya verás que te lo pasas estupendamente esta semana alli.",
+                "next": "end",
+                "requiredFlags": ["1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.2.2"],
+                "end": true
+            },
+            {
+                "text": "Ya... es una manera de verlo, sí.",
+                "next": "end",
+                "requiredFlags": ["1.2.2.1.1"],
+                "setFlags": ["1.2.2.1.1.1"],
+                "end": true
+            },
+            {
+                "text": "Eso también es verdad...",
+                "next": "end",
+                "requiredFlags": ["1.2.2.1.2"],
+                "setFlags": ["1.2.2.1.2.2"],
+                "end": true
+            }
+        ]
+    },
+    {
+        "id": "6L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.2.1.1.1"],
+                "text": "Casi 4 meses..."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1.2"],
+                "text": "Hombre pero una cosa es que se le olvide decirte que ha llegado la factura del agua y otra que no te cuente esto..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Lo mismo me lo dijo una mañana y estaba yo todavía medio dormido...",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.1.1"],
+                "setFlags": ["1.1.2.1.1.1.1"],
+                "end": true
+            },
+            {
+                "text": "No tenía ni idea... no tenía ni idea.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.1.1"],
+                "setFlags": ["1.1.2.1.1.1.2"],
+                "end": true
+            },
+            {
+                "text": "A ver, yo diría que llevamos aquí bastante más que un ratito...",
+                "next": "end",
+                "requiredFlags": ["1.2.1.1.1.2"],
+                "setFlags": ["1.2.1.1.1.2.1"],
+                "end": true
+            },
+            {
+                "text": "La esperanza es lo último que se pierde...",
+                "next": "end",
+                "requiredFlags": ["1.2.1.1.1.2"],
+                "setFlags": ["1.2.1.1.1.2.2"],
+                "end": true
+            }
+        ]
+    },
+    {
+        "id": "end",
+        "speaker": "Suegra",
+        "text": "Bueno... habladlo ustedes que sois los que tenéis que hablar. Ayúdame con la maleta anda.",
+        "end": true
+    }
+]
