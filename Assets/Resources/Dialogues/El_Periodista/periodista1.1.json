@@ -1,0 +1,390 @@
+[
+  {
+    "id": "start",
+    "speaker": "Periodista",
+    "text": "¡Buenos días! A los apartamentos Midas, por favor.",
+    "choices": [
+      {
+        "text": "Por supuesto, está al otro lado de la isla, tardaremos un rato.",
+        "next": "1P1",
+        "setFlags": ["P1.1"]
+      },
+      {
+        "text": "¿A empezar las vacaciones un lunes? ¿A qué se supone que se dedica usted?",
+        "next": "1P1",
+        "setFlags": ["P1.2"]
+      }
+    ]
+  },
+  {
+    "id": "1P1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P1.1"],
+        "text": "No hay problema, así me puede contar usted sobre la isla ¿Usted es de aquí verdad?"
+      },
+      {
+        "requiredFlags": ["P1.2"],
+        "text": "No no, no vengo de vacaciones, bueno, bien puedo decir eso o que mi trabajo es estar de vacaciones. Soy periodista y hago reportajes, ya sabe, los típicos de recomendaciones de destinos que no conocías y guías... esas cosas."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Cómo lo has podido adivinar? Sí, me crié aquí, este taxi era de mi padre.",
+        "next": "2P1",
+        "requiredFlags": ["P1.1"],
+        "setFlags": ["P1.1.1"]
+      },
+      {
+        "text": "Sí, soy de aquí, aunque no creo que ningún isleño te pueda contar mucho de la zona norte.",
+        "next": "2P1",
+        "requiredFlags": ["P1.1"],
+        "setFlags": ["P1.1.2"]
+      },
+      {
+        "text": "Así que tú nos vas a terminar de hacer famosos eh, te aviso que últimamente cada vez hay menos gente que no nos conozca como destino turístico.",
+        "next": "2P1",
+        "requiredFlags": ["P1.2"],
+        "setFlags": ["P1.2.1"]
+      },
+      {
+        "text": "Entonces mejor te llevo al pueblo, a ver si eso se lo recomendarías a tus lectores",
+        "next": "2P1",
+        "requiredFlags": ["P1.2"],
+        "setFlags": ["P1.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "2P1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P1.1.1"],
+        "text": "Jaja, normalmente a los sitios que voy casi todos son locales, parajes no muy conocidos no suelen tener mucha tasa de inmigración, sin ninguna intención de ofender ¿Quién iba a mudarse para llevar un taxi aquí?¿Hay siquiera más taxis que el suyo?"
+      },
+      {
+        "requiredFlags": ["P1.1.2"],
+        "text": "¿Es de nueva construcción, no? Sí que he visto que está un poco lejos del único núcleo urbano de la isla. Bueno, supongo que así tendréis que aguantar menos a los turistas."
+      },
+      {
+        "requiredFlags": ["P1.2.1"],
+        "text": "Sí lo sé, sois el destino indie de moda, eso a usted le viene bien para el negocio no? Un sitio así casi sin transporte público, hasta que tengáis una red como tal los taxis van a hacer el agosto."
+      },
+      {
+        "requiredFlags": ["P1.2.2"],
+        "text": "Pensaba ir algún día en las próximas semanas, ya sabe, para hablar de la experiencia local y eso. Aunque entiendo por su tono que el pueblo no está en un estado muy visitable."
+      }
+    ],
+    "choices": [
+      {
+        "text": "¿Quién iba a quedarse aquí para llevar un taxi?",
+        "next": "3P1",
+        "requiredFlags": ["P1.1.1"],
+        "setFlags": ["P1.1.1.1"]
+      },
+      {
+        "text": "Sí, somos 3 taxistas en la isla, si no, los horarios a los que la gente puede entrar y salir del puerto dependería de los 3 buses y de que a mí me apetezca venir.",
+        "next": "3P1",
+        "requiredFlags": ["P1.1.1"],
+        "setFlags": ["P1.1.1.2"]
+      },
+      {
+        "text": "Sí, vamos técnicamente aún está en construcción, siguen levantando edificios para convertir aquello en una zona turística",
+        "next": "3P1",
+        "requiredFlags": ["P1.1.2"],
+        "setFlags": ["P1.1.2.1"]
+      },
+      {
+        "text": "Llamar núcleo urbano a un pueblo de menos de 400 personas es un poco exagerado quizás, pero sí, de momento no hay mucho forastero por el pueblo",
+        "next": "3P1",
+        "requiredFlags": ["P1.1.2"],
+        "setFlags": ["P1.1.2.2"]
+      },
+      {
+        "text": "El turismo es un negocio muy lucrativo, y tan sólo a cambio de dedicarnos a servir a los extranjeros, la mitad de la isla se dedica a minar y producir en la fábrica materiales que venden al continente y, dentro de poco, la otra mitad nos dedicaremos a entretener a los que vengan de allí.",
+        "next": "3P1",
+        "requiredFlags": ["P1.2.1"],
+        "setFlags": ["P1.2.1.1"]
+      },
+      {
+        "text": "Muchos confían en que eso de \"moda\" no signifique que vaya a ser temporal, hay alguno que podría perder mucho dinero si la gente se aburre de nuestra pequeña isla. En la zona norte siguen construyendo edificios vacacionales, ni 400 personas, una escuela que es un aula con una profesora para todos los niños y ahora vamos a tener un resort en el otro lado de la isla, para que en el continente estén hablando de desarrollo sostenible.",
+        "next": "3P1",
+        "requiredFlags": ["P1.2.1"],
+        "setFlags": ["P1.2.1.2"]
+      },
+      {
+        "text": "Ha estado peor, cuando la gente vivía del mar y el pueblo se vaciaba durante semanas, ahora es un pueblo tranquilo, trabajador, no tiene nada que visitar la verdad",
+        "next": "3P1",
+        "requiredFlags": ["P1.2.2"],
+        "setFlags": ["P1.2.2.1"]
+      },
+      {
+        "text": "Siempre mencionaís cosas así, la experiencia local, la experiencia local es levantarse de madrugada e irse a la fábrica o al puerto, pero la gente que venga no quiere hacer eso ¿no? Querrán una experiencia de cafeterías monas y productos con nombres raros",
+        "next": "3P1",
+        "requiredFlags": ["P1.2.2"],
+        "setFlags": ["P1.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "3P1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P1.1.1.1"],
+        "text": "Oh, lo siento, no lo he dicho con mala intención, es sólo que no parece la mejor idea de negocio si vienes del continente. Lo siento de verdad. Si no le importa ¿podría decirme algunas cosas típicas de la isla? Ya sabe, comidas, algún baile o fecha especial, algo así"
+      },
+      {
+        "requiredFlags": ["P1.1.1.2"],
+        "text": "Ah, entonces supongo que hacéis turnos ¿Tenéis algo así como un sindicato? ¿Una patronal? Al menos siendo 3 no podéis empatar si sometéis cosas a votación"
+      },
+      {
+        "requiredFlags": ["P1.1.2.1"],
+        "text": "Vaya, parece que a alguien le parece que el turismo es el futuro de esta isla eh, si construyen mucho más en aquella parte va a llegar un punto en el que seáis menos locales que turistas"
+      },
+      {
+        "requiredFlags": ["P1.1.2.2"],
+        "text": "¿Cuatrocientos? Wow, pensaba que seríais al menos mil, viendo las fotos parecía que la zona norte podía acoger bastante gente, va a llegar un punto en el que seáis menos locales que turistas en la isla"
+      },
+      {
+        "requiredFlags": ["P1.2.1.1"],
+        "text": "Oh, no suena como que te haga mucha ilusión que un periodista escriba un artículo sobre la isla. Heh, bueno, si te sirve de consuelo, es a lo que nos dedicamos todos, a producir para otros y a entretener a los que más pagan"
+      },
+      {
+        "requiredFlags": ["P1.2.1.2"],
+        "text": "¿Sólo hay una profesora?"
+      },
+      {
+        "requiredFlags": ["P1.2.2.1"],
+        "text": "La vida del mar es complicada, muchos de los sitios a los que voy son así, gente que antes se dedicaba al mar, a la tierra o al ganado y ahora prefiere servir cócteles a precios ridículos. No es una mala decisión a nivel de calidad de vida, aunque no todo el mundo soporta ser servicio."
+      },
+      {
+        "requiredFlags": ["P1.2.2.2"],
+        "text": "*se ríe* \"Te sorprendería lo que algunos llaman ocio, yo estoy convencido de que muchos trabajos se podrían ahorrar un pico de presupuesto si me pagasen por escribir un artículo describiéndolo como una 'costumbrista actividad desestresante'.\""
+      }
+    ],
+    "choices": [
+      {
+        "text": "No te preocupes, no me ofende, yo también preguntaba honestamente. No tenemos bailes y esas cosas, la realidad es que la isla apenas lleva 3 generaciones habitada por civiles, esto hace 200 años era un puesto militar para controlar que no se acercasen barcos indeseados al continente, después hubo unos años en los que desterraban gente aquí, gente con crímenes lo suficientemente graves como para no poder librarse y quedarse allí, pero con poder como para \"pactar\" con la justicia. De esa mezcla acaba naciendo el pueblo, en la zona desde la que se vigilaba el océano, en lugar de la que tiene playas de arena fina. Después resultó que había unas reservas naturales importantísimas en el centro de la isla, montaron una cantera, vieron que les salía mejor de precio ponernos a trabajar y exportar el producto directamente aquí y montaron La Fábrica, y ahora eso es lo que es la isla, una planta química y una playa para los forasteros",
+        "next": "4P1",
+        "requiredFlags": ["P1.1.1.1"],
+        "setFlags": ["P1.1.1.1.1"]
+      },
+      {
+        "text": "Yo soy taxista chaval, me dedico a llevarte a sitios, lo de los bailes regionales y las recomendaciones culinarias es lo tuyo.",
+        "next": "4P1",
+        "requiredFlags": ["P1.1.1.1"],
+        "setFlags": ["P1.1.1.1.2"]
+      },
+      {
+        "text": "Que pasa ¿vas a hacernos un reportaje a los taxistas de la isla? No, no tenemos ningún sindicato, tenemos un grupo de WhatsApp y un excel en el que nos apuntamos para asegurarnos de que ningún turno queda vacío, al menos entre semana. Si queda un hueco le toca cogerlo al que más tiempo haga que no cubre un turno, simple. Mientras todo el mundo quiera que algo funcione es fácil mantener una sociedad civilizada. Pero hay veces que la gente prefiere ganar más dinero aunque por el camino haya que joder a los demás, de momento los taxistas no somos así, ya nos llegará.",
+        "next": "4P1",
+        "requiredFlags": ["P1.1.1.2"],
+        "setFlags": ["P1.1.1.2.1"]
+      },
+      {
+        "text": "Si te interesa el derecho laboral deberías irte a hacer reportajes a La Fábrica, a nosotros déjanos que nos ganamos la vida de forma honesta y recordando siempre que lo nuestro también es un servicio público.",
+        "next": "4P1",
+        "requiredFlags": ["P1.1.1.2"],
+        "setFlags": ["P1.1.1.2.2"]
+      },
+      {
+        "text": "Mientras haya gente como para mantener La Fábrica funcionando, todos los demás podríamos ser turistas y defenderían que es lo mejor para la economía local.",
+        "next": "4P1",
+        "requiredFlags": ["P1.1.2.1", "P1.1.2.2"],
+        "setFlags": ["P1.1.2.1.1", "P1.1.2.2.1"]
+      },
+      {
+        "text": "Apenas 400 sí, más de 100 trabajando en La Fábrica, quita niños y jubilados y ya te puedes imaginar cuantos quedamos.",
+        "next": "4P1",
+        "requiredFlags": ["P1.1.2.1", "P1.1.2.2"],
+        "setFlags": ["P1.1.2.1.2", "P1.1.2.2.2"]
+      },
+      {
+        "text": "No te equivoques, a mí me encantaría que alguien escribiese sobre la isla, sobre la gente, sobre los últimos pescadores de bajura, sobre la identidad de un pueblo tan aislado y al mismo tiempo dependiente, sobre La Fábrica, sobre el caciquismo del Siglo XXI, estoy deseando leer artículos que hablen de las cosas que pasan o dejan de pasar en esta isla.",
+        "next": "4P1",
+        "requiredFlags": ["P1.2.1.1"],
+        "setFlags": ["P1.2.1.1.1"]
+      },
+      {
+        "text": "Pues no, me gustaría que viniese gente a trabajar el mar, si se pudiera, que viniesen inspectores a ver lo que se hace con la naturaleza de un sitio único como este, que venga más gente a emborracharse y hacerse fotos me genera dinero, pero no ilusión",
+        "next": "4P1",
+        "requiredFlags": ["P1.2.1.1"],
+        "setFlags": ["P1.2.1.1.2"]
+      },
+      {
+        "text": "Mi señora",
+        "next": "4P1",
+        "requiredFlags": ["P1.2.1.2"],
+        "setFlags": ["P1.2.1.2.1"]
+      },
+      {
+        "text": "Sí, no hay niños suficientes para contratar más profesores, aunque yo creo que para contratar gente lo que falta no son niños, es dinero",
+        "next": "4P1",
+        "requiredFlags": ["P1.2.1.2"],
+        "setFlags": ["P1.2.1.2.2"]
+      },
+      {
+        "text": "Esa gente sí que se merece artículos y portadas, los marisqueros, los de bajura, mi mujer dándole clase a todos los niños ella sola, la playa es una playa, no ha hecho nada para que hablemos de ella.",
+        "next": "4P1",
+        "requiredFlags": ["P1.2.2.1"],
+        "setFlags": ["P1.2.2.1.1"]
+      },
+      {
+        "text": "¿Y tú mismo no ves la relación? Solo la gente pobre ve como progreso trabajar para otros",
+        "next": "4P1",
+        "requiredFlags": ["P1.2.2.1"],
+        "setFlags": ["P1.2.2.1.2"]
+      },
+      {
+        "text": "Pues mira ya me empieza a interesar más que escribas un artículo incitando al turismo en la isla",
+        "next": "4P1",
+        "requiredFlags": ["P1.2.2.2"],
+        "setFlags": ["P1.2.2.2.1"]
+      },
+      {
+        "text": "La gente que no tiene problemas de verdad necesita inventarse alguno para mantenerse vivo, es como cuando los niños juegan a pegarse, hay algo en nuestro instinto que nos hace mantenernos preparados para cuando las cosas vayan mal, el pesimismo es el pensamiento natural del humano, aunque suene raro hoy en día.",
+        "next": "4P1",
+        "requiredFlags": ["P1.2.2.2"],
+        "setFlags": ["P1.2.2.2.2"]
+      }
+    ]
+  },
+  {
+    "id": "4P1",
+    "speaker": "Periodista",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["P1.1.1.1.2"],
+        "text": "Hombre no sea así, si yo lo único que estoy inentando hacer es el mejor trabajo posible hablando de la isla"
+      },
+      {
+        "requiredFlags": ["P1.1.1.2.1"],
+        "text": "Pues la verdad que podría quedar un reportaje interesante, así siguiendo vuestro día a día, como pasan historias por el asiento de detrás de cada taxi, podría dar incluso para un falso documental. Si en estas semanas vuelve a ser mi conductor lo mismo te traigo alguna propuesta y todo."
+      },
+      {
+        "requiredFlags": ["P1.1.1.2.2", "P1.1.2.1.1", "P1.1.2.2.1", "P1.1.2.1.2", "P1.1.2.2.2", "P1.2.1.1.1"],
+        "text": "¿Qué es eso de La Fábrica?"
+      },
+      {
+        "requiredFlags": ["P1.2.1.1.2"],
+        "text": "Bueno, hay quien dice que cualquier publicidad es buena, todo lo que sea llamar la atención es más probable que las autoridades se preocupen por vosotros, aún así, no creo que a la larga este sitio atraiga ese tipo de turismo, es una isla tranquila, aislada, parece un sitio perfecto para desconectar o ir de luna de miel, mucho mejor que para salir."
+      },
+      {
+        "requiredFlags": ["P1.2.1.2.1", "P1.2.2.1.1"],
+        "text": "¿Su mujer es la única profesora de la isla? Y si usted deja el taxi el transporte interno se descompone prácticamente, no sé si la gente lo aprecia pero parece que su matrimonio sostiene la isla en gran parte"
+      },
+      {
+        "requiredFlags": ["P1.2.1.2.2"],
+        "text": "*risa sarcástica*\"Si alguno quiere cobrar en niños no creo que sea válido para el puesto no\""
+      },
+      {
+        "requiredFlags": ["P1.2.2.1.2"],
+        "text": "Ya...no sé, en el fondo todos trabajamos para otros, salvo el que pesca y siembra lo que come, los demás hacemos nuestro trabajo para otros."
+      },
+      {
+        "requiredFlags": ["P1.2.2.2.1"],
+        "text": "¿Ves? Si al final nos vamos a llevar bien usted y yo, además, si me cuenta las cosas usted esa va a ser mi perspectiva sobre la situación, el artículo prácticamente será suyo."
+      },
+      {
+        "requiredFlags": ["P1.2.2.2.2"],
+        "text": "El juego es parte de la supervivencia...Sí, supongo que sí.",
+        "end":true
+      }
+    ],
+    "choices": [
+      {
+        "text": "Perdón, perdón, te cuento",
+        "next": "1P1",
+        "requiredFlags": ["P1.1.1.1.2"],
+        "setFlags": ["P1.1.1.1.2.1"]
+      },
+      {
+        "text": "Y yo intento que no lo haga",
+        "next": "5P1",
+        "requiredFlags": ["P1.1.1.1.2"],
+        "setFlags": ["P1.1.1.1.2.2"]
+      },
+      {
+        "text": "Heh, de eso podemos hablar, pero es un poco largo, ya te lo contaré la próxima vez que te montes",
+        "next": "5P1",
+        "requiredFlags": ["P1.1.1.2.2", "P1.1.2.1.1", "P1.1.2.2.1", "P1.1.2.1.2", "P1.1.2.2.2", "P1.2.1.1.1"],
+        "setFlags": ["P1.1.1.2.2.1"]
+      },
+      {
+        "text": "Ahí ya no se sí me debería meter... Ya iremos hablando tú y yo",
+        "next": "5P1",
+        "requiredFlags": ["P1.1.1.2.2", "P1.1.2.1.1", "P1.1.2.2.1", "P1.1.2.1.2", "P1.1.2.2.2", "P1.2.1.1.1"],
+        "setFlags": ["P1.1.1.2.2.2"]
+      },
+      {
+        "text": "Como si ellos no supieran lo que pasa, otra cosa es que aquí todo el mundo mire para otro lado. Ya te irás dando cuenta estos días",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.1.1.2"],
+        "setFlags": ["P1.2.1.1.2.1"]
+      },
+      {
+        "text": "Sí, lo que le hace falta a esta isla es más gente con poder metiendose de por medio...",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.1.1.2"],
+        "setFlags": ["P1.2.1.1.2.2"]
+      },
+      {
+        "text": "Hmmm, sí, si nosotros nos fuésemos esto no funcionaría, hay que ser consciente...",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.1.2.1"],
+        "setFlags": ["P1.2.1.2.1.1"]
+      },
+      {
+        "text": "Bueno el taxi lo puede conducir cualquiera, lo suyo es bastante más complicado",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.1.2.1"],
+        "setFlags": ["P1.2.1.2.1.2"]
+      },
+      {
+        "text": "...",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.1.2.2"],
+        "setFlags": ["P1.2.1.2.2.1"]
+      },
+      {
+        "text": "*reírse*\"Ya es lo que nos faltaba..\"",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.1.2.2"],
+        "setFlags": ["P1.2.1.2.2.2"]
+      },
+      {
+        "text": "Precisamente a eso se dedicaba la mayoría de la isla hace no tantos años, unos pescaban otros trabajaban la tierra y esto funcionaba como un ecosistema.",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.2.1.2"],
+        "setFlags": ["P1.2.2.1.1.1"]
+      },
+      {
+        "text": "Nacidos para servir... no luches contra el destino, que el tiempo te pondrá en tu sitio",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.2.1.2"],
+        "setFlags": ["P1.2.2.1.1.2"]
+      },
+      {
+        "text": "No hace falta que ligues conmigo, si llamas un taxi y es mi turno voy a ir, y callarme no se me da demasiado bien.",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.2.2.1"],
+        "setFlags": ["P1.2.2.2.1.1"]
+      },
+      {
+        "text": "Si escribo yo el artículo os cierran la revista esa misma semana",
+        "next": "5P1",
+        "requiredFlags": ["P1.2.2.2.1"],
+        "setFlags": ["P1.2.2.2.1.2"]
+      }
+    ]
+  },
+  {
+    "id": "5P1",
+    "speaker": "PJ",
+    "text": "(Fin del diálogo)",
+    "end": true
+  }
+]

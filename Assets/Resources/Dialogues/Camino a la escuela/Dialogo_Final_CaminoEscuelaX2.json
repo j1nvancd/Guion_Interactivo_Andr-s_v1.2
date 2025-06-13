@@ -1,6 +1,6 @@
 [
   {
-    "id": "startX2",
+    "id": "start",
     "speaker": "Verónica",
     "text": "¿Has visto la bombilla del pasillo? Lleva desde el lunes con ese parpadeo tonto.",
     "setFlags": ["InicioX2"],

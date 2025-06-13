@@ -1,6 +1,6 @@
 [
   {
-    "id": "startJ2",
+    "id": "start",
     "speaker": "Verónica",
     "text": "Tuve un sueño esta noche… creo. Pero se me ha ido al abrir los ojos.",
     "setFlags": ["InicioJ2"],

@@ -1,0 +1,64 @@
+[
+    {
+        "id": "start",
+        "speaker": "El Padre",
+        "text": "Llévame a la Ermita muchacho, hoy es día de rezar por los justos.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Y el plan con el que iba a venir del continente?",
+                "next": "1L1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "¿Qué tal le ha sentado la visita a sus amigos? ¿Ha cambiado su visión?",
+                "next": "1L1",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L1",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "En el maletero está mi equipaje, considéralo un regalo. Una recompensa por ser un actor clave en detener al mal que asola esta isla. No te preocupes, cuando lo veas sabrás lo que tienes que hacer."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "En absoluto, tengo la mirada clara como el agua de la pila bautismal. En el maletero está mi equipaje, considéralo un regalo. Una recompensa por ser un actor clave en detener al mal que asola esta isla. No te preocupes, cuando lo veas sabrás lo que tienes que hacer"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y cómo sabe que hoy es el día para rezar por los justos?",
+                "next": "2L1",
+                "requiredFlags": ["1.1", "1.2"],
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "De acuerdo, rece por la justicia en ese caso.",
+                "next": "2L1",
+                "requiredFlags": ["1.1", "1.2"],
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L1",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1"],
+                "text": "No preguntes por saber lo que el tiempo te dirá, que no hay cosa más bonita que el saber sin preguntar."
+            },
+            {
+                "requiredFlags": ["2.2"],
+                "text": "Lo haré, no tengas dudas."
+            }
+        ],
+        "end": true,
+        "action": "En la maleta, Teodoro encuentra un Revólver Nagant, un silenciador, una bolsa para cadáveres, una Sagrada Biblia y un rosario."
+    }
+]

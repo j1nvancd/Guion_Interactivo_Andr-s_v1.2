@@ -1,6 +1,6 @@
 [
   {
-    "id": "startL2",
+    "id": "start",
     "speaker": "Verónica",
     "text": "Creo que el viernes me dejé la chaqueta en la sala de profesores.",
     "setFlags": ["InicioL2"],

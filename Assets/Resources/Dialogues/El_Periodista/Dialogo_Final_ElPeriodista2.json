@@ -190,7 +190,7 @@
         "text": "Uf, este tema es peligroso, más aún ahora, yo sinceramente no me metería si fuera tú, entiendo además que si estás aquí quedándote donde te estás quedando, no creo que te vayan a dejar hablar de nada de esto tampoco",
         "next": "5P2",
         "requiredFlags": ["P2.2.1.1", "P2.2.1.2"],
-        "setFlags": ["P2.2.1.1.1"]
+        "setFlags": ["P2.1.2.1.1"]
       },
       {
         "text": "La Fábrica tuvo un fallo en la gestión de los residuos, eso dicen ellos, la realidad yo creo que es que la empresa filtraba aguas residuales al subsuelo y las vertía en los barrancos naturales de la isla.",
@@ -216,7 +216,7 @@
     "choices": [
       {
         "text": "...",
-        "next": "6P2",
+        "next": "end2",
         "requiredFlags": ["P2.1.2.1.1"],
         "setFlags": ["P2.1.2.1.1.1"]
       },
@@ -244,10 +244,7 @@
     "id": "6P2",
     "speaker": "Periodista",
     "conditionalTexts": [
-      {
-        "requiredFlags": ["P2.1.2.1.1.1"],
-        "text": "Bueno, alguien conseguiré que me cuente qué pasó"
-      },
+      
       {
         "requiredFlags": ["P2.1.2.1.2.1"],
         "text": "¿La mayoría?"
@@ -266,7 +263,7 @@
       },
       {
         "text": "Sí, la gente siguió las instrucciones y La Fábrica reformó su sistema de residuos.",
-        "next": "7P2",
+        "next": "end3",
         "requiredFlags": ["P2.1.2.1.2.1", "P2.1.2.1.2.2"],
         "setFlags": ["P2.1.2.1.2.1.2", "P2.1.2.1.2.2.2"]
       }
@@ -279,10 +276,7 @@
       {
         "requiredFlags": ["P2.1.2.1.2.1.1", "P2.1.2.1.2.2.1"],
         "text": "¿Abel? ¿Ese es el chico al que ahora están buscando?"
-      },
-      {
-        "requiredFlags": ["P2.1.2.1.2.1.2", "P2.1.2.1.2.2.2"],
-        "text": "Entiendo, supongo que al fin y al cabo todo salió bien."
+        
       }
     ],
     "choices": [
@@ -304,6 +298,18 @@
     "id": "endP2",
     "speaker": "PJ",
     "text": "(Fin del diálogo)",
+    "end": true
+  },
+  {
+    "id": "end2",
+    "speaker": "Periodista",
+    "text": "Bueno, alguien conseguiré que me cuente qué pasó",
+    "end": true
+  },
+  {
+    "id": "end3",
+    "speaker": "Periodista",
+    "text": "Entiendo, supongo que al fin y al cabo todo salió bien.",
     "end": true
   }
 ]

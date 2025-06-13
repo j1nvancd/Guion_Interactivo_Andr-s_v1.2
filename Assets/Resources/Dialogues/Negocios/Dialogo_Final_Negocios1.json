@@ -152,7 +152,7 @@
       },
       {
         "text": "(No decir nada)",
-        "next": "4HdN",
+        "next": "end2",
         "requiredFlags": ["HdN.1.1.3"],
         "setFlags": ["HdN.1.1.3.2"]
       },
@@ -176,7 +176,7 @@
       },
       {
         "text": "(Mantener el silencio)",
-        "next": "4HdN",
+        "next": "end2",
         "requiredFlags": ["HdN.1.2.3"],
         "setFlags": ["HdN.1.2.3.1"]
       }
@@ -202,10 +202,7 @@
         "requiredFlags": ["HdN.1.1.3.1"],
         "text": "A veces hablar poco es cerrar más tratos."
       },
-      {
-        "requiredFlags": ["HdN.1.1.3.2"],
-        "text": "(HdN sonríe levemente)"
-      },
+
       {
         "requiredFlags": ["HdN.1.2.1.2"],
         "text": "Hay que tener cuidado... si te duermes cerca de la costa, te puede pillar la marea."
@@ -217,11 +214,9 @@
       {
         "requiredFlags": ["HdN.1.2.2.2"],
         "text": "Hmm, eso es interesante, ver la perspectiva de otras personas a veces es importante."
-      },
-      {
-        "requiredFlags": ["HdN.1.2.3.1"],
-        "text": "(HdN respeta el silencio)"
+
       }
+
     ],
     "choices": [
       {
@@ -239,13 +234,13 @@
       {
         "text": "Sí, no queda otra...",
         "next": "5HdN",
-        "requiredFlags": ["HdN.1.1.1.2"],
+        "requiredFlags": ["HdN.1.1.1.2","HdN.1.1.2.1"],
         "setFlags": ["HdN.1.1.1.2.1"]
       },
       {
         "text": "Hay quién preferiría morir a evolucionar dependiendo de lo que signifique evolucionar",
         "next": "5HdN",
-        "requiredFlags": ["HdN.1.1.1.2", "HdN.1.1.2.2"],
+        "requiredFlags": ["HdN.1.1.1.2", "HdN.1.1.2.1", "HdN.1.1.2.2"],
         "setFlags": ["HdN.1.1.1.2.2", "HdN.1.1.2.2.1"]
       },
       {
@@ -449,6 +444,21 @@
     "id": "endHdN",
     "speaker": "HdN",
     "text": "Volveremos a hablar un día de estos, no me viene mal un cambio de perspectiva de vez en cuando.",
+    "end": true
+  },
+  {
+    "id": "end2",
+    "speaker": "HdN",
+    "conditionalTexts": [
+      {
+        "requiredFlags": ["HdN.1.1.3.2"],
+        "text": "(HdN sonríe levemente)"
+      },
+      { 
+        "requiredFlags": ["HdN.1.2.3.1"],
+        "text": "(HdN respeta el silencio)"
+      }
+    ],
     "end": true
   }
 ]

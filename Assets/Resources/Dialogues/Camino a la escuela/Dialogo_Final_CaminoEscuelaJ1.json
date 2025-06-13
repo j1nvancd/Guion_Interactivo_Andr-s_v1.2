@@ -71,9 +71,9 @@
       },
       {
         "text": "No mujer no te enfades, ahora ya no me dejes con la curiosidad, La Bencomo es la viuda del Capita el marisquero ¿no?",
-        "next": "3J1",
+        "next": "2J1",
         "requiredFlags": ["J1.2.2"],
-        "setFlags": ["J1.2.2.1"]
+        "setFlags": ["J1.2.1"]
       },
       {
         "text": "Cuanto menos sepa mejor, que después me preguntan a mí y yo no he jurado secreto de confesión",
@@ -95,10 +95,7 @@
         "requiredFlags": ["J1.2.1.2"],
         "text": "Pues eso es lo que no sabemos, hombre pinta de familiar no tiene la verdad, no me suena que tenga un sobrino extranjero, además que según dicen él no habla ni el idioma"
       },
-      {
-        "requiredFlags": ["J1.2.2.1"],
-        "text": "Hombre, joven en comparación, un poco más joven que nosotros, tampoco es que sea ahora una asaltacunas"
-      },
+      
       {
         "requiredFlags": ["J1.2.2.2"],
         "text": "La verdad que lo único que te falta es meterte a cura"

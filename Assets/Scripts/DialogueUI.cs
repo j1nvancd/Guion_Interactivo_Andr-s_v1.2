@@ -23,10 +23,29 @@ public class DialogueUI : MonoBehaviour
     private HashSet<string> activeFlags => loader.activeFlags;
 
     void Start()
+{
+    nodes = loader.LoadDialogue();
+    ShowNode("start");
+
+    continueButton.gameObject.SetActive(true); // Siempre visible
+
+    continueButton.onClick.RemoveAllListeners();
+    continueButton.onClick.AddListener(() =>
     {
-        nodes = loader.LoadDialogue();
-        ShowNode("start"); //Es el nodo de inicio, recuerda que debe de existir en el JSON
-    }
+        if (loader.LoadNextDialogue())
+        {
+            nodes = loader.LoadDialogue();
+            ShowNode("start");
+        }
+        else
+        {
+            Debug.Log("No hay más diálogos para cargar.");
+            // Opcional: aquí puedes desactivar el botón o mostrar mensaje en UI
+            // continueButton.gameObject.SetActive(false);
+        }
+    });
+}
+
 
     public void ShowNode(string nodeID)
     {
@@ -95,31 +114,7 @@ public class DialogueUI : MonoBehaviour
             });
         }
         
-        continueButton.gameObject.SetActive(false); // Ocultarlo por defecto
-
-        if (currentNode.choices == null || currentNode.choices.Count == 0)
-        {
-            // Si es nodo final
-            if (currentNode.end)
-            {
-                if (loader.LoadNextDialogue())
-                {
-                    continueButton.gameObject.SetActive(true);
-                    continueButton.onClick.RemoveAllListeners();
-                    continueButton.onClick.AddListener(() =>
-                    {
-                        nodes = loader.LoadDialogue();
-                        ShowNode("start");
-                        continueButton.gameObject.SetActive(false);
-                    });
-                }
-                else
-                {
-                    // No hay más diálogos
-                    Debug.Log("Fin de todos los diálogos.");
-                }
-            }
-        }
+        
 
     }
 }

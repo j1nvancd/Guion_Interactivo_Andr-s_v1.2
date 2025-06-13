@@ -1,6 +1,6 @@
 [
   {
-    "id": "startM2",
+    "id": "start",
     "speaker": "Verónica",
     "text": "Esta mañana había un gorrión en el suelo, justo afuera de la ventana de la cocina.",
     "setFlags": ["InicioM2"],
