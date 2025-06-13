@@ -1,263 +1,277 @@
 [
-  {
-    "id": "start",
-    "speaker": "Suegra",
-    "text": "¿Sabes ir a la Ermita verdad?, vamos, que se me va a hacer de noche",
-    "setFlags": ["InicioSuegra"],
-    "choices": [
-      {
-        "text": "Señora, tráteme bien que le estoy haciendo un favor",
-        "next": "1Suegra",
-        "setFlags": ["S1"]
-      },
-      {
-        "text": "Sí, se llegar, voy y vengo varias veces todas las semanas",
-        "next": "1Suegra",
-        "setFlags": ["S2"]
-      }
-    ]
-  },
-  {
-    "id": "1Suegra",
-    "speaker": "Suegra",
-    "conditionalTexts": [
-      { "requiredFlags": ["S1"], "text": "Hombre, lo que faltaba ya es que le cobrases a tu suegra" },
-      { "requiredFlags": ["S2"], "text": "Claro claro, tampoco haces otra cosa que no sea conducir el taxi" }
-    ],
-    "choices": [
-      {
-        "text": "A todos los demás les cobro, para eso es mi trabajo",
-        "next": "2Suegra",
-        "requiredFlags": ["S1"],
-        "setFlags": ["S1.1"]
-      },
-      {
-        "text": "El doble le cobro a los que no piden las cosas por favor",
-        "next": "2Suegra",
-        "requiredFlags": ["S1"],
-        "setFlags": ["S1.2"]
-      },
-      {
-        "text": "Es mi trabajo",
-        "next": "2Suegra",
-        "requiredFlags": ["S2"],
-        "setFlags": ["S2.1"]
-      },
-      {
-        "text": "Claro, porque en esta isla hay otras muchas cosas que hacer",
-        "next": "2Suegra",
-        "requiredFlags": ["S2"],
-        "setFlags": ["S2.2"]
-      }
-    ]
-  },
-  {
-    "id": "2Suegra",
-    "speaker": "Suegra",
-    "conditionalTexts": [
-      { "requiredFlags": ["S1.1", "S1.2"], "text": "Tan agradable como siempre, no sé como Verónica te aguanta" },
-      { "requiredFlags": ["S2.1"], "text": "Lo sé lo sé, ¿tienes algún plan para que deje de serlo? ¿o piensas quedarte con el taxi toda la vida como tu padre?" },
-      { "requiredFlags": ["S2.2"], "text": "Formar una familia a mí me parece una cosa magnífica que se puede hacer en esta isla, es lo que hice yo" }
-    ],
-    "choices": [
-      {
-        "text": "Ella ha entendido que no hace falta hablar si no tienes nada que decir",
-        "next": "3Suegra",
-        "requiredFlags": ["S1.1"],
-        "setFlags": ["S1.1.1"]
-      },
-      {
-        "text": "Yo tampoco, para qué mentir",
-        "next": "3Suegra",
-        "requiredFlags": ["S1.1"],
-        "setFlags": ["S1.1.2"]
-      },
-      {
-        "text": "Me llevo bastante mejor con su hija que con usted, como podrá comprender",
-        "next": "3Suegra",
-        "requiredFlags": ["S1.1"],
-        "setFlags": ["S1.1.3"]
-      },
-      {
-        "text": "...",
-        "next": "3Suegra",
-        "requiredFlags": ["S2.1"],
-        "setFlags": ["S2.1.1"]
-      },
-      {
-        "text": "¿Y cuando yo me muera quién hereda el taxi?",
-        "next": "3Suegra",
-        "requiredFlags": ["S2.1"],
-        "setFlags": ["S2.1.2"]
-      },
-      {
-        "text": "Yo no soy el que no quiere irse de la isla",
-        "next": "3Suegra",
-        "requiredFlags": ["S2.1"],
-        "setFlags": ["S2.1.3"]
-      },
-      {
-        "text": "...",
-        "next": "3Suegra",
-        "requiredFlags": ["S2.2"],
-        "setFlags": ["S2.2.1"]
-      },
-      {
-        "text": "Si los dos tenemos que seguir trabajando es complicado",
-        "next": "3Suegra",
-        "requiredFlags": ["S2.2"],
-        "setFlags": ["S2.2.2"]
-      },
-      {
-        "text": "Y yo se lo agradezco",
-        "next": "3Suegra",
-        "requiredFlags": ["S2.2"],
-        "setFlags": ["S2.2.3"]
-      }
-    ]
-  },
-  {
-    "id": "3Suegra",
-    "speaker": "Suegra",
-    "conditionalTexts": [
-      { "requiredFlags": ["S1.1.1", "S2.1.1", "S2.2.1"], "text": "No te preocupes que podemos hacer lo que queda de trayecto en silencio" },
-      { "requiredFlags": ["S1.1.2"], "text": "Los caminos del señor son inescrutables" },
-      { "requiredFlags": ["S1.1.3"], "text": "Hombre evidentemente, pero vamos que más de lo que discuto conmigo discutía con mi marido" },
-      { "requiredFlags": ["S2.1.2"], "text": "No sé si prefiero no tener nietos o que su plan de vida sea heredar un taxi" },
-      { "requiredFlags": ["S2.1.3"], "text": "Claro, a tí te da igual que los niños de la isla se queden sin colegio" },
-      { "requiredFlags": ["S2.2.2"], "text": "Todo es organizarse, además que yo os puedo ayudar, y tú madre seguro que está desando un nieto también" },
-      { "requiredFlags": ["S2.2.3"], "text": "No te voy a decir como me lo podrías agradecer porque ya lo sabes" }
-    ],
-    "choices": [
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        },
-        {
-        "text": "",
-        "next": "",
-        "requiredFlags": [""],
-        "setFlags": [""]
-        }  
-    ]
-  },
-  {
-    "id": "4Suegra",
-    "speaker": "Suegra",
-    "conditionalTexts": [
-      {
-        "requiredFlags": [""],
-        "text": ""
-      },
-      {
-        "requiredFlags": [""],
-        "text": ""
-      },
-      {
-        "requiredFlags": [""],
-        "text": ""
-      },
-      {
-        "requiredFlags": [""],
-        "text": ""
-      },
-      {
-        "requiredFlags": [""],
-        "text": ""
-      },
-      {
-        "requiredFlags": [""],
-        "text": ""
-      },
-      {
-        "requiredFlags": [""],
-        "text": ""
-      }
-    ]
-  },
-  {
-    "id": "FinSuegra",
-    "speaker": "Suegra",
-    "conditionalTexts": [
-      {
-        "requiredFlags": ["S2.2.2.1"],
-        "text": "Ya... a ver si la próxima vez que la vea puedo sacar el tema"
-      }
-    ],
-    "end": true
-  }
+    {
+        "id": "start",
+        "speaker": "Suegra",
+        "text": "¿Sabes ir a la Ermita verdad?, vamos, que se me va a hacer de noche",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "Señora, tráteme bien que le estoy haciendo un favor",
+                "next": "1L1",
+                "setFlags": ["0.1"]
+            },
+            {
+                "text": "Sí, se llegar, voy y vengo varias veces todas las semanas",
+                "next": "1L1",
+                "setFlags": ["0.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["0.1"],
+                "text": "Hombre, lo que faltaba ya es que le cobrasen a tu suegra"
+            },
+            {
+                "requiredFlags": ["0.2"],
+                "text": "Claro claro, tampoco haces otra cosa que no sea conducir el taxi"
+            }
+        ],
+        "choices": [
+            {
+                "text": "A todos los demás les cobro, para eso es mi trabajo",
+                "next": "2L1",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "El doble le cobró a los que no piden las cosas por favor",
+                "next": "2L1",
+                "requiredFlags": ["0.1"],
+                "setFlags": ["1.2"]
+            },
+            {
+                "text": "Es mi trabajo",
+                "next": "2L1",
+                "requiredFlags": ["0.2"],
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "Claro, porque en esta isla hay otras muchas cosas que hacer",
+                "next": "2L1",
+                "requiredFlags": ["0.2"],
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1", "1.2"],
+                "text": "Tan agradable como siempre, no sé como Verónica te aguanta"
+            },
+            {
+                "requiredFlags": ["2.1"],
+                "text": "Lo sé lo sé, ¿tienes algún plan para que deje de serlo? ¿o piensas quedarte con el taxi toda la vida como tu padre?"
+            },
+            {
+                "requiredFlags": ["2.2"],
+                "text": "Formar una familia a mí me parece una cosa magnífica que se puede hacer en esta isla, es lo que hice yo"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ella ha entendido que no hace falta hablar si no tienes nada que decir",
+                "next": "3L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Yo tampoco, para qué mentir",
+                "next": "3L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "Me llevo bastante mejor con su hija que con usted, como podrá comprender",
+                "next": "3L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.3"]
+            },
+            {
+                "text": "...",
+                "next": "3L1",
+                "requiredFlags": ["2.1", "2.2"],
+                "setFlags": ["2.1.1", "2.2.1"]
+            },
+            {
+                "text": "¿Y cuando yo me muera quién hereda el taxi?",
+                "next": "3L1",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.2"]
+            },
+            {
+                "text": "Yo no soy el que no quiere irse de la isla",
+                "next": "3L1",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.3"]
+            },
+            {
+                "text": "Si los dos tenemos que seguir trabajando es complicado",
+                "next": "3L1",
+                "requiredFlags": ["2.2"],
+                "setFlags": ["2.2.2"]
+            },
+            {
+                "text": "Y yo se lo agradezco",
+                "next": "3L1",
+                "requiredFlags": ["2.2"],
+                "setFlags": ["2.2.3"]
+            }
+        ]
+    },
+    {
+        "id": "3L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1", "2.1.1", "2.2.1"],
+                "text": "No te preocupes que podemos hacer lo que queda de trayecto en silencio"
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Los caminos del señor son inescrutables"
+            },
+            {
+                "requiredFlags": ["1.1.3"],
+                "text": "Hombre evidentemente, pero vamos que más de lo que discuto conmigo discutía con mi marido"
+            },
+            {
+                "requiredFlags": ["2.1.2"],
+                "text": "No sé si prefiero no tener nietos o que su plan de vida sea heredar un taxi"
+            },
+            {
+                "requiredFlags": ["2.1.3"],
+                "text": "Claro, a tí te da igual que los niños de la isla se queden sin colegio"
+            },
+            {
+                "requiredFlags": ["2.2.2"],
+                "text": "Todo es organizarse, además que yo os puedo ayudar, y tú madre seguro que está deseando un nieto también"
+            },
+            {
+                "requiredFlags": ["2.2.3"],
+                "text": "No te voy a decir como me lo podrías agradecer porque ya lo sabes"
+            }
+        ],
+        "choices": [
+            {
+                "text": "...",
+                "next": "Fin",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "No mujer, tampoco se enfade ¿A qué va a la Ermita?",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "...",
+                "next": "Fin",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "Sin duda, ¿Y qué inescrutable camino nos lleva hoy a la Ermita?",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "Entonces parece que no es tan evidente lo de llevarte mejor con tu pareja que con tu suegra ¿no?",
+                "next": "4L1",
+                "requiredFlags": ["1.1.3"],
+                "setFlags": ["1.1.3.1"]
+            },
+            {
+                "text": "Sí, recuerdo los últimos meses cuando aún vivía, parecía que mejoraba sólo para tener fuerzas para discutir con usted",
+                "next": "4L1",
+                "requiredFlags": ["1.1.3"],
+                "setFlags": ["1.1.3.2"]
+            },
+            {
+                "text": "...",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2"],
+                "setFlags": ["2.1.2.1"]
+            },
+            {
+                "text": "Mi plan de vida no era este señora, no haga como que no sabe que estudié ingeniería en el continente",
+                "next": "4L1",
+                "requiredFlags": ["2.1.2"],
+                "setFlags": ["2.1.2.2"]
+            },
+            {
+                "text": "A mí me importa Verónica y poder formar una familia con ella, no tener que ser responsables por todos los que pueden a cambio de no poder nosotros",
+                "next": "4L1",
+                "requiredFlags": ["2.1.3"],
+                "setFlags": ["2.1.3.1"]
+            },
+            {
+                "text": "Como siempre, yo lo único que quiero es que se hunda la isla de una vez",
+                "next": "4L1",
+                "requiredFlags": ["2.1.3"],
+                "setFlags": ["2.1.3.2"]
+            },
+            {
+                "text": "...",
+                "next": "Fin",
+                "requiredFlags": ["2.2.2"],
+                "setFlags": ["2.2.2.1"]
+            },
+            {
+                "text": "A mí no me tiene que convencer usted...",
+                "next": "4L1",
+                "requiredFlags": ["2.2.2", "2.2.3"],
+                "setFlags": ["2.2.2.1", "2.2.3.1"]
+            },
+            {
+                "text": "> 2.2.2",
+                "next": "4L1",
+                "requiredFlags": ["2.2.3"],
+                "setFlags": ["2.2.3.2"]
+            }
+        ]
+    },
+    {
+        "id": "4L1",
+        "speaker": "Suegra",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.2", "1.1.2.2"],
+                "text": "Estamos varias vecinas buscando al pobre huérfano, ya hace una semana que nadie sabe dónde está. Voy a buscar por la zona y ya que estoy aprovecho para rezar allí"
+            },
+            {
+                "requiredFlags": ["1.1.3.1", "1.1.3.2"],
+                "text": "Nosotros discutimos todos los días, por todo, si no discutimos es que algo iba mal de verdad, cuando uno estaba muy callado el otro le buscaba aunque fuese discutir por comprobar que no pasaba nada, cuando se puso enfermo, ya no podía hacer casi nada, pero seguíamos discutiendo. Seguro que Verónica y tú también discutís bastante"
+            },
+            {
+                "requiredFlags": ["2.1.2.2"],
+                "text": "Si me acuerdo sí ¿En la fábrica no necesitan a nadie con tu calificación tampoco?"
+            },
+            {
+                "requiredFlags": ["2.1.3.1"],
+                "text": "Pues de eso va tener una familia, de ser responsable de gente, sin vacaciones ni Plan B"
+            },
+            {
+                "requiredFlags": ["2.1.3.2"],
+                "text": "No te haces favores diciendo esas cosas, ya sabemos que tú no querías estar aquí, pero amargarte la vida con ello no te va a hacer más feliz"
+            },
+            {
+                "requiredFlags": ["2.2.2.1", "2.2.3.1"],
+                "text": "Ya... a ver si la próxima vez que la vea puedo sacar el tema"
+            }
+        ],
+        "end": true
+    },
+    {
+        "id": "Fin",
+        "end": true
+    }
 ]

@@ -1,0 +1,850 @@
+[
+    {
+        "id": "start",
+        "speaker": "Hombre de Negocios",
+        "text": "Al puerto, por favor.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Tiene reunión mañana a primera hora o por qué se va un domingo? Aunque bueno, supongo que para usted no es mucho problema la tarifa extra de día festivo.",
+                "next": "1L1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Sin problema.",
+                "next": "1L1",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Sí, mañana a primera hora se decide el futuro de mucha gente... De hecho ¿Usted es ingeniero electrónico, no?"
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "La próxima vez espero venir con buenas noticias... especialmente para usted."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ser, ahora mismo soy taxista. Estudié ingeniería electrónica en su momento, sí ¿Por qué lo pregunta?",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Con varias matrículas de honor, sí. Aun así no soy capaz de que la radio de esta tartana pille bien alguna cadena que no sea Radio María.",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "¿Para mí? ¿Va a reasfaltar La Isla?",
+                "next": "2L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            },
+            {
+                "text": "¿Perdón?",
+                "next": "2L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1", "1.2.2"],
+                "text": "Mañana le propongo a los accionistas abrir una sección de I+D en la planta de Las Lajas, La Fábrica, vaya. No es exactamente su especialidad, pero no creo que vayamos a poder conseguir un ingeniero con más conocimiento del terreno y ganas de mudarse aquí..."
+            },
+            {
+                "requiredFlags": ["1.1.2", "1.2.1"],
+                "text": "*se ríe* Mañana le propongo a los accionistas abrir una sección de I+D en la planta de Las Lajas, La Fábrica, vaya. No es exactamente su especialidad, pero no creo que vayamos a poder conseguir un ingeniero con más conocimiento del terreno y ganas de mudarse aquí..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Me está ofreciendo trabajo?",
+                "next": "3L1",
+                "requiredFlags": ["1.1.1", "1.1.2", "1.2.1", "1.2.2"],
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "¿Aquí? ¿Más gente para trabajar en La Fábrica?",
+                "next": "3L1",
+                "requiredFlags": ["1.1.1", "1.1.2", "1.2.1", "1.2.2"],
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "3L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1"],
+                "text": "Bueno, por motivos legales todavía no le puedo confirmar pero... digamos que los accionistas no suelen ponerme muchas pegas."
+            },
+            {
+                "requiredFlags": ["2.2"],
+                "text": "Sí, entre esto y los apartamentos del norte... el que pesque aquí va a ser por hobby."
+            }
+        ],
+        "choices": [
+            {
+                "text": "No, a usted nadie le pone pegas nunca ¿Verdad?",
+                "next": "4L1",
+                "requiredFlags": ["2.1"],
+                "setFlags": ["2.1.1"]
+            },
+            {
+                "text": "Ya... y eso supongo que es un puesto a largo plazo.",
+                "next": "4L1",
+                "requiredFlags": ["2.1", "2.2"],
+                "setFlags": ["2.1.2", "2.2.2"]
+            },
+            {
+                "text": "No va a quedar nada en La Isla que no sea de su propiedad.",
+                "next": "4L1",
+                "requiredFlags": ["2.2"],
+                "setFlags": ["2.2.1"]
+            }
+        ]
+    },
+    {
+        "id": "4L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1"],
+                "text": "No habitualmente. Es lo que pasa cuando eres del que dependen sus sueldos. Es raro que a alguien le apetezca discutir."
+            },
+            {
+                "requiredFlags": ["2.1.2", "2.2.2"],
+                "text": "Claro, además, no es un puesto como los que había hasta ahora. La formación es complicada de encontrar y se recompensará debidamente."
+            },
+            {
+                "requiredFlags": ["2.2.1"],
+                "text": "*riendo sonoramente* Esto de aquí a unos años va a ser Disneyland. En vez del castillo de la Bella Durmiente va a estar La Fábrica."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Supongo entonces que nadie le ha llamado nunca asesino a la cara.",
+                "next": "5L1",
+                "requiredFlags": ["2.1.1"],
+                "setFlags": ["2.1.1.1"]
+            },
+            {
+                "text": "Así es más fácil gobernar ¿No? En lugar de presentarse a las elecciones, le pagas a quién salga para que no te moleste mucho.",
+                "next": "5L1",
+                "requiredFlags": ["2.1.1"],
+                "setFlags": ["2.1.1.2"]
+            },
+            {
+                "text": "Ya... es un trabajo de esos de ir de traje ¿No? De los que tienes días libres y bajas de paternidad.",
+                "next": "5L1",
+                "requiredFlags": ["2.1.2"],
+                "setFlags": ["2.1.2.1"]
+            },
+            {
+                "text": "Es complicado que la gente estudie en una isla en cuya escuela hay una sola profesora. Para ir a la universidad te tienes que mudar y el pescado no da para tanto.",
+                "next": "5L1",
+                "requiredFlags": ["2.1.2"],
+                "setFlags": ["2.1.2.2"]
+            },
+            {
+                "text": "¿Y usted es Walt Disney, no? Cuando se muera ¿Sus subordinados meterán su cabeza en un congelador?",
+                "next": "5L1",
+                "requiredFlags": ["2.2.1"],
+                "setFlags": ["2.2.1.1"]
+            },
+            {
+                "text": "¿También va a hacer cabalgatas saludando como si fuese Mickey Mouse?",
+                "next": "5L1",
+                "requiredFlags": ["2.2.1"],
+                "setFlags": ["2.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "5L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1.1", "2.1.1.2"],
+                "text": "¿Perdón?"
+            },
+            {
+                "requiredFlags": ["2.1.2.1"],
+                "text": "*riendo sonoramente* Sí... lo que viene a ser un trabajo de verdad. Supongo que el calor te ha frito un poco la cabeza. Normal, este trasto sin aire acondicionado parece un microondas..."
+            },
+            {
+                "requiredFlags": ["2.1.2.2"],
+                "text": "Bueno... si esto sigue creciendo en algún momento gente empezará a mudarse aquí. Más gente con trabajo, más niños, más profesores ¿No?"
+            },
+            {
+                "requiredFlags": ["2.2.1.1"],
+                "text": "*riendo sonoramente* Cuando yo me muera de lo único que se van a preocupar esos buitres es de mi cartera."
+            },
+            {
+                "requiredFlags": ["2.2.1.2"],
+                "text": "*riendo sonoramente* Quién sabe, lo mismo a los niños les hace ilusión."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Vamos, no se sorprenda tanto, por mucho que se tape usted sabe la verdad. Todo lo que ha pasado con Abel es culpa de su amada fábrica. Tres niños huérfanos y ni un comunicado de disculpa. Para qué, si ni salió en la prensa.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.1.1"],
+                "setFlags": ["2.1.1.1.1"]
+            },
+            {
+                "text": "A mí no me tiene que pedir perdón, tampoco creo que a esas pobres niñas que dejaste sin familia les hubiese servido de mucho un perdón.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.1.1"],
+                "setFlags": ["2.1.1.1.2"]
+            },
+            {
+                "text": "Vamos, no se sorprenda tanto. El antiguo delegado de gobierno es un magnífico asesor financiero. El actual será un experto en materias legales dentro de un par de años... y a ustedes no se les pide ni un permiso para construir y destrozar terrenos naturales supuestamente protegidos.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.1.2"],
+                "setFlags": ["2.1.1.2.1"]
+            },
+            {
+                "text": "No se haga el sorprendido ¿Aristocracia platónica, no? Que gobiernen los mejores, y si los pobres se piensan que tienen voz, mejor, así no se revolucionan mucho.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.1.2"],
+                "setFlags": ["2.1.1.2.2"]
+            },
+            {
+                "text": "Aquí la temperatura cambia poco durante el año... yo no paso demasiado calor nunca. Tampoco voy con corbata, que supongo que agobia.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.2.1"],
+                "setFlags": ["2.1.2.1.1"]
+            },
+            {
+                "text": "Mi padre se pasó más de 30 años metido en este microondas... y me mandó a la universidad para que pudiese trabajar en esos trabajos de oficina y días libres. Y míreme, aquí me tiene.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.2.1"],
+                "setFlags": ["2.1.2.1.2"]
+            },
+            {
+                "text": "Sí, supongo que es un buen plan...",
+                "next": "6L1",
+                "requiredFlags": ["2.1.2.2"],
+                "setFlags": ["2.1.2.2.1"]
+            },
+            {
+                "text": "No sé, la gente vendrá a la playa, seguro. Mudarse a un feudo medieval a propósito me parece más extraño.",
+                "next": "6L1",
+                "requiredFlags": ["2.1.2.2"],
+                "setFlags": ["2.1.2.2.2"]
+            },
+            {
+                "text": "¿No le parece un poco triste?",
+                "next": "6L1",
+                "requiredFlags": ["2.2.1.1"],
+                "setFlags": ["2.2.1.1.1"]
+            },
+            {
+                "text": "¿Piensa mucho en la muerte? Ya sabe, en el paraíso y esas cosas.",
+                "next": "6L1",
+                "requiredFlags": ["2.2.1.1"],
+                "setFlags": ["2.2.1.1.2"]
+            },
+            {
+                "text": "Quizás, aunque yo me preocupo más por los niños a los que le joden la vida antes de que ellos puedan aprender a defenderse, no sé si conoce usted algún caso.",
+                "next": "6L1",
+                "requiredFlags": ["2.2.1.2"],
+                "setFlags": ["2.2.1.2.1"]
+            },
+            {
+                "text": "A usted seguro que le haría ilusión. Que le aplaudan, que le adulen mientras usted mira desde arriba, lanzando caramelos.",
+                "next": "6L1",
+                "requiredFlags": ["2.2.1.2"],
+                "setFlags": ["2.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "6L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1.1.1", "2.1.1.1.2"],
+                "text": "Aquello fue una desgracia. Un error terrible por el que subsidiamos a La Isla con provisiones para poder vivir tranquilamente mientras lo solucionábamos. Un padre irresponsable es más complicado de solucionar, no sé cómo dejan a cualquiera tener hijos... Además, hablando del mayor de aquella familia, yo no soy el que le puso un revólver en la mano y muchas malas ideas en la cabeza..."
+            },
+            {
+                "requiredFlags": ["2.1.1.2.1"],
+                "text": "No tienes ni idea de cómo se lleva una empresa. Aquí o pagas, o pagas. Y hay unas formas más eficientes de hacerlo que otras."
+            },
+            {
+                "requiredFlags": ["2.1.1.2.2"],
+                "text": "Si eso fuese cierto no tendría que andar invitando a comer a incompetentes que han puesto su cara en 4 carteles. Sería todo mucho más fácil, más productivo."
+            },
+            {
+                "requiredFlags": ["2.1.2.1.1"],
+                "text": "Ya... también es verdad. Bueno, en La Fábrica tampoco hace falta que se ponga corbata, pero aire acondicionado sí que va a tener."
+            },
+            {
+                "requiredFlags": ["2.1.2.1.2"],
+                "text": "Siempre hay formas de salir adelante. El esfuerzo y el riesgo se paga con recompensas."
+            },
+            {
+                "requiredFlags": ["2.1.2.2.1"],
+                "text": "Claro que lo es, que me dice ¿Quiere ser mi ejemplo en el meeting de mañana?"
+            },
+            {
+                "requiredFlags": ["2.1.2.2.2"],
+                "text": "¿Perdón?"
+            },
+            {
+                "requiredFlags": ["2.2.1.1.1"],
+                "text": "¿Triste? No... más triste es cuando se muere alguien a quien la gente aprecia de verdad. Morirme yo es como que se rompa una piñata."
+            },
+            {
+                "requiredFlags": ["2.2.1.1.2"],
+                "text": "No... mi paraíso lo construyo yo con mis propias manos. Bueno, con mis inversiones, mejor dicho. Yo pienso disfrutar aquí todo lo posible que en la próxima quién sabe la que me espera."
+            },
+            {
+                "requiredFlags": ["2.2.1.2.1"],
+                "text": "> 2.1.1.1"
+            },
+            {
+                "requiredFlags": ["2.2.1.2.2"],
+                "text": "¿A quién no le gusta que le adulen?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿A La Isla? No, subsidiaron a los trabajadores de La Fábrica. Aquello no fue ningún error, fue una declaración de intenciones. Un conmigo o contra mí de los de toda la vida, pero en este caso contra ustedes no podía ir nadie.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.1.1", "2.1.1.1.2"],
+                "setFlags": ["2.1.1.1.1.1", "2.1.1.1.2.1"]
+            },
+            {
+                "text": "Poco más que eso le falta por controlar... decidir quién nace y ya puede usted considerarse Dios, porque quién muere ya lo ha elegido antes.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.1.1", "2.1.1.1.2"],
+                "setFlags": ["2.1.1.1.1.2", "2.1.1.1.2.2"]
+            },
+            {
+                "text": "Aquí, como en todas partes, haces las cosas legalmente o sobornas. Y usted eligió hace tiempo.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.2.1"],
+                "setFlags": ["2.1.1.2.1.1"]
+            },
+            {
+                "text": "También podía no pagar y no construir apartamentos vacacionales en terrenos protegidos.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.2.1"],
+                "setFlags": ["2.1.1.2.1.2"]
+            },
+            {
+                "text": "¿Incompetentes? Yo creo que son sus mejores empleados. Usted tiene un hombre de paja que gobierna, la gente le echa la culpa y vota a otro que resulta ser también su hombre de paja.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.2.2"],
+                "setFlags": ["2.1.1.2.2.1"]
+            },
+            {
+                "text": "Es curioso ¿Verdad? Usted tiene el poder pero al mismo tiempo tiene que hacer el paripé de que otro, a quién usted mismo le deja claro quién tiene el poder, lo tiene para que la gente no le considere a usted responsable cuando algo se descarrila.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.1.2.2"],
+                "setFlags": ["2.1.1.2.2.2"]
+            },
+            {
+                "text": "Yo no he dicho que vaya a aceptar la oferta...",
+                "next": "7L1",
+                "requiredFlags": ["2.1.2.1.1"],
+                "setFlags": ["2.1.2.1.1.1"]
+            },
+            {
+                "text": "Sí... suena bien, espero tener buenas noticias de usted cuando vuelva.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.2.1.1"],
+                "setFlags": ["2.1.2.1.1.2"]
+            },
+            {
+                "text": "Le recomiendo no dar lecciones de meritocracia a ningún currela si no tiene seguridad cerca, un día se va a llevar un susto.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.2.1.2"],
+                "setFlags": ["2.1.2.1.2.1"]
+            },
+            {
+                "text": "Desde luego, todo mi esfuerzo de estos años está a punto de tener una recompensa.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.2.1.2"],
+                "setFlags": ["2.1.2.1.2.2"]
+            },
+            {
+                "text": "Suena bien, aunque no puedo firmar nada vinculante sin hablarlo con mi mujer.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.2.2.1"],
+                "setFlags": ["2.1.2.2.1.1"]
+            },
+            {
+                "text": "*Abrir la guantera y agarrar el revólver* Mañana voy a ser un ejemplo de muchas cosas. Ejemplo de un pueblo harto, ejemplo de resistencia, ejemplo de justicia.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.2.2.1"],
+                "setFlags": ["2.1.2.2.1.2"]
+            },
+            {
+                "text": "No se sorprenda tanto. Cuando empiece a comprar casas y cobrar a la gente lo que le apetezca de alquiler el diezmo va a sonar a un trato irrechazable.",
+                "next": "7L1",
+                "requiredFlags": ["2.1.2.2.2"],
+                "setFlags": ["2.1.2.2.2.1"]
+            },
+            {
+                "text": "No se disculpe, el ganador debe recoger sus recompensas, si no el juego no tiene gracia. ¿Quién jugaría a la ruleta si al salir le fuesen a dejar siempre con lo mismo que con lo que entró?",
+                "next": "7L1",
+                "requiredFlags": ["2.1.2.2.2"],
+                "setFlags": ["2.1.2.2.2.2"]
+            },
+            {
+                "text": "*Abrir la guantera y agarrar el revólver* En algo por fin estamos de acuerdo. Dígame ¿Alguna vez ha deseado morir?",
+                "next": "7L1",
+                "requiredFlags": ["2.2.1.1.1"],
+                "setFlags": ["2.2.1.1.1.1"]
+            },
+            {
+                "text": "Al menos tiene claro su papel en esta vida.",
+                "next": "7L1",
+                "requiredFlags": ["2.2.1.1.1"],
+                "setFlags": ["2.2.1.1.1.2"]
+            },
+            {
+                "text": "*Abrir la guantera y agarrar el revólver* ¿Y no le pica un poco la curiosidad? ¿No cree que debería tener un poco de red de seguridad por si un día un puto loco hace una locura?",
+                "next": "7L1",
+                "requiredFlags": ["2.2.1.1.2"],
+                "setFlags": ["2.2.1.1.2.1"]
+            },
+            {
+                "text": "Usted pone el dinero, pero las consecuencias de su paraíso las pagamos todos.",
+                "next": "7L1",
+                "requiredFlags": ["2.2.1.1.2"],
+                "setFlags": ["2.2.1.1.2.2"]
+            },
+            {
+                "text": "Supongo que algunos simplemente no están acostumbrados al éxito.",
+                "next": "7L1",
+                "requiredFlags": ["2.2.1.2.1"],
+                "setFlags": ["2.2.1.2.1.1"]
+            },
+            {
+                "text": "Hay gente que prefiere la satisfacción del trabajo bien hecho, hacer algo bueno, en silencio, sin que nadie tenga que saber que lo has hecho...",
+                "next": "7L1",
+                "requiredFlags": ["2.2.1.2.1"],
+                "setFlags": ["2.2.1.2.1.2"]
+            },
+            {
+                "text": "*Abrir la guantera y agarrar el revólver* A usted seguro que le haría ilusión. Que le aplaudan, que le adulen mientras usted mira desde arriba, lanzando caramelos.",
+                "next": "7L1",
+                "requiredFlags": ["2.2.1.2.2"],
+                "setFlags": ["2.2.1.2.2.1"]
+            },
+            {
+                "text": "No esperaba que lo entendiese, la vida ya le devolverá tantos préstamos, con sus debidos intereses.",
+                "next": "7L1",
+                "requiredFlags": ["2.2.1.2.2"],
+                "setFlags": ["2.2.1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "7L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1.1.1.1", "2.1.1.1.2.1"],
+                "text": "Pues tú parece que no aprendiste eso de no ir contra mí."
+            },
+            {
+                "requiredFlags": ["2.1.1.1.1.2", "2.1.1.1.2.2"],
+                "text": "Como diría el tió Ben, un gran poder conlleva una gran responsabilidad."
+            },
+            {
+                "requiredFlags": ["2.1.1.2.1.1", "2.1.1.2.1.2"],
+                "text": "Qué pasa, ¿Que ahora un taxista de medio pelo me va a dar lecciones de cómo llevar mis negocios?."
+            },
+            {
+                "requiredFlags": ["2.1.1.2.2.1", "2.1.1.2.2.2", "2.1.2.2.2.1"],
+                "text": "Es usted sorprendentemente elocuente para un taxista de medio pelo. Vaya al grano, que quiere ¿Dinero? ¿Un puesto en La Fábrica? Aunque antes espero que me explique con qué me amenaza porque me sorprendería mucho que pudiese alcanzarme aunque lo intentase, tengo amigos en los medios, en política... soy intocable, pero has despertado mi interés."
+            },
+            {
+                "requiredFlags": ["2.1.2.1.1.1", "2.1.2.2.1.1"],
+                "text": "No, claro, tendrá que consultarlo con su señora. No se preocupe, en unos días tendrá una oferta formal en su buzón."
+            },
+            {
+                "requiredFlags": ["2.1.2.1.1.2"],
+                "text": "No se preocupe, en unos días tendrá una oferta formal en su buzón."
+            },
+            {
+                "requiredFlags": ["2.1.2.1.2.1"],
+                "text": "*se ríe sonoramente* ¿Un susto? ¿Te crees que puedes asustarme?"
+            },
+            {
+                "requiredFlags": ["2.1.2.1.2.2"],
+                "text": "Entonces te interesa ese puesto en I+D..."
+            },
+            {
+                "requiredFlags": ["2.1.2.2.1.2"],
+                "text": "¿QUÉ? ¿DE DÓNDE HA SACADO ESO? No... debe ser de mentira... claro, ahora que sabe que tiene un pez gordo en el coche se cree que con una pistola de plástico puede robarme... te va a caer un puro que no vas a saber por dónde meterte eso, chaval."
+            },
+            {
+                "requiredFlags": ["2.1.2.2.2.2"],
+                "text": "Claro, a mí me dan ese chute los negocios. Dejarte tres kilos en un edificio... bloquear las acciones de una empresa en bolsa y ver los precios subir y subir... acordar una venta y ver esa gráfica salirse de la pantalla..."
+            },
+            {
+                "requiredFlags": ["2.2.1.1.1.1", "2.2.1.1.2.1"],
+                "text": "¿Qué? ¿De qué coño estás hablando?"
+            },
+            {
+                "requiredFlags": ["2.2.1.1.1.2"],
+                "text": "*Asiente*"
+            },
+            {
+                "requiredFlags": ["2.2.1.1.2.2"],
+                "text": "Bueno, siempre tiene que haber daños colaterales."
+            },
+            {
+                "requiredFlags": ["2.2.1.2.1.1"],
+                "text": "Será eso..."
+            },
+            {
+                "requiredFlags": ["2.2.1.2.1.2"],
+                "text": "No lo puedo ver... lo entiendo, pero no lo comparto, la verdad."
+            },
+            {
+                "requiredFlags": ["2.2.1.2.2.1"],
+                "text": "> 2.1.2.2.1.2"
+            },
+            {
+                "requiredFlags": ["2.2.1.2.2.2"],
+                "text": "¿QUÉ? ¿Qué hace con eso? Vamos... seguro que podemos llegar a un acuerdo ¿No?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "*Abrir guantera, agarrando el revólver* No, yo soy duro de mollera...",
+                "next": "8L1",
+                "requiredFlags": ["2.1.1.1.1.1"],
+                "setFlags": ["2.1.1.1.1.1.1"]
+            },
+            {
+                "text": "Hay unos cuantos que no aprendimos la lección, yo le recomiendo ir con cuidado no vaya a llevarse ningún susto.",
+                "next": "Fin",
+                "requiredFlags": ["2.1.1.1.1.1"],
+                "setFlags": ["2.1.1.1.1.1.2"]
+            },
+            {
+                "text": "*Abrir guantera, agarrando el revólver* Ahí estamos completamente de acuerdo...",
+                "next": "8L1",
+                "requiredFlags": ["2.1.1.1.1.2"],
+                "setFlags": ["2.1.1.1.1.2.1"]
+            },
+            {
+                "text": "Intente aplicárselo... es un buen lema para la vida de alguien de su categoría.",
+                "next": "Fin",
+                "requiredFlags": ["2.1.1.1.1.2"],
+                "setFlags": ["2.1.1.1.1.2.2"]
+            },
+            {
+                "text": "*Abrir guantera, agarrando el revólver* Un taxista de medio pelo con un gran poder en la palma de su mano.",
+                "next": "8L1",
+                "requiredFlags": ["2.1.1.2.1.1"],
+                "setFlags": ["2.1.1.2.1.1.1"]
+            },
+            {
+                "text": "No, de eso nunca, de humanidad. Yo sólo le hablo de humanidad, el día que lo entienda lo entenderá todo. Créame, si ese día llega va pasar un rato malísimo...",
+                "next": "Fin",
+                "requiredFlags": ["2.1.1.2.1.1"],
+                "setFlags": ["2.1.1.2.1.1.2"]
+            },
+            {
+                "text": "*Abrir guantera, agarrando el revólver* Un taxista de medio pelo con un gran poder en la palma de su mano.",
+                "next": "8L1",
+                "requiredFlags": ["2.1.1.2.2.1"],
+                "setFlags": ["2.1.1.2.2.1.1"]
+            },
+            {
+                "text": "Oh, no... no tengo ni idea de lo que van a opinar sus amigos de la prensa de lo que va a publicar ese chaval con pintas de guiri que se plantó en La Fábrica el otro día. Me muero por ver cómo reacciona la gente...",
+                "next": "Fin",
+                "requiredFlags": ["2.1.1.2.2.1"],
+                "setFlags": ["2.1.1.2.2.1.2"]
+            },
+            {
+                "text": "*Abrir guantera, agarrando el revólver* Dígame ¿Está asustado?",
+                "next": "8L1",
+                "requiredFlags": ["2.1.2.1.2.1"],
+                "setFlags": ["2.1.2.1.2.1.1"]
+            },
+            {
+                "text": "No hablo necesariamente de mí. Tenga cuidado con los cabos que deja sueltos.",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.1.2.1"],
+                "setFlags": ["2.1.2.1.2.1.2"]
+            },
+            {
+                "text": "Sí... claro, cómo no me va a interesar",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.1.2.2"],
+                "setFlags": ["2.1.2.1.2.2.1"]
+            },
+            {
+                "text": "*Abrir guantera, agarrando el revólver* No me refería a ese tipo de recompensa.",
+                "next": "8L1",
+                "requiredFlags": ["2.1.2.1.2.2"],
+                "setFlags": ["2.1.2.1.2.2.2"]
+            },
+            {
+                "text": "¿Robarle? No, yo no necesito el dinero para nada. Sirva esto a modo de aviso, haga las cosas bien, trabaje para la gente, no se aproveche de La Isla... y mantendrá el cerebro dentro de la cabeza.",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.1.2"],
+                "setFlags": ["2.1.2.2.1.2.1"]
+            },
+            {
+                "text": "Sí, es de plástico, el único con verdadero poder aquí es usted... *Disparo seco*",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.1.2"],
+                "setFlags": ["2.1.2.2.1.2.2"]
+            },
+            {
+                "text": "*Abrir guantera, agarrando el revólver* ¿Nunca le ha gustado jugar a la ruleta?",
+                "next": "8L1",
+                "requiredFlags": ["2.1.2.2.2.2"],
+                "setFlags": ["2.1.2.2.2.2.1"]
+            },
+            {
+                "text": "Sí... supongo que cada uno encuentra la adrenalina donde puede.",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.2.2"],
+                "setFlags": ["2.1.2.2.2.2.2"]
+            },
+            {
+                "text": "Nada, no se preocupe... ya casi hemos llegado.",
+                "next": "Fin",
+                "requiredFlags": ["2.2.1.1.1.1"],
+                "setFlags": ["2.2.1.1.1.1.2"]
+            },
+            {
+                "text": "*Abrir guantera, agarrando el revólver* En eso justamente estamos de acuerdo.",
+                "next": "8L1",
+                "requiredFlags": ["2.2.1.1.2.1"],
+                "setFlags": ["2.2.1.1.2.1.1"]
+            },
+            {
+                "text": "Tenga cuidado con los cabos que deja sueltos, no vaya a ser que un daño colateral se le revuelva.",
+                "next": "Fin",
+                "requiredFlags": ["2.2.1.1.2.1"],
+                "setFlags": ["2.2.1.1.2.1.2"]
+            },
+            {
+                "text": "*Abrir guantera, agarrando el revólver* Yo le hago una demostración práctica, no se preocupe.",
+                "next": "8L1",
+                "requiredFlags": ["2.2.1.2.2.1"],
+                "setFlags": ["2.2.1.2.2.1.1"]
+            },
+            {
+                "text": "No esperaba que lo entendiese, la vida ya le devolverá tantos préstamos, con sus debidos intereses.",
+                "next": "Fin",
+                "requiredFlags": ["2.2.1.2.2.1"],
+                "setFlags": ["2.2.1.2.2.1.2"]
+            },
+            {
+                "text": "Sí estoy seguro de que es usted un hombre de lo más razonable. Adelante, qué propone.",
+                "next": "8L1",
+                "requiredFlags": ["2.2.1.2.2.2"],
+                "setFlags": ["2.2.1.2.2.2.1"]
+            },
+            {
+                "text": "(Ruleta Rusa) Sí, estoy seguro de que ahora va a entender lo que es una negociación desde una posición desfavorable *Teodoro gira el tambor del revólver descontroladamente, apunta hacia detrás mientras conduce. *Click** Venga, dispare ¿Lo pilla?",
+                "next": "8L1",
+                "requiredFlags": ["2.2.1.2.2.2"],
+                "setFlags": ["2.2.1.2.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "8L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.1.1.1.1.1", "2.1.1.1.1.2.1", "2.1.2.1.2.1.1", "2.1.2.1.2.2.2", "2.2.1.1.2.1.1", "2.2.1.2.2.1.1"],
+                "text": "> 2.1.2.2.1.2"
+            },
+            {
+                "requiredFlags": ["2.1.1.2.1.1.1", "2.1.1.2.2.1.1"],
+                "text": "¿QUÉ? ¿Qué hace con eso? Vamos... seguro que podemos llegar a un acuerdo ¿No?"
+            },
+            {
+                "requiredFlags": ["2.1.2.1.2.2.1"],
+                "text": "¿QUÉ? ¿DE DÓNDE HA SACADO ESO? No... debe ser de mentira... claro, ahora que sabe que tiene un pez gordo en el coche se cree que con una pistola de plástico puede robarme... te va a caer un puro que no vas a saber por dónde meterte eso, chaval."
+            },
+            {
+                "requiredFlags": ["2.1.2.2.2.2.1"],
+                "text": "*llorando desconsoladamente* Sólo pida, pida y yo lo haré realidad. Lo que sea, lo que se le ocurra y lo tiene."
+            }
+        ],
+        "choices": [
+            {
+                "text": "> 2.1.2.2.1.2.1",
+                "next": "Fin",
+                "requiredFlags": ["2.1.1.1.1.1.1", "2.1.1.1.1.2.1", "2.1.2.1.2.1.1", "2.1.2.1.2.2.2", "2.2.1.1.2.1.1", "2.2.1.2.2.1.1"],
+                "setFlags": ["2.1.2.2.1.2.1"]
+            },
+            {
+                "text": "> 2.1.2.2.1.2.2",
+                "next": "Fin",
+                "requiredFlags": ["2.1.1.1.1.1.1", "2.1.1.1.1.2.1", "2.1.2.1.2.1.1", "2.1.2.1.2.2.2", "2.2.1.1.2.1.1", "2.2.1.2.2.1.1"],
+                "setFlags": ["2.1.2.2.1.2.2"]
+            },
+            {
+                "text": "Sí estoy seguro de que es usted un hombre de lo más razonable. Adelante, qué propone.",
+                "next": "9L1",
+                "requiredFlags": ["2.1.1.2.1.1.1", "2.1.1.2.2.1.1"],
+                "setFlags": ["2.2.1.2.2.2.1"]
+            },
+            {
+                "text": "(Ruleta Rusa) Sí, estoy seguro de que ahora va a entender lo que es una negociación desde una posición desfavorable *Teodoro gira el tambor del revólver descontroladamente, apunta hacia detrás mientras conduce. *Click** Venga, dispare ¿Lo pilla?",
+                "next": "9L1",
+                "requiredFlags": ["2.1.1.2.1.1.1", "2.1.1.2.2.1.1"],
+                "setFlags": ["2.2.1.2.2.2.2"]
+            },
+            {
+                "text": "¿LO HARÁ REALIDAD? ¿AHORA TIENES LA CAPACIDAD DE RESUCITAR GENTE? ¿CÓMO VA A DEVOLVERLE A LA ISLA A LA FAMILIA QUE LE ARREBATÓ?",
+                "next": "9L1",
+                "requiredFlags": ["2.1.2.1.2.2.1"],
+                "setFlags": ["2.1.2.2.2.2.1.1"]
+            },
+            {
+                "text": "(Ruleta Rusa) No puedes darme nada que me interese... aprende, las negociaciones deben ser justas. *Teodoro pone el cañón del revólver contra su sien* *Click*",
+                "next": "9L1",
+                "requiredFlags": ["2.1.2.1.2.2.1"],
+                "setFlags": ["2.1.2.2.2.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "9L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.2.1.2.2.2.1"],
+                "text": "¿Qué quiere? ¿Dinero? ¿Un puesto en la compañía? No... debe ser de mentira... claro, ahora que sabe que tiene un pez gordo en el coche se cree que con una pistola de plástico puede robarme... te va a caer un puro que no vas a saber por dónde meterte eso, chaval."
+            },
+            {
+                "requiredFlags": ["2.2.1.2.2.2.2"],
+                "text": "*llorando desconsoladamente* Sólo pida, pida y yo lo haré realidad. Lo que sea, lo que se le ocurra y lo tiene."
+            },
+            {
+                "requiredFlags": ["2.1.2.2.2.2.1.1"],
+                "text": "¿Qué? Vamos, algo tienes que querer, no puedes estar haciendo esto sólo por ellos."
+            },
+            {
+                "requiredFlags": ["2.1.2.2.2.2.1.2"],
+                "text": "¿QUÉ COJONES TE PASA? ERES UN PUTO ENFERMO ¿QUÉ QUIERES DE MÍ?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "> 2.1.2.2.1.2.1",
+                "next": "Fin",
+                "requiredFlags": ["2.2.1.2.2.2.1"],
+                "setFlags": ["2.1.2.2.1.2.1"]
+            },
+            {
+                "text": "> 2.1.2.2.1.2.2",
+                "next": "Fin",
+                "requiredFlags": ["2.2.1.2.2.2.1"],
+                "setFlags": ["2.1.2.2.1.2.2"]
+            },
+            {
+                "text": "Venga, te voy a dar una última oportunidad de decir algo que me haga no dispararte, aprovéchala.",
+                "next": "10L1",
+                "requiredFlags": ["2.1.2.2.2.2.1.1"],
+                "setFlags": ["2.1.2.2.2.2.1.1.1"]
+            },
+            {
+                "text": "(DISPARAR) Nada, no lo vas a entender, no merece la pena.",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.2.2.1.1"],
+                "setFlags": ["2.1.2.2.2.2.1.1.2"]
+            },
+            {
+                "text": "Vas a dejar de construir en los terrenos naturales protegidos. Vas a dejar de contaminar Las Lajas. Vas a ponerle a todos los trabajadores las condiciones del convenio que te pedía el sindicato cuando trasladaste la producción.",
+                "next": "10L1",
+                "requiredFlags": ["2.1.2.2.2.2.1.2"],
+                "setFlags": ["2.1.2.2.2.2.1.2.1"]
+            },
+            {
+                "text": "(Ruleta Rusa) ¿Lo sientes? ¿Sientes lo que es poder perderlo todo por decisión de otro? ¿Sientes lo que es que el otro pueda cambiar las reglas del juego a mitad de la partida? Ahora, por ejemplo, podría apretar el gatillo 3 veces en vez de una y llamarte daño colateral. *Click*",
+                "next": "10L1",
+                "requiredFlags": ["2.1.2.2.2.2.1.2"],
+                "setFlags": ["2.1.2.2.2.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "10L1",
+        "speaker": "Hombre de Negocios",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["2.1.2.2.2.2.1.1.1"],
+                "text": "Pide, de verdad, dime que quieres...lo que sea, te consigo lo que sea..."
+            },
+            {
+                "requiredFlags": ["2.1.2.2.2.2.1.2.1"],
+                "text": "Sí... sí. Lo prometo..."
+            },
+            {
+                "requiredFlags": ["2.1.2.2.2.2.1.2.2"],
+                "text": "*llorando descontroladamente* Lo pillo... lo siento... de verdad... no me dispares..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "> 2.1.2.2.2.2.1.1.2",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.2.2.1.1.1"],
+                "setFlags": ["2.1.2.2.2.2.1.1.2"]
+            },
+            {
+                "text": "(NO DISPARAR) Bien, parece que lo pillas. Recuerda, si acabas conmigo, vendrá otro. Considera esto una revelación divina.",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.2.2.1.2.1"],
+                "setFlags": ["2.1.2.2.2.2.1.2.1.1"]
+            },
+            {
+                "text": "(Ruleta Rusa) Bien, parece que lo pillas. Recuerda, si acabas conmigo, vendrá otro. Considera esto una revelación divina. *Un disparo seco resuena en el interior del taxi como un trueno*",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.2.2.1.2.1"],
+                "setFlags": ["2.1.2.2.2.2.1.2.1.2"]
+            },
+            {
+                "text": "(NO DISPARAR) Bien, parece que lo pillas. Recuerda, si acabas conmigo, vendrá otro. Considera esto una revelación divina.",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.2.2.1.2.2"],
+                "setFlags": ["2.1.2.2.2.2.1.2.2.1"]
+            },
+            {
+                "text": "(Ruleta Rusa) Bien, parece que lo pillas. Recuerda, si acabas conmigo, vendrá otro. Considera esto una revelación divina. *Un disparo seco resuena en el interior del taxi como un trueno*",
+                "next": "Fin",
+                "requiredFlags": ["2.1.2.2.2.2.1.2.2"],
+                "setFlags": ["2.1.2.2.2.2.1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "Fin",
+        "end": true
+    }
+]

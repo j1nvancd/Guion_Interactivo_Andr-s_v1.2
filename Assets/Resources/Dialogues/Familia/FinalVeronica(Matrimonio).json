@@ -1,0 +1,665 @@
+[
+    {
+        "id": "start",
+        "speaker": "Verónica",
+        "text": "Ayer me llamó mi madre desde casa de Celia.",
+        "setFlags": ["Inicio"],
+        "choices": [
+            {
+                "text": "¿Todo bien por allí?",
+                "next": "1MV",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "¿Alguna noticia?",
+                "next": "1MV",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1MV",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Sí... por allí todo está tranquilo. Mi madre me habló de vuestra conversación del otro día, cuando la llevaste al puerto."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Bueno... supongo que no. Me habló de vuestra conversación del otro día, cuando la llevaste al puerto."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Sí, no he querido sacar el tema. Suponía que si no me habías contado nada sería por algo.",
+                "next": "2MV",
+                "setFlags": ["2.1"]
+            },
+            {
+                "text": "¿Cuándo pensabas contármelo?",
+                "next": "2MV",
+                "setFlags": ["2.2"]
+            }
+        ]
+    },
+    {
+        "id": "2MV",
+        "speaker": "Verónica",
+        "text": "Ni yo sé por qué no te lo había contado ya, la verdad. Sé que tú siempre has querido tener una familia, hijos... Que yo también, pero... ver a mi hermana pequeña teniendo un hijo, en el continente... era como ver lo que tú siempre has querido...",
+        "choices": [
+            {
+                "text": "¿Qué más da lo que yo quisiera? ¿Qué pensabas que iba a responderte? ¿Que ojalá me hubiese ido con tu hermana? Es una gilipollez, yo me alegro por ellos... y en el fondo me hace ilusión ser tío.",
+                "next": "3MV",
+                "setFlags": ["3.1"]
+            },
+            {
+                "text": "¿Lo que yo he querido? Sé sincera, ¿A ti no te gustaría estar en esa situación? Sin pensar en todo lo del colegio, los niños y todo eso. Cambio uno por uno ¿No preferirías lo que tienen ellos?",
+                "next": "3MV",
+                "setFlags": ["3.2"]
+            }
+        ]
+    },
+    {
+        "id": "3MV",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["3.1"],
+                "text": "Yo que sé... yo no sé lo que está en tu cabeza. No sé lo que está en la mía, en realidad... Últimamente no paro de tener sueños raros, agua... puertas cerradas. He estado pensando y lo mismo algo dentro de mí se ahoga. El tema es que no sé qué me ahoga realmente..."
+            },
+            {
+                "requiredFlags": ["3.2"],
+                "text": "Ellos tienen su vida y se merecen su vida, no me cambiaría porque estoy segura de que ellos no querrían esto, ellos no soportarían esto."
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Cuáles son los candidatos?",
+                "next": "4MV",
+                "requiredFlags": ["3.1"],
+                "setFlags": ["3.1.1"]
+            },
+            {
+                "text": "Me encantaría ayudarte, pero no puedo sacarte del agua sin saber si lo que te ahoga es el agua o el aire.",
+                "next": "4MV",
+                "requiredFlags": ["3.1"],
+                "setFlags": ["3.1.2"]
+            },
+            {
+                "text": "Entonces ¿Por qué nosotros sí? ¿Por qué tú tienes que aguantar lo que los demás no pueden?",
+                "next": "4MV",
+                "requiredFlags": ["3.2"],
+                "setFlags": ["3.2.1"]
+            },
+            {
+                "text": "No hace falta que ellos sufran para que nosotros tengamos algo parecido. Podemos irnos, puedo volver a echar currículums. Para el final del verano habré encontrado algo... tú seguro que vas encontrando cosas en academias mientras te dan el traslado... lo podemos sacar adelante, estoy seguro.",
+                "next": "4MV",
+                "requiredFlags": ["3.2"],
+                "setFlags": ["3.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4MV",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["3.1.1"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["3.1.2"],
+                "text": "¿Y cómo lo sé yo? Cuando sólo sabes estar con el agua al cuello, ¿Cómo sabes si lo que te ahoga es el agua o tener la cabeza fuera?"
+            },
+            {
+                "requiredFlags": ["3.2.1"],
+                "text": "Porque es lo que me ha tocado, porque eso soy yo, porque alguien lo tendrá que hacer, porque no sé hacer otra cosa."
+            },
+            {
+                "requiredFlags": ["3.2.2"],
+                "text": "..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Venga Verónica, si no me dices nada voy a asumir la respuesta y va a ser la peor posible...",
+                "next": "5MV",
+                "requiredFlags": ["3.1.1"],
+                "setFlags": ["3.1.1.1"]
+            },
+            {
+                "text": "Ya... no quedan muchas más puertas por abrir ¿No? ¿Esto es todo? ¿Así acaba una vida? ¿Ahora yo me voy y se supone que no me voy a pasar el resto de mi vida pensando en que habría pasado si lo hubiésemos intentado?",
+                "next": "5MV",
+                "requiredFlags": ["3.1.1"],
+                "setFlags": ["3.1.1.2"]
+            },
+            {
+                "text": "Pues supongo que pruebas, buceas y compruebas si resulta que en realidad siempre has tenido branquias. O te agarras a alguna roca y te secas a ver cómo es.",
+                "next": "5MV",
+                "requiredFlags": ["3.1.2"],
+                "setFlags": ["3.1.2.1"]
+            },
+            {
+                "text": "Haz memoria... ¿Cuándo es la última época en la que no te sentías así? ¿Cuándo empezaste a ahogarte?",
+                "next": "5MV",
+                "requiredFlags": ["3.1.2"],
+                "setFlags": ["3.1.2.2"]
+            },
+            {
+                "text": "¿Y cómo sabes que no sabes hacer otra cosa? Yo te he visto hacer mil cosas, te he visto tocar la guitarra, te he visto saltar al mar desde un acantilado, te he visto hacer autostop para ir a un festival sola porque yo no quise ir contigo... ¿Qué no sabes hacer?",
+                "next": "5MV",
+                "requiredFlags": ["3.2.1"],
+                "setFlags": ["3.2.1.1"]
+            },
+            {
+                "text": "¿Hacer qué? ¿Estar ahí para los demás? ¿Ser un seguro? ¿Eso es lo que quieres ser? ¿Es eso lo que eres?",
+                "next": "5MV",
+                "requiredFlags": ["3.2.1"],
+                "setFlags": ["3.2.1.2"]
+            },
+            {
+                "text": "Venga, Verónica... dime algo. Dime que lo podemos solucionar, propón un camino. Señala y yo te sigo...",
+                "next": "5MV",
+                "requiredFlags": ["3.2.2"],
+                "setFlags": ["3.2.2.1"]
+            },
+            {
+                "text": "¿No? Supongo que eso es lo que ellos tienen, lo que yo quiero, pero no lo que tú quieres.",
+                "next": "5MV",
+                "requiredFlags": ["3.2.2"],
+                "setFlags": ["3.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5MV",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["3.1.1.1"],
+                "text": "Es que no sé cuál es. Nací siendo la hermana mayor, con un padre marinero que desaparecía meses ¿Quién cuidaba de Celia? Cuando mi padre se puso enfermo ella acababa de irse a la universidad y total nosotros ya estábamos aquí por el tuyo... Y pasó un año y otro y otro... y mi padre cada vez más enfermo y mi madre cada vez más mayor y nosotros cada vez con menos planes de futuro. Mi padre se muere y a mí me dan la plaza en el colegio. Yo no sé hacer otra cosa que no sea cuidar de gente y tú no deseas nada más que volar... Y yo no sé si me ahoga el peso de todo lo que tengo aquí o el vértigo de volar contigo..."
+            },
+            {
+                "requiredFlags": ["3.1.1.2"],
+                "text": "Yo no he dicho eso, pero es que no sé... no sé. Nací siendo la hermana mayor, con un padre marinero que desaparecía meses ¿Quién cuidaba de Celia? Cuando mi padre se puso enfermo ella acababa de irse a la universidad y total nosotros ya estábamos aquí por el tuyo... Y pasó un año y otro y otro... y mi padre cada vez más enfermo y mi madre cada vez más mayor y nosotros cada vez con menos planes de futuro. Mi padre se muere y a mí me dan la plaza en el colegio. Yo no sé hacer otra cosa que no sea cuidar de gente y tú no deseas nada más que volar... Y yo no sé si me ahoga el peso de todo lo que tengo aquí o el vértigo de volar contigo..."
+            },
+            {
+                "requiredFlags": ["3.1.2.1"],
+                "text": "¿Y qué pasa si me ahogo? ¿Qué pasa si elijo mal?"
+            },
+            {
+                "requiredFlags": ["3.1.2.2"],
+                "text": "No lo sé... sé que cuando estábamos en la universidad no lo sentía... pero eso no es una época que pueda durar toda la vida... incluso entonces en realidad sentiría mil problemas y todo sería una incógnita. La vida es así, supongo todo es una incógnita y es una mierda porque es una incógnita y después todo es siempre lo mismo y es una mierda porque todo es siempre lo mismo."
+            },
+            {
+                "requiredFlags": ["3.2.1.1"],
+                "text": "¿Quién me regaló la guitarra? ¿Quién estaba en el agua gritándome que saltase? ¿Quién fue de madrugada a esperarme al aparcamiento para llevarme a casa? ¿Qué sé hacer sin ti?"
+            },
+            {
+                "requiredFlags": ["3.2.1.2"],
+                "text": "¿Lo que soy? Sí, seguro, lo que llevo siendo toda la vida ¿Lo que quiero ser? Ni idea, que más da, por mucho que un gorrión quiera ser cuco nunca tendrá la fuerza para tirar a los otros del nido."
+            },
+            {
+                "requiredFlags": ["3.2.2.1"],
+                "text": "Si es que no tengo camino... todos los caminos que conozco van al mismo sitio y me da tanto pánico ese sitio como salirme del camino."
+            },
+            {
+                "requiredFlags": ["3.2.2.2"],
+                "text": "¿Cómo se supone que tengo que saber lo que quiero? Nací siendo la hermana mayor, con un padre marinero que desaparecía meses ¿Quién cuidaba de Celia? Cuando mi padre se puso enfermo ella acababa de irse a la universidad y total nosotros ya estábamos aquí por el tuyo... Y pasó un año y otro y otro... y mi padre cada vez más enfermo y mi madre cada vez más mayor y nosotros cada vez con menos planes de futuro. Mi padre se muere y a mí me dan la plaza en el colegio. Yo no sé hacer otra cosa que no sea cuidar de gente y tú no deseas nada más que volar... Y yo no sé si me ahoga el peso de todo lo que tengo aquí o el vértigo de volar contigo..."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Yo lo único que te puedo decir es que si te sientes ahogada y lo único que has hecho es cuidar de otros... no perdemos nada por probar a irnos, desaparecer, que no tengas que cuidar de nadie al menos un tiempo.",
+                "next": "6MV",
+                "requiredFlags": ["3.1.1.1", "3.2.2.2", "3.1.1.2", "3.2.2.1"],
+                "setFlags": ["3.1.1.1.1", "3.2.2.2.1", "3.1.1.2.1", "3.2.2.1.1"]
+            },
+            {
+                "text": "Todo en esta vida es cuidar, Verónica, de una forma u otra. Unos con niños en un colegio y un padre ausente, otros con palabras de apoyo y algunas historias que te saquen de la realidad, otros, simplemente estando, intentando no estorbar mucho, no siendo carga para nadie... Querer significa cuidar, y querer es inevitable.",
+                "next": "6MV",
+                "requiredFlags": ["3.1.1.1", "3.2.2.2", "3.1.1.2", "3.2.2.1"],
+                "setFlags": ["3.1.1.1.2", "3.2.2.2.2", "3.1.1.2.2", "3.2.2.1.2"]
+            },
+            {
+                "text": "No te vas a ahogar, porque yo voy a estar contigo mientras pruebas. Si te hundes yo te saco y si te quedas fuera... no sé cuál sería la metáfora pero yo te ayudo, algo se me ocurrirá.",
+                "next": "6MV",
+                "requiredFlags": ["3.1.2.1"],
+                "setFlags": ["3.1.2.1.1"]
+            },
+            {
+                "text": "Pues te ahogarás intentándolo. Si te quedas a medias te ahogas igual, más lento, más sufrido, más en silencio, pero te ahogas igual.",
+                "next": "6MV",
+                "requiredFlags": ["3.1.2.1"],
+                "setFlags": ["3.1.2.1.2"]
+            },
+            {
+                "text": "No tiene por qué ser siempre lo mismo... ¿Te agobia la rutina? Pues nos vamos a la mierda, nos compramos un barco y nos dedicamos al estraperlo, lo vendemos y montamos una academia en la capital... cada vez que te canses dímelo y lo mandamos todo a tomar por culo.",
+                "next": "6MV",
+                "requiredFlags": ["3.1.2.2"],
+                "setFlags": ["3.1.2.2.1"]
+            },
+            {
+                "text": "La rutina sólo es una mierda si no te gusta lo que haces... nadie se cansa de lo que le gusta por hacerlo cada día.",
+                "next": "6MV",
+                "requiredFlags": ["3.1.2.2"],
+                "setFlags": ["3.1.2.2.2"]
+            },
+            {
+                "text": "Bueno, eso no significa que no puedas hacer esas cosas. Significa que las hacemos juntos... mientras estemos juntos, podemos hacer lo que sea. Como cuando estábamos en la universidad. Tú te vuelves a poner la chaqueta de cuero y yo ese jersey horrendo.",
+                "next": "6MV",
+                "requiredFlags": ["3.2.1.1"],
+                "setFlags": ["3.2.1.1.1"],
+                "requiredPreviousFlags": ["chaqueta_cuero_X2"] 
+            },
+            {
+                "text": "Bueno, eso no significa que no puedas hacer esas cosas. Significa que las hacemos juntos... mientras estemos juntos, podemos hacer lo que sea ¿No?",
+                "next": "6MV",
+                "requiredFlags": ["3.2.1.1"],
+                "setFlags": ["3.2.1.1.1"],
+                "missingPreviousFlags": ["chaqueta_cuero_X2"] 
+            },
+            {
+                "text": "¿Entonces? ¿Eso es lo que quieres? ¿Descubrir qué puedes hacer sin mí?",
+                "next": "6MV",
+                "requiredFlags": ["3.2.1.1"],
+                "setFlags": ["3.2.1.1.2"]
+            },
+            {
+                "text": "¿Qué te digo, Verónica? ¿Cómo te explico que no creo que haya nada que no puedas hacer? Yo te he visto hacer mil cosas, te he visto tocar la guitarra, te he visto saltar al mar desde un acantilado, te he visto hacer autostop para ir a un festival sola porque yo no quise ir contigo... ¿Qué no sabes hacer?",
+                "next": "6MV",
+                "requiredFlags": ["3.2.1.2"],
+                "setFlags": ["3.2.1.2.1"]
+            },
+            {
+                "text": "Cada uno nace con un destino y un propósito. No se puede ser feliz sin hacer las paces con lo que te tocase...",
+                "next": "6MV",
+                "requiredFlags": ["3.2.1.2"],
+                "setFlags": ["3.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "6MV",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["3.1.1.1", "3.2.2.2", "3.1.1.2"],
+                "text": "¿Y qué pasa si no es eso? ¿Qué pasa si me sigo ahogando? ¿Qué hacemos si no cambia nada? ¿Qué pasa si el problema soy yo?"
+            },
+            {
+                "requiredFlags": ["3.1.1.2", "3.2.2.2", "3.1.1.2"],
+                "text": "¿Y qué pasa si yo ya no puedo cuidar más? ¿Qué pasa si ya no puedo más?"
+            },
+            {
+                "requiredFlags": ["3.1.2.1.1"],
+                "text": "¿Entonces qué? ¿Toda la vida cuidando de otros y ahora mi tranquilidad tiene que ser que alguien va a cuidar de mí?"
+            },
+            {
+                "requiredFlags": ["3.1.2.1.2"],
+                "text": "Como las peonías..."
+            },
+            {
+                "requiredFlags": ["3.1.2.2.1"],
+                "text": "¿Y qué pasa si hacemos todo eso y da igual? ¿Qué pasa si lo mandas todo a la mierda y yo sigo soñando que me ahogo?"
+            },
+            {
+                "requiredFlags": ["3.1.2.2.2"],
+                "text": "¿Y cómo lo sabes?¿Cómo sabes que no te vas a cansar nunca de algo?"
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1"],
+                "text": "¿No era que estaba viejo y tenía un botón roto? ¿Es que es horrendo?"
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1"],
+                "text": "Pero por mí tú estás dejando de hacer un montón de cosas. Tú podrías tener un despacho en un edificio alto en la capital, una familia, niños, un perro..."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.2"],
+                "text": "¿Puede ser? Pero me da pánico la respuesta."
+            },
+            {
+                "requiredFlags": ["3.2.1.2.2"],
+                "text": "¿Y esto es lo que me ha tocado a mí?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Lo seguimos intentando, hasta que algo funcione, hasta que puedas ser feliz.",
+                "next": "7MV",
+                "requiredFlags": ["3.1.1.1", "3.1.2.2.1"],
+                "setFlags": ["3.1.1.1.1", "3.1.2.2.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "7MV",
+                "requiredFlags": ["3.1.1.1", "3.1.1.2", "3.1.2.2.1"],
+                "setFlags": ["3.1.1.1.2", "3.1.1.2.2", "3.1.2.2.1.2"]
+            },
+            {
+                "text": "No poder cuidar más es no poder querer más, y no creo que me estés diciendo eso.",
+                "next": "7MV",
+                "requiredFlags": ["3.1.1.2"],
+                "setFlags": ["3.1.1.2.1"]
+            },
+            {
+                "text": "No, yo. Alguien no, yo. Pase lo que pase yo te cuido, eso no lo dudes ni por un momento.",
+                "next": "7MV",
+                "requiredFlags": ["3.1.2.1.1"],
+                "setFlags": ["3.1.2.1.1.2"]
+            },
+            {
+                "text": "Exacto, hay que podar, mejor la incertidumbre de una posible vida que la seguridad de una inevitable muerte.",
+                "next": "7MV",
+                "requiredFlags": ["3.1.2.1.2"],
+                "setFlags": ["3.1.2.1.2.1"]
+            },
+            {
+                "text": "Todavía no he podado las putas peonías...",
+                "next": "7MV",
+                "requiredFlags": ["3.1.2.1.2"],
+                "setFlags": ["3.1.2.1.2.2"]
+            },
+            {
+                "text": "¿Por qué no cambiar? ¿Por qué quedarse donde uno no es feliz?",
+                "next": "7MV",
+                "requiredFlags": ["3.1.2.2.2"],
+                "setFlags": ["3.1.2.2.2.1"]
+            },
+            {
+                "text": "Supongo que simplemente no te cansas, tus madre todavía no se ha cansado de discutir con tu padre, y eso que él lleva años sin responder... mi madre todavía sigue haciendo café de más todas las mañanas...",
+                "next": "7MV",
+                "requiredFlags": ["3.1.2.2.2"],
+                "setFlags": ["3.1.2.2.2.2"]
+            },
+            {
+                "text": "Es horrendo porque está viejo y tiene un botón roto.",
+                "next": "7MV",
+                "requiredFlags": ["3.2.1.1.1"],
+                "setFlags": ["3.2.1.1.1A.1"]
+            },
+            {
+                "text": "¿Qué más da que esté viejo, roto o sea feo? Es nuestro jersey, los demás verán un jersey feo y viejo, nosotros veremos una historia... nuestra historia.",
+                "next": "7MV",
+                "requiredFlags": ["3.2.1.1.1"],
+                "setFlags": ["3.2.1.1.1A.2"]
+            },
+            {
+                "text": "¿Y con quién iba a tener los hijos? ¿A quién iba a poner en un marquito en el despacho? ¿Quién iba a enseñarle al perro a no subirse al sofá?",
+                "next": "7MV",
+                "requiredFlags": ["3.2.1.1.1"],
+                "setFlags": ["3.2.1.1.1B.1"]
+            },
+            {
+                "text": "¿Y tú? ¿Tú serías feliz viéndome hacer todo esto sin ti?",
+                "next": "7MV",
+                "requiredFlags": ["3.2.1.1.1"],
+                "setFlags": ["3.2.1.1.1B.2"]
+            },
+            {
+                "text": "No es valiente el que no tiene miedo, sino el que hace lo que debe aún con miedo. Si es lo que necesitas... Cuando tengas la respuesta no dudes que me puedes llamar. Yo voy a seguir ahí para lo que necesites cuando lo necesites.",
+                "next": "7MV",
+                "requiredFlags": ["3.2.1.1.2"],
+                "setFlags": ["3.2.1.1.2.1"]
+            },
+            {
+                "text": "Pues esa no la puedes encontrar conmigo...",
+                "next": "7MV",
+                "requiredFlags": ["3.2.1.1.2"],
+                "setFlags": ["3.2.1.1.2.2"]
+            },
+            {
+                "text": "No sé si te ha tocado o lo has elegido, pero en estas estamos.",
+                "next": "7MV",
+                "requiredFlags": ["3.2.1.2.2"],
+                "setFlags": ["3.2.1.2.2.1"]
+            },
+            {
+                "text": "Esto es lo que nos ha tocado a nosotros.",
+                "next": "7MV",
+                "requiredFlags": ["3.2.1.2.2"],
+                "setFlags": ["3.2.1.2.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "7MV",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["3.1.1.1.1", "3.1.2.2.1.1"],
+                "text": "Sí... lo seguimos intentando..."
+            },
+            {
+                "requiredFlags": ["3.1.1.1.2", "3.1.1.2.2", "3.1.2.2.1.2"],
+                "text": "Ya... si el problema soy yo no hay solución. Vamos, hay solo una solución, mejor dicho."
+            },
+            {
+                "requiredFlags": ["3.1.1.2.1"],
+                "text": "No lo sé, puede ser que esté diciendo justamente eso..."
+            },
+            {
+                "requiredFlags": ["3.1.2.1.1.2", "3.2.1.1.2.1"],
+                "text": "¿Siempre?"
+            },
+            {
+                "requiredFlags": ["3.1.2.1.2.1"],
+                "text": "Entonces... ¿Nos vamos al continente?"
+            },
+            {
+                "requiredFlags": ["3.1.2.1.2.2"],
+                "text": "Exacto..."
+            },
+            {
+                "requiredFlags": ["3.1.2.2.2.1"],
+                "text": "Entonces... el que no esté feliz con la vida que eligió, ¿Debe cambiar?"
+            },
+            {
+                "requiredFlags": ["3.1.2.2.2.2"],
+                "text": "..."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1A.1"],
+                "text": "Supongo que es así con todo, todas las casas son feas cuando están abandonadas, los pueblos solo dan miedo cuando no vive nadie..."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1A.2"],
+                "text": "Entonces ¿Qué dices? ¿Yo me pongo la vieja chaqueta de cuero y tú te pones tu jersey horrible?"
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1B.1"],
+                "text": "*en broma* Yo seguro que no, si tuviésemos un perro te mandaba a dormir al sofá para dormir con el perro."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1B.2"],
+                "text": "¿Qué más da? Es tu vida, la que tú quieres. Tú serías feliz."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.2.2"],
+                "text": "Ya...ya..."
+            },
+            {
+                "requiredFlags": ["3.2.1.2.2.1", "3.2.1.2.2.2"],
+                "text": "¿Entonces ya está? ¿Esto es todo lo que hay? ¿Esto es la vida?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Ahí te equivocas, a un mismo problema puede haber infinitas soluciones. Palabra de ingeniero.",
+                "next": "FinMV",
+                "requiredFlags": ["3.1.1.1.2"],
+                "setFlags": ["3.1.1.1.2.1"]
+            },
+            {
+                "text": "...",
+                "next": "FinMV",
+                "requiredFlags": ["3.1.1.1.2"],
+                "setFlags": ["3.1.1.1.2.2"]
+            },
+            {
+                "text": "Ya... Entonces... supongo que esto es un adiós.",
+                "next": "FinMV",
+                "requiredFlags": ["3.1.1.2.1"],
+                "setFlags": ["3.1.1.2.1.1"]
+            },
+            {
+                "text": "¿Y ya está? ¿No hay nada más que hacer? ¿Se acabó?",
+                "next": "FinMV",
+                "requiredFlags": ["3.1.1.2.1"],
+                "setFlags": ["3.1.1.2.1.2"]
+            },
+            {
+                "text": "Siempre",
+                "next": "FinMV",
+                "requiredFlags": ["3.1.2.1.1.2"],
+                "setFlags": ["3.1.2.1.1.2.1"]
+            },
+            {
+                "text": "Mientras tú quieras que esté ahí. Y después también, no vaya a ser que te arrepientas.",
+                "next": "FinMV",
+                "requiredFlags": ["3.1.2.1.1.2"],
+                "setFlags": ["3.1.2.1.1.2.2"]
+            },
+            {
+                "text": "¿Por qué no cambiar? ¿Por qué quedarse donde uno no es feliz?",
+                "next": "FinMV",
+                "requiredFlags": ["3.1.2.2.2.1"],
+                "setFlags": ["3.1.2.2.2.1.1"]
+            },
+            {
+                "text": "Me da miedo responder a eso... pero creo que sabes la respuesta.",
+                "next": "FinMV",
+                "requiredFlags": ["3.1.2.2.2.1"],
+                "setFlags": ["3.1.2.2.2.1.2"]
+            },
+            {
+                "text": "Exacto, el jersey nunca será feo si lo llevas puesto tú.",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.1.1A.1"],
+                "setFlags": ["3.2.1.1.1A.1.1"]
+            },
+            {
+                "text": "Y ese jersey hace tiempo que no se lo pone nadie...",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.1.1A.1"],
+                "setFlags": ["3.2.1.1.1A.1.2"]
+            },
+            {
+                "text": "Suena como un buen plan.",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.1.1A.2"],
+                "setFlags": ["3.2.1.1.1A.2.1"]
+            },
+            {
+                "text": "Entonces estamos de acuerdo en que es horrible.",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.1.1A.2"],
+                "setFlags": ["3.2.1.1.1A.2.2"]
+            },
+            {
+                "text": "Perro no, anotado. Lo demás entonces ¿Te parece un buen plan?",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.1.1B.1"],
+                "setFlags": ["3.2.1.1.1B.1.1"]
+            },
+            {
+                "text": "Mientras seas tú la del marquito, lo demás es secundario.",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.1.1B.1", "3.2.1.1.1B.2"],
+                "setFlags": ["3.2.1.1.1B.1.2", "3.2.1.1.1B.2.1"]
+            },
+            {
+                "text": "No lo sé, te diría que sí lo sería o que sin tí no podría ser feliz, pero no lo sé. Sé lo que es ser feliz y lo que es estar triste, pero no lo que es no estar contigo.",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.1.1B.2"],
+                "setFlags": ["3.2.1.1.1B.2.2"]
+            },
+            {
+                "text": "Si quieres otra cosa... hay que luchar por ella. Tú señala y yo te sigo",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.2.2.1"],
+                "setFlags": ["3.2.1.2.2.1.1"]
+            },
+            {
+                "text": "...",
+                "next": "FinMV",
+                "requiredFlags": ["3.2.1.2.2.1"],
+                "setFlags": ["3.2.1.2.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "FinMV",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["3.1.1.1.2.1"],
+                "text": "¿Y cuánto tiempo puedes dedicar a buscar infinitas soluciones?"
+            },
+            {
+                "requiredFlags": ["3.1.1.2.1.1", "3.1.1.2.1.2"],
+                "text": "Supongo que sí... No es como me lo había imaginado, pero supongo que sí..."
+            },
+            {
+                "requiredFlags": ["3.1.2.2.2.1.1"],
+                "text": "Ya, claro. Para qué..."
+            },
+            {
+                "requiredFlags": ["3.1.2.2.2.1.2"],
+                "text": "Sí... creo que sí."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1A.1.1"],
+                "text": "Entonces ¿Qué dices? ¿Yo me pongo la vieja chaqueta de cuero y tú te pones tu jersey horrible?"
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1A.1.2"],
+                "text": "Sí..."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1A.2.2"],
+                "text": "Supongo que es así con todo, todas las casas son feas cuando están abandonadas, los pueblos solo dan miedo cuando no vive nadie..."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1B.1.1"],
+                "text": "Suena bien, eso seguro."
+            },
+            {
+                "requiredFlags": ["3.2.1.1.1B.2"],
+                "text": "Entonces ¿Qué dices? ¿Yo me pongo la vieja chaqueta de cuero y tú te pones tu jersey horrible?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "Toda una vida.",
+                "next": "FinFinalMV",
+                "requiredFlags": ["3.1.1.1.2.1"],
+                "setFlags": ["3.1.1.1.2.1.1"]
+            },
+            {
+                "text": "Mientras te interese la solución, seguiremos buscando.",
+                "next": "FinFinalMV",
+                "requiredFlags": ["3.1.1.1.2.1"],
+                "setFlags": ["3.1.1.1.2.1.2"]
+            }
+        ],
+        "end": true
+    },
+    {
+        "id": "FinFinalMV",
+        "speaker": "Verónica",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["3.1.1.1.2.1.1"],
+                "text": "Sí... lo seguimos intentando..."
+            },
+            {
+                "requiredFlags": ["3.1.1.1.2.1.2"],
+                "text": "Sí..."
+            }
+        ],
+        "end": true
+    }
+]

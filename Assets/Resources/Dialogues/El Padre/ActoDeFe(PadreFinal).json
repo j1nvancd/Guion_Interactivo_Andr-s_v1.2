@@ -1,0 +1,557 @@
+[
+    {
+        "id": "start",
+        "speaker": "El Padre",
+        "text": "Buenas, al puerto, por favor.",
+        "choices": [
+            {
+                "text": "¿Al puerto? ¿Se va usted al continente?",
+                "next": "1L1",
+                "setFlags": ["1.1"]
+            },
+            {
+                "text": "Enseguida ¿Tuvo alguna revelación nueva el otro día en El Diente del Santo?",
+                "next": "1L1",
+                "setFlags": ["1.2"]
+            }
+        ]
+    },
+    {
+        "id": "1L1",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1"],
+                "text": "Sí, voy un par de días a visitar a un amigo de mis días del seminario. Necesito descansar un poco de esta isla."
+            },
+            {
+                "requiredFlags": ["1.2"],
+                "text": "Bueno, ahí tuve la idea de ir al continente a visitar a unos amigos, así que supongo que sí."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Le entiendo, Padre, aunque si yo fuese usted no sé si volvería.",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.1"]
+            },
+            {
+                "text": "Va a dejar este sitio huérfano de fe, Padre. Quién sabe, lo mismo es usted el que mantiene esto sin derrumbarse del todo.",
+                "next": "2L1",
+                "requiredFlags": ["1.1"],
+                "setFlags": ["1.1.2"]
+            },
+            {
+                "text": "¿Nada relacionado con Abel?",
+                "next": "2L1",
+                "requiredFlags": ["1.2"],
+                "setFlags": ["1.2.1"]
+            }
+        ]
+    },
+    {
+        "id": "2L1",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1"],
+                "text": "No creas que no lo he pensado... pero ¿Qué hago yo en otra parroquia? Llevo aquí tantos años que ya no me acuerdo de cómo es no escuchar el mar."
+            },
+            {
+                "requiredFlags": ["1.1.2"],
+                "text": "Sólo me voy unos días, Teodoro. Volveré, todavía me quedan asuntos por resolver en La Isla."
+            },
+            {
+                "requiredFlags": ["1.2.1"],
+                "text": "Todo está interconectado, muchacho."
+            }
+        ],
+        "choices": [
+            {
+                "text": "Pues estar tranquilo, ver gente nueva de vez en cuando en vez de los mismos cuatro todas las semanas. Salir de este ambiente...",
+                "next": "3L1",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.1"]
+            },
+            {
+                "text": "Desaparecer, huir de los rumores. Alejarse de la historia de ese revólver.",
+                "next": "3L1",
+                "requiredFlags": ["1.1.1"],
+                "setFlags": ["1.1.1.2"]
+            },
+            {
+                "text": "¿Asuntos? ¿Qué asuntos?",
+                "next": "3L1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.1"]
+            },
+            {
+                "text": "No se de prisa, que aquí nada va a cambiar.",
+                "next": "3L1",
+                "requiredFlags": ["1.1.2"],
+                "setFlags": ["1.1.2.2"]
+            },
+            {
+                "text": "Ya, supongo. Hay muchos que parecen no querer ver las conexiones, aún así.",
+                "next": "3L1",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.1"]
+            },
+            {
+                "text": "¿Y me lo va a contar o va a mantener el misterio?",
+                "next": "3L1",
+                "requiredFlags": ["1.2.1"],
+                "setFlags": ["1.2.1.2"]
+            }
+        ]
+    },
+    {
+        "id": "3L1",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.1"],
+                "text": "Quizás en el futuro... de momento sólo me voy unos días. Aún tengo asuntos que resolver en esta isla."
+            },
+            {
+                "requiredFlags": ["1.1.1.2"],
+                "text": "No tengo nada de lo que huir, al menos no hasta que todo esté resuelto."
+            },
+            {
+                "requiredFlags": ["1.1.2.1"],
+                "text": "Hay que limpiar, purificar, purgar... Si esta isla es el paraíso aún queda mucho trabajo para que lo parezca."
+            },
+            {
+                "requiredFlags": ["1.1.2.2"],
+                "text": "Para eso tengo que volver, para que cambien cosas."
+            },
+            {
+                "requiredFlags": ["1.2.1.1"],
+                "text": "Para eso tengo que volver, para conseguir que entiendan, para convertir a los escépticos en creyentes. Para que todos vean la verdad."
+            },
+            {
+                "requiredFlags": ["1.2.1.2"],
+                "text": "Depende ¿Te asusta la verdad? ¿Te asusta cuando alguien respalda sus palabras con acciones?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "> 1.1.2.1",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1.1"],
+                "setFlags": ["redirect"]
+            },
+            {
+                "text": "¿Resuelto? ¿Qué tiene usted que resolver?",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.1"]
+            },
+            {
+                "text": "¿Eso quiere decir que cuándo lo resuelvan tendrá usted que huir?",
+                "next": "4L1",
+                "requiredFlags": ["1.1.1.2"],
+                "setFlags": ["1.1.1.2.2"]
+            },
+            {
+                "text": "¿Quién ha dicho que esto sea el paraíso? Si esto es lo que usted entiende por el paraíso ahora entiendo por qué cada vez va menos gente a misa.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.1"]
+            },
+            {
+                "text": "¿Y cuál es su plan de limpieza?",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2.1"],
+                "setFlags": ["1.1.2.1.2"]
+            },
+            {
+                "text": "No lo entiendo, usted lleva aquí veinticinco años, ¿Cómo es que es también el que representa el cambio?",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.1"]
+            },
+            {
+                "text": "Para que cambien cosas tendrían que irse unos cuantos.",
+                "next": "4L1",
+                "requiredFlags": ["1.1.2.2"],
+                "setFlags": ["1.1.2.2.2"]
+            },
+            {
+                "text": "¿Y cuál es esa verdad?",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.1"]
+            },
+            {
+                "text": "¿En veinticinco años no ha conseguido que la vean y lo va a conseguir ahora?",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.2"]
+            },
+            {
+                "text": "Pues depende de cuáles sean esas palabras y esas acciones.",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "No, la verdad es que estoy bastante harto de las medias tintas y murmullos que tan de moda están por aquí.",
+                "next": "4L1",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "4L1",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.2.1"],
+                "text": "> 1.1.2.1"
+            },
+            {
+                "requiredFlags": ["1.1.1.2.2"],
+                "text": "¿Lo resuelvan? No sé de qué hablas, yo soy parte de la solución. Una vez terminado me podré ir tranquilo, aunque ya no tendré motivos para irme."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1"],
+                "text": "Se te ha olvidado lo que era tu casa, muchacho y, sobretodo, lo que podría ser si estuviese limpia de carroñeros."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2"],
+                "text": "El único plan de limpieza que se puede tener, sacar la basura.",
+                "requiredAdditionalFlags": ["Revólver en disposición policial"]
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2"],
+                "text": "El único plan de limpieza que se puede tener, el mismo que tienes tú, aunque temas afrontarlo.",
+                "requiredAdditionalFlags": ["Revólver en el coche"]
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1"],
+                "text": "Ahí tengo que darte la razón, me he dejado ir... y de aquellos polvos estos lodos."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.2"],
+                "text": "Ese es el plan, Teodoro, ese es el plan."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.1"],
+                "text": "Que para parar una epidemia a veces hay que quemar campos."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "La palabra es justicia, la acción es sentencia."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2"],
+                "text": "Exacto, alguien debe tomar las riendas, romper el bucle."
+            }
+        ],
+        "choices": [
+            {
+                "text": "> 1.1.2.2.1",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1.2.2"],
+                "setFlags": ["redirect"]
+            },
+            {
+                "text": "¿Y qué quiere terminar, concretamente?",
+                "next": "5L1",
+                "requiredFlags": ["1.1.1.2.2"],
+                "setFlags": ["1.1.1.2.2.2"]
+            },
+            {
+                "text": "Mi casa no es esta isla, ni el continente, mi casa es el sitio donde pueda vivir tranquilo con mi mujer.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.1"],
+                "setFlags": ["1.1.2.1.1.1"]
+            },
+            {
+                "text": "¿Y cuál es su plan para acabar con esos carroñeros, Padre?",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.1"],
+                "setFlags": ["1.1.2.1.1.2"]
+            },
+            {
+                "text": "Ya, sí, lo que me pregunto es cómo piensa hacerlo.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.2"],
+                "setFlags": ["1.1.2.1.2.1"]
+            },
+            {
+                "text": "... De momento el único que se va es usted, no sé si eso será parte de su plan.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.2"],
+                "setFlags": ["1.1.2.1.2.2"]
+            },
+            {
+                "text": "¿Y qué sabe usted de mis planes?",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.2"],
+                "requiredAdditionalFlags": ["Revólver en el coche"],
+                "setFlags": ["1.1.2.1.2B.1"]
+            },
+            {
+                "text": "Yo no tengo ningún plan que no sea podar las peonías del jardín antes de que mi mujer me pode a mí la cabeza.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.1.2"],
+                "requiredAdditionalFlags": ["Revólver en el coche"],
+                "setFlags": ["1.1.2.1.2B.2"]
+            },
+            {
+                "text": "Entonces ¿Cuál es el plan ahora?",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.2.1"],
+                "setFlags": ["1.1.2.2.1.1"]
+            },
+            {
+                "text": "No se apure, Padre. No todo está en nuestras manos.",
+                "next": "5L1",
+                "requiredFlags": ["1.1.2.2.1"],
+                "setFlags": ["1.1.2.2.1.2"]
+            },
+            {
+                "text": "Hable claro, Padre, algo me dice que me va a pedir algo así que pídamelo.",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.1"],
+                "setFlags": ["1.2.1.1.2"]
+            },
+            {
+                "text": "Entiendo... ¿Y a quién va a sentenciar usted?",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "Suena usted como un fanático, Padre.",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.1"]
+            },
+            {
+                "text": "Y ese alguien entiendo que es usted.",
+                "next": "5L1",
+                "requiredFlags": ["1.2.1.2"],
+                "setFlags": ["1.2.1.2.2"]
+            }
+        ]
+    },
+    {
+        "id": "5L1",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.2.2.2"],
+                "text": "¿No está claro? Debemos eliminar la plaga que asola La Isla. Esa fábrica es un templo al mal."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1.1"],
+                "text": "Tu mujer no quiere irse de esta isla. Teodoro. Cuanto antes de des cuenta mejor, antes te centrarás en hacer de este sitio un lugar mejor."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.1.2"],
+                "text": "> 1.1.2.1.2A/1.1.2.1.2B"
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2.1"],
+                "text": "Pregúntate cómo vamos a hacerlo. Tú también estás en contra de La Fábrica, de sus planes de convertir esto en un destino turístico para que el mundo mire hacia el mar y no al volcán. Tú eres de los míos."
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2.2"],
+                "text": "Todo es parte del plan, volveré. Pero antes de irme me gustaría saber una cosa ¿Estás conmigo o contra mí?"
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2B.1"],
+                "text": "Un hombre sólo guarda una pistola si tiene alguien a quién dispararle. Lo que me falta por saber es ¿Estás dispuesto a ser quién apriete el gatillo?"
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2B.2"],
+                "text": "Para que las flores crezcan la tierra debe sanar. Los dos sabemos lo que necesita la tierra para sanar tranquila."
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.1"],
+                "text": "Depende ¿Estás dispuesto a respaldar las palabras con actos?"
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.2"],
+                "text": "Puede estarlo, muchacho. Sólo hay que agarrar el destino por los cuernos."
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2"],
+                "text": "Hay que arrancar la mala hierba de raíz. Tú las tienes muy cerca ¿Estás dispuesto a arrancarlas?"
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "No hagas preguntas cuyas respuestas conoces, todos sabemos quién es el origen de la plaga que asola La Isla."
+            },
+            {
+                "requiredFlags": ["1.2.1.2.1"],
+                "text": "No... sólo un hombre que quiere erradicar el mal de esta tierra, la pregunta es ¿Estás dispuesto a ayudarme con ello?"
+            },
+            {
+                "requiredFlags": ["1.2.1.2.2"],
+                "text": "No... no yo solo, al menos. La pregunta es ¿Estás conmigo? ¿Estás dispuesto a arrancar las malas hierbas?"
+            }
+        ],
+        "choices": [
+            {
+                "text": "¿Y cómo piensa hacer eso?",
+                "next": "end",
+                "requiredFlags": ["1.1.1.2.2.2"],
+                "setFlags": ["1.1.1.2.2.2.1"]
+            },
+            {
+                "text": "Padre, sinceramente. Quédese con sus amigos allí y olvídese de todo eso o entréguese a la policía, usted no está bien y yo no tengo forma de hacer que le detengan.",
+                "next": "end",
+                "requiredFlags": ["1.1.1.2.2.2"],
+                "setFlags": ["1.1.1.2.2.2.2"],
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "text": "Padre, usted no me conoce a mí ni conoce a mi mujer. Cállese y váyase a un sitio donde le saquen estas ideas de la cabeza.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.1.1"],
+                "setFlags": ["1.1.2.1.1.1.2"],
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "text": "Si con de los suyos se refiere a querer que se haga justicia, sí, soy de los suyos.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2.1"],
+                "setFlags": ["1.1.2.1.2.1.1"],
+                "endType": "ACTO DE FE"
+            },
+            {
+                "text": "No se equivoque, Padre. Yo intenté que se hiciese justicia como se debía. Eso no nos convierte en amigos, ni en aliados.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2.1"],
+                "setFlags": ["1.1.2.1.2.1.2"],
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "text": "Si con usted se refiere a querer que se haga justicia, sí, estoy con usted.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2.2"],
+                "setFlags": ["1.1.2.1.2.2.1"],
+                "endType": "ACTO DE FE"
+            },
+            {
+                "text": "Esto no es ninguna guerra, Padre, deje el discurso. Quédese allí con sus amigos y que cada uno lidie con sus problemas pero no intente meter a nadie más en sus batallas.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2.2"],
+                "setFlags": ["1.1.2.1.2.2.2"],
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "text": "... Alguien tiene que hacerlo... alguien tiene que ser verdugo.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2B.1"],
+                "setFlags": ["1.1.2.1.2B.1.1"],
+                "endType": "ACTO DE FE"
+            },
+            {
+                "text": "Yo no tengo ninguna pistola, Padre. No haga acusaciones de cosas tan graves si no tiene pruebas.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2B.1"],
+                "setFlags": ["1.1.2.1.2B.1.2"],
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "text": "No diga más, Padre. Tengo claro qué es lo que hay que extirpar para que las flores crezcan...",
+                "next": "end",
+                "requiredFlags": ["1.1.2.1.2B.2"],
+                "setFlags": ["1.1.2.1.2B.2.1"],
+                "endType": "ACTO DE FE"
+            },
+            {
+                "text": "> 1.2.1.2.1",
+                "next": "end",
+                "requiredFlags": ["1.1.2.2.1.1"],
+                "setFlags": ["redirect"]
+            },
+            {
+                "text": "Yo no estoy dispuesto a nada que no sea llegar a mi casa y dormir la siesta, Padre, no se confunda.",
+                "next": "end",
+                "requiredFlags": ["1.1.2.2.1.2"],
+                "setFlags": ["1.1.2.2.1.2"],
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "text": "Por supuesto, Padre. Aunque no lo crea esta es mi casa, no pienso dejar escapar más oportunidades.",
+                "next": "end",
+                "requiredFlags": ["1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.2.1"],
+                "endType": "ACTO DE FE"
+            },
+            {
+                "text": "Yo no arranco nada que no sea el coche por las mañanas. Déjeme de historias y deje de intentar meter a gente en su cruzada.",
+                "next": "end",
+                "requiredFlags": ["1.2.1.1.2"],
+                "setFlags": ["1.2.1.1.2.2"],
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "text": "Si... ahí estamos de acuerdo. Lo que no tengo claro es cómo piensa hacerlo...",
+                "next": "end",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.1"],
+                "endType": "ACTO DE FE"
+            },
+            {
+                "text": "Suena como lo que hay que hacer... la única duda es cómo piensa hacerlo.",
+                "next": "end",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.1"],
+                "endType": "ACTO DE FE"
+            },
+            {
+                "text": "No me interesa esta conversación, Padre. No soy juez ni policía, yo solo quiero vivir tranquilo. Aquí o en cualquier parte.",
+                "next": "end",
+                "requiredFlags": ["1.2.1.2.1"],
+                "setFlags": ["1.2.1.2.1.2"],
+                "endType": "MIRAR A OTRO LADO"
+            }
+        ]
+    },
+    {
+        "id": "end",
+        "speaker": "El Padre",
+        "conditionalTexts": [
+            {
+                "requiredFlags": ["1.1.1.2.2.2.2", "1.1.2.1.1.1.2", "1.1.2.1.2.1.2", "1.1.2.1.2.2.2", "1.1.2.1.2B.2.2", "1.2.1.2.1.2", "1.2.1.2.1.1.2", "1.2.1.2.2.2"],
+                "text": "Siempre tiene que haber incrédulos...",
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2.1.1", "1.1.2.1.2.2.1", "1.1.2.1.2B.1.1", "1.2.1.1.2.1", "1.2.1.2.2.1B", "1.2.1.2.1.1A", "1.2.1.2.2.1A", "1.2.1.2.1.1B", "1.2.1.2.1.1.1"],
+                "text": "Por supuesto... Volveré en un par de días, entonces sabrás cómo proceder.",
+                "endType": "ACTO DE FE"
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2B.1.2"],
+                "text": "Dios no necesitará pruebas cuando llegue el juicio.",
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "requiredFlags": ["1.1.2.1.2B.2.1"],
+                "text": "Me alegro, espero que no tengamos que intercambiar más palabras. Que los actos hablen por nosotros.",
+                "endType": "ACTO DE FE"
+            },
+            {
+                "requiredFlags": ["1.1.2.2.1.2"],
+                "text": "Una pena... una pena.",
+                "endType": "MIRAR A OTRO LADO"
+            },
+            {
+                "requiredFlags": ["1.2.1.1.2.2"],
+                "text": "Pilato se lavó las manos, y aún así la sangre no desapareció.",
+                "endType": "MIRAR A OTRO LADO"
+            }
+        ],
+        "end": true
+    }
+]
